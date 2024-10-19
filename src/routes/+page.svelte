@@ -23,7 +23,7 @@
 			<TextField 
 				bind:value = {value /*Передача переменной по ссылке*/}
 				variant = 'Outlined'
-				label = 'Outlined'
+				label = 'Outlined Outlined Outlined Outlined'
 				onfocus={() => {}}
 				onblur={() => {}}
 				oninput={(e: Event) => {
@@ -88,7 +88,6 @@
 			<li> Отображение, извлечение и редактирование данных DataGrid, а также - его кастомизация; </li>
 			<li> TextArea; </li>
 			<li> Отображение drop list'а AutoComplete сверху или снизу поля в зависимости от доступной области экрана и при скролинге; </li>
-			<li> Стили для активации TextField с помощью состояний, а не селектора input:not(:placeholder-shown);</li>
 		</ol>
 	</div>
 </div>
@@ -107,7 +106,6 @@
 	#container {
 		display: flex;
 		justify-content: center; /* Горизонтальное центрирование */
-		align-items: center; /* Вертикальное центрирование */
 		min-height: 100vh; /* Минимальная высота экрана */
 	}
 </style>

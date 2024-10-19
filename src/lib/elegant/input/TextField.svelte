@@ -35,18 +35,23 @@
         on:focus={handleFocus}
         on:blur={handleBlur}
     />
-    <label 
-        for = {id}
+    <div 
+        class = 'label-container'
         style:position = 'absolute'
-        style:margin-left = {paddingLeft}
-        style:background-color = {variant === 'Filled' ? 'transparent' : ''}
-        style:--Xl-color = {primaryColor}
-        style:--Xl-font-size = {fontSize}
-        style:--Xl-labelColor = {labelColor}
+        style:padding-left = {paddingLeft}
         style:--Xl-liftingHeight = {variant === 'Outlined' ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)` : variant === 'Standard' ? `${height}/2 + 0.65rem` : `${height}/2 + 0.7rem`}
+        style:--Xl-color = {primaryColor}
+        style:--Xl-labelColor = {labelColor}
+        style:background-color = {variant === 'Filled' ? 'transparent' : ''}
     >
-        {label}
-    </label>
+        <label 
+            for = {id}
+            style:--Xl-font-size = {fontSize}
+            style:width='2rem'
+        >
+            {label}
+        </label>
+    </div>
 </div>
 
 <script lang='ts'>
@@ -159,14 +164,13 @@
     }
 
     label {
-        background-color: var(--Xl-background-color);
-        pointer-events: none; /* Нажатие на label не перекрывает не припятствует активации input */
         font-size: var(--Xl-font-size);
         color: var(--Xl-labelColor);
-        transition: var(--Xl-effectsTimeCode);
 
-        /* Перекрытие верхней границы поля */
-        height: calc(var(--Xl-activeborderWidth) + 1px);
+        white-space: nowrap;        /* Текст в одну строку, без переноса */
+        overflow: hidden;           /* Скрыть текст, который не помещается */
+        text-overflow: ellipsis;    /* Добавить многоточие (...) в конце */
+
         display: flex;
         align-items: center;
     }
@@ -177,12 +181,23 @@
         flex-direction: column;
     }
 
+    .label-container {
+        pointer-events: none; /* Нажатие на label не перекрывает не припятствует активации input */
+        height: calc(var(--Xl-activeborderWidth) + 1px);
+
+        /* Перекрытие верхней границы поля */
+        display: flex;
+        align-items: center;
+
+        transition: all var(--Xl-effectsTimeCode);
+    }
+
     .hovered {
         background-color: var(--Xl-fill);
         border-color: var(--Xl-hoverBorderColor);
     }
 
-    input.hovered + label {
+    input.hovered + .label-container {
         background-color: var(--Xl-fill);
     }
 
@@ -191,16 +206,18 @@
         border-width: var(--Xl-activeborderWidth);
     }
 
-    input.focused + label {
+    input.focused + .label-container label {
         color: var(--Xl-color); /* Изменяем цвет на основной цвет */
     }
 
-    input.focused + label, input:not(:placeholder-shown) + label {
-        transform: translate(-0.26rem, calc(-1 * var(--Xl-liftingHeight))); /* Сдвигаем метку влево и вверх */
+    input.focused + .label-container label, input:not(:placeholder-shown) + .label-container label {
         font-size: 13px; /* Уменьшаем размер шрифта */
-        background-color: var(--Xl-background-color);
         padding: 0 0.26rem 0 0.26rem;
-        transition: all var(--Xl-effectsTimeCode);
+    }
+
+    input.focused + .label-container, input:not(:placeholder-shown) + .label-container {
+        transform: translate(-0.26rem, calc(-1 * var(--Xl-liftingHeight))); /* Сдвигаем метку влево и вверх */
+        background-color: var(--Xl-background-color);
     }
 
     input.focused, input:not(:placeholder-shown) {
