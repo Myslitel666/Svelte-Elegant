@@ -221,7 +221,7 @@
     }
 
     input.focused, input:not(:placeholder-shown) {
-        background-color: var(--Xl-background-color);
+        background-color: var(--Xl-background-color); /**/
     }
 
     input::placeholder {
