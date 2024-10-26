@@ -1,4 +1,7 @@
-<div style:height = {height}>
+<div 
+    style:height = {height}
+    style:width = {width}
+>
     <span 
         class="track"
         style:height = {height}
@@ -22,6 +25,7 @@
         type="checkbox"
         id = {id}
         style:height = {height}
+        style:width = {width}
         bind:checked={isChecked} 
         on:click={()=> {
             toggleSwitch();
@@ -43,6 +47,7 @@
     export let onClick = () => {};                            /* Обработчик нажатия */
 
     let height = '2rem'; // Высота Switch'а
+    let width = '3.55rem'
     let borderRadius = '1rem'; // Радиус скругления углов
 
     // Флаги для отслеживания, передал ли пользователь значение извне
@@ -71,7 +76,6 @@
         opacity: 0;
         margin: 0;
         position: absolute;
-        width: 4rem;
         cursor: pointer;
     }
     .track {

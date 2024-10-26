@@ -23,7 +23,7 @@
 			<TextField 
 				bind:value = {value /*Передача переменной по ссылке*/}
 				variant = 'Outlined'
-				label = 'Outlined Outlined Outlined Outlined'
+				label = 'Outlined'
 				onfocus={() => {}}
 				onblur={() => {}}
 				oninput={(e: Event) => {
