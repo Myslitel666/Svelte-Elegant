@@ -9,7 +9,7 @@
         {#each columns as column}
         <div 
             class="cell border" 
-            style="width: {column.width}"
+            style:width = {column.width}
         >
             <div class="cell-content">
                 <p>{column.headerName || column.header}</p>
@@ -23,7 +23,7 @@
         {#each columns as column}
         <div 
             class="cell border" 
-            style="width: {column.width}"
+            style:width = {column.width}
         >
             <div class="cell-content">
                 <p>Пример значения {column.field}</p>
