@@ -7,23 +7,35 @@
     <div 
         class = 'row border'
     >
-        <div class = 'cell border'>
-            <div class = 'cell-content'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div 
+                class = 'cell-content'
+            >
                 <p>Id</p>
             </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
             <div class = 'cell-content'>
                 <p>Jargon</p>
             </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
             <div class = 'cell-content'>
                 <p>Translate</p>
             </div>
         </div>
         <div 
             class = 'cell border'
+            style:width = 15rem
         >
             <div 
                 class = 'cell-content'
@@ -35,25 +47,77 @@
     <div 
         class = 'row border'
     >
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div class = 'cell-content'>
+                <p>Id</p>
+            </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div class = 'cell-content'>
+                <p>Jargon</p>
+            </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div class = 'cell-content'>
+                <p>Translate</p>
+            </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div 
+                class = 'cell-content'
+            >
+                <p>Example Of Use</p> <p>Example Of Use</p> <p>Example Of Use</p>
+            </div>
         </div>
     </div>
     <div 
         class = 'row border'
     >
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div class = 'cell-content'>
+                <p>Id</p>
+            </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div class = 'cell-content'>
+                <p>Jargon</p>
+            </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div class = 'cell-content'>
+                <p>Translate</p>
+            </div>
         </div>
-        <div class = 'cell border'>
+        <div 
+            class = 'cell border'
+            style:width = 15rem
+        >
+            <div 
+                class = 'cell-content'
+            >
+                <p>Example Of Use</p>
+            </div>
         </div>
     </div>
 </div>
@@ -119,10 +183,10 @@
         border-top: none;
         border-bottom: none;
         border-left: none;
-        flex: 1; /* Ячейки растягиваются на всю ширину строки */
         display: flex; /* Используем Flexbox для выравнивания содержимого ячеек */
         align-items: stretch; /* Ячейки растягиваются равномерно */
         justify-content: center; /* Центрируем содержимое по горизонтали */
+        min-width: 5rem;
     }
 
     .cell-content {
