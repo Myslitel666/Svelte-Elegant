@@ -22,8 +22,12 @@
                 <p>Translate</p>
             </div>
         </div>
-        <div class = 'cell border'>
-            <div class = 'cell-content'>
+        <div 
+            class = 'cell border'
+        >
+            <div 
+                class = 'cell-content'
+            >
                 <p>Example Of Use Translate</p>
             </div>
         </div>
@@ -114,8 +118,6 @@
         border-top: none;
         border-bottom: none;
         border-left: none;
-        border-top: none;
-        border-bottom: none;
         flex: 1; /* Ячейки растягиваются на всю ширину строки */
         display: flex; /* Используем Flexbox для выравнивания содержимого ячеек */
         align-items: center; /* Центрируем содержимое по вертикали */
