@@ -1,6 +1,5 @@
 <script lang="ts">
     import BarsIcon from "$lib/icons-elegant/BarsIcon.svelte";
-    import { onDestroy } from "svelte";
 
     let isMenuOpen = false;
 
@@ -25,14 +24,16 @@
         }
     }
 
-    // Добавление и удаление обработчика событий
-    if (typeof window !== 'undefined') {
-        document.addEventListener('click', closeMenu);
+    $: {
+        if (isMenuOpen) {
+            if (typeof window !== 'undefined') {
+                document.addEventListener('click', closeMenu);
+            }
+            else {
+                document.removeEventListener('click', closeMenu);
+            }
+        }
     }
-
-    onDestroy(() => {
-        document.removeEventListener('click', closeMenu);
-    });
 </script>
 
 <style>
