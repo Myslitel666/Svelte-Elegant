@@ -9,7 +9,7 @@
     >
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div 
                 class = 'cell-content'
@@ -19,7 +19,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Jargon</p>
@@ -27,7 +27,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Translate</p>
@@ -35,7 +35,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div 
                 class = 'cell-content'
@@ -49,7 +49,7 @@
     >
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Id</p>
@@ -57,7 +57,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Jargon</p>
@@ -65,7 +65,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Translate</p>
@@ -73,7 +73,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div 
                 class = 'cell-content'
@@ -87,7 +87,7 @@
     >
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Id</p>
@@ -95,7 +95,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Jargon</p>
@@ -103,7 +103,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div class = 'cell-content'>
                 <p>Translate</p>
@@ -111,7 +111,7 @@
         </div>
         <div 
             class = 'cell border'
-            style:width = 15rem
+            style:width = 10rem
         >
             <div 
                 class = 'cell-content'
@@ -167,7 +167,6 @@
 
     .data-grid {
         border-radius: 4px;
-        width: 100%;
     }
 
     .row {
@@ -192,7 +191,8 @@
     .cell-content {
         padding: 0.75rem;
         display: flex;
-        align-items: center; /* Ячейки растягиваются равномерно */
+        justify-content: center; /* Центрируем содержимое по горизонтали */
+        flex-direction: column; /* Расположение элементов друг под другом */
     }
 
     .data-grid:hover {
