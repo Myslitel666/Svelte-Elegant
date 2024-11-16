@@ -19,18 +19,20 @@
     </div>
 
     <!-- Пример строки данных -->
-    <div class="row border">
-        {#each columns as column}
-        <div 
-            class="cell border" 
-            style:width = {column.width}
-        >
-            <div class="cell-content">
-                <p>Пример значения {column.field}</p>
+    {#each rows as row}
+        <div class="row border">
+            {#each columns as column}
+            <div 
+                class="cell border" 
+                style:width={column.width}
+            >
+                <div class="cell-content">
+                    <p>{row[column.field as keyof typeof row]}</p>
+                </div>
             </div>
+            {/each}
         </div>
-        {/each}
-    </div>
+    {/each}
 </div>
 
 <script lang='ts'>
@@ -67,24 +69,28 @@
         
     }
 
-    const columns = [
-    { field: 'id', header: 'Id', width: '10rem' },
-    {
-        field: 'jargon',
-        header: 'Jargon',
-        width: '10rem',
-    },
-    {
-        field: 'translte',
-        header: 'Translate',
-        width: '10rem',
-    },
-    {
-        field: 'examplaeOfUse',
-        header: 'Example Of Use',
-        width: '10rem',
-    }
-];
+    export let columns = [
+        {   field: 'id', 
+            header: 'Id', 
+            width: '3.5rem' 
+        },
+        {
+            field: 'phrase',
+            header: 'Phrase',
+            width: '15rem',
+        },
+        {
+            field: 'translate',
+            header: 'Translate',
+            width: '15rem',
+        },
+    ];
+
+    export let rows = [
+        { id: 1, phrase: 'It is your table!', translate: 'Это Ваша таблица!' },
+        { id: 2, phrase: 'Don\'t forget to give her your data', translate: 'Не забудьте передать ей свои данные' },
+    ];
+
 </script>
 
 <style>
@@ -114,7 +120,7 @@
         display: flex; /* Используем Flexbox для выравнивания содержимого ячеек */
         align-items: stretch; /* Ячейки растягиваются равномерно */
         justify-content: center; /* Центрируем содержимое по горизонтали */
-        min-width: 5rem;
+        min-width: 3.5rem;
     }
 
     .cell-content {
