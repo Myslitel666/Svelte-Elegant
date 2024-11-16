@@ -208,6 +208,6 @@
     }
 
     input::placeholder {
-        color: var(--Xl-background-color)
+        opacity: 0;
     }
 </style>

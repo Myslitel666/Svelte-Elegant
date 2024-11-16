@@ -77,18 +77,6 @@
 		<div>
 			<ColorThemeSwitch bind:isChecked = {isChecked}/>
 		</div>
-		<p class='heading'>План работы:</p>
-		<ol>
-			<li> Возможность тёмной темы по умолчанию </li>
-			<li> Проверить вставку своего шрифта в Tester'е </li>
-			<li> Разграничить инициализацию CSS-переменных при omMount ThemeProvider и смене темы. При смене темы не нужно повторно загружать все стили для размера шрифтов, интервалов между символами и т. д. </li>
-			<li> Передача конкретных свойств в ColorThemeStore; </li>
-			<li> Стили для TextField и Button в состоянии disabled;</li>
-			<li> Header и Drawer; </li>
-			<li> Отображение, извлечение и редактирование данных DataGrid, а также - его кастомизация; </li>
-			<li> TextArea; </li>
-			<li> Отображение drop list'а AutoComplete сверху или снизу поля в зависимости от доступной области экрана и при скролинге; </li>
-		</ol>
 	</div>
 </div>
 
@@ -106,6 +94,7 @@
 	#container {
 		display: flex;
 		justify-content: center; /* Горизонтальное центрирование */
+		align-items: center; /* Вертикальное центрирование */
 		min-height: 100vh; /* Минимальная высота экрана */
 	}
 </style>
