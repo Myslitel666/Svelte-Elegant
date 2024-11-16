@@ -12,7 +12,7 @@
             style:width = {column.width}
         >
             <div class="cell-content">
-                <p>{column.headerName || column.header}</p>
+                <p>{column.header}</p>
             </div>
         </div>
         {/each}
@@ -68,7 +68,7 @@
     }
 
     const columns = [
-    { field: 'id', headerName: 'Id', width: '10rem' },
+    { field: 'id', header: 'Id', width: '10rem' },
     {
         field: 'jargon',
         header: 'Jargon',
