@@ -11,7 +11,7 @@
 
     // Функция для закрытия меню при клике вне его
     function closeMenu(event: MouseEvent) {
-        const menu = document.querySelector('.side-menu');
+        const menu = document.querySelector('.drawer');
         const toggleButton = document.querySelector('.menu-toggle');
         
         if (
@@ -47,7 +47,7 @@
     }
 
     /* Само меню */
-    .side-menu {
+    .drawer {
         position: fixed;
         top: 0;
         left: -250px; /* Скрыто за пределами экрана */
@@ -63,7 +63,7 @@
     }
 
     /* Меню в открытом состоянии */
-    .side-menu.open {
+    .drawer.open {
         left: 0; /* Выдвигается */
     }
 
@@ -87,7 +87,7 @@
     </button>
 
     <!-- Выдвижное меню -->
-    <nav class="side-menu {isMenuOpen ? 'open' : ''}">
+    <nav class="drawer {isMenuOpen ? 'open' : ''}">
         <ul>
             <li><a href="#" style:color="#202020">Home</a></li>
             <li><a href="#" style:color="#202020">About</a></li>
