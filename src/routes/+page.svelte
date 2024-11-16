@@ -5,7 +5,9 @@
 	import TextField from "../lib/elegant/input/TextField.svelte";;
 	import DataGrid from "../lib/elegant/data-display/DataGrid.svelte";
 	import ColorThemeSwitch from "../lib/elegant/customization/ColorThemeSwitch.svelte";
-	import AutoComplete from "$lib/elegant/input/AutoComplete.svelte";
+	import AutoComplete from "../lib/elegant/input/AutoComplete.svelte";
+	import BarsIcon from '../lib/icons-elegant/BarsIcon.svelte';
+	import Drawer from "../lib/elegant/navigation/Drawer.svelte";
 
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
@@ -13,7 +15,6 @@
 	//Тестовое данные
 	let value = '';
 	let isChecked = true;
-	let isDarkTheme = true;
 
 	let columns = [
         {   field: 'id', 
@@ -48,6 +49,14 @@
 <div id = 'container'>
 	<div id = 'page'>
 		<h1>Svelte Elegant</h1>
+		<p class='heading'>Drawer</p>
+		<div class="components-container">
+			<Drawer />
+		</div>
+		<p class='heading'>Bars</p>
+		<div class="components-container">
+			<BarsIcon />
+		</div>
 		<p>Text Field</p>
 		<div class="components-container">
 			<TextField 
@@ -98,7 +107,7 @@
 			</Button>
 		</div>
 		<p class='heading'>Switch</p>
-		<div>
+		<div class="components-container">
 			<Switch
 				bind:isChecked = {isChecked /*Передача переменной по ссылке*/}
 				onchange={(e: Event) => {
@@ -107,8 +116,8 @@
 			 />
 		</div>
 		<p class='heading'>Color Theme Switch</p>
-		<div>
-			<ColorThemeSwitch bind:isChecked = {isDarkTheme}/>
+		<div class="components-container">
+			<ColorThemeSwitch />
 		</div>
 	</div>
 </div>

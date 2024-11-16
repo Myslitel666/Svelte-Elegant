@@ -22,14 +22,6 @@
 			"types": "./dist/index.d.ts",
 			"svelte": "./dist/index.js"
 		},
-		"./ThemeProvider": {
-			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
-			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
-		},
-		"./ColorThemeSwitch": {
-			"types": "./dist/elegant/customization/ColorThemeSwitch.svelte.d.ts",
-			"svelte": "./dist/elegant/customization/ColorThemeSwitch.svelte"
-		},
 		"./AutoComplete": {
 			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
 			"svelte": "./dist/elegant/input/AutoComplete.svelte"
@@ -37,6 +29,18 @@
 		"./Button": {
 			"types": "./dist/elegant/input/Button.svelte.d.ts",
 			"svelte": "./dist/elegant/input/Button.svelte"
+		},
+		"./ColorThemeSwitch": {
+			"types": "./dist/elegant/customization/ColorThemeSwitch.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ColorThemeSwitch.svelte"
+		},
+		"./DataGrid": {
+			"types": "./dist/elegant/data-display/DataGrid.svelte.d.ts",
+			"svelte": "./dist/elegant/data-display/DataGrid.svelte"
+		},
+		"./Drawer": {
+			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
+			"svelte": "./dist/elegant/navigation/Drawer.svelte"
 		},
 		"./Switch": {
 			"types": "./dist/elegant/input/Switch.svelte.d.ts",
@@ -46,21 +50,25 @@
 			"types": "./dist/elegant/input/TextField.svelte.d.ts",
 			"svelte": "./dist/elegant/input/TextField.svelte"
 		},
-		"./DataGrid": {
-			"types": "./dist/elegant/data-display/DataGrid.svelte.d.ts",
-			"svelte": "./dist/elegant/data-display/DataGrid.svelte"
+		"./ThemeProvider": {
+			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
 		},
 		"./icons-elegant": {
 			"types": "./dist/icons-elegant/index.d.ts",
 			"svelte": "./dist/icons-elegant/index.js"
 		},
-		"./icons-elegant/Light": {
-			"types": "./dist/icons-elegant/Light.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Light.svelte"
+		"./icons-elegant/BarsIcon": {
+			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/BarsIcon.svelte"
 		},
 		"./icons-elegant/Dark": {
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Dark.svelte"
+		},
+		"./icons-elegant/Light": {
+			"types": "./dist/icons-elegant/Light.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Light.svelte"
 		},
 		"./icons-elegant/TriangularArrowDown": {
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
