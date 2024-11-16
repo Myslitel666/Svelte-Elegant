@@ -6,19 +6,26 @@
 >
     <div 
         class = 'row border'
-        style:background-color = {headBg}
     >
         <div class = 'cell border'>
-            <p>Id</p>
+            <div class = 'cell-content'>
+                <p>Id</p>
+            </div>
         </div>
         <div class = 'cell border'>
-            <p>Jargon</p>
+            <div class = 'cell-content'>
+                <p>Jargon</p>
+            </div>
         </div>
         <div class = 'cell border'>
-            <p>Translate</p>
+            <div class = 'cell-content'>
+                <p>Translate</p>
+            </div>
         </div>
         <div class = 'cell border'>
-            <p>Example Of Use</p>
+            <div class = 'cell-content'>
+                <p>Example Of Use Translate</p>
+            </div>
         </div>
     </div>
     <div 
@@ -119,7 +126,11 @@
         cursor: pointer;
     }
 
-    .row:hover {
+    .cell-content {
+        padding: 0.75rem;
+    }
+
+    .row:hover, .row:first-child {
         background-color: var(--Xl-head-bg);
     }
 

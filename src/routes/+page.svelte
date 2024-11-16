@@ -13,6 +13,7 @@
 	//Тестовое данные
 	let value = '';
 	let isChecked = true;
+	let isDarkTheme = true;
 </script>
 
 <div id = 'container'>
@@ -75,7 +76,7 @@
 		</div>
 		<p class='heading'>Color Theme Switch</p>
 		<div>
-			<ColorThemeSwitch bind:isChecked = {isChecked}/>
+			<ColorThemeSwitch bind:isChecked = {isDarkTheme}/>
 		</div>
 	</div>
 </div>
