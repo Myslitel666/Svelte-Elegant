@@ -1,12 +1,38 @@
 <script lang="ts">
     import BarsIcon from "$lib/icons-elegant/BarsIcon.svelte";
-    // Переменная для отслеживания состояния меню
+    import { onDestroy } from "svelte";
+
     let isMenuOpen = false;
 
     // Функция для переключения состояния
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
     }
+
+    // Функция для закрытия меню при клике вне его
+    function closeMenu(event: MouseEvent) {
+        const menu = document.querySelector('.side-menu');
+        const toggleButton = document.querySelector('.menu-toggle');
+        
+        if (
+            isMenuOpen && 
+            menu && 
+            !menu.contains(event.target as Node) && 
+            toggleButton && 
+            !toggleButton.contains(event.target as Node)
+        ) {
+            isMenuOpen = false;
+        }
+    }
+
+    // Добавление и удаление обработчика событий
+    if (typeof window !== 'undefined') {
+        document.addEventListener('click', closeMenu);
+    }
+
+    onDestroy(() => {
+        document.removeEventListener('click', closeMenu);
+    });
 </script>
 
 <style>
@@ -17,7 +43,6 @@
     .menu-container {
         position: relative;
         width: 100%;
-        height: 100vh;
         overflow: hidden;
     }
 
@@ -35,7 +60,6 @@
         padding: 1rem;
         z-index: 100; /* Над всем остальным */
         background-color: #fafafa;
-        /* border-right: 1px solid #dddddd */
     }
 
     /* Меню в открытом состоянии */
@@ -60,16 +84,16 @@
 <div class="menu-container">
     <!-- Кнопка для переключения меню -->
     <button class="menu-toggle" on:click={toggleMenu}>
-        <BarsIcon/>
+        <BarsIcon />
     </button>
 
     <!-- Выдвижное меню -->
     <nav class="side-menu {isMenuOpen ? 'open' : ''}">
         <ul>
-            <li><a href="#" style:color = '#202020'>Home</a></li>
-            <li><a href="#" style:color = '#202020'>About</a></li>
-            <li><a href="#" style:color = '#202020'>Services</a></li>
-            <li><a href="#" style:color = '#202020'>Contact</a></li>
+            <li><a href="#" style:color="#202020">Home</a></li>
+            <li><a href="#" style:color="#202020">About</a></li>
+            <li><a href="#" style:color="#202020">Services</a></li>
+            <li><a href="#" style:color="#202020">Contact</a></li>
         </ul>
     </nav>
 </div>
