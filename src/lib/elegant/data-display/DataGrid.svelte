@@ -28,7 +28,7 @@
             <div 
                 class = 'cell-content'
             >
-                <p>Example Of Use Translate</p>
+                <p>Example Of Use</p>
             </div>
         </div>
     </div>
@@ -107,11 +107,12 @@
     }
 
     .row {
-        height: 3rem;
+        min-height:3rem;
         border-left: none;
         border-right: none;
         border-top: none;
         display: flex; /* Горизонтальная ориентация для ячеек */
+        align-items: stretch; /* Ячейки растягиваются равномерно */
     }
 
     .cell {
@@ -120,16 +121,18 @@
         border-left: none;
         flex: 1; /* Ячейки растягиваются на всю ширину строки */
         display: flex; /* Используем Flexbox для выравнивания содержимого ячеек */
-        align-items: center; /* Центрируем содержимое по вертикали */
+        align-items: stretch; /* Ячейки растягиваются равномерно */
         justify-content: center; /* Центрируем содержимое по горизонтали */
-    }
-
-    .data-grid:hover {
-        cursor: pointer;
     }
 
     .cell-content {
         padding: 0.75rem;
+        display: flex;
+        align-items: center; /* Ячейки растягиваются равномерно */
+    }
+
+    .data-grid:hover {
+        cursor: pointer;
     }
 
     .row:hover, .row:first-child {
