@@ -14,6 +14,35 @@
 	let value = '';
 	let isChecked = true;
 	let isDarkTheme = true;
+
+	let columns = [
+        {   field: 'id', 
+            header: 'Id', 
+            width: '10rem' 
+        },
+        {
+            field: 'jargon',
+            header: 'Jargon',
+            width: '10rem',
+        },
+        {
+            field: 'translate',
+            header: 'Translate',
+            width: '10rem',
+        },
+        {
+            field: 'exampleOfUse',
+            header: 'Example Of Use',
+            width: '10rem',
+        }
+    ];
+
+	let rows = [
+		{ id: 1, jargon: 'Foo', translate: 'Бар', exampleOfUse: 'Это пример 1' },
+		{ id: 2, jargon: 'Baz', translate: 'Баз', exampleOfUse: 'Это пример 2' },
+		{ id: 3, jargon: 'Qux', translate: 'Кукс', exampleOfUse: 'Это пример 3' }
+	];
+
 </script>
 
 <div id = 'container'>
@@ -42,7 +71,10 @@
 		</div>
 		<p class='heading'>Data Grid</p>
 		<div class="components-container">
-			<DataGrid />
+			<DataGrid 
+				columns = {columns}
+				rows = {rows}
+			/>
 		</div>
 		<p class = 'heading'>Auto Complete</p>
 		<div class="components-container">

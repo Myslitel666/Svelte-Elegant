@@ -27,7 +27,7 @@
                 style:width={column.width}
             >
                 <div class="cell-content">
-                    <p>{row[column.field as keyof typeof row]}</p>
+                    <p>{row[column.field]}</p>
                 </div>
             </div>
             {/each}
@@ -86,7 +86,7 @@
         },
     ];
 
-    export let rows = [
+    export let rows: { [key: string]: any }[] = [
         { id: 1, phrase: 'It is your table!', translate: 'Это Ваша таблица!' },
         { id: 2, phrase: 'Don\'t forget to give her your data', translate: 'Не забудьте передать ей свои данные' },
     ];
