@@ -1,8 +1,7 @@
 <div>
     <Switch 
         onClick = {toggleThemeMode}
-        bind:isChecked = {isChecked}
-        {...$$props}
+        bind:isChecked
     >
         <ActiveIcon slot="activeIcon" size="1.1rem" />
         <DisabledIcon slot="disabledIcon" size="1.1rem" />
@@ -17,11 +16,12 @@
     import { onMount } from 'svelte';
     import { themeStore } from '../../stores/ColorThemeStore.js';
 
-    export let isChecked = false;
+    let isChecked = false;
 
     onMount(() => {
+        //В дальнейшем он должен подхватывать своё состояние 
         if (isChecked) {
-            toggleThemeMode();
+            isChecked = true;
         }
     });
 </script>
