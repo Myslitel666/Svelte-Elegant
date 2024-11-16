@@ -1,124 +1,35 @@
 <div 
-    class = 'data-grid border'
-    style:background-color = {rowBg}
-    style:--Xl-border-color = {borderColor}
-    style:--Xl-head-bg = {headBg}
+    class="data-grid border"
+    style:background-color={rowBg}
+    style:--Xl-border-color={borderColor}
+    style:--Xl-head-bg={headBg}
 >
-    <div 
-        class = 'row border'
-    >
+    <!-- Заголовок таблицы -->
+    <div class="row border">
+        {#each columns as column}
         <div 
-            class = 'cell border'
-            style:width = 10rem
+            class="cell border" 
+            style="width: {column.width}"
         >
-            <div 
-                class = 'cell-content'
-            >
-                <p>Id</p>
+            <div class="cell-content">
+                <p>{column.headerName || column.header}</p>
             </div>
         </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Jargon</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Translate</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div 
-                class = 'cell-content'
-            >
-                <p>Example Of Use</p>
-            </div>
-        </div>
+        {/each}
     </div>
-    <div 
-        class = 'row border'
-    >
+
+    <!-- Пример строки данных -->
+    <div class="row border">
+        {#each columns as column}
         <div 
-            class = 'cell border'
-            style:width = 10rem
+            class="cell border" 
+            style="width: {column.width}"
         >
-            <div class = 'cell-content'>
-                <p>Id</p>
+            <div class="cell-content">
+                <p>Пример значения {column.field}</p>
             </div>
         </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Jargon</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Translate</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div 
-                class = 'cell-content'
-            >
-                <p>Example Of Use</p> <p>Example Of Use</p> <p>Example Of Use</p>
-            </div>
-        </div>
-    </div>
-    <div 
-        class = 'row border'
-    >
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Id</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Jargon</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div class = 'cell-content'>
-                <p>Translate</p>
-            </div>
-        </div>
-        <div 
-            class = 'cell border'
-            style:width = 10rem
-        >
-            <div 
-                class = 'cell-content'
-            >
-                <p>Example Of Use</p>
-            </div>
-        </div>
+        {/each}
     </div>
 </div>
 
@@ -156,6 +67,24 @@
         
     }
 
+    const columns = [
+    { field: 'id', headerName: 'Id', width: '10rem' },
+    {
+        field: 'jargon',
+        header: 'Jargon',
+        width: '10rem',
+    },
+    {
+        field: 'translte',
+        header: 'Translate',
+        width: '10rem',
+    },
+    {
+        field: 'examplaeOfUse',
+        header: 'Example Of Use',
+        width: '10rem',
+    }
+];
 </script>
 
 <style>
