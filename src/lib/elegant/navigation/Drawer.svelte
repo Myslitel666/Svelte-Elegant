@@ -72,7 +72,6 @@
         position: fixed;
         top: 1rem;
         left: 1rem;
-        z-index: 101; /* Над меню */
         border: none;
         border-radius: 4px;
         padding: 0.5rem 1rem;
