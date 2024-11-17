@@ -1,9 +1,10 @@
 <script lang="ts">
     import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
     import { themeMode, themeStore } from "$lib/stores/ColorThemeStore.js";
-    import BarsIcon from "$lib/icons-elegant/BarsIcon.svelte";
+    import { onMount, onDestroy } from "svelte";
 
-    let isMenuOpen = false;
+    export let isOpen = false;
+    export let toggleButtonId = 'drawer-toggle-button'
 
     let theme: IColorThemeStore | undefined;
     let bg = ''
@@ -18,63 +19,48 @@
         border = $themeMode === 'light' ? `1px solid ${theme.border.elegant.color}` : '';
     });
 
-    // Функция для переключения состояния
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-    }
-
     // Функция для закрытия меню при клике вне его
-    function closeMenu(event: MouseEvent) {
+    function close(event: MouseEvent) {
         const menu = document.querySelector('.drawer');
-        const toggleButton = document.querySelector('.menu-toggle');
+        const toggleButton = document.getElementById(toggleButtonId);
         
         if (
-            isMenuOpen && 
+            isOpen && 
             menu && 
             !menu.contains(event.target as Node) && 
             toggleButton && 
             !toggleButton.contains(event.target as Node)
         ) {
-            isMenuOpen = false;
+            isOpen = false;
         }
     }
 
-    $: {
-        if (isMenuOpen) {
-            //Проверяем, что код выполняется на стороне клиента
-            if (typeof window !== 'undefined') {
-                document.addEventListener('click', closeMenu);
-            }
-            else {
-                document.removeEventListener('click', closeMenu);
-            }
+    onMount(() => {
+        if (typeof window !== 'undefined') {
+            document.addEventListener('click', close);
         }
-    }
+    });
+
+    onDestroy(() => {
+        if (typeof window !== 'undefined') {
+            document.removeEventListener('click', close);
+        }
+    });
 </script>
 
 <style>
     * {
         box-sizing: border-box;
     }
-    /* Основной контейнер */
-    .menu-container {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-    }
 
-    /* Само меню */
+    /* Сам Drawer */
     .drawer {
         position: fixed;
         top: 0;
         left: -250px; /* Скрыто за пределами экрана */
         width: 250px;
         height: 100%;
-        color: #202020;
         transition: left 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
         z-index: 100; /* Над всем остальным */
     }
 
@@ -82,32 +68,13 @@
     .drawer.open {
         left: 0; /* Выдвигается */
     }
-
-    /* Кнопка для открытия/закрытия меню */
-    .menu-toggle {
-        position: fixed;
-        top: 1rem;
-        left: 1rem;
-        border: none;
-        border-radius: 4px;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
 </style>
 
-<div class="menu-container">
-    <!-- Кнопка для переключения меню -->
-    <button class="menu-toggle" on:click={toggleMenu}>
-        <BarsIcon />
-    </button>
-
-    <!-- Выдвижное меню -->
-    <nav 
-        class="drawer {isMenuOpen ? 'open' : ''}"
-        style:background-color = {bg}
-        style:border-right={border}
-    >
-        <slot/>
-    </nav>
-</div>
+<!-- Drawer -->
+<nav 
+    class="drawer {isOpen ? 'open' : ''}"
+    style:background-color = {bg}
+    style:border-right={border}
+>
+    <slot/>
+</nav>

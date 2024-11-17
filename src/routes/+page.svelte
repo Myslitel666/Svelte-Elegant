@@ -16,6 +16,10 @@
 	let value = '';
 	let isChecked = true;
 
+	let isDrawerOpen = true;
+
+	let toggleButtonId = 'drawer-toggle-button2'
+
 	let columns = [
         {   field: 'id', 
             header: 'Id', 
@@ -51,7 +55,10 @@
 		<h1>Svelte Elegant</h1>
 		<p class='heading'>Drawer</p>
 		<div class="components-container">
-			<Drawer>
+			<Drawer
+				bind:isOpen = {isDrawerOpen}
+				toggleButtonId = {toggleButtonId}
+			>
 				<ul>
 					<li><a href="#" style:color="red">Home</a></li>
 					<li><a href="#" style:color="red">About</a></li>
@@ -62,7 +69,12 @@
 		</div>
 		<p class='heading'>Bars</p>
 		<div class="components-container">
-			<BarsIcon />
+			<button 
+				id = {toggleButtonId}
+				onclick = {() => {isDrawerOpen = !isDrawerOpen}}
+			>
+				<BarsIcon />
+			</button>
 		</div>
 		<p>Text Field</p>
 		<div class="components-container">
