@@ -82,6 +82,22 @@
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
 		},
+		"./interfaces": {
+			"types": "./dist/interfaces/index.d.ts",
+			"svelte": "./dist/interfaces/index.js"
+		},
+		"./interfaces/IColorThemeStore": {
+			"types": "./dist/interfaces/color-theme/IColorThemeStore.d.ts",
+			"svelte": "./dist/interfaces/color-theme/IColorThemeStore.js"
+		},
+		"./stores": {
+			"types": "./dist/stores/index.d.ts",
+			"svelte": "./dist/stores/index.js"
+		},
+		"./stores/themeStore": {
+			"types": "./dist/stores/ColorThemeStore.d.ts",
+			"svelte": "./dist/stores/ColorThemeStore.js"
+		},
 		"./utils": {
 			"types": "./dist/utils/index.d.ts",
 			"svelte": "./dist/utils/index.js"
