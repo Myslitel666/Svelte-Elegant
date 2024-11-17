@@ -14,7 +14,7 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        bg = theme.colors.background;
+        bg = $themeMode === 'light' ? theme.colors.background : theme.action.hover;
         border = $themeMode === 'light' ? `1px solid ${theme.border.elegant.color}` : '';
     });
 
