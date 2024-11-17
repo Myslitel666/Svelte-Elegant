@@ -9,6 +9,7 @@
 	import BarsIcon from '../lib/icons-elegant/BarsIcon.svelte';
 	import Drawer from "../lib/elegant/navigation/Drawer.svelte";
 	import Elegant from "$lib/icons-elegant/Elegant.svelte";
+	import Header from "$lib/elegant/layout/Header.svelte";
 
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
@@ -51,6 +52,9 @@
 
 </script>
 
+<Header>
+	<Elegant />
+</Header>
 <div id = 'container'>
 	<div id = 'page'>
 		<h1>Svelte Elegant</h1>

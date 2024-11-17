@@ -18,5 +18,8 @@ export { default as Switch } from './elegant/input/Switch.svelte';
 export { default as TextField } from './elegant/input/TextField.svelte';
 export { default as AutoComplete } from './elegant/input/AutoComplete.svelte';
 
+/* Layout Components */
+export { default as Header } from './elegant/layout/Header.svelte';
+
 /* Navigation Components */
 export { default as Drawer } from './elegant/navigation/Drawer.svelte';

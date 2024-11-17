@@ -42,6 +42,10 @@
 			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
 			"svelte": "./dist/elegant/navigation/Drawer.svelte"
 		},
+		"./Header": {
+			"types": "./dist/elegant/layout/Header.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/Header.svelte"
+		},
 		"./Switch": {
 			"types": "./dist/elegant/input/Switch.svelte.d.ts",
 			"svelte": "./dist/elegant/input/Switch.svelte"
