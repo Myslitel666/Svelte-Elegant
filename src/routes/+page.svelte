@@ -53,102 +53,107 @@
 </script>
 
 <Header>
-	<Elegant />
+	<button style:gap = '0.5rem'>
+		<Elegant size = 3.25rem/>
+		<p 
+			style:font-size=26px
+		>
+			<span style:color = #1e8f0d>Svelte</span> <span>Elegant</span>
+		</p>
+	</button>
 </Header>
 <div id = 'container'>
-	<div id = 'page'>
-		<h1>Svelte Elegant</h1>
-		<p class='heading'>Elegant</p>
-		<div class="components-container">
-			<div style:transform = rotate(45deg);>
-				<Elegant />
-			</div>
+	<h1>Svelte Elegant</h1>
+	<p class='heading'>Elegant</p>
+	<div class="components-container">
+		<div style:transform = rotate(45deg);>
+			<Elegant />
 		</div>
-		<p class='heading'>Drawer</p>
-		<div class="components-container">
-			<Drawer
-				bind:isOpen = {isDrawerOpen}
-				toggleButtonId = {toggleButtonId}
-			>
-				<ul>
-					<li><a href="#" style:color="red">Home</a></li>
-					<li><a href="#" style:color="red">About</a></li>
-					<li><a href="#" style:color="red">Services</a></li>
-					<li><a href="#" style:color="red">Contact</a></li>
-				</ul>
-			</Drawer>
-		</div>
-		<p class='heading'>Bars</p>
-		<div class="components-container">
-			<button 
-				id = {toggleButtonId}
-				onclick = {() => {isDrawerOpen = !isDrawerOpen}}
-			>
-				<BarsIcon />
-			</button>
-		</div>
-		<p>Text Field</p>
-		<div class="components-container">
-			<TextField 
-				bind:value = {value /*Передача переменной по ссылке*/}
-				variant = 'Outlined'
-				label = 'Outlined'
-				onfocus={() => {}}
-				onblur={() => {}}
-				oninput={(e: Event) => {
-					let value = extractors.getInputValue(e); //Извлечение значения
-				}}
+	</div>
+	<p class='heading'>Drawer</p>
+	<div class="components-container">
+		<Drawer
+			bind:isOpen = {isDrawerOpen}
+			toggleButtonId = {toggleButtonId}
+		>
+			<ul>
+				<li><a href="#" style:color="red">Home</a></li>
+				<li><a href="#" style:color="red">About</a></li>
+				<li><a href="#" style:color="red">Services</a></li>
+				<li><a href="#" style:color="red">Contact</a></li>
+			</ul>
+		</Drawer>
+	</div>
+	<p class='heading'>Bars</p>
+	<div class="components-container">
+		<button 
+			id = {toggleButtonId}
+			onclick = {() => {isDrawerOpen = !isDrawerOpen}}
+		>
+			<BarsIcon />
+		</button>
+	</div>
+	<p>Text Field</p>
+	<div class="components-container">
+		<TextField 
+			bind:value = {value /*Передача переменной по ссылке*/}
+			variant = 'Outlined'
+			label = 'Outlined'
+			onfocus={() => {}}
+			onblur={() => {}}
+			oninput={(e: Event) => {
+				let value = extractors.getInputValue(e); //Извлечение значения
+			}}
+		/>
+		<TextField 
+			variant = 'Filled'
+			label = 'Filled'
+		/>
+		<TextField 
+			variant = 'Standard'
+			label = 'Standard'
+		/>
+	</div>
+	<p class='heading'>Data Grid</p>
+	<div class="components-container">
+		<DataGrid 
+			columns = {columns}
+			rows = {rows}
+		/>
+	</div>
+	<p class = 'heading'>Auto Complete</p>
+	<div class="components-container">
+		<AutoComplete 
+			options = {['Apple', 'Orange', 'Banana', 'Grape', 'Mango']}
+		/>
+		<AutoComplete 
+			variant = 'Filled' 
+		/>
+		<AutoComplete 
+			variant = 'Standard' 
+		/>
+	</div>
+	<p class = 'heading'>Button</p>
+	<div class="components-container">
+		<Button variant = 'Contained'>
+			CONTAINED
+		</Button>
+		<Button variant = 'Outlined'>
+			OUTLINED
+		</Button>
+	</div>
+	<p class='heading'>Switch</p>
+	<div class="components-container">
+		<Switch
+			bind:isChecked = {isChecked /*Передача переменной по ссылке*/}
+			onchange={(e: Event) => {
+				const check = extractors.getChecked(e);
+			}}
 			/>
-			<TextField 
-				variant = 'Filled'
-				label = 'Filled'
-			/>
-			<TextField 
-				variant = 'Standard'
-				label = 'Standard'
-			/>
-		</div>
-		<p class='heading'>Data Grid</p>
-		<div class="components-container">
-			<DataGrid 
-				columns = {columns}
-				rows = {rows}
-			/>
-		</div>
-		<p class = 'heading'>Auto Complete</p>
-		<div class="components-container">
-			<AutoComplete 
-				options = {['Apple', 'Orange', 'Banana', 'Grape', 'Mango']}
-			/>
-			<AutoComplete 
-				variant = 'Filled' 
-			/>
-			<AutoComplete 
-				variant = 'Standard' 
-			/>
-		</div>
-		<p class = 'heading'>Button</p>
-		<div class="components-container">
-			<Button variant = 'Contained'>
-				CONTAINED
-			</Button>
-			<Button variant = 'Outlined'>
-				OUTLINED
-			</Button>
-		</div>
-		<p class='heading'>Switch</p>
-		<div class="components-container">
-			<Switch
-				bind:isChecked = {isChecked /*Передача переменной по ссылке*/}
-				onchange={(e: Event) => {
-					const check = extractors.getChecked(e);
-				}}
-			 />
-		</div>
-		<p class='heading'>Color Theme Switch</p>
-		<div class="components-container">
-			<ColorThemeSwitch />
-		</div>
+	</div>
+	<p class='heading'>Color Theme Switch</p>
+	<div class="components-container">
+		<ColorThemeSwitch />
 	</div>
 </div>
 
@@ -165,8 +170,10 @@
 
 	#container {
 		display: flex;
+		flex-direction: column;
 		justify-content: center; /* Горизонтальное центрирование */
 		align-items: center; /* Вертикальное центрирование */
 		min-height: 100vh; /* Минимальная высота экрана */
+		padding-top: 4rem;
 	}
 </style>

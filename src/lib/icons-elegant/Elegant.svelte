@@ -50,7 +50,15 @@
 </svg>
 
 <style>
+	svg {
+		transition: transform 0.3s;
+	}
+
     svg path {
       transition: fill 1s ease, stroke 1s ease;
     }
+
+	svg:hover {
+		transform: scale(1.2);
+	}
 </style>

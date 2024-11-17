@@ -52,6 +52,11 @@ const theme: Readable<IColorThemeStore> = derived(
       fill: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
       touch: $themeMode === 'light' ? '#efefef' : '#2f2f2f',
     },
+    surface: {
+      header: {
+        background: $themeMode === 'light' ? 'white' : '#242424',
+      }
+    },
     typography: {
       font: 'Century Gothic',
       fontUrl: './fonts/century-gothic-original/century-gothic.ttf',

@@ -42,6 +42,11 @@ export interface IColorThemeStore {
         fill: string;
         touch: string;
     };
+    surface: {
+        header: {
+          background: string;
+        }
+    };
     typography: {
         font: string;
         fontUrl: string;
