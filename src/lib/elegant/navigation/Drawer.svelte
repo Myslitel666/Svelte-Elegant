@@ -108,11 +108,6 @@
         style:background-color = {bg}
         style:border-right={border}
     >
-        <ul>
-            <li><a href="#" style:color="#202020">Home</a></li>
-            <li><a href="#" style:color="#202020">About</a></li>
-            <li><a href="#" style:color="#202020">Services</a></li>
-            <li><a href="#" style:color="#202020">Contact</a></li>
-        </ul>
+        <slot/>
     </nav>
 </div>

@@ -51,7 +51,14 @@
 		<h1>Svelte Elegant</h1>
 		<p class='heading'>Drawer</p>
 		<div class="components-container">
-			<Drawer />
+			<Drawer>
+				<ul>
+					<li><a href="#" style:color="red">Home</a></li>
+					<li><a href="#" style:color="red">About</a></li>
+					<li><a href="#" style:color="red">Services</a></li>
+					<li><a href="#" style:color="red">Contact</a></li>
+				</ul>
+			</Drawer>
 		</div>
 		<p class='heading'>Bars</p>
 		<div class="components-container">
