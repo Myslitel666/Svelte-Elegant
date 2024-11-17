@@ -14,6 +14,25 @@
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
 
+	//Контекст темы
+	import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
+	import { themeStore, themeMode } from "$lib/stores/ColorThemeStore.js";
+
+	let theme: IColorThemeStore | undefined;
+
+	let logotypeFilter = ''
+	let svelteColor = ''
+	let elegantColor = ''
+
+	// Подписываемся на изменения темы
+	themeStore.subscribe(value => {
+        theme = value; //Инициализация объекта темы
+
+		svelteColor = theme.colors.primary;
+		elegantColor = $themeMode === 'light' ? '#383838' : '#fdfdfd';
+		logotypeFilter = $themeMode === 'light' ? 'brightness(80%)' : '';
+    });
+
 	//Тестовое данные
 	let value = '';
 	let isChecked = true;
@@ -55,15 +74,30 @@
 <Header>
 	<button style:gap = '0.5rem'>
 		<Elegant size = 3.25rem/>
-		<p 
-			style:font-size=26px
-		>
-			<span style:color = #1e8f0d>Svelte</span> <span>Elegant</span>
+		<p style:font-size=26px>
+			<span 
+				style:color = {svelteColor}
+				style:filter = {logotypeFilter}
+				style:transition = 'all 0.3s'
+			>
+				Svelte
+			</span> 
+			<span
+				style:color = {elegantColor}
+				style:transition = 'all 0.3s' 
+			>
+				Elegant
+			</span>
 		</p>
 	</button>
+	<div 
+		style:margin-left = auto
+		style:margin-right = 1.25rem
+	>
+		<ColorThemeSwitch />
+	</div>
 </Header>
 <div id = 'container'>
-	<h1>Svelte Elegant</h1>
 	<p class='heading'>Elegant</p>
 	<div class="components-container">
 		<div style:transform = rotate(45deg);>
@@ -149,7 +183,7 @@
 			onchange={(e: Event) => {
 				const check = extractors.getChecked(e);
 			}}
-			/>
+		/>
 	</div>
 	<p class='heading'>Color Theme Switch</p>
 	<div class="components-container">

@@ -2,19 +2,21 @@
     import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
     import { themeStore } from "$lib/stores/ColorThemeStore.js";
 
+    export let bgColor = ''
     export let gap = '0.5rem'; /* Расстояние между элементами */
     export let height = '2.75rem';
     export let padding = '0.5rem';
 
     let theme: IColorThemeStore | undefined;
-    let bg = ''
+
+    let bgColorFromUser = bgColor !== ''
 
     // Подписываемся на изменения темы
     themeStore.subscribe(value => {
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        bg = theme.surface.header.background;
+        bgColor = bgColorFromUser ? bgColor : theme.surface.header.background;
     });
 </script>
 
@@ -23,7 +25,7 @@
     style:gap = {gap}
     style:height = {height}
     style:padding = {padding}
-    style:background-color={bg}
+    style:background-color={bgColor}
     style:transition = 'all 0.3s ease'
 >
     <slot/>

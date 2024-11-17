@@ -1,6 +1,6 @@
 <script lang="ts">
   import { type IColorThemeStore } from "../interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore } from "../stores/ColorThemeStore.js";
+  import { themeMode, themeStore } from "../stores/ColorThemeStore.js";
 
   export let fill = "";
   export let size = "3rem";
@@ -16,7 +16,7 @@
       theme = value;
 
       if (!isFillFromUser) fill = theme.colors.primary;
-      if (!isStrokeFromUser) stroke = theme.colors.text.primary;
+      if (!isStrokeFromUser) stroke = $themeMode === 'light' ? '#151515' : '#fdfdfd';
   });
 </script>
 
@@ -55,7 +55,7 @@
 	}
 
     svg path {
-      transition: fill 1s ease, stroke 1s ease;
+      transition: all 1s ease;
     }
 
 	svg:hover {

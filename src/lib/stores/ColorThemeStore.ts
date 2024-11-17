@@ -32,7 +32,7 @@ const theme: Readable<IColorThemeStore> = derived(
       secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
       background: $themeMode === 'light' ? 'white' : '#161616',
       text: {
-        primary: $themeMode === 'light' ? '#111' : '#fff',
+        primary: $themeMode === 'light' ? '#111' : '#fefefe',
         label: $themeMode === 'light' ? '#b3b3b3' : '#808080',
       }
     },
