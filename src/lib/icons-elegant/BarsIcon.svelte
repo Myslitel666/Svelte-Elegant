@@ -28,6 +28,6 @@
   
     // Подписываемся на изменения темы
     themeStore.subscribe((value) => {
-      theme = value;
+        theme = value;
     });
   </script>

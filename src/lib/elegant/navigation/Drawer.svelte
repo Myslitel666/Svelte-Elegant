@@ -1,7 +1,22 @@
 <script lang="ts">
+    import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
+    import { themeMode, themeStore } from "$lib/stores/ColorThemeStore.js";
     import BarsIcon from "$lib/icons-elegant/BarsIcon.svelte";
 
     let isMenuOpen = false;
+
+    let theme: IColorThemeStore | undefined;
+    let bg = ''
+    let border = ''
+
+    // Подписываемся на изменения темы
+    themeStore.subscribe(value => {
+        theme = value; //Инициализация объекта темы
+
+        // Устанавливаем значения цветов при смене темы
+        bg = theme.colors.background;
+        border = $themeMode === 'light' ? `1px solid ${theme.border.elegant.color}` : '';
+    });
 
     // Функция для переключения состояния
     function toggleMenu() {
@@ -26,6 +41,7 @@
 
     $: {
         if (isMenuOpen) {
+            //Проверяем, что код выполняется на стороне клиента
             if (typeof window !== 'undefined') {
                 document.addEventListener('click', closeMenu);
             }
@@ -60,7 +76,6 @@
         flex-direction: column;
         padding: 1rem;
         z-index: 100; /* Над всем остальным */
-        background-color: #fafafa;
     }
 
     /* Меню в открытом состоянии */
@@ -88,7 +103,11 @@
     </button>
 
     <!-- Выдвижное меню -->
-    <nav class="drawer {isMenuOpen ? 'open' : ''}">
+    <nav 
+        class="drawer {isMenuOpen ? 'open' : ''}"
+        style:background-color = {bg}
+        style:border-right={border}
+    >
         <ul>
             <li><a href="#" style:color="#202020">Home</a></li>
             <li><a href="#" style:color="#202020">About</a></li>
