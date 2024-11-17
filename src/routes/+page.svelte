@@ -8,6 +8,7 @@
 	import AutoComplete from "../lib/elegant/input/AutoComplete.svelte";
 	import BarsIcon from '../lib/icons-elegant/BarsIcon.svelte';
 	import Drawer from "../lib/elegant/navigation/Drawer.svelte";
+	import Elegant from "$lib/icons-elegant/Elegant.svelte";
 
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
@@ -16,7 +17,7 @@
 	let value = '';
 	let isChecked = true;
 
-	let isDrawerOpen = true;
+	let isDrawerOpen = false;
 
 	let toggleButtonId = 'drawer-toggle-button2'
 
@@ -53,6 +54,12 @@
 <div id = 'container'>
 	<div id = 'page'>
 		<h1>Svelte Elegant</h1>
+		<p class='heading'>Elegant</p>
+		<div class="components-container">
+			<div style:transform = rotate(45deg);>
+				<Elegant />
+			</div>
+		</div>
 		<p class='heading'>Drawer</p>
 		<div class="components-container">
 			<Drawer

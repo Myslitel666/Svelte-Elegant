@@ -58,6 +58,10 @@
 			"types": "./dist/icons-elegant/index.d.ts",
 			"svelte": "./dist/icons-elegant/index.js"
 		},
+		"./icons-elegant/Elegant": {
+			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Elegant.svelte"
+		},
 		"./icons-elegant/BarsIcon": {
 			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/BarsIcon.svelte"

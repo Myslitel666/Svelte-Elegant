@@ -10,6 +10,7 @@ export { default as DataGrid } from './elegant/data-display/DataGrid.svelte';
 
 /* Icons */
 export { default as BarsIcon } from './icons-elegant/BarsIcon.svelte';
+export { default as Elegant } from './icons-elegant/Elegant.svelte';
 
 /* Input Components */
 export { default as Button } from './elegant/input/Button.svelte';
