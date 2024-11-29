@@ -20,7 +20,8 @@ h5,
 h6,
 li,
 ol,
-ul {
+ul,
+a {
 	margin: 0;
 	color: var(--Xl-text-color);
 }
