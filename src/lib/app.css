@@ -5,6 +5,7 @@ body {
 	margin: 0;
 	transition: background-color var(--Xl-effectsTimeCode);
 	background-color: var(--Xl-background-color);
+	color: var(--Xl-text-color);
 }
 
 p {

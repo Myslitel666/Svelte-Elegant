@@ -10,6 +10,7 @@
 	import Drawer from "../lib/elegant/navigation/Drawer.svelte";
 	import Elegant from "$lib/icons-elegant/Elegant.svelte";
 	import Header from "$lib/elegant/layout/Header.svelte";
+	import Box from "$lib/elegant/layout/Box.svelte";
 
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
@@ -98,12 +99,14 @@
 	</div>
 </Header>
 <div id = 'container'>
-	<p class='heading'>Elegant</p>
-	<div class="components-container">
-		<div style:transform = rotate(45deg);>
-			<Elegant />
-		</div>
-	</div>
+	<Box 
+		width = 5rem 
+		height = 5rem 
+		justifyContent = 'center' 
+		onclick = {() => console.log('I\'m Click!')}
+	>
+		Box
+	</Box>
 	<p class='heading'>Drawer</p>
 	<div class="components-container">
 		<Drawer
@@ -120,12 +123,13 @@
 	</div>
 	<p class='heading'>Bars</p>
 	<div class="components-container">
-		<button 
+		<Box 
+			padding = 0.66rem
 			id = {toggleButtonId}
 			onclick = {() => {isDrawerOpen = !isDrawerOpen}}
 		>
-			<BarsIcon />
-		</button>
+			<BarsIcon size = 20px />
+		</Box>
 	</div>
 	<p>Text Field</p>
 	<div class="components-container">

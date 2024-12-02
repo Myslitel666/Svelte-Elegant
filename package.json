@@ -26,6 +26,10 @@
 			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
 			"svelte": "./dist/elegant/input/AutoComplete.svelte"
 		},
+		"./Box": {
+			"types": "./dist/elegant/layout/Box.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/Box.svelte"
+		},
 		"./Button": {
 			"types": "./dist/elegant/input/Button.svelte.d.ts",
 			"svelte": "./dist/elegant/input/Button.svelte"

@@ -12,6 +12,9 @@ export interface IColorThemeStore {
             color: string;
             width: string;
         };
+        light: {
+            color: string;
+        };
         elegant: {
             color:  string;
         };
@@ -45,7 +48,10 @@ export interface IColorThemeStore {
     surface: {
         header: {
           background: string;
-        }
+        };
+        box: {
+            background: string;
+        };
     };
     typography: {
         font: string;

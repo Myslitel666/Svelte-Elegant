@@ -27,8 +27,8 @@
         if (
             isOpen && 
             menu && 
-            !menu.contains(event.target as Node) && 
             toggleButton && 
+            !menu.contains(event.target as Node) && 
             !toggleButton.contains(event.target as Node)
         ) {
             isOpen = false;

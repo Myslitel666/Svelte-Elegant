@@ -22,6 +22,9 @@ const theme: Readable<IColorThemeStore> = derived(
         color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
         width: '2px',
       },
+      light: {
+        color: $themeMode === 'light' ? '#ccc' : '#2f2f2f',
+      },
       elegant: {
         color: $themeMode === 'light' ? '#ddd' : '#484848',
       },
@@ -55,6 +58,9 @@ const theme: Readable<IColorThemeStore> = derived(
     surface: {
       header: {
         background: $themeMode === 'light' ? 'white' : '#242424',
+      },
+      box: {
+        background: $themeMode === 'light' ? '#f2f2f2' : '#202020',
       }
     },
     typography: {
