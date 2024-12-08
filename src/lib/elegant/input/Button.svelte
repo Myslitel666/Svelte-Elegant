@@ -7,8 +7,9 @@
         placeholder = ''
         style:border = {variant === 'Outlined' ? `1px solid ${primaryColor}` : 'none'}
         style:border-radius = {borderRadius}
-        style:padding-left = {paddingLeft}
-        style:padding-right = {paddingRight}
+        style:box-shadow = {boxShadow}
+        style:padding-left = {padding}
+        style:padding-right = {padding}
         style:font-size = {fontSize}
         style:min-width = {minWidth}
         style:width='100%'
@@ -33,13 +34,13 @@
     export let id = ''                                   /* Уникальный идентификатор элемента */
     export let borderColor = '';                         /* Цвет обводки */
     export let borderRadius = '';                        /* Радиус скругления углов */
+    export let boxShadow = '';                           /* Тень */
     export let fontSize = '';                            /* Размер шрифта */
     export let height = '';                              /* Высота поля */
     export let labelColor ='';                           /* Цвет надписи */
     export let minWidth = '';                            /* Минимальная ширина */
     export let outlineWidth ='';                         /* Толщина обводки */
-    export let paddingLeft = '';                         /* Отступ от левой границы до курсора */
-    export let paddingRight = '';                        /* Отступ от правой границы */
+    export let padding = '';                             /* Отступ */
     export let primaryColor = '';                        /* Основной цвет */
     export let secondaryColor = '';                      /* Вторичный цвет */
     export let textColor = '';                           /* Цвет текста */
@@ -75,8 +76,7 @@
         if (!borderRadius) borderRadius = theme.border.borderRadius;
         if (!height) height = theme.controls.height;
         if (!outlineWidth) outlineWidth = theme.border.disabled.width;
-        if (!paddingLeft) paddingLeft = theme.controls.textField.padding;
-        if (!paddingRight) paddingRight = paddingLeft;
+        if (!padding) padding = theme.controls.textField.padding;
         if (!width) width = theme.controls.width;
         if (!fontSize) fontSize = theme.typography.fontSize;
     }
