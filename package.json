@@ -102,6 +102,10 @@
 			"types": "./dist/stores/ColorThemeStore.d.ts",
 			"svelte": "./dist/stores/ColorThemeStore.js"
 		},
+		"./stores/ElementIdStore": {
+			"types": "./dist/stores/ColorThemeStore.d.ts",
+			"svelte": "./dist/stores/ColorThemeStore.js"
+		},
 		"./utils": {
 			"types": "./dist/utils/index.d.ts",
 			"svelte": "./dist/utils/index.js"
