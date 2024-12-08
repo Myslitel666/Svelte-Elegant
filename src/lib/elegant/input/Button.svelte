@@ -9,7 +9,6 @@
         style:border-radius = {borderRadius}
         style:padding-left = {paddingLeft}
         style:padding-right = {paddingRight}
-        style:padding = {padding}
         style:font-size = {fontSize}
         style:min-width = {minWidth}
         style:width='100%'
@@ -41,7 +40,6 @@
     export let outlineWidth ='';                         /* Толщина обводки */
     export let paddingLeft = '';                         /* Отступ от левой границы до курсора */
     export let paddingRight = '';                        /* Отступ от правой границы */
-    export let padding = '';                             /* Отступ */
     export let primaryColor = '';                        /* Основной цвет */
     export let secondaryColor = '';                      /* Вторичный цвет */
     export let textColor = '';                           /* Цвет текста */
