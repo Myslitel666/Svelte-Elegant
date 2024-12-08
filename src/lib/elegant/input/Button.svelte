@@ -19,6 +19,7 @@
         style:--Xl-hoverBorderColor = {textColor}
         style:--Xl-textColor = {textColor}
         style:--Xl-filter = {filter}
+        {...$$props}
     >
         <slot></slot> <!-- Слот для содержимого кнопки -->
     </button>
