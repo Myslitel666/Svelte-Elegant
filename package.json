@@ -78,6 +78,10 @@
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Dark.svelte"
 		},
+		"./icons-elegant/EnvelopeIcon": {
+			"types": "./dist/icons-elegant/EnvelopeIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EnvelopeIcon.svelte"
+		},
 		"./icons-elegant/Light": {
 			"types": "./dist/icons-elegant/Light.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Light.svelte"

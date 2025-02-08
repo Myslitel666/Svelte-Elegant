@@ -4,6 +4,9 @@ import { defineConfig } from 'vite';
 export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
+        port: 5173, // Укажите другой порт
+    },
+	server: {
 		host: '0.0.0.0' //ability to connect to the server from a mobile device
 	}
 });

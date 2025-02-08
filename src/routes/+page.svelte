@@ -11,9 +11,12 @@
 	import Elegant from "$lib/icons-elegant/Elegant.svelte";
 	import Header from "$lib/elegant/layout/Header.svelte";
 	import Box from "$lib/elegant/layout/Box.svelte";
+	import ModalIcon from "$lib/icons-elegant/ModalIcon.svelte";
+	import EnvelopeIcon from "$lib/icons-elegant/EnvelopeIcon.svelte";
 
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
+	import { generateIdElement } from "$lib/stores/ElementIdStore.js";
 
 	//Контекст темы
 	import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
@@ -40,7 +43,8 @@
 
 	let isDrawerOpen = false;
 
-	let toggleButtonId = 'drawer-toggle-button2'
+	let drToggleButtonId = `drawer-toggle-button-${generateIdElement()}`;
+	let mdlToggleButtonId = `modal-toggle-button-${generateIdElement()}`;
 
 	let columns = [
         {   field: 'id', 
@@ -107,11 +111,19 @@
 	>
 		Box
 	</Box>
+	<p class='heading'>Icons</p>
+	<div class="components-container">
+		<EnvelopeIcon />
+	</div>
+	<p class='heading'>Modal</p>
+	<div class="components-container">
+		<ModalIcon id = {mdlToggleButtonId}/>
+	</div>
 	<p class='heading'>Drawer</p>
 	<div class="components-container">
 		<Drawer
 			bind:isOpen = {isDrawerOpen}
-			toggleButtonId = {toggleButtonId}
+			toggleButtonId = {drToggleButtonId}
 		>
 			<ul>
 				<li><a href="#" style:color="red">Home</a></li>
@@ -125,7 +137,7 @@
 	<div class="components-container">
 		<Box 
 			padding = 0.66rem
-			id = {toggleButtonId}
+			id = {drToggleButtonId}
 			onclick = {() => {isDrawerOpen = !isDrawerOpen}}
 		>
 			<BarsIcon size = 20px />

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { type IColorThemeStore } from "../interfaces/color-theme/IColorThemeStore.js";
   import { themeMode, themeStore } from "../stores/ColorThemeStore.js";
+  import "./style/icons.css";
 
   export let fill = "";
   export let size = "3rem";
@@ -50,14 +51,6 @@
 </svg>
 
 <style>
-	svg {
-		transition: transform 0.3s;
-	}
-
-    svg path {
-      transition: all 1s ease;
-    }
-
 	svg:hover {
 		transform: scale(1.2);
 	}
