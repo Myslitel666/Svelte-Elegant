@@ -1,5 +1,4 @@
 <script lang='ts'>
-	import Box from './../../../../.svelte-kit/__package__/elegant/layout/Box.svelte';
 	//Контекст темы
 	import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
 	import { themeStore } from "$lib/stores/ColorThemeStore.js";
