@@ -13,16 +13,17 @@
         id = {id}
         placeholder = 'fictitious'
         type = 'text'
-        style:outline = none
-        style:border-radius = {borderRadius}
-        style:padding-left = {paddingLeft}
-        style:padding-right = {paddingRight}
-        style:padding-top = {paddingTop}
-        style:font-size = {fontSize}
-        style:font-width = 0.5rem
         style:border-left = {variant !== 'Outlined' ? 'none' : ''}
         style:border-right = {variant !== 'Outlined' ? 'none' : ''}
         style:border-top = {variant !== 'Outlined' ? 'none' : ''}
+        style:border-radius = {borderRadius}
+        style:font-size = {fontSize}
+        style:font-width = 0.5rem
+        style:min-width = {minWidth}
+        style:outline = none
+        style:padding-left = {paddingLeft}
+        style:padding-right = {paddingRight}
+        style:padding-top = {paddingTop}
         style:--Xl-border-color = {borderColor}
         style:--Xl-color = {primaryColor}
         style:--Xl-height = {height}
@@ -69,6 +70,7 @@
     export let height = '';                                   /* Высота поля */
     export let label = 'Text Field'                           /* Надпись */
     export let labelColor ='';                                /* Цвет надписи */
+    export let minWidth ='';                                  /* Минимальная ширина поля */
     export let paddingLeft = '';                              /* Отступ от левой границы до курсора */
     export let paddingRight = '';                             /* Отступ от правой границы */
     export let paddingTop = '';                               /* Отступ от верхней границы */
