@@ -4,13 +4,14 @@
 
     let theme: IColorThemeStore | undefined;
 
-    export let borderSizing = 'border-box'
-    export let width = '';
-    export let height = '';
-    export let padding = '0.5rem';
-    export let borderRadius = '';
     export let border = '';
+    export let borderRadius = '';
+    export let borderSizing = 'border-box'
+    export let height = '';
     export let justifyContent = '';
+    export let padding = '0.5rem';
+    export let variant: 'Default' | 'Hoverable' | 'Solid' = 'Default';
+    export let width = '';
 
     let borderRadiusFromUser = borderRadius !== '';
     let borderFromUser = border !== '';
@@ -28,16 +29,18 @@
 <!-- Основной Box -->
 <div 
     class="box"
+    style:background-color = {variant === 'Solid' ? theme?.surface.box.background : ''}
     style:border={border}
-    style:padding={padding}
     style:border-radius={borderRadius}
+    style:box-sizing={borderSizing}
+    style:cursor = {variant === 'Hoverable' ? 'pointer' : '' }
     style:justify-content={justifyContent}
     style:overflow = hidden;
-    style:box-sizing={borderSizing}
+    style:padding={padding}
     style:transition = {`all ${theme?.effectsTimeCode}`}
-    style:--bg-color={theme?.surface.box.background}
-    style:--width={width}
-    style:--height={height}
+    style:--Xl-bg-color={variant === 'Default' ? '' : theme?.surface.box.background}
+    style:--Xl-height={height}
+    style:--Xl-width={width}
     
     {...$$props}
 >
@@ -49,12 +52,11 @@
         display: flex;
         align-items: center;
 
-        width: var(--width);
-        height: var(--height);
+        width: var(--Xl-width);
+        height: var(--Xl-height);
     }
 
     .box:hover {
-        cursor: pointer;
-        background-color: var(--bg-color);
+        background-color: var(--Xl-bg-color);
     }
 </style>

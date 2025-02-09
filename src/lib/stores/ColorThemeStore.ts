@@ -60,7 +60,7 @@ const theme: Readable<IColorThemeStore> = derived(
         background: $themeMode === 'light' ? 'white' : '#242424',
       },
       box: {
-        background: $themeMode === 'light' ? '#f2f2f2' : '#202020',
+        background: $themeMode === 'light' ? '#f7f7f7' : '#202020',
       }
     },
     typography: {

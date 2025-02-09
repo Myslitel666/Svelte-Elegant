@@ -103,14 +103,36 @@
 	</div>
 </Header>
 <div id = 'container'>
-	<Box 
-		width = 5rem 
-		height = 5rem 
-		justifyContent = 'center' 
-		onclick = {() => console.log('I\'m Click!')}
-	>
-		Box
-	</Box>
+	<p class='heading'>Boxes</p>
+	<div class="components-container">
+		<Box 
+			variant = 'Default'
+			width = 6rem 
+			height = 6rem 
+			justifyContent = 'center' 
+			onclick = {() => console.log('I\'m Click!')}
+		>
+			Default
+		</Box>
+		<Box 
+			variant = 'Hoverable'
+			width = 6rem 
+			height = 6rem 
+			justifyContent = 'center' 
+			onclick = {() => console.log('I\'m Click!')}
+		>
+			Hoverable
+		</Box>
+		<Box 
+			variant = 'Solid'
+			width = 6rem 
+			height = 6rem 
+			justifyContent = 'center' 
+			onclick = {() => console.log('I\'m Click!')}
+		>
+			Solid
+		</Box>
+	</div>
 	<p class='heading'>Icons</p>
 	<div class="components-container">
 		<EnvelopeIcon />
@@ -133,9 +155,9 @@
 			</ul>
 		</Drawer>
 	</div>
-	<p class='heading'>Bars</p>
 	<div class="components-container">
 		<Box 
+			variant = 'Hoverable'
 			padding = 0.66rem
 			id = {drToggleButtonId}
 			onclick = {() => {isDrawerOpen = !isDrawerOpen}}
@@ -143,7 +165,7 @@
 			<BarsIcon size = 20px />
 		</Box>
 	</div>
-	<p>Text Field</p>
+	<p class='heading'>Text Field</p>
 	<div class="components-container">
 		<TextField 
 			bind:value = {value /*Передача переменной по ссылке*/}
@@ -210,6 +232,7 @@
 <style>
 	.heading {
 		margin-top: 0.35rem;
+		margin-bottom: 0.35rem;
 	}
 
 	.components-container {
