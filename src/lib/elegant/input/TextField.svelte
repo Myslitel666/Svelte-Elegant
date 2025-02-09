@@ -24,6 +24,7 @@
         style:padding-left = {paddingLeft}
         style:padding-right = {paddingRight}
         style:padding-top = {paddingTop}
+        style:width = 100%
         style:--Xl-border-color = {borderColor}
         style:--Xl-color = {primaryColor}
         style:--Xl-height = {height}

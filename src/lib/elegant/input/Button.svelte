@@ -12,7 +12,7 @@
         style:padding-right = {padding}
         style:font-size = {fontSize}
         style:min-width = {minWidth}
-        style:width='100%'
+        style:width=100%
         style:--Xl-color = {variant === 'Contained' ? primaryColor : ''}
         style:--Xl-height = {height}
         style:--Xl-secondaryColor = {secondaryColor}
