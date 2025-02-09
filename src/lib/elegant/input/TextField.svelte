@@ -19,7 +19,6 @@
         style:border-radius = {borderRadius}
         style:font-size = {fontSize}
         style:font-width = 0.5rem
-        style:flex-grow = {flexGrow}
         style:min-width = {minWidth}
         style:outline = none
         style:padding-left = {paddingLeft}
@@ -68,7 +67,6 @@
     export let borderRadius = '';                             /* Радиус скругления углов */
     export let disabledborderWidth = '';                      /* Толщина обводки в неактивном состоянии */
     export let fontSize = '';                                 /* Размер шрифта */
-    export let flexGrow = 1;                                  /* Способность занимать оставшееся доступное пространство */
     export let height = '';                                   /* Высота поля */
     export let label = 'Text Field'                           /* Надпись */
     export let labelColor ='';                                /* Цвет надписи */

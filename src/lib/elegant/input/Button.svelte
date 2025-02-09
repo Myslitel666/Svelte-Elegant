@@ -11,7 +11,6 @@
         style:padding-left = {padding}
         style:padding-right = {padding}
         style:font-size = {fontSize}
-        style:flex-grow = {flexGrow}
         style:min-width = {minWidth}
         style:width='100%'
         style:--Xl-color = {variant === 'Contained' ? primaryColor : ''}
@@ -38,7 +37,6 @@
     export let borderRadius = '';                        /* Радиус скругления углов */
     export let boxShadow = '';                           /* Тень */
     export let fontSize = '';                            /* Размер шрифта */
-    export let flexGrow = 1;                             /* Способность занимать оставшееся доступное пространство */
     export let height = '';                              /* Высота поля */
     export let labelColor ='';                           /* Цвет надписи */
     export let minWidth = '';                            /* Минимальная ширина */
