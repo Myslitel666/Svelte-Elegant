@@ -58,6 +58,10 @@
 			"types": "./dist/elegant/input/TextField.svelte.d.ts",
 			"svelte": "./dist/elegant/input/TextField.svelte"
 		},
+		"./TitledBox": {
+			"types": "./dist/elegant/input/TitledBox.svelte.d.ts",
+			"svelte": "./dist/elegant/input/TitledBox.svelte"
+		},
 		"./ThemeProvider": {
 			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
 			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"

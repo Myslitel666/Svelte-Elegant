@@ -1,6 +1,6 @@
 <script lang='ts'>
     import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
-    import { themeStore, themeMode } from "$lib/stores/ColorThemeStore.js";
+    import { themeStore } from "$lib/stores/ColorThemeStore.js";
 
     let theme: IColorThemeStore | undefined;
 

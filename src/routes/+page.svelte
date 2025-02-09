@@ -13,6 +13,7 @@
 	import Box from "$lib/elegant/layout/Box.svelte";
 	import ModalIcon from "$lib/icons-elegant/ModalIcon.svelte";
 	import EnvelopeIcon from "$lib/icons-elegant/EnvelopeIcon.svelte";
+	import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
 
 	//Импорт утилит
 	import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
@@ -103,6 +104,13 @@
 	</div>
 </Header>
 <div id = 'container'>
+	<p class='heading'>Titled Box</p>
+	<div class="components-container">
+		<TitledBox title = 'Your Box Title'>
+			<p>Main Content<p>
+			<p>Main Content<p></p>
+		</TitledBox>
+	</div>
 	<p class='heading'>Boxes</p>
 	<div class="components-container">
 		<Box 
@@ -131,38 +139,6 @@
 			onclick = {() => console.log('I\'m Click!')}
 		>
 			Solid
-		</Box>
-	</div>
-	<p class='heading'>Icons</p>
-	<div class="components-container">
-		<EnvelopeIcon />
-	</div>
-	<p class='heading'>Modal</p>
-	<div class="components-container">
-		<ModalIcon id = {mdlToggleButtonId}/>
-	</div>
-	<p class='heading'>Drawer</p>
-	<div class="components-container">
-		<Drawer
-			bind:isOpen = {isDrawerOpen}
-			toggleButtonId = {drToggleButtonId}
-		>
-			<ul>
-				<li><a href="#" style:color="red">Home</a></li>
-				<li><a href="#" style:color="red">About</a></li>
-				<li><a href="#" style:color="red">Services</a></li>
-				<li><a href="#" style:color="red">Contact</a></li>
-			</ul>
-		</Drawer>
-	</div>
-	<div class="components-container">
-		<Box 
-			variant = 'Hoverable'
-			padding = 0.66rem
-			id = {drToggleButtonId}
-			onclick = {() => {isDrawerOpen = !isDrawerOpen}}
-		>
-			<BarsIcon size = 20px />
 		</Box>
 	</div>
 	<p class='heading'>Text Field</p>
@@ -226,6 +202,38 @@
 	<p class='heading'>Color Theme Switch</p>
 	<div class="components-container">
 		<ColorThemeSwitch />
+	</div>
+	<p class='heading'>Icons</p>
+	<div class="components-container">
+		<EnvelopeIcon />
+	</div>
+	<p class='heading'>Modal</p>
+	<div class="components-container">
+		<ModalIcon id = {mdlToggleButtonId}/>
+	</div>
+	<p class='heading'>Drawer</p>
+	<div class="components-container">
+		<Drawer
+			bind:isOpen = {isDrawerOpen}
+			toggleButtonId = {drToggleButtonId}
+		>
+			<ul>
+				<li><a href="#" style:color="red">Home</a></li>
+				<li><a href="#" style:color="red">About</a></li>
+				<li><a href="#" style:color="red">Services</a></li>
+				<li><a href="#" style:color="red">Contact</a></li>
+			</ul>
+		</Drawer>
+	</div>
+	<div class="components-container">
+		<Box 
+			variant = 'Hoverable'
+			padding = 0.66rem
+			id = {drToggleButtonId}
+			onclick = {() => {isDrawerOpen = !isDrawerOpen}}
+		>
+			<BarsIcon size = 20px />
+		</Box>
 	</div>
 </div>
 
