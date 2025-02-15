@@ -27,29 +27,31 @@
         theme = value; // Инициализация объекта темы
 
         // Устанавливаем значения свойтсв при смене темы, если они не были заданы пользователем
-        border = borderFromUser ? border : `${theme.border.disabled.width} solid ${theme.border.light.color}`;
-        borderRadius = borderRadiusFromUser ? borderRadius : theme.border.borderRadius;
+        border = borderFromUser ? border : `${theme.border.disabled.width} solid ${theme.border.focused.color}`;
+        borderRadius = borderRadiusFromUser ? borderRadius : theme.border.borderRadius.extra;
     });
 </script>
 
 <div 
 	class = 'box-container border'
 	style:width = {width}
-	style:--Xl-border-color = #d7d7d7
+	style:--Xl-border-color = {theme?.border.focused.color}
 	style:--Xl-borderWidth = {theme?.border.disabled.width}
 
 	style:border-radius = {borderRadius}
+	style:transition = {`all ${theme?.effectsTimeCode}`}
 >
 	<div 
 		class = 'title border'
+		style:align-items = center
 		style:height = {titleHeight}
-		style:padding = {padding}
 		style:border-top = none
 		style:border-left = none
 		style:border-right = none
 		style:display = flex
 		style:justify-content = center
-		style:align-items = center
+		style:padding = {padding}
+		style:transition = {`all ${theme?.effectsTimeCode}`}
 	>
 		<p 	
 			style:color = {theme?.colors.primary}
@@ -60,12 +62,13 @@
 	</div>
 	<div 
 		class = 'content'
-		style:background-color = {theme?.surface.box.background}
+		style:background-color = {theme?.surface.solid.background}
+		style:box-sizing = border-box
 		style:border-radius = {`0 0 ${borderRadius} ${borderRadius}`}
 		style:height = {contentHeight}
 		style:min-height = {contentMinHeight}
 		style:padding = {padding}
-		style:box-sizing = border-box
+		style:transition = {`all ${theme?.effectsTimeCode}`}
 	>
 		<slot />
 	</div>

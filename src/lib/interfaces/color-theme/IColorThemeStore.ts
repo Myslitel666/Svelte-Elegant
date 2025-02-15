@@ -4,21 +4,29 @@ export interface IColorThemeStore {
         selected: string;
     };
     border: {
-        disabled: {
-            color:  string;
-            width: string;
-        };
         active: {
             color: string;
             width: string;
         };
-        light: {
+        disabled: {
+            color:  string;
+            width: string;
+        };
+        focused: {
+            color:  string;
+        };
+        table: {
             color: string;
         };
         elegant: {
             color:  string;
         };
-        borderRadius: string;
+        borderRadius: {
+            default: string;
+            balanced: string;
+            extra: string;
+            ultimate: string;
+        }
     };
     colors: {
         primary: string;
@@ -44,12 +52,16 @@ export interface IColorThemeStore {
         expressed: string;
         fill: string;
         touch: string;
+        elegant: string;
     };
     surface: {
         header: {
           background: string;
         };
-        box: {
+        hoverable: {
+            background: string;
+        };
+        solid: {
             background: string;
         };
     };

@@ -41,7 +41,7 @@
         style:right = {variant === 'Standard' ? '0rem' : '0.53rem'}
         style:transform = {isOpen ? 'rotate(180deg) translateY(50%)' : ''}
         style:transition = 'transform var(--Xl-effectsTimeCode)'
-        style:background-color = {triangleHover ? theme?.disabled.ghost : ''}
+        style:background-color = {triangleHover ? theme?.surface.box.background : ''}
     >
         <Arrow
             size=1.16rem 
@@ -102,7 +102,7 @@
 
     //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
     if (theme) {
-        if (!borderRadius) borderRadius = variant === 'Outlined' ? theme.border.borderRadius : `0 0 ${theme.border.borderRadius} ${theme.border.borderRadius}`;
+        if (!borderRadius) borderRadius = variant === 'Outlined' ? theme.border.borderRadius.default : `0 0 ${theme.border.borderRadius.default} ${theme.border.borderRadius.default}`;
         else {
             borderRadius = variant === 'Outlined' ? borderRadius : `0 0 ${borderRadius} ${borderRadius}`; 
         }

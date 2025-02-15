@@ -21,15 +21,17 @@
         theme = value; // Инициализация объекта темы
 
         // Устанавливаем значения свойтсв при смене темы, если они не были заданы пользователем
-        border = borderFromUser ? border : `${theme.border.disabled.width} solid ${theme.border.light.color}`;
-        borderRadius = borderRadiusFromUser ? borderRadius : theme.border.borderRadius;
+        border = borderFromUser ? border : `${theme.border.disabled.width} solid ${
+            variant === 'Solid' ? theme.border.focused.color : theme.border.elegant.color
+        }`;
+        borderRadius = borderRadiusFromUser ? borderRadius : theme.border.borderRadius.balanced;
     });
 </script>
 
 <!-- Основной Box -->
 <div 
     class="box"
-    style:background-color = {variant === 'Solid' ? theme?.surface.box.background : ''}
+    style:background-color = {variant === 'Solid' ? theme?.surface.solid.background : ''}
     style:border={border}
     style:border-radius={borderRadius}
     style:box-sizing={borderSizing}
@@ -38,7 +40,9 @@
     style:overflow = hidden;
     style:padding={padding}
     style:transition = {`all ${theme?.effectsTimeCode}`}
-    style:--Xl-bg-color={variant === 'Default' ? '' : theme?.surface.box.background}
+    style:--Xl-bg-color={variant === 'Default' ? '' : variant === 'Solid' ? 
+        theme?.surface.solid.background : theme?.surface.hoverable.background
+    }
     style:--Xl-height={height}
     style:--Xl-width={width}
     

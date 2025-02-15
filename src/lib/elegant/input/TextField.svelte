@@ -108,7 +108,7 @@
     if (theme) {
         if (!activedborderWidth) activedborderWidth = theme.border.active.width;
         if (!borderRadius) { 
-            borderRadius = variant === 'Outlined' ? theme.border.borderRadius : `${theme.border.borderRadius} ${theme.border.borderRadius} 0 0`; 
+            borderRadius = variant === 'Outlined' ? theme.border.borderRadius.default : `${theme.border.borderRadius.default} ${theme.border.borderRadius.default} 0 0`; 
         }
         else {
             borderRadius = variant === 'Outlined' ? borderRadius : `${borderRadius} ${borderRadius} 0 0`; 

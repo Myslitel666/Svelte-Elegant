@@ -74,7 +74,7 @@
 
     //Устанавливаем значения стилей после инициализации темы
     if (theme) {
-        if (!borderRadius) borderRadius = theme.border.borderRadius;
+        if (!borderRadius) borderRadius = theme.border.borderRadius.default;
         if (!height) height = theme.controls.height;
         if (!outlineWidth) outlineWidth = theme.border.disabled.width;
         if (!padding) padding = theme.controls.textField.padding;

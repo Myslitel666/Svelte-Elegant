@@ -10,30 +10,38 @@ const theme: Readable<IColorThemeStore> = derived(
   themeMode,
   ($themeMode): IColorThemeStore => ({
     action: {
-      hover: $themeMode === 'light' ? '#fafafa' : '#1c1c1c',
-      selected: $themeMode === 'light' ? '#f5f5f5' : '#2e2e2e',
+      hover: $themeMode === 'light' ? '#fafafa' : '#111',
+      selected: $themeMode === 'light' ? '#f5f5f5' : '#1a1a1a',
     },
     border: {
-      disabled: {
-        color: $themeMode === 'light' ? '#bebebe' : '#606060',
-        width: '1px',
-      },
       active: {
         color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
         width: '2px',
       },
-      light: {
-        color: $themeMode === 'light' ? '#ccc' : '#2f2f2f',
+      disabled: {
+        color: $themeMode === 'light' ? '#bebebe' : '#606060',
+        width: '1px',
+      },
+      focused: {
+        color: $themeMode === 'light' ? '#cdcdcd' : '#505050',
+      },
+      table: {
+        color: $themeMode === 'light' ? '#ddd' : '#505050',
       },
       elegant: {
-        color: $themeMode === 'light' ? '#ddd' : '#484848',
+        color: $themeMode === 'light' ? '#e7e7e7' : '#333',
       },
-      borderRadius: '4px',
+      borderRadius: {
+          default: '0.28rem',
+          balanced: '0.425rem',
+          extra: 'string',
+          ultimate: 'string',
+      }
     },
     colors: {
       primary: $themeMode === 'light' ? '#5bb056' : '#f41c1c',
       secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
-      background: $themeMode === 'light' ? 'white' : '#161616',
+      background: $themeMode === 'light' ? 'white' : '#050505',
       text: {
         primary: $themeMode === 'light' ? '#111' : '#fefefe',
         label: $themeMode === 'light' ? '#b3b3b3' : '#808080',
@@ -54,13 +62,17 @@ const theme: Readable<IColorThemeStore> = derived(
       expressed: $themeMode === 'light' ? '#757575' : '#e0e0e0',
       fill: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
       touch: $themeMode === 'light' ? '#efefef' : '#2f2f2f',
+      elegant: $themeMode === 'light' ? '#f5f5f5' : '#2f2f2f',
     },
     surface: {
       header: {
-        background: $themeMode === 'light' ? 'white' : '#242424',
+        background: $themeMode === 'light' ? 'white' : '#212121',
       },
-      box: {
-        background: $themeMode === 'light' ? '#f7f7f7' : '#202020',
+      hoverable: {
+        background: $themeMode === 'light' ? '#f8f8f8' : '#202020',
+      },
+      solid: {
+        background: $themeMode === 'light' ? '#f6f6f6' : '#202020',
       }
     },
     typography: {
