@@ -23,13 +23,13 @@ const theme: Readable<IColorThemeStore> = derived(
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? '#cdcdcd' : '#505050',
+        color: $themeMode === 'light' ? '#cdcdcd' : '#484848',
       },
       table: {
         color: $themeMode === 'light' ? '#ddd' : '#505050',
       },
       elegant: {
-        color: $themeMode === 'light' ? '#e7e7e7' : '#222',
+        color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
       },
       borderRadius: {
           default: '0.28rem',
@@ -69,10 +69,10 @@ const theme: Readable<IColorThemeStore> = derived(
         background: $themeMode === 'light' ? 'white' : '#212121',
       },
       hoverable: {
-        background: $themeMode === 'light' ? '#f8f8f8' : '#141414',
+        background: $themeMode === 'light' ? '#f8f8f8' : '#101010',
       },
       solid: {
-        background: $themeMode === 'light' ? '#f6f6f6' : '#202020',
+        background: $themeMode === 'light' ? '#f6f6f6' : '#171717',
       }
     },
     typography: {
