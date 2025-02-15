@@ -29,7 +29,7 @@ const theme: Readable<IColorThemeStore> = derived(
         color: $themeMode === 'light' ? '#ddd' : '#505050',
       },
       elegant: {
-        color: $themeMode === 'light' ? '#e7e7e7' : '#333',
+        color: $themeMode === 'light' ? '#e7e7e7' : '#222',
       },
       borderRadius: {
           default: '0.28rem',
@@ -69,7 +69,7 @@ const theme: Readable<IColorThemeStore> = derived(
         background: $themeMode === 'light' ? 'white' : '#212121',
       },
       hoverable: {
-        background: $themeMode === 'light' ? '#f8f8f8' : '#202020',
+        background: $themeMode === 'light' ? '#f8f8f8' : '#141414',
       },
       solid: {
         background: $themeMode === 'light' ? '#f6f6f6' : '#202020',
