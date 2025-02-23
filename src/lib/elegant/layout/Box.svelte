@@ -4,7 +4,9 @@
 
     let theme: IColorThemeStore | undefined;
 
-    export let border = '';
+    export let borderWidth = '';
+    export let borderStyle = '';
+    export let borderColor = '';
     export let borderRadius = '';
     export let borderSizing = 'border-box'
     export let height = '';
@@ -14,16 +16,18 @@
     export let width = '';
 
     let borderRadiusFromUser = borderRadius !== '';
-    let borderFromUser = border !== '';
+    let borderWidthFromUser = borderWidth !== '';
+    let borderStyleFromUser = borderStyle !== '';
+    let borderColorFromUser = borderColor !== '';
 
     // Подписываемся на изменения темы
     themeStore.subscribe(value => {
         theme = value; // Инициализация объекта темы
 
         // Устанавливаем значения свойтсв при смене темы, если они не были заданы пользователем
-        border = borderFromUser ? border : `${theme.border.disabled.width} solid ${
-            variant === 'Solid' ? theme.border.focused.color : theme.border.elegant.color
-        }`;
+        borderWidth = borderWidthFromUser ? borderWidth : `${theme.border.disabled.width}`;
+        borderStyle = borderStyleFromUser ? borderStyle : 'solid';
+        borderColor = borderColorFromUser ? borderColor : '';
         borderRadius = borderRadiusFromUser ? borderRadius : theme.border.borderRadius.balanced;
     });
 </script>
@@ -32,17 +36,20 @@
 <div 
     class="box"
     style:background-color = {variant === 'Solid' ? theme?.surface.solid.background : ''}
-    style:border={border}
+    style:border-color={variant === 'Solid' ? theme?.border.focused.color : ''}
     style:border-radius={borderRadius}
+    style:border-style={borderStyle}
+    style:border-width={borderWidth}
     style:box-sizing={borderSizing}
     style:cursor = {variant === 'Hoverable' ? 'pointer' : '' }
     style:justify-content={justifyContent}
     style:overflow = hidden;
     style:padding={padding}
     style:transition = {`all ${theme?.effectsTimeCode}`}
-    style:--Xl-bg-color={variant === 'Default' ? '' : variant === 'Solid' ? 
-        theme?.surface.solid.background : theme?.surface.hoverable.background
+    style:--Xl-bg-color={variant === 'Default' ? '' : theme?.surface.solid.background
     }
+    style:--Xl-elegant-border = {theme?.border.elegant.color}
+    style:--Xl-border-color = {variant === 'Default' ? theme?.border.elegant.color : theme?.border.focused.color}
     style:--Xl-height={height}
     style:--Xl-width={width}
     
@@ -53,8 +60,9 @@
 
 <style>
     .box {
-        display: flex;
         align-items: center;
+        border-color: var(--Xl-elegant-border);
+        display: flex;
 
         width: var(--Xl-width);
         height: var(--Xl-height);
@@ -62,5 +70,6 @@
 
     .box:hover {
         background-color: var(--Xl-bg-color);
+        border-color: var(--Xl-border-color);
     }
 </style>

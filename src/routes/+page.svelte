@@ -104,14 +104,14 @@
 	</div>
 </Header>
 <div id = 'container'>
-	<p class='heading'>Titled Box</p>
+	<h6 class='heading'>Titled Box</h6>
 	<div class="components-container">
 		<TitledBox title = 'Your Box Title'>
 			<p>Main Content<p>
 			<p>Main Content<p></p>
 		</TitledBox>
 	</div>
-	<p class='heading'>Boxes</p>
+	<h6 class='heading'>Boxes</h6>
 	<div class="components-container">
 		<Box 
 			variant = 'Default'
@@ -141,7 +141,7 @@
 			Solid
 		</Box>
 	</div>
-	<p class='heading'>Text Field</p>
+	<h6 class='heading'>Text Field</h6>
 	<div class="components-container">
 		<TextField 
 			bind:value = {value /*Передача переменной по ссылке*/}
@@ -162,14 +162,14 @@
 			label = 'Standard'
 		/>
 	</div>
-	<p class='heading'>Data Grid</p>
+	<h6 class='heading'>Data Grid</h6>
 	<div class="components-container">
 		<DataGrid 
 			columns = {columns}
 			rows = {rows}
 		/>
 	</div>
-	<p class = 'heading'>Auto Complete</p>
+	<h6 class = 'heading'>Auto Complete</h6>
 	<div class="components-container">
 		<AutoComplete 
 			options = {['Apple', 'Orange', 'Banana', 'Grape', 'Mango']}
@@ -181,7 +181,7 @@
 			variant = 'Standard' 
 		/>
 	</div>
-	<p class = 'heading'>Button</p>
+	<h6 class = 'heading'>Button</h6>
 	<div class="components-container">
 		<Button variant = 'Contained'>
 			CONTAINED
@@ -190,7 +190,7 @@
 			OUTLINED
 		</Button>
 	</div>
-	<p class='heading'>Switch</p>
+	<h6 class='heading'>Switch</h6>
 	<div class="components-container">
 		<Switch
 			bind:isChecked = {isChecked /*Передача переменной по ссылке*/}
@@ -199,19 +199,19 @@
 			}}
 		/>
 	</div>
-	<p class='heading'>Color Theme Switch</p>
+	<h6 class='heading'>Color Theme Switch</h6>
 	<div class="components-container">
 		<ColorThemeSwitch />
 	</div>
-	<p class='heading'>Icons</p>
+	<h6 class='heading'>Icons</h6>
 	<div class="components-container">
 		<EnvelopeIcon />
 	</div>
-	<p class='heading'>Modal</p>
+	<h6 class='heading'>Modal</h6>
 	<div class="components-container">
 		<ModalIcon id = {mdlToggleButtonId}/>
 	</div>
-	<p class='heading'>Drawer</p>
+	<h6 class='heading'>Drawer</h6>
 	<div class="components-container">
 		<Drawer
 			bind:isOpen = {isDrawerOpen}

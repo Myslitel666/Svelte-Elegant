@@ -6,6 +6,7 @@
         id = {id}
         placeholder = ''
         style:border = {variant === 'Outlined' ? `1px solid ${primaryColor}` : 'none'}
+        style:border-color = {borderColor}
         style:border-radius = {borderRadius}
         style:box-shadow = {boxShadow}
         style:padding-left = {padding}
@@ -49,7 +50,6 @@
 
     // Флаги для отслеживания, передал ли пользователь значение извне
     let isTextColorFromUser = textColor !== '';
-    let isBorderColorFromUser = borderColor !== '';
     let isLabelColorFromUser = labelColor !== '';
     let isPrimaryColorFromUser = primaryColor !== '';
     let isSecondaryColorFromUser = primaryColor !== '';
@@ -63,11 +63,10 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        if (!isBorderColorFromUser) borderColor = theme.themeMode === 'light' ? theme.colors.text.primary : theme.colors.primary;
         if (!isLabelColorFromUser) labelColor = theme.colors.text.label;
         if (!isPrimaryColorFromUser) primaryColor = theme.colors.primary;
         if (!isSecondaryColorFromUser) secondaryColor = theme.colors.secondary;
-        if (!isTextColorFromUser) textColor = variant === 'Contained' ? theme.colors.text.primary : theme.colors.primary;
+        if (!isTextColorFromUser) textColor = variant === 'Contained' ? theme.colors.text.contrast : theme.colors.primary;
 
         filter = theme.controls.button.filter;
     });

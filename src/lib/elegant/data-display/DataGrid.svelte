@@ -61,7 +61,7 @@
         rowBg = theme.action.hover;
         headBg = theme.action.selected;
         if (!isBackgroundColorFromUser) backgroundColor = theme.disabled.touch;
-        if (!isBorderColorFromUser) borderColor = theme.border.table.color;
+        if (!isBorderColorFromUser) borderColor = theme.border.elegant.color;
     });
 
     //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей

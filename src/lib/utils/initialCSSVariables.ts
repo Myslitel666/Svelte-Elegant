@@ -14,7 +14,8 @@ export const initialCSSVariables = () => {
     body.setProperty('--Xl-font-style', theme.typography.fontStyle);
     body.setProperty('--Xl-font-weight', theme.typography.fontWeight);
     body.setProperty('--Xl-letter-spacing', theme.typography.letterSpacing);
-    body.setProperty('--Xl-text-color', theme.colors.text.primary);
+    body.setProperty('--Xl-textColorMain', theme.colors.text.main);
+    body.setProperty('--Xl-textColorContrast', theme.colors.text.contrast);
     body.setProperty('--Xl-fontUrl', theme.typography.fontUrl);
     body.setProperty('--Xl-format', theme.typography.format);
 };

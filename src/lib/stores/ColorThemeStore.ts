@@ -19,14 +19,11 @@ const theme: Readable<IColorThemeStore> = derived(
         width: '2px',
       },
       disabled: {
-        color: $themeMode === 'light' ? '#bebebe' : '#606060',
+        color: $themeMode === 'light' ? '#c7c7c7' : '#606060',
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? '#cdcdcd' : '#484848',
-      },
-      table: {
-        color: $themeMode === 'light' ? '#ddd' : '#505050',
+        color: $themeMode === 'light' ? '#ddd' : '#404040',
       },
       elegant: {
         color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
@@ -43,7 +40,8 @@ const theme: Readable<IColorThemeStore> = derived(
       secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
       background: $themeMode === 'light' ? 'white' : '#050505',
       text: {
-        primary: $themeMode === 'light' ? '#111' : '#fefefe',
+        contrast: $themeMode === 'light' ? '#111' : '#fefefe',
+        main: $themeMode === 'light' ? '#4a4a4a' : '#d2d2d2',
         label: $themeMode === 'light' ? '#b3b3b3' : '#808080',
       }
     },
@@ -68,11 +66,8 @@ const theme: Readable<IColorThemeStore> = derived(
       header: {
         background: $themeMode === 'light' ? 'white' : '#212121',
       },
-      hoverable: {
-        background: $themeMode === 'light' ? '#f8f8f8' : '#101010',
-      },
       solid: {
-        background: $themeMode === 'light' ? '#f6f6f6' : '#171717',
+        background: $themeMode === 'light' ? '#f8f8f8' : '#171717',
       }
     },
     typography: {

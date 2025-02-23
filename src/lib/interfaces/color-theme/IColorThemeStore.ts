@@ -15,9 +15,6 @@ export interface IColorThemeStore {
         focused: {
             color:  string;
         };
-        table: {
-            color: string;
-        };
         elegant: {
             color:  string;
         };
@@ -33,7 +30,8 @@ export interface IColorThemeStore {
         secondary: string;
         background: string;
         text: {
-            primary: string;
+            contrast: string;
+            main: string;
             label: string;
         };
     };
@@ -57,9 +55,6 @@ export interface IColorThemeStore {
     surface: {
         header: {
           background: string;
-        };
-        hoverable: {
-            background: string;
         };
         solid: {
             background: string;

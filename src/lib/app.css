@@ -8,29 +8,39 @@ body {
 	color: var(--Xl-text-color);
 }
 
-p {
+p,
+h6 {
+	margin: 0;
 	font-size: var(--Xl-font-size);
 }
 
-p,
+p {
+	color: var(--Xl-textColorMain);
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+	color: var(--Xl-textColorContrast);
+	font-weight: 600;
+}
+
 li,
 ol,
 ul,
-a {
-	margin: 0;
-	color: var(--Xl-text-color);
+a,
+div {
+	color: var(--Xl-textColorMain);
 }
 
 button {
 	padding: 0;
 	border: none;
 	background-color: transparent;
+	color: var(--Xl-textColorContrast);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
