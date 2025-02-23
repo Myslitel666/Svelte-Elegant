@@ -29,8 +29,8 @@
     // Подписываемся на изменения темы
     themeStore.subscribe(value => {
         theme = value; // Инициализация объекта темы
-        fill = theme?.colors.primary
-        hoverColor = theme?.colors.primary
+        fill = theme?.palette.primary
+        hoverColor = theme?.palette.primary
     });
 </script>
 

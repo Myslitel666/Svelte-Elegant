@@ -1,8 +1,4 @@
 export interface IColorThemeStore {
-    action: {
-        hover: string;
-        selected: string;
-    };
     border: {
         active: {
             color: string;
@@ -25,7 +21,7 @@ export interface IColorThemeStore {
             ultimate: string;
         }
     };
-    colors: {
+    palette: {
         primary: string;
         secondary: string;
         background: string;
@@ -63,6 +59,12 @@ export interface IColorThemeStore {
         };
         solid: {
             background: string;
+        };
+    };
+    table: {
+        palette: {
+            background: string;
+            hover: string;
         };
     };
     typography: {

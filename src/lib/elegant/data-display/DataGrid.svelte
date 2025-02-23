@@ -58,8 +58,8 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        rowBg = theme.action.hover;
-        headBg = theme.action.selected;
+        rowBg = theme.table.palette.background;
+        headBg = theme.table.palette.hover;
         if (!isBackgroundColorFromUser) backgroundColor = theme.surface.filled.background;
         if (!isBorderColorFromUser) borderColor = theme.border.elegant.color;
     });

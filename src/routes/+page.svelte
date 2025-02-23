@@ -33,7 +33,7 @@
 	themeStore.subscribe(value => {
         theme = value; //Инициализация объекта темы
 
-		svelteColor = theme.colors.primary;
+		svelteColor = theme.palette.primary;
 		elegantColor = $themeMode === 'light' ? '#383838' : '#fdfdfd';
 		logotypeFilter = $themeMode === 'light' ? 'brightness(80%)' : '';
     });

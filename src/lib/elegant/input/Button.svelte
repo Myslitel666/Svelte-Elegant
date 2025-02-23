@@ -63,10 +63,10 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        if (!isLabelColorFromUser) labelColor = theme.colors.text.label;
-        if (!isPrimaryColorFromUser) primaryColor = theme.colors.primary;
-        if (!isSecondaryColorFromUser) secondaryColor = theme.colors.secondary;
-        if (!isTextColorFromUser) textColor = variant === 'Contained' ? theme.colors.text.contrast : theme.colors.primary;
+        if (!isLabelColorFromUser) labelColor = theme.palette.text.label;
+        if (!isPrimaryColorFromUser) primaryColor = theme.palette.primary;
+        if (!isSecondaryColorFromUser) secondaryColor = theme.palette.secondary;
+        if (!isTextColorFromUser) textColor = variant === 'Contained' ? theme.palette.text.contrast : theme.palette.primary;
 
         filter = theme.controls.button.filter;
     });

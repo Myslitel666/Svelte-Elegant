@@ -9,10 +9,6 @@ const themeMode: Writable<string> = writable('light');
 const theme: Readable<IColorThemeStore> = derived(
   themeMode,
   ($themeMode): IColorThemeStore => ({
-    action: {
-      hover: $themeMode === 'light' ? '#fafafa' : '#111',
-      selected: $themeMode === 'light' ? '#f5f5f5' : '#1a1a1a',
-    },
     border: {
       active: {
         color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
@@ -35,7 +31,7 @@ const theme: Readable<IColorThemeStore> = derived(
           ultimate: 'string',
       }
     },
-    colors: {
+    palette: {
       primary: $themeMode === 'light' ? '#5bb056' : '#f41c1c',
       secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
       background: $themeMode === 'light' ? 'white' : '#050505',
@@ -73,6 +69,12 @@ const theme: Readable<IColorThemeStore> = derived(
       },
       solid: {
         background: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
+      }
+    },
+    table: {
+      palette: {
+        background: $themeMode === 'light' ? '#fafafa' : '#111',
+        hover: $themeMode === 'light' ? '#f5f5f5' : '#1a1a1a'
       }
     },
     typography: {

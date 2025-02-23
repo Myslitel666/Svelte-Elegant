@@ -96,11 +96,11 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        if (!isBackgroundColorFromUser) backgroundColor = variant === 'Filled' ? theme.surface.filled.background : theme.colors.background;
+        if (!isBackgroundColorFromUser) backgroundColor = variant === 'Filled' ? theme.surface.filled.background : theme.palette.background;
         if (!isBorderColorFromUser) borderColor = variant === 'Filled' ? theme.border.active.color : theme.border.disabled.color;
-        if (!isLabelColorFromUser) labelColor = theme.colors.text.label;
-        if (!isPrimaryColorFromUser) primaryColor = theme.colors.primary;
-        if (!isTextColorFromUser) textColor = theme.colors.text.contrast;
+        if (!isLabelColorFromUser) labelColor = theme.palette.text.label;
+        if (!isPrimaryColorFromUser) primaryColor = theme.palette.primary;
+        if (!isTextColorFromUser) textColor = theme.palette.text.contrast;
         if (!isBackgroundColorFromUser) fill = variant === 'Filled' ? theme.surface.solid.background : '';
     });
 

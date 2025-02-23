@@ -54,7 +54,7 @@
 		style:transition = {`all ${theme?.effectsTimeCode}`}
 	>
 		<p 	
-			style:color = {theme?.colors.primary}
+			style:color = {theme?.palette.primary}
 			style:font-weight = 600
 		>
 			{title}

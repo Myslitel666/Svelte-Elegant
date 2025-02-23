@@ -16,7 +16,7 @@
   themeStore.subscribe((value) => {
       theme = value;
 
-      if (!isFillFromUser) fill = theme.colors.primary;
+      if (!isFillFromUser) fill = theme.palette.primary;
       if (!isStrokeFromUser) stroke = $themeMode === 'light' ? '#151515' : '#fdfdfd';
   });
 </script>

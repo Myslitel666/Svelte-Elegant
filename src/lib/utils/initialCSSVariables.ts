@@ -6,7 +6,7 @@ export const initialCSSVariables = () => {
     const theme = get(themeStore);
 
     const body = document.body.style;
-    body.setProperty('--Xl-background-color', theme.colors.background);
+    body.setProperty('--Xl-background-color', theme.palette.background);
     body.setProperty('--Xl-effectsTimeCode', theme.effectsTimeCode);
 
     body.setProperty('--Xl-font-family', theme.typography.font);
@@ -14,8 +14,8 @@ export const initialCSSVariables = () => {
     body.setProperty('--Xl-font-style', theme.typography.fontStyle);
     body.setProperty('--Xl-font-weight', theme.typography.fontWeight);
     body.setProperty('--Xl-letter-spacing', theme.typography.letterSpacing);
-    body.setProperty('--Xl-textColorMain', theme.colors.text.main);
-    body.setProperty('--Xl-textColorContrast', theme.colors.text.contrast);
+    body.setProperty('--Xl-textColorMain', theme.palette.text.main);
+    body.setProperty('--Xl-textColorContrast', theme.palette.text.contrast);
     body.setProperty('--Xl-fontUrl', theme.typography.fontUrl);
     body.setProperty('--Xl-format', theme.typography.format);
 };

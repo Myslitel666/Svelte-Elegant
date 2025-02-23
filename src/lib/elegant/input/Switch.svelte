@@ -12,7 +12,7 @@
     <span 
         class="switch"
         style:transform = {`translate(${isChecked ? '1.76rem' : '0.26rem'}, 0.26rem)`}
-        style:--Xl-background-color = {theme.colors.background}
+        style:--Xl-background-color = {theme.palette.background}
         style:--Xl-border-radius = {borderRadius}
     >
         {#if isChecked}
@@ -63,7 +63,7 @@
     themeStore.subscribe(value => {
         theme = value;
 
-        if (!isColorFromUser) color = theme.colors.primary;
+        if (!isColorFromUser) color = theme.palette.primary;
     });
 
     onMount(() => {
