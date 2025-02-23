@@ -97,7 +97,7 @@
 
         // Устанавливаем значения цветов при смене темы
         if (!isBackgroundColorFromUser) backgroundColor = variant === 'Filled' ? theme.surface.filled.background : theme.palette.background;
-        if (!isBorderColorFromUser) borderColor = variant === 'Filled' ? theme.border.active.color : theme.border.disabled.color;
+        if (!isBorderColorFromUser) borderColor = variant === 'Filled' ? theme.border.active.color : theme.border.focused.color;
         if (!isLabelColorFromUser) labelColor = theme.palette.text.label;
         if (!isPrimaryColorFromUser) primaryColor = theme.palette.primary;
         if (!isTextColorFromUser) textColor = theme.palette.text.contrast;

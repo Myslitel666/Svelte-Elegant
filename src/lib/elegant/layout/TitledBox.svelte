@@ -35,7 +35,7 @@
 <div 
 	class = 'box-container border'
 	style:width = {width}
-	style:--Xl-border-color = {theme?.border.focused.color}
+	style:--Xl-border-color = {theme?.border.disabled.color}
 	style:--Xl-borderWidth = {theme?.border.disabled.width}
 
 	style:border-radius = {borderRadius}

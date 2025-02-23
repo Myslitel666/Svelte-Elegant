@@ -36,7 +36,7 @@
 <div 
     class="box"
     style:background-color = {variant === 'Solid' ? theme?.surface.ghost.background : ''}
-    style:border-color={variant === 'Solid' ? theme?.border.focused.color : ''}
+    style:border-color={variant === 'Solid' ? theme?.border.disabled.color : ''}
     style:border-radius={borderRadius}
     style:border-style={borderStyle}
     style:border-width={borderWidth}
@@ -49,7 +49,7 @@
     style:--Xl-bg-color={variant === 'Default' ? '' : theme?.surface.ghost.background
     }
     style:--Xl-elegant-border = {theme?.border.elegant.color}
-    style:--Xl-border-color = {variant === 'Default' ? theme?.border.elegant.color : theme?.border.focused.color}
+    style:--Xl-border-color = {variant === 'Default' ? theme?.border.elegant.color : theme?.border.disabled.color}
     style:--Xl-height={height}
     style:--Xl-width={width}
     

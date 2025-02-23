@@ -10,26 +10,26 @@ const theme: Readable<IColorThemeStore> = derived(
   themeMode,
   ($themeMode): IColorThemeStore => ({
     border: {
-      active: {
-        color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
-        width: '2px',
+      elegant: {
+        color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
       },
       disabled: {
-        color: $themeMode === 'light' ? '#c7c7c7' : '#606060',
+        color: $themeMode === 'light' ? '#ddd' : '#606060',
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? '#ddd' : '#404040',
+        color: $themeMode === 'light' ? '#c7c7c7' : '#404040',
       },
-      elegant: {
-        color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
+      active: {
+        color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
+        width: '2px',
       },
       borderRadius: {
           default: '0.28rem',
           balanced: '0.425rem',
           extra: 'string',
           ultimate: 'string',
-      }
+      },
     },
     palette: {
       primary: $themeMode === 'light' ? '#5bb056' : '#f41c1c',
