@@ -46,15 +46,20 @@ export interface IColorThemeStore {
         height: string;
         width: string;
     };
-    disabled: {
-        expressed: string;
-        fill: string;
-        touch: string;
-        elegant: string;
+    icon: {
+        color: {
+            primary: string;
+        }
     };
     surface: {
         header: {
-          background: string;
+            background: string;
+        };
+        ghost: {
+            background: string;
+        };
+        filled: {
+            background: string;
         };
         solid: {
             background: string;

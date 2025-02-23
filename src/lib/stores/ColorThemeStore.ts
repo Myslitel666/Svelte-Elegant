@@ -56,18 +56,23 @@ const theme: Readable<IColorThemeStore> = derived(
       height: '3rem',
       width: '15rem',
     },
-    disabled: {
-      expressed: $themeMode === 'light' ? '#757575' : '#e0e0e0',
-      fill: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
-      touch: $themeMode === 'light' ? '#efefef' : '#2f2f2f',
-      elegant: $themeMode === 'light' ? '#f5f5f5' : '#2f2f2f',
+    icon: {
+      color: {
+        primary: $themeMode === 'light' ? '#757575' : '#e0e0e0'
+      }
     },
     surface: {
       header: {
         background: $themeMode === 'light' ? 'white' : '#212121',
       },
-      solid: {
+      ghost: {
         background: $themeMode === 'light' ? '#f8f8f8' : '#171717',
+      },
+      filled: {
+        background: $themeMode === 'light' ? '#efefef' : '#2f2f2f',
+      },
+      solid: {
+        background: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
       }
     },
     typography: {

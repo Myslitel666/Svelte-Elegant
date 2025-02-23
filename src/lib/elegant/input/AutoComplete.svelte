@@ -41,7 +41,7 @@
         style:right = {variant === 'Standard' ? '0rem' : '0.53rem'}
         style:transform = {isOpen ? 'rotate(180deg) translateY(50%)' : ''}
         style:transition = 'transform var(--Xl-effectsTimeCode)'
-        style:background-color = {triangleHover ? theme?.surface.solid.background : ''}
+        style:background-color = {triangleHover ? theme?.surface.ghost.background : ''}
     >
         <Arrow
             size=1.16rem 

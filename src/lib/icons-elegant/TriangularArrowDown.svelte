@@ -3,7 +3,7 @@
 	style:width={size}
 >
 	<svg 
-		fill = {fill !== '' ? fill : theme.disabled.expressed} 
+		fill = {fill !== '' ? fill : theme.icon.color.primary} 
 		viewBox='0 -3 24 24' 
 	>
 		<path d='M6.5,8.5l6,7l6-7H6.5z'/>

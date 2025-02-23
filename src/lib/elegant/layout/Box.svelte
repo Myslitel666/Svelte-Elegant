@@ -35,7 +35,7 @@
 <!-- Основной Box -->
 <div 
     class="box"
-    style:background-color = {variant === 'Solid' ? theme?.surface.solid.background : ''}
+    style:background-color = {variant === 'Solid' ? theme?.surface.ghost.background : ''}
     style:border-color={variant === 'Solid' ? theme?.border.focused.color : ''}
     style:border-radius={borderRadius}
     style:border-style={borderStyle}
@@ -46,7 +46,7 @@
     style:overflow = hidden;
     style:padding={padding}
     style:transition = {`all ${theme?.effectsTimeCode}`}
-    style:--Xl-bg-color={variant === 'Default' ? '' : theme?.surface.solid.background
+    style:--Xl-bg-color={variant === 'Default' ? '' : theme?.surface.ghost.background
     }
     style:--Xl-elegant-border = {theme?.border.elegant.color}
     style:--Xl-border-color = {variant === 'Default' ? theme?.border.elegant.color : theme?.border.focused.color}

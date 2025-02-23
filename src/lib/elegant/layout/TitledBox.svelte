@@ -62,7 +62,7 @@
 	</div>
 	<div 
 		class = 'content'
-		style:background-color = {theme?.surface.solid.background}
+		style:background-color = {theme?.surface.ghost.background}
 		style:box-sizing = border-box
 		style:border-radius = {`0 0 ${borderRadius} ${borderRadius}`}
 		style:height = {contentHeight}

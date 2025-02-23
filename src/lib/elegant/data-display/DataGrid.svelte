@@ -60,7 +60,7 @@
         // Устанавливаем значения цветов при смене темы
         rowBg = theme.action.hover;
         headBg = theme.action.selected;
-        if (!isBackgroundColorFromUser) backgroundColor = theme.disabled.touch;
+        if (!isBackgroundColorFromUser) backgroundColor = theme.surface.filled.background;
         if (!isBorderColorFromUser) borderColor = theme.border.elegant.color;
     });
 

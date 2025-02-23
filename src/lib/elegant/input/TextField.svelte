@@ -96,12 +96,12 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        if (!isBackgroundColorFromUser) backgroundColor = variant === 'Filled' ? theme.disabled.touch : theme.colors.background;
+        if (!isBackgroundColorFromUser) backgroundColor = variant === 'Filled' ? theme.surface.filled.background : theme.colors.background;
         if (!isBorderColorFromUser) borderColor = variant === 'Filled' ? theme.border.active.color : theme.border.disabled.color;
         if (!isLabelColorFromUser) labelColor = theme.colors.text.label;
         if (!isPrimaryColorFromUser) primaryColor = theme.colors.primary;
-        if (!isTextColorFromUser) textColor = theme.colors.text.primary;
-        if (!isBackgroundColorFromUser) fill = variant === 'Filled' ? theme.disabled.fill : '';
+        if (!isTextColorFromUser) textColor = theme.colors.text.contrast;
+        if (!isBackgroundColorFromUser) fill = variant === 'Filled' ? theme.surface.solid.background : '';
     });
 
     //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей

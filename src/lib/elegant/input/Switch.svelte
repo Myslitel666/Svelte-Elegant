@@ -5,7 +5,7 @@
     <span 
         class="track"
         style:height = {height}
-        style:background-color = {isChecked ? color : theme.disabled.fill}
+        style:background-color = {isChecked ? color : theme.surface.solid.background}
         style:--Xl-border-radius = {borderRadius}
     >
     </span>
