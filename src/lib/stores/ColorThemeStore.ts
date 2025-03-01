@@ -11,14 +11,14 @@ const theme: Readable<IColorThemeStore> = derived(
   ($themeMode): IColorThemeStore => ({
     border: {
       elegant: {
-        color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
+        color: $themeMode === 'light' ? '#e7e7e7' : '#2c2c2c',
       },
       disabled: {
-        color: $themeMode === 'light' ? '#d7d7d7' : '#404040',
+        color: $themeMode === 'light' ? '#d7d7d7' : '#3d3d3d',
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? '#c7c7c7' : '#606060',
+        color: $themeMode === 'light' ? '#cacaca' : '#5c5c5c',
       },
       active: {
         color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
@@ -38,7 +38,7 @@ const theme: Readable<IColorThemeStore> = derived(
       text: {
         contrast: $themeMode === 'light' ? '#111' : '#fefefe',
         main: $themeMode === 'light' ? '#4a4a4a' : '#d2d2d2',
-        label: $themeMode === 'light' ? '#b3b3b3' : '#808080',
+        label: $themeMode === 'light' ? '#ababab' : '#808080',
       }
     },
     controls: {
@@ -59,16 +59,16 @@ const theme: Readable<IColorThemeStore> = derived(
     },
     surface: {
       header: {
-        background: $themeMode === 'light' ? 'white' : '#212121',
+        background: $themeMode === 'light' ? '#ffffff' : '#212121',
       },
       ghost: {
-        background: $themeMode === 'light' ? '#f7f7f7' : '#171717',
+        background: $themeMode === 'light' ? '#f8f8f8' : '#181818',
       },
       filled: {
-        background: $themeMode === 'light' ? '#eee' : '#2f2f2f',
+        background: $themeMode === 'light' ? '#efefef' : '#212121',
       },
       solid: {
-        background: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
+        background: $themeMode === 'light' ? '#e2e2e2' : '#404040',
       }
     },
     typography: {
