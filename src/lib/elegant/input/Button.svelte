@@ -15,6 +15,7 @@
         style:min-width = {minWidth}
         style:width=100%
         style:--Xl-color = {variant === 'Contained' ? primaryColor : ''}
+        style:--Xl-effectsTimeCode = {theme?.effectsTimeCode}
         style:--Xl-height = {height}
         style:--Xl-secondaryColor = {secondaryColor}
         style:--Xl-hoverBorderColor = {textColor}
