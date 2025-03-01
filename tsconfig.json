@@ -19,6 +19,7 @@
 			"$interfaces/*": ["src/lib/interfaces/*"],
 			"$stores/*": ["src/lib/stores/*"],
 			"$utils/*": ["src/lib/utils/*"],
+			"$lib/*": ["src/lib/*"],
 		}
 	}
 }

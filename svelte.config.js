@@ -20,7 +20,8 @@ const config = {
 			'$icons-elegant': 'src/lib/icons-elegant',
 			'$interfaces': 'src/lib/interfaces',
 			'$stores': 'src/lib/stores',
-			'$utils': 'src/lib/utils'
+			'$utils': 'src/lib/utils',
+			'$lib': 'src/lib'
 		}
 	},
 };
