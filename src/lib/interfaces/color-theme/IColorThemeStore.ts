@@ -61,12 +61,6 @@ export interface IColorThemeStore {
             background: string;
         };
     };
-    table: {
-        palette: {
-            background: string;
-            hover: string;
-        };
-    };
     typography: {
         font: string;
         fontUrl: string;

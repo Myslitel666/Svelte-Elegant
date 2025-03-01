@@ -14,7 +14,7 @@ const theme: Readable<IColorThemeStore> = derived(
         color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
       },
       disabled: {
-        color: $themeMode === 'light' ? '#ddd' : '#404040',
+        color: $themeMode === 'light' ? '#d7d7d7' : '#404040',
         width: '1px',
       },
       focused: {
@@ -62,19 +62,13 @@ const theme: Readable<IColorThemeStore> = derived(
         background: $themeMode === 'light' ? 'white' : '#212121',
       },
       ghost: {
-        background: $themeMode === 'light' ? '#f8f8f8' : '#171717',
+        background: $themeMode === 'light' ? '#f7f7f7' : '#171717',
       },
       filled: {
-        background: $themeMode === 'light' ? '#efefef' : '#2f2f2f',
+        background: $themeMode === 'light' ? '#eee' : '#2f2f2f',
       },
       solid: {
         background: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
-      }
-    },
-    table: {
-      palette: {
-        background: $themeMode === 'light' ? '#fafafa' : '#111',
-        hover: $themeMode === 'light' ? '#f5f5f5' : '#1a1a1a'
       }
     },
     typography: {

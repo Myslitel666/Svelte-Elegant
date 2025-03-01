@@ -58,10 +58,10 @@
         theme = value; //Инициализация объекта темы
 
         // Устанавливаем значения цветов при смене темы
-        rowBg = theme.table.palette.background;
-        headBg = theme.table.palette.hover;
+        rowBg = theme.surface.ghost.background;
+        headBg = theme.surface.filled.background;
         if (!isBackgroundColorFromUser) backgroundColor = theme.surface.filled.background;
-        if (!isBorderColorFromUser) borderColor = theme.border.elegant.color;
+        if (!isBorderColorFromUser) borderColor = theme.border.disabled.color;
     });
 
     //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
