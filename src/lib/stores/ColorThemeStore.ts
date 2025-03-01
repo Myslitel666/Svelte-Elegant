@@ -62,10 +62,10 @@ const theme: Readable<IColorThemeStore> = derived(
         background: $themeMode === 'light' ? '#ffffff' : '#212121',
       },
       ghost: {
-        background: $themeMode === 'light' ? '#f8f8f8' : '#181818',
+        background: $themeMode === 'light' ? '#f7f7f7' : '#181818',
       },
       filled: {
-        background: $themeMode === 'light' ? '#efefef' : '#212121',
+        background: $themeMode === 'light' ? '#eeeeee' : '#212121',
       },
       solid: {
         background: $themeMode === 'light' ? '#e2e2e2' : '#404040',
