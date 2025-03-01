@@ -6,5 +6,5 @@ export default defineConfig({
 	server: {
 		host: '0.0.0.0', //ability to connect to the server from a mobile device
 		port: 5173 // Укажите другой порт
-    }
+	}
 });
