@@ -11,17 +11,17 @@ const theme: Readable<IColorThemeStore> = derived(
   ($themeMode): IColorThemeStore => ({
     border: {
       elegant: {
-        color: $themeMode === 'light' ? '#e7e7e7' : '#2c2c2c',
+        color: $themeMode === 'light' ? '#E7E7E7' : '#2C2C2C',
       },
       disabled: {
-        color: $themeMode === 'light' ? '#d6d6d6' : '#3d3d3d',
+        color: $themeMode === 'light' ? '#D6D6D6' : '#3D3D3D',
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? '#cacaca' : '#5c5c5c',
+        color: $themeMode === 'light' ? '#CACACA' : '#5C5C5C',
       },
       active: {
-        color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
+        color: $themeMode === 'light' ? '#959595' : '#A0A0A0',
         width: '2px',
       },
       borderRadius: {
@@ -32,13 +32,13 @@ const theme: Readable<IColorThemeStore> = derived(
       },
     },
     palette: {
-      primary: $themeMode === 'light' ? '#5bb056' : '#f41c1c',
-      secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
-      background: $themeMode === 'light' ? 'white' : '#050505',
+      primary: $themeMode === 'light' ? '#5BB056' : '#F41C1C',
+      secondary: $themeMode === 'light' ? '#D06BCC' : '#FF35F8',
+      background: $themeMode === 'light' ? '#FFFFFF' : '#050505',
       text: {
-        contrast: $themeMode === 'light' ? '#111' : '#fefefe',
-        main: $themeMode === 'light' ? '#4a4a4a' : '#d2d2d2',
-        label: $themeMode === 'light' ? '#b4b4b4' : '#808080',
+        contrast: $themeMode === 'light' ? '#111111' : '#FEFEFE',
+        main: $themeMode === 'light' ? '#4A4A4A' : '#D2D2D2',
+        label: $themeMode === 'light' ? '#B4B4B4' : '#808080',
       }
     },
     controls: {
@@ -54,21 +54,21 @@ const theme: Readable<IColorThemeStore> = derived(
     },
     icon: {
       color: {
-        primary: $themeMode === 'light' ? '#757575' : '#e0e0e0'
+        primary: $themeMode === 'light' ? '#757575' : '#E0E0E0'
       }
     },
     surface: {
       header: {
-        background: $themeMode === 'light' ? '#ffffff' : '#212121',
+        background: $themeMode === 'light' ? '#FFFFFF' : '#212121',
       },
       ghost: {
-        background: $themeMode === 'light' ? '#f7f7f7' : '#181818',
+        background: $themeMode === 'light' ? '#F7F7F7' : '#181818',
       },
       filled: {
-        background: $themeMode === 'light' ? '#eeeeee' : '#212121',
+        background: $themeMode === 'light' ? '#EEEEEE' : '#212121',
       },
       solid: {
-        background: $themeMode === 'light' ? '#e2e2e2' : '#404040',
+        background: $themeMode === 'light' ? '#E2E2E2' : '#404040',
       }
     },
     typography: {
