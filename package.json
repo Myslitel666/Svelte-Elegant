@@ -3,7 +3,7 @@
 	"version": "0.1.34",
 	"scripts": {
 		"clean": "rimraf dist",
-		"dev": "vite dev",
+		"dev": "vite dev --open",
 		"build": "npm run clean && vite build && npm run package",
 		"preview": "vite preview",
 		"package": "npm run clean && svelte-kit sync && svelte-package && publint",
@@ -133,27 +133,30 @@
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
-		"svelte": "^5.0.0-next.1"
+		"svelte": "^5.0.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
+		"@eslint/compat": "^1.2.5",
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/package": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@types/eslint": "^9.6.0",
-		"eslint": "^9.0.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.36.0",
-		"globals": "^15.0.0",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"publint": "^0.2.0",
+		"@eslint/js": "^9.18.0",
+		"eslint-config-prettier": "^10.0.1",
+		"eslint-plugin-svelte": "^3.0.0",
+		"globals": "^16.0.0",
+		"jsdom": "^26.0.0",
+		"prettier": "^3.4.2",
+		"prettier-plugin-svelte": "^3.3.3",
+		"publint": "^0.3.2",
 		"rimraf": "^6.0.1",
-		"svelte": "^5.0.0-next.1",
+		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"typescript": "^5.0.0",
-		"typescript-eslint": "^8.0.0",
-		"vite": "^5.0.11"
+		"typescript-eslint": "^8.20.0",
+		"vite": "^6.0.0",
+		"vitest": "^3.0.0"
 	},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
