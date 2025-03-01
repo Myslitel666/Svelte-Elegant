@@ -1,27 +1,27 @@
 <script lang="ts">
-	import { type IColorThemeStore } from '../../interfaces/color-theme/IColorThemeStore.js';
-	import { themeStore } from '../../stores/ColorThemeStore.js';
-	import { onMount } from 'svelte';
-	import { initialCSSVariables } from '../../utils/initialCSSVariables.js';
-	import '../../font.css';
-	import '../../app.css';
+  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
+  import { themeStore } from "$stores/ColorThemeStore.js";
+  import { onMount } from "svelte";
+  import { initialCSSVariables } from "$utils/initialCSSVariables.js";
+  import "../../font.css";
+  import "../../app.css";
 
-	export const prerender = true;
+  export const prerender = true;
 
-	let theme: IColorThemeStore;
+  let theme: IColorThemeStore;
 
-	// Подписываемся на изменения темы
-	themeStore.subscribe((value) => {
-		theme = value;
-	});
+  // Подписываемся на изменения темы
+  themeStore.subscribe((value) => {
+    theme = value;
+  });
 
-	onMount(() => {
-		initialCSSVariables(); // Применяем тему при запуске приложения
-	});
+  onMount(() => {
+    initialCSSVariables(); // Применяем тему при запуске приложения
+  });
 </script>
 
 <div class="app">
-	<main>
-		<slot />
-	</main>
+  <main>
+    <slot />
+  </main>
 </div>

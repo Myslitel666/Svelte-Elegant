@@ -1,5 +1,5 @@
 import { writable, type Writable } from 'svelte/store';
-import { type IGridColumn } from '../interfaces/IGridColumn.js';
+import { type IGridColumn } from '$interfaces/IGridColumn.js';
 
 export const gridColumn: Writable<IGridColumn> = writable<IGridColumn>({
 	field: 'fieldName',

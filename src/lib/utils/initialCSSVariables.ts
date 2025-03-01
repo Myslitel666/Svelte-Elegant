@@ -1,5 +1,5 @@
 import { get } from 'svelte/store';
-import { themeStore } from '../stores/ColorThemeStore.js';
+import { themeStore } from '$stores/ColorThemeStore.js';
 
 //обновление CSS-переменных значениями из хранилища темы
 export const initialCSSVariables = () => {

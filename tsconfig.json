@@ -10,6 +10,15 @@
 		"sourceMap": true,
 		"strict": true,
 		"module": "NodeNext",
-		"moduleResolution": "NodeNext"
+		"moduleResolution": "NodeNext",
+		"baseUrl": ".",
+		"paths": {
+			"$elegant/*": ["src/lib/elegant/*"],
+			"$fonts/*": ["src/lib/fonts/*"],
+			"$icons-elegant/*": ["src/lib/icons-elegant/*"],
+			"$interfaces/*": ["src/lib/interfaces/*"],
+			"$stores/*": ["src/lib/stores/*"],
+			"$utils/*": ["src/lib/utils/*"],
+		}
 	}
 }
