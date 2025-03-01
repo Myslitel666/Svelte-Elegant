@@ -101,7 +101,7 @@
         if (!isLabelColorFromUser) labelColor = theme.palette.text.label;
         if (!isPrimaryColorFromUser) primaryColor = theme.palette.primary;
         if (!isTextColorFromUser) textColor = theme.palette.text.contrast;
-        if (!isBackgroundColorFromUser) fill = variant === 'Filled' ? theme.surface.solid.background : '';
+        if (!isBackgroundColorFromUser) fill = variant === 'Filled' ? theme.surface.solid.background : theme.palette.background;
     });
 
     //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
@@ -194,7 +194,7 @@
     }
 
     input.focused + label {
-        color: var(--Xl-color); /* Изменяем цвет на основной цвет */
+        color: var(--Xl-color); /* Изменяем цвет на основной */
     }
 
     input.focused + label, input:not(:placeholder-shown) + label {

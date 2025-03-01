@@ -107,6 +107,7 @@
 	<h6 class='heading'>Titled Box</h6>
 	<div class="components-container">
 		<TitledBox title = 'Your Box Title'>
+			<TextField/>
 			<p>Main Content<p>
 			<p>Main Content<p></p>
 		</TitledBox>
