@@ -38,7 +38,7 @@ const theme: Readable<IColorThemeStore> = derived(
       text: {
         contrast: $themeMode === 'light' ? '#111' : '#fefefe',
         main: $themeMode === 'light' ? '#4a4a4a' : '#d2d2d2',
-        label: $themeMode === 'light' ? '#ababab' : '#808080',
+        label: $themeMode === 'light' ? '#b4b4b4' : '#808080',
       }
     },
     controls: {
