@@ -16,7 +16,7 @@
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
 
   //Импорт утилит
-  import { valueExtractors as extractors } from "../lib/utils/valueExtractors.js";
+  import { valueExtractors as extractors } from "$lib/utils/valueExtractors.js";
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
 
   //Контекст темы
