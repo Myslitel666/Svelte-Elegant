@@ -11,17 +11,17 @@ const theme: Readable<IColorThemeStore> = derived(
   ($themeMode): IColorThemeStore => ({
     border: {
       elegant: {
-        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.19)' : 'rgba(0, 0, 0, 0.822)',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.19)' : 'rgba(256, 256, 256, 0.16)',
       },
       disabled: {
-        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.27)' : 'rgba(0, 0, 0, 0.625)',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.27)' : 'rgba(256, 256, 256, 0.236)',
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.45)' : 'rgba(0, 0, 0, 0.75)',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.45)' : 'rgba(256, 256, 256, 0.365)',
       },
       active: {
-        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.85)' : 'rgba(0, 0, 0, 0.371)',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.85)' : 'rgba(256, 256, 256, 0.62)',
         width: '2px',
       },
       borderRadius: {
@@ -36,9 +36,9 @@ const theme: Readable<IColorThemeStore> = derived(
       secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
       background: $themeMode === 'light' ? 'white' : '#050505',
       text: {
-        contrast: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.935)' : 'rgba(0, 0, 0, 0.001)',
-        main: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.708)' : 'rgba(0, 0, 0, 0.178)',
-        label: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.297)' : 'rgba(0, 0, 0, 0.497)',
+        contrast: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.935)' : 'rgba(256, 256, 256, 0.995)',
+        main: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.708)' : 'rgba(256, 256, 256, 0.82)',
+        label: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.297)' : 'rgba(256, 256, 256, 0.495)',
       }
     },
     controls: {
@@ -54,27 +54,27 @@ const theme: Readable<IColorThemeStore> = derived(
     },
     icon: {
       color: {
-        primary: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.54)' : '#e0e0e0'
+        primary: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.54)' : 'rgba(256, 256, 256, 0.875)'
       }
     },
     surface: {
       header: {
-        background: $themeMode === 'light' ? 'rgba(170, 170, 170, 0.0)' : 'rgba(0, 0, 0, 0.872)',
+        background: $themeMode === 'light' ? 'rgba(170, 170, 170, 0.0)' : 'rgba(256, 256, 256, 0.115)',
       },
       ghost: {
-        background: $themeMode === 'light' ? 'rgba(170, 170, 170, 0.08)' : 'rgba(0, 0, 0, 0.908)',
+        background: $themeMode === 'light' ? 'rgba(170, 170, 170, 0.08)' : 'rgba(256, 256, 256, 0.072)',
       },
       filled: {
-        background: $themeMode === 'light' ? 'rgba(131, 131, 131, 0.13)' : 'rgba(0, 0, 0, 0.815)',
+        background: $themeMode === 'light' ? 'rgba(131, 131, 131, 0.13)' : 'rgba(256, 256, 256, 0.17)',
       },
       solid: {
-        background: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(0, 0, 0, 0.71)',
+        background: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(256, 256, 256, 0.275)',
       }
     },
     table: {
       palette: {
-        background: $themeMode === 'light' ? 'rgba(131, 131, 131, 0.05)' : 'rgba(0, 0, 0, 0.935)',
-        hover: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.04)' : 'rgba(0, 0, 0, 0.897)'
+        background: $themeMode === 'light' ? 'rgba(131, 131, 131, 0.05)' : 'rgba(256, 256, 256, 0.047)',
+        hover: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.04)' : 'rgba(256, 256, 256, 0.082)'
       }
     },
     typography: {
