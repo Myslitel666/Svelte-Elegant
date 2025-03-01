@@ -11,17 +11,17 @@ const theme: Readable<IColorThemeStore> = derived(
   ($themeMode): IColorThemeStore => ({
     border: {
       elegant: {
-        color: $themeMode === 'light' ? '#e7e7e7' : '#2d2d2d',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.19)' : 'rgba(0, 0, 0, 0.822)',
       },
       disabled: {
-        color: $themeMode === 'light' ? '#ddd' : '#606060',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.27)' : 'rgba(0, 0, 0, 0.625)',
         width: '1px',
       },
       focused: {
-        color: $themeMode === 'light' ? '#c7c7c7' : '#404040',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.45)' : 'rgba(0, 0, 0, 0.75)',
       },
       active: {
-        color: $themeMode === 'light' ? '#959595' : '#a0a0a0',
+        color: $themeMode === 'light' ? 'rgba(130, 130, 130, 0.85)' : 'rgba(0, 0, 0, 0.371)',
         width: '2px',
       },
       borderRadius: {
@@ -36,9 +36,9 @@ const theme: Readable<IColorThemeStore> = derived(
       secondary: $themeMode === 'light' ? '#d06bcc' : '#ff35f8',
       background: $themeMode === 'light' ? 'white' : '#050505',
       text: {
-        contrast: $themeMode === 'light' ? '#111' : '#fefefe',
-        main: $themeMode === 'light' ? '#4a4a4a' : '#d2d2d2',
-        label: $themeMode === 'light' ? '#b3b3b3' : '#808080',
+        contrast: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.935)' : 'rgba(0, 0, 0, 0.001)',
+        main: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.708)' : 'rgba(0, 0, 0, 0.178)',
+        label: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.297)' : 'rgba(0, 0, 0, 0.497)',
       }
     },
     controls: {
@@ -54,27 +54,27 @@ const theme: Readable<IColorThemeStore> = derived(
     },
     icon: {
       color: {
-        primary: $themeMode === 'light' ? '#757575' : '#e0e0e0'
+        primary: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.54)' : '#e0e0e0'
       }
     },
     surface: {
       header: {
-        background: $themeMode === 'light' ? 'white' : '#212121',
+        background: $themeMode === 'light' ? 'rgba(170, 170, 170, 0.0)' : 'rgba(0, 0, 0, 0.872)',
       },
       ghost: {
-        background: $themeMode === 'light' ? '#f8f8f8' : '#171717',
+        background: $themeMode === 'light' ? 'rgba(170, 170, 170, 0.08)' : 'rgba(0, 0, 0, 0.908)',
       },
       filled: {
-        background: $themeMode === 'light' ? '#efefef' : '#2f2f2f',
+        background: $themeMode === 'light' ? 'rgba(131, 131, 131, 0.13)' : 'rgba(0, 0, 0, 0.815)',
       },
       solid: {
-        background: $themeMode === 'light' ? '#e5e5e5' : '#4a4a4a',
+        background: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.1)' : 'rgba(0, 0, 0, 0.71)',
       }
     },
     table: {
       palette: {
-        background: $themeMode === 'light' ? '#fafafa' : '#111',
-        hover: $themeMode === 'light' ? '#f5f5f5' : '#1a1a1a'
+        background: $themeMode === 'light' ? 'rgba(131, 131, 131, 0.05)' : 'rgba(0, 0, 0, 0.935)',
+        hover: $themeMode === 'light' ? 'rgba(0, 0, 0, 0.04)' : 'rgba(0, 0, 0, 0.897)'
       }
     },
     typography: {
