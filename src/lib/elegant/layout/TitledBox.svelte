@@ -9,6 +9,8 @@
     export let borderRadius = '10px';
 	export let contentHeight = '';
 	export let contentMinHeight = '2.5rem';
+	export let flexDirection = 'column';
+	export let gap = '1rem';
     export let titleHeight = '';
     export let padding = '0.66rem';
 	export let title = 'Your Box Title';
@@ -62,6 +64,9 @@
 	</div>
 	<div 
 		class = 'content'
+		style:display = flex
+		style:flex-direction = {flexDirection}
+		style:gap = {gap}
 		style:background-color = {theme?.surface.ghost.background}
 		style:box-sizing = border-box
 		style:border-radius = {`0 0 ${borderRadius} ${borderRadius}`}
