@@ -5,6 +5,7 @@
     style:width = {width}
     style:--Xl-activeborderWidth = {activedborderWidth}
     style:--Xl-background-color = {backgroundColor}
+    style:--Xl-effectsTimeCode = {theme?.effectsTimeCode}
     style:--Xl-fill = {fill}
 >
     <input 

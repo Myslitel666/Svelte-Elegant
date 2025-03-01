@@ -1,10 +1,10 @@
 <script>
-	import ColorThemeProvider from '../lib/elegant/customization/ThemeProvider.svelte';
+	import '../lib/app.css';
+	import '../lib/font.css';
 </script>
-<ColorThemeProvider>
-	<div>
-		<main>
-			<slot />
-		</main>
-	</div>
-</ColorThemeProvider>
+
+<div class="app">
+	<main>
+		<slot />
+	</main>
+</div>
