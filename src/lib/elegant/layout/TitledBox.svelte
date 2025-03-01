@@ -10,7 +10,7 @@
 	export let contentHeight = '';
 	export let contentMinHeight = '2.5rem';
 	export let flexDirection = 'column';
-	export let gap = '1rem';
+	export let gap = '0.22rem';
     export let titleHeight = '';
     export let padding = '0.66rem';
 	export let title = 'Your Box Title';
