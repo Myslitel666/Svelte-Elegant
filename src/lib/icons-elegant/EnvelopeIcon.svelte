@@ -1,13 +1,11 @@
 <script lang="ts">
-  import { text } from "@sveltejs/kit";
-  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore } from "$stores/ColorThemeStore.js";
+  import * as shared from "$shared";
   import "./style/icons.css";
 
-  let theme: IColorThemeStore;
+  let theme: shared.IColorThemeStore;
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value;
   });
 

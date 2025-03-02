@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore } from "$stores/ColorThemeStore.js";
+  import * as shared from "$shared";
   import { generateIdElement } from "$stores/ElementIdStore.js";
   import { onMount, tick } from "svelte";
   import Arrow from "$icons-elegant/TriangularArrowDown.svelte";
@@ -30,10 +29,10 @@
   //Стили из контекста темы
   let triangleHover = false;
 
-  let theme: IColorThemeStore | undefined;
+  let theme: shared.IColorThemeStore | undefined;
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
   });
 

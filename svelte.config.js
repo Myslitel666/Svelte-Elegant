@@ -14,13 +14,16 @@ const config = {
 		adapter: adapter(),
 
 		alias: {
+			//Folder Paths
 			'$elegant': 'src/lib/elegant',
 			'$fonts': 'src/lib/fonts',
 			'$icons-elegant': 'src/lib/icons-elegant',
 			'$interfaces': 'src/lib/interfaces',
+			'$lib': 'src/lib',
 			'$stores': 'src/lib/stores',
 			'$utils': 'src/lib/utils',
-			'$lib': 'src/lib'
+			//Files Paths
+			'$shared': 'src/lib/sharedImports.js'
 		}
 	},
 };

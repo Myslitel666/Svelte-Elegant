@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
-  import { themeMode, themeStore } from "$stores/ColorThemeStore.js";
+  import * as shared from "$shared";
+  import { themeMode } from "$stores/ColorThemeStore.js";
   import "./style/icons.css";
 
   export let fill = "";
@@ -10,10 +10,10 @@
   let isFillFromUser = fill !== "";
   let isStrokeFromUser = stroke !== "";
 
-  let theme: IColorThemeStore;
+  let theme: shared.IColorThemeStore;
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value;
 
     if (!isFillFromUser) fill = theme.palette.primary;

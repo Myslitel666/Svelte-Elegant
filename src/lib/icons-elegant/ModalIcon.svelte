@@ -1,16 +1,15 @@
 <script lang="ts">
-  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore, themeMode } from "$stores/ColorThemeStore.js";
+  import * as shared from "$shared";
   export let id = "";
   export let stroke = "";
   export let size = "2rem";
   let fill = "";
   let hoverColor = "";
 
-  let theme: IColorThemeStore | undefined;
+  let theme: shared.IColorThemeStore | undefined;
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value; // Инициализация объекта темы
     fill = theme?.palette.primary;
     hoverColor = theme?.palette.primary;

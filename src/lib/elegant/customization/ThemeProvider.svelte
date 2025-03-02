@@ -1,6 +1,5 @@
 <script lang="ts">
-  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore } from "$stores/ColorThemeStore.js";
+  import * as shared from "$shared";
   import { onMount } from "svelte";
   import { initialCSSVariables } from "$utils/initialCSSVariables.js";
   import "../../font.css";
@@ -8,10 +7,10 @@
 
   export const prerender = true;
 
-  let theme: IColorThemeStore;
+  let theme: shared.IColorThemeStore;
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value;
   });
 

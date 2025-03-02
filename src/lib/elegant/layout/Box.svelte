@@ -1,8 +1,7 @@
 <script lang="ts">
-  import type { IColorThemeStore } from "$lib/interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import * as shared from "$shared";
 
-  let theme: IColorThemeStore | undefined;
+  let theme: shared.IColorThemeStore | undefined;
 
   export let borderWidth = "";
   export let borderStyle = "";
@@ -21,7 +20,7 @@
   let borderColorFromUser = borderColor !== "";
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value; // Инициализация объекта темы
 
     // Устанавливаем значения свойтсв при смене темы, если они не были заданы пользователем

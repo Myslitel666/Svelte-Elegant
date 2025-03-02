@@ -1,7 +1,6 @@
 <script lang="ts">
   import { generateIdElement } from "$stores/ElementIdStore.js";
-  import { type IColorThemeStore } from "$interfaces/color-theme/IColorThemeStore.js";
-  import { themeStore } from "$stores/ColorThemeStore.js";
+  import * as shared from "$shared";
   import { onMount } from "svelte";
 
   export let variant = "Contained"; /* Тип кнопки */
@@ -28,10 +27,10 @@
 
   let filter = "";
 
-  let theme: IColorThemeStore | undefined;
+  let theme: shared.IColorThemeStore | undefined;
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
     // Устанавливаем значения цветов при смене темы
