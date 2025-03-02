@@ -8,14 +8,9 @@
 
   let theme: shared.IColorThemeStore | undefined;
 
-  let bgColorFromUser = bgColor !== "";
-
   // Подписываемся на изменения темы
   shared.themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
-
-    // Устанавливаем значения цветов при смене темы
-    bgColor = bgColorFromUser ? bgColor : theme.surface.header.background;
   });
 </script>
 
@@ -24,7 +19,7 @@
   style:gap
   style:height
   style:padding
-  style:background-color={bgColor}
+  style:background-color={bgColor ? bgColor : theme?.surface.header.background}
   style:transition="all 0.3s ease"
 >
   <slot />
