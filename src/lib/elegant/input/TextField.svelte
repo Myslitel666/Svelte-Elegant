@@ -19,8 +19,7 @@
   export let label = "Text Field"; /* Надпись */
   export let labelColor = ""; /* Цвет надписи */
   export let minWidth = ""; /* Минимальная ширина поля */
-  export let paddingLeft = ""; /* Отступ от левой границы до курсора */
-  export let paddingRight = ""; /* Отступ от правой границы */
+  export let padding = ""; /* Отступ */
   export let paddingTop = ""; /* Отступ от верхней границы */
   export let primaryColor = ""; /* Основной цвет */
   export let textColor = ""; /* Цвет текста */
@@ -79,9 +78,8 @@
     }
     if (!height) height = theme.controls.height;
     if (!disabledborderWidth) disabledborderWidth = theme.border.disabled.width;
-    if (!paddingLeft)
-      paddingLeft = variant === "Standard" ? "0" : theme.padding.balanced;
-    if (!paddingRight) paddingRight = theme.padding.balanced;
+    if (!padding)
+      padding = variant === "Standard" ? "0" : theme.padding.balanced;
     if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0";
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
@@ -137,8 +135,8 @@
     style:font-width="0.5rem"
     style:min-width={minWidth}
     style:outline="none"
-    style:padding-left={paddingLeft}
-    style:padding-right={paddingRight}
+    style:padding-left={padding}
+    style:padding-right={padding}
     style:padding-top={paddingTop}
     style:width="100%"
     style:--Xl-border-color={borderColor}
@@ -156,7 +154,7 @@
   <label
     for={id}
     style:position="absolute"
-    style:margin-left={paddingLeft}
+    style:margin-left={padding}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-color={primaryColor}
     style:--Xl-font-size={fontSize}
@@ -165,7 +163,7 @@
       ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"
         ? `${height}/2 + 0.65rem`
-        : `${height}/2 + 0.7rem`}
+        : `${height}/2 + 0.82rem`}
   >
     {label}
   </label>
