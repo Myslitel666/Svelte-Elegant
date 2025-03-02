@@ -24,7 +24,7 @@
   let borderFromUser = border !== "";
 
   // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
+  shared.themeStore.subscribe((value) => {
     theme = value; // Инициализация объекта темы
 
     // Устанавливаем значения свойтсв при смене темы, если они не были заданы пользователем
