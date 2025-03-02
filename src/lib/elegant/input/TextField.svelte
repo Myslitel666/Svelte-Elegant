@@ -81,8 +81,8 @@
     if (!disabledborderWidth) disabledborderWidth = theme.border.disabled.width;
     if (!paddingLeft)
       paddingLeft =
-        variant === "Standard" ? "0" : theme.controls.textField.padding;
-    if (!paddingRight) paddingRight = theme.controls.textField.padding;
+        variant === "Standard" ? "0" : theme.padding.balanced;
+    if (!paddingRight) paddingRight = theme.padding.balanced;
     if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0";
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;

@@ -22,6 +22,7 @@
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = textColor !== "";
   let isLabelColorFromUser = labelColor !== "";
+  let isPaddingFromUser = padding !== "";
   let isPrimaryColorFromUser = primaryColor !== "";
   let isSecondaryColorFromUser = primaryColor !== "";
 
@@ -50,8 +51,8 @@
   if (theme) {
     if (!borderRadius) borderRadius = theme.border.borderRadius.default;
     if (!height) height = theme.controls.height;
+    if (!padding) padding = theme.padding.balanced
     if (!outlineWidth) outlineWidth = theme.border.disabled.width;
-    if (!padding) padding = theme.controls.textField.padding;
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
   }
@@ -69,8 +70,6 @@
     style:border-color={borderColor}
     style:border-radius={borderRadius}
     style:box-shadow={boxShadow}
-    style:padding-left={padding}
-    style:padding-right={padding}
     style:font-size={fontSize}
     style:min-width={minWidth}
     style:width="100%"

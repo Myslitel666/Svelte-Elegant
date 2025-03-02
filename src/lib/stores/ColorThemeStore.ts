@@ -31,6 +31,24 @@ const theme: Readable<IColorThemeStore> = derived(
 				ultimate: 'string'
 			}
 		},
+		controls: {
+			button: {
+				filter: $themeMode === 'light' ? 'brightness(108%)' : 'contrast(70%)'
+			},
+			height: '3rem',
+			width: '15rem'
+		},
+		icon: {
+			color: {
+				primary: $themeMode === 'light' ? '#757575' : '#E0E0E0'
+			}
+		},
+		padding: {
+			default: '0.66rem',
+			balanced: '0.85rem',
+			extra: 'string',
+			ultimate: 'string',
+		},
 		palette: {
 			primary: $themeMode === 'light' ? '#5BB056' : '#F41C1C',
 			secondary: $themeMode === 'light' ? '#D06BCC' : '#FF35F8',
@@ -39,22 +57,6 @@ const theme: Readable<IColorThemeStore> = derived(
 				contrast: $themeMode === 'light' ? '#111111' : '#FEFEFE',
 				main: $themeMode === 'light' ? '#4A4A4A' : '#D2D2D2',
 				label: $themeMode === 'light' ? '#B4B4B4' : '#808080'
-			}
-		},
-		controls: {
-			button: {
-				padding: '0.85rem',
-				filter: $themeMode === 'light' ? 'brightness(108%)' : 'contrast(70%)'
-			},
-			textField: {
-				padding: '0.85rem'
-			},
-			height: '3rem',
-			width: '15rem'
-		},
-		icon: {
-			color: {
-				primary: $themeMode === 'light' ? '#757575' : '#E0E0E0'
 			}
 		},
 		surface: {

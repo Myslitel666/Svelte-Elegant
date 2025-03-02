@@ -21,6 +21,24 @@ export interface IColorThemeStore {
 			ultimate: string;
 		};
 	};
+	controls: {
+		button: {
+			filter: string;
+		};
+		height: string;
+		width: string;
+	};
+	icon: {
+		color: {
+			primary: string;
+		};
+	};
+	padding: {
+		default: string;
+		balanced: string;
+		extra: string;
+		ultimate: string;
+	};
 	palette: {
 		primary: string;
 		secondary: string;
@@ -29,22 +47,6 @@ export interface IColorThemeStore {
 			contrast: string;
 			main: string;
 			label: string;
-		};
-	};
-	controls: {
-		button: {
-			padding: string;
-			filter: string;
-		};
-		textField: {
-			padding: string;
-		};
-		height: string;
-		width: string;
-	};
-	icon: {
-		color: {
-			primary: string;
 		};
 	};
 	surface: {

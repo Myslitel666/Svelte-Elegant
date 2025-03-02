@@ -2,26 +2,24 @@
   //Контекст темы
   import * as shared from "$shared";
 
-  let theme: shared.IColorThemeStore | undefined;
-
   export let border = "";
   export let borderRadius = "10px";
   export let contentHeight = "";
   export let contentMinHeight = "2.5rem";
   export let flexDirection = "column";
   export let gap = "0.22rem";
+  export let headerPadding = "";
   export let titleHeight = "";
-  export let padding = "0.66rem";
+  export let padding = "";
   export let title = "Your Box Title";
   export let width = "20rem";
 
-  // Подписываемся на изменения темы
-  shared.themeStore.subscribe((value) => {
-    theme = value; //Инициализация объекта темы
-  });
+  let theme: shared.IColorThemeStore | undefined;
 
   let borderRadiusFromUser = borderRadius !== "";
   let borderFromUser = border !== "";
+  let paddingFromUser = padding !== "";
+  let headerPaddingFromUser = padding !== "";
 
   // Подписываемся на изменения темы
   shared.themeStore.subscribe((value) => {
@@ -34,6 +32,17 @@
     borderRadius = borderRadiusFromUser
       ? borderRadius
       : theme.border.borderRadius.extra;
+    padding = paddingFromUser
+      ? padding
+      : theme.padding.default;
+      headerPadding = headerPaddingFromUser
+      ? headerPadding
+      : theme.padding.default;
+  });
+
+  // Подписываемся на изменения темы
+  shared.themeStore.subscribe((value) => {
+    theme = value; //Инициализация объекта темы
   });
 </script>
 
@@ -54,10 +63,13 @@
     style:border-right="none"
     style:display="flex"
     style:justify-content="center"
-    style:padding
+    style:padding={headerPadding}
     style:transition={`all ${theme?.effectsTimeCode}`}
   >
-    <p style:color={theme?.palette.primary} style:font-weight="600">
+    <p 
+      style:color={theme?.palette.primary} 
+      style:font-weight="600"
+    >
       {title}
     </p>
   </div>
