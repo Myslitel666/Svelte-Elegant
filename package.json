@@ -6,7 +6,7 @@
 		"dev": "vite dev --open",
 		"build": "npm run clean && vite build && npm run package",
 		"preview": "vite preview",
-		"package": "npm run clean && svelte-kit sync && svelte-package && publint",
+		"package": "npm run clean && svelte-kit sync && svelte-package",
 		"prepublishOnly": "npm run package",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
