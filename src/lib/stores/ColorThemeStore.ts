@@ -18,7 +18,7 @@ const theme: Readable<IColorThemeStore> = derived(
 				width: '1px'
 			},
 			focused: {
-				color: $themeMode === 'light' ? '#C7C7C7' : '#5C5C5C'
+				color: $themeMode === 'light' ? '#C7C7C7' : '#5A5A5A'
 			},
 			active: {
 				color: $themeMode === 'light' ? '#959595' : '#A0A0A0',
