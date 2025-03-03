@@ -1,8 +1,0 @@
-svg {
-	transition: transform 0.3s;
-}
-
-path,
-line {
-	transition: all 1s ease;
-}

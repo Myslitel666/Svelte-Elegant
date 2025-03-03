@@ -1,135 +1,30 @@
 {
-	"name": "svelte-elegant",
-	"version": "0.1.35",
+	"name": "js",
+	"version": "0.0.1",
 	"scripts": {
-		"clean": "rimraf dist",
-		"dev": "vite dev --open",
-		"build": "npm run clean && vite build && npm run package",
+		"dev": "vite dev",
+		"build": "vite build && npm run prepack",
 		"preview": "vite preview",
-		"package": "npm run clean && svelte-kit sync && svelte-package",
-		"prepublishOnly": "npm run package",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Myslitel666/Svelte-Elegant.git"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		},
-		"./AutoComplete": {
-			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
-			"svelte": "./dist/elegant/input/AutoComplete.svelte"
-		},
-		"./Box": {
-			"types": "./dist/elegant/layout/Box.svelte.d.ts",
-			"svelte": "./dist/elegant/layout/Box.svelte"
-		},
-		"./Button": {
-			"types": "./dist/elegant/input/Button.svelte.d.ts",
-			"svelte": "./dist/elegant/input/Button.svelte"
-		},
-		"./ColorThemeSwitch": {
-			"types": "./dist/elegant/customization/ColorThemeSwitch.svelte.d.ts",
-			"svelte": "./dist/elegant/customization/ColorThemeSwitch.svelte"
-		},
-		"./DataGrid": {
-			"types": "./dist/elegant/data-display/DataGrid.svelte.d.ts",
-			"svelte": "./dist/elegant/data-display/DataGrid.svelte"
-		},
-		"./Drawer": {
-			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
-			"svelte": "./dist/elegant/navigation/Drawer.svelte"
-		},
-		"./Header": {
-			"types": "./dist/elegant/layout/Header.svelte.d.ts",
-			"svelte": "./dist/elegant/layout/Header.svelte"
-		},
-		"./Switch": {
-			"types": "./dist/elegant/input/Switch.svelte.d.ts",
-			"svelte": "./dist/elegant/input/Switch.svelte"
-		},
-		"./TextField": {
-			"types": "./dist/elegant/input/TextField.svelte.d.ts",
-			"svelte": "./dist/elegant/input/TextField.svelte"
-		},
-		"./TitledBox": {
-			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
-			"svelte": "./dist/elegant/layout/TitledBox.svelte"
-		},
-		"./ThemeProvider": {
-			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
-			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
-		},
-		"./icons-elegant": {
-			"types": "./dist/icons-elegant/index.d.ts",
-			"svelte": "./dist/icons-elegant/index.js"
-		},
-		"./icons-elegant/Elegant": {
-			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Elegant.svelte"
-		},
-		"./icons-elegant/BarsIcon": {
-			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/BarsIcon.svelte"
-		},
-		"./icons-elegant/Dark": {
-			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Dark.svelte"
-		},
-		"./icons-elegant/EnvelopeIcon": {
-			"types": "./dist/icons-elegant/EnvelopeIcon.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/EnvelopeIcon.svelte"
-		},
-		"./icons-elegant/Light": {
-			"types": "./dist/icons-elegant/Light.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Light.svelte"
-		},
-		"./icons-elegant/TriangularArrowDown": {
-			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
-		},
-		"./interfaces": {
-			"types": "./dist/interfaces/index.d.ts",
-			"svelte": "./dist/interfaces/index.js"
-		},
-		"./interfaces/IColorThemeStore": {
-			"types": "./dist/interfaces/color-theme/IColorThemeStore.d.ts",
-			"svelte": "./dist/interfaces/color-theme/IColorThemeStore.js"
-		},
-		"./stores": {
-			"types": "./dist/stores/index.d.ts",
-			"svelte": "./dist/stores/index.js"
-		},
-		"./stores/themeStore": {
-			"types": "./dist/stores/ColorThemeStore.d.ts",
-			"svelte": "./dist/stores/ColorThemeStore.js"
-		},
-		"./stores/ElementIdStore": {
-			"types": "./dist/stores/ColorThemeStore.d.ts",
-			"svelte": "./dist/stores/ColorThemeStore.js"
-		},
-		"./utils": {
-			"types": "./dist/utils/index.d.ts",
-			"svelte": "./dist/utils/index.js"
-		},
-		"./utils/initialCSSVariables": {
-			"types": "./dist/utils/initialCSSVariables.d.ts",
-			"import": "./dist/utils/initialCSSVariables.js"
-		},
-		"./utils/valueExtractors": {
-			"types": "./dist/utils/valueExtractors.d.ts",
-			"import": "./dist/utils/valueExtractors.js"
-		}
+		"prepare": "svelte-kit sync || echo ''",
+		"prepack": "svelte-kit sync && svelte-package && publint"
 	},
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
 		"!dist/**/*.spec.*"
 	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		}
+	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},
@@ -138,23 +33,9 @@
 		"@sveltejs/kit": "^2.16.0",
 		"@sveltejs/package": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
-		"globals": "^16.0.0",
-		"jsdom": "^26.0.0",
-		"rimraf": "^6.0.1",
+		"publint": "^0.3.2",
 		"svelte": "^5.0.0",
-		"svelte-check": "^4.0.0",
-		"typescript": "^5.0.0",
-		"vite": "^6.0.0",
-		"vitest": "^3.0.0"
-	},
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {
-		"svelte2tsx": "^0.7.18"
-	},
-	"description": "Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).",
-	"main": "eslint.config.js",
-	"author": "",
-	"license": "MIT"
+		"typescript": "^5.3.2",
+		"vite": "^6.0.0"
+	}
 }
