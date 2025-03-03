@@ -14,6 +14,92 @@
 		"type": "git",
 		"url": "git+https://github.com/Myslitel666/Svelte-Elegant.git"
 	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		},
+		"./AutoComplete": {
+			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
+			"svelte": "./dist/elegant/input/AutoComplete.svelte"
+		},
+		"./Box": {
+			"types": "./dist/elegant/layout/Box.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/Box.svelte"
+		},
+		"./Button": {
+			"types": "./dist/elegant/input/Button.svelte.d.ts",
+			"svelte": "./dist/elegant/input/Button.svelte"
+		},
+		"./ColorThemeSwitch": {
+			"types": "./dist/elegant/customization/ColorThemeSwitch.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ColorThemeSwitch.svelte"
+		},
+		"./DataGrid": {
+			"types": "./dist/elegant/data-display/DataGrid.svelte.d.ts",
+			"svelte": "./dist/elegant/data-display/DataGrid.svelte"
+		},
+		"./Drawer": {
+			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
+			"svelte": "./dist/elegant/navigation/Drawer.svelte"
+		},
+		"./Header": {
+			"types": "./dist/elegant/layout/Header.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/Header.svelte"
+		},
+		"./Switch": {
+			"types": "./dist/elegant/input/Switch.svelte.d.ts",
+			"svelte": "./dist/elegant/input/Switch.svelte"
+		},
+		"./TextField": {
+			"types": "./dist/elegant/input/TextField.svelte.d.ts",
+			"svelte": "./dist/elegant/input/TextField.svelte"
+		},
+		"./TitledBox": {
+			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/TitledBox.svelte"
+		},
+		"./icons-elegant": {
+			"types": "./dist/icons-elegant/index.d.ts",
+			"svelte": "./dist/icons-elegant/index.js"
+		},
+		"./icons-elegant/Elegant": {
+			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Elegant.svelte"
+		},
+		"./icons-elegant/BarsIcon": {
+			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/BarsIcon.svelte"
+		},
+		"./icons-elegant/Dark": {
+			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Dark.svelte"
+		},
+		"./icons-elegant/EnvelopeIcon": {
+			"types": "./dist/icons-elegant/EnvelopeIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EnvelopeIcon.svelte"
+		},
+		"./icons-elegant/Light": {
+			"types": "./dist/icons-elegant/Light.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Light.svelte"
+		},
+		"./icons-elegant/TriangularArrowDown": {
+			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
+		},
+		"./stores": {
+			"types": "./dist/stores/index.d.ts",
+			"svelte": "./dist/stores/index.js"
+		},
+		"./stores/themeStore": {
+			"types": "./dist/stores/ColorThemeStore.d.ts",
+			"svelte": "./dist/stores/ColorThemeStore.js"
+		},
+		"./stores/ElementIdStore": {
+			"types": "./dist/stores/ColorThemeStore.d.ts",
+			"svelte": "./dist/stores/ColorThemeStore.js"
+		}
+	},
 	"files": [
 		"dist",
 		"!dist/**/*.test.*",
@@ -25,12 +111,6 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		}
-	},
 	"peerDependencies": {
 		"svelte": "^5.0.0"
 	},
