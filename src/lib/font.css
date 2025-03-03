@@ -1,0 +1,11 @@
+* {
+	font-family: var(--Xl-font-family, 'Century Gothic');
+	font-weight: var(--Xl-font-weight, '100');
+	letter-spacing: var(--Xl-letter-spacing, -0.02rem);
+	font-style: var(--Xl-font-style, normal);
+}
+
+@font-face {
+	font-family: 'Century Gothic';
+	src: url('./fonts/century-gothic-original/century-gothic.ttf') format('truetype');
+}

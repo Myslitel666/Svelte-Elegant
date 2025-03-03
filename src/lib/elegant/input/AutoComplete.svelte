@@ -2,7 +2,7 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { themeStore } from "$lib/stores/ColorThemeStore.js";
   import { onMount, tick } from "svelte";
-  import Arrow from "../icons-elegant/TriangularArrowDown.svelte";
+  import Arrow from "../../icons-elegant/TriangularArrowDown.svelte";
   import TextField from "./TextField.svelte";
 
   // Публичные свойства

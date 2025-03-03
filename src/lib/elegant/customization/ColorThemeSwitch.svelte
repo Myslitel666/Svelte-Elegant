@@ -1,8 +1,8 @@
 <script lang="ts">
   import { toggleThemeMode } from "../../stores/ColorThemeStore.js";
   import Switch from "../input/Switch.svelte";
-  import ActiveIcon from "../icons-elegant/Dark.svelte";
-  import DisabledIcon from "../icons-elegant/Light.svelte";
+  import ActiveIcon from "../../icons-elegant/Dark.svelte";
+  import DisabledIcon from "../../icons-elegant/Light.svelte";
   import { onMount } from "svelte";
 
   let isChecked = false;

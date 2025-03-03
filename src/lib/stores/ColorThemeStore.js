@@ -1,5 +1,4 @@
 import { writable, derived } from 'svelte/store';
-import { initialCSSVariables } from '$utils/initialCSSVariables.js';
 
 // Начальный режим темы
 const themeMode = writable('light');
