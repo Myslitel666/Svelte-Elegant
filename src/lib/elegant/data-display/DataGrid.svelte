@@ -1,35 +1,17 @@
 <script lang="ts">
   import * as shared from "$shared";
 
-  // Свойства для управления CSS-стилями
-  export let backgroundColor = ""; /* Цвет заливки */
-  export let borderColor = ""; /* Цвет обводки */
-
-  // Флаги для отслеживания, передал ли пользователь значение извне
-  let isBackgroundColorFromUser = backgroundColor !== "";
-  let isBorderColorFromUser = borderColor !== "";
-
-  // Приватные стили
-  let rowBg = "";
-  let headBg = "";
-
   let theme: shared.IColorThemeStore | undefined;
 
   // Подписываемся на изменения темы
   shared.themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
-
-    // Устанавливаем значения цветов при смене темы
-    rowBg = theme.surface.ghost.background;
-    headBg = theme.surface.filled.background;
-    if (!isBackgroundColorFromUser)
-      backgroundColor = theme.surface.filled.background;
-    if (!isBorderColorFromUser) borderColor = theme.border.disabled.color;
   });
 
-  //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
-  if (theme) {
-  }
+  // Свойства для управления CSS-стилями
+  export let borderColor = ""; /* Цвет обводки */
+  export let headBg = "";
+  export let rowBg = "";
 
   export let columns = [
     { field: "id", header: "Id", width: "3.5rem" },
@@ -57,9 +39,9 @@
 
 <div
   class="data-grid border"
-  style:background-color={rowBg}
-  style:--Xl-border-color={borderColor}
-  style:--Xl-head-bg={headBg}
+  style:background-color={rowBg || theme?.surface.ghost.background}
+  style:--Xl-border-color={borderColor || theme?.border.disabled.color}
+  style:--Xl-head-bg={headBg || theme?.surface.filled.background}
 >
   <!-- Заголовок таблицы -->
   <div class="row border">

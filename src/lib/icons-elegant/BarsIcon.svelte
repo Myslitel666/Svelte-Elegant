@@ -38,7 +38,7 @@
       rx="6.500000"
       width="113.000000"
       height="13.000000"
-      fill={fill !== "" ? fill : theme.palette.text.contrast}
+      fill={fill || theme.palette.text.contrast}
       fill-opacity="1.000000"
     />
     <rect
@@ -47,7 +47,7 @@
       rx="6.500000"
       width="113.000000"
       height="13.000000"
-      fill={fill !== "" ? fill : theme.palette.text.contrast}
+      fill={fill || theme.palette.text.contrast}
       fill-opacity="1.000000"
     />
     <rect
@@ -56,7 +56,7 @@
       rx="6.500000"
       width="113.000000"
       height="13.000000"
-      fill={fill !== "" ? fill : theme.palette.text.contrast}
+      fill={fill || theme.palette.text.contrast}
       fill-opacity="1.000000"
     />
     <rect
@@ -65,7 +65,7 @@
       rx="6.500000"
       width="113.000000"
       height="13.000000"
-      fill={fill !== "" ? fill : theme.palette.text.contrast}
+      fill={fill || theme.palette.text.contrast}
       fill-opacity="1.000000"
     />
     <rect
@@ -74,7 +74,7 @@
       rx="6.500000"
       width="113.000000"
       height="13.000000"
-      fill={fill !== "" ? fill : theme.palette.text.contrast}
+      fill={fill || theme.palette.text.contrast}
       fill-opacity="1.000000"
     />
     <rect
@@ -83,7 +83,7 @@
       rx="6.500000"
       width="113.000000"
       height="13.000000"
-      fill={fill !== "" ? fill : theme.palette.text.contrast}
+      fill={fill || theme.palette.text.contrast}
       fill-opacity="1.000000"
     />
   </g>

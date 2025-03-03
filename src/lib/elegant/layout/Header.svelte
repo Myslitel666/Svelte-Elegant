@@ -19,7 +19,7 @@
   style:gap
   style:height
   style:padding
-  style:background-color={bgColor ? bgColor : theme?.surface.header.background}
+  style:background-color={bgColor || theme?.surface.header.background}
   style:transition="all 0.3s ease"
 >
   <slot />

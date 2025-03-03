@@ -7,7 +7,6 @@
   export let size = "3rem";
   export let stroke = "";
 
-  let isFillFromUser = fill !== "";
   let isStrokeFromUser = stroke !== "";
 
   let theme: shared.IColorThemeStore;
@@ -16,7 +15,6 @@
   shared.themeStore.subscribe((value) => {
     theme = value;
 
-    if (!isFillFromUser) fill = theme.palette.primary;
     if (!isStrokeFromUser)
       stroke = $themeMode === "light" ? "#151515" : "#fdfdfd";
   });
@@ -96,49 +94,49 @@
     <path
       id="Vector 2"
       d="M330.24 565.2L465.14 223.37L195.85 222.48L330.24 565.2Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />
     <path
       id="Vector 2"
       d="M253.3 107.79L198.84 205.9L464.14 205.9L411.18 107.79L253.3 107.79Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />
     <path
       id="Vector 2"
       d="M233.32 105.55L177.86 204.56L36.97 176.33L143.89 88.97L233.32 105.55Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />
     <path
       id="Vector 2"
       d="M263.29 68.81L193.35 80.01L248.31 90.32L418.68 90.32L471.14 81.36L397.69 68.81L263.29 68.81Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />
     <path
       id="Vector 2"
       d="M39.96 195.15L174.86 222.48L299.27 538.32L39.96 195.15Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />
     <path
       id="Vector 2"
       d="M486.13 222.48L622.02 194.7L361.72 535.63L486.13 222.48Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />
     <path
       id="Vector 2"
       d="M624.02 176.78L484.63 204.11L430.67 105.55L521.6 90.32L624.02 176.78Z"
-      {fill}
+      fill={fill || theme?.palette.primary}
       fill-opacity="1.000000"
       fill-rule="evenodd"
     />

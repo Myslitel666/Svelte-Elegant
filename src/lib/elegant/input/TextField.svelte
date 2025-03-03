@@ -28,9 +28,6 @@
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isBackgroundColorFromUser = backgroundColor !== "";
   let isBorderColorFromUser = borderColor !== "";
-  let isTextColorFromUser = textColor !== "";
-  let isLabelColorFromUser = labelColor !== "";
-  let isPrimaryColorFromUser = primaryColor !== "";
 
   //Стили из контекста темы
   let fill = backgroundColor;
@@ -52,9 +49,6 @@
         variant === "Filled"
           ? theme.border.active.color
           : theme.border.focused.color;
-    if (!isLabelColorFromUser) labelColor = theme.palette.text.label;
-    if (!isPrimaryColorFromUser) primaryColor = theme.palette.primary;
-    if (!isTextColorFromUser) textColor = theme.palette.text.contrast;
     if (!isBackgroundColorFromUser)
       fill =
         variant === "Filled"
@@ -77,7 +71,6 @@
           : `${borderRadius} ${borderRadius} 0 0`;
     }
     if (!height) height = theme.controls.height;
-    if (!disabledborderWidth) disabledborderWidth = theme.border.disabled.width;
     if (!padding)
       padding = variant === "Standard" ? "0" : theme.padding.balanced;
     if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0";
@@ -89,14 +82,9 @@
     id ? "" : (id = `text-field-${generateIdElement()}`);
   });
 
-  export function handleMouseOver() {
+  export function handleBlur() {
     const inputElement = extractors.getElementById(id);
-    inputElement.classList.add("hovered");
-  }
-
-  export function handleMouseOut() {
-    const inputElement = extractors.getElementById(id);
-    inputElement.classList.remove("hovered");
+    inputElement.classList.remove("focused");
   }
 
   export function handleFocus() {
@@ -105,9 +93,14 @@
     inputElement.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
   }
 
-  export function handleBlur() {
+  export function handleMouseOver() {
     const inputElement = extractors.getElementById(id);
-    inputElement.classList.remove("focused");
+    inputElement.classList.add("hovered");
+  }
+
+  export function handleMouseOut() {
+    const inputElement = extractors.getElementById(id);
+    inputElement.classList.remove("hovered");
   }
 </script>
 
@@ -140,11 +133,12 @@
     style:padding-top={paddingTop}
     style:width="100%"
     style:--Xl-border-color={borderColor}
-    style:--Xl-color={primaryColor}
+    style:--Xl-color={primaryColor || theme?.palette.primary}
     style:--Xl-height={height}
-    style:--Xl-disabledborderWidth={disabledborderWidth}
-    style:--Xl-hoverBorderColor={textColor}
-    style:--Xl-textColor={textColor}
+    style:--Xl-disabledborderWidth={disabledborderWidth ||
+      theme?.border.disabled.width}
+    style:--Xl-hoverBorderColor={textColor || theme?.palette.text.contrast}
+    style:--Xl-textColor={textColor || theme?.palette.text.contrast}
     {...$$props}
     on:mouseover={handleMouseOver}
     on:mouseout={handleMouseOut}
@@ -158,7 +152,7 @@
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-color={primaryColor}
     style:--Xl-font-size={fontSize}
-    style:--Xl-labelColor={labelColor}
+    style:--Xl-labelColor={labelColor || theme?.palette.text.label}
     style:--Xl-liftingHeight={variant === "Outlined"
       ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"

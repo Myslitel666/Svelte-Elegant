@@ -2,8 +2,10 @@
   //Контекст темы
   import * as shared from "$shared";
 
-  export let border = "";
-  export let borderRadius = "10px";
+  export let borderColor = "";
+  export let borderRadius = "";
+  export let borderWidth = "";
+  export let bgColor = "";
   export let contentHeight = "";
   export let contentMinHeight = "2.5rem";
   export let flexDirection = "column";
@@ -17,7 +19,6 @@
   let theme: shared.IColorThemeStore | undefined;
 
   let borderRadiusFromUser = borderRadius !== "";
-  let borderFromUser = border !== "";
   let paddingFromUser = padding !== "";
   let headerPaddingFromUser = padding !== "";
 
@@ -26,16 +27,11 @@
     theme = value; // Инициализация объекта темы
 
     // Устанавливаем значения свойтсв при смене темы, если они не были заданы пользователем
-    border = borderFromUser
-      ? border
-      : `${theme.border.disabled.width} solid ${theme.border.focused.color}`;
     borderRadius = borderRadiusFromUser
       ? borderRadius
       : theme.border.borderRadius.extra;
-    padding = paddingFromUser
-      ? padding
-      : theme.padding.default;
-      headerPadding = headerPaddingFromUser
+    padding = paddingFromUser ? padding : theme.padding.default;
+    headerPadding = headerPaddingFromUser
       ? headerPadding
       : theme.padding.default;
   });
@@ -49,8 +45,8 @@
 <div
   class="box-container border"
   style:width
-  style:--Xl-border-color={theme?.border.disabled.color}
-  style:--Xl-borderWidth={theme?.border.disabled.width}
+  style:--Xl-border-color={borderColor || theme?.border.disabled.color}
+  style:--Xl-borderWidth={borderWidth || theme?.border.disabled.width}
   style:border-radius={borderRadius}
   style:transition={`all ${theme?.effectsTimeCode}`}
 >
@@ -66,10 +62,7 @@
     style:padding={headerPadding}
     style:transition={`all ${theme?.effectsTimeCode}`}
   >
-    <p 
-      style:color={theme?.palette.primary} 
-      style:font-weight="600"
-    >
+    <p style:color={theme?.palette.primary} style:font-weight="600">
       {title}
     </p>
   </div>

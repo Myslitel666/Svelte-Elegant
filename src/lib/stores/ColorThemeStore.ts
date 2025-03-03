@@ -27,7 +27,7 @@ const theme: Readable<IColorThemeStore> = derived(
 			borderRadius: {
 				default: '0.28rem',
 				balanced: '0.425rem',
-				extra: 'string',
+				extra: '0.62rem',
 				ultimate: 'string'
 			}
 		},

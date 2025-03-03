@@ -7,20 +7,23 @@
   export let toggleButtonId = "drawer-toggle-button";
 
   let theme: shared.IColorThemeStore | undefined;
-  let bg = "";
-  let border = "";
+  export let bgColor = "";
+  export let border = "";
+
+  $: xBgColor = bgColor
+    ? bgColor
+    : $themeMode === "light"
+      ? theme?.palette.background
+      : theme?.surface.ghost.background;
+  $: xBorder = border
+    ? border
+    : $themeMode === "light"
+      ? `1px solid ${theme?.border.elegant.color}`
+      : "";
 
   // Подписываемся на изменения темы
   shared.themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
-
-    // Устанавливаем значения цветов при смене темы
-    bg =
-      $themeMode === "light"
-        ? theme.palette.background
-        : theme.surface.ghost.background;
-    border =
-      $themeMode === "light" ? `1px solid ${theme.border.elegant.color}` : "";
   });
 
   // Функция для закрытия меню при клике вне его
@@ -55,8 +58,8 @@
 <!-- Drawer -->
 <nav
   class="drawer {isOpen ? 'open' : ''}"
-  style:background-color={bg}
-  style:border-right={border}
+  style:background-color={xBgColor}
+  style:border-right={xBorder}
 >
   <slot />
 </nav>
