@@ -21,7 +21,7 @@
 
   let filter = "";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

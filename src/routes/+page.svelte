@@ -139,7 +139,7 @@
       label="Outlined"
       onfocus={() => {}}
       onblur={() => {}}
-      oninput={(e) => {
+      oninput={(e: any) => {
         let value = e.target.value; //Извлечение значения
       }}
     />
@@ -165,7 +165,7 @@
   <div class="components-container">
     <Switch
       bind:isChecked
-      onchange={(e) => {
+      onchange={(e: any) => {
         const check = e.target.checked;
       }}
     />

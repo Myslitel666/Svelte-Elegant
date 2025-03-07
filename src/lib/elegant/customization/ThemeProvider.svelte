@@ -1,15 +1,21 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores";
+  import { onMount } from "svelte";
+  import { initialBodyStyle } from "$lib/utils/initialBodyStyle";
   import "../../font.css";
   import "../../app.css";
 
   export const prerender = true;
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value;
+  });
+
+  onMount(() => {
+    initialBodyStyle(); // Применяем тему при запуске приложения
   });
 </script>
 

@@ -19,7 +19,7 @@
     isChecked = !isChecked; // изменение состояния при клике
   }
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -38,12 +38,14 @@
     class="track"
     style:height
     style:background-color={isChecked ? color : theme.surface.solid.background}
+    style:transition={`all ${theme.effectsTimeCode} ease`}
     style:--Xl-border-radius={borderRadius}
   >
   </span>
   <span
     class="switch"
     style:transform={`translate(${isChecked ? "1.76rem" : "0.26rem"}, 0.26rem)`}
+    style:transition={`all ${theme.effectsTimeCode} ease`}
     style:--Xl-background-color={theme.palette.background}
     style:--Xl-border-radius={borderRadius}
   >
@@ -80,7 +82,6 @@
     position: absolute;
     width: 3.55rem;
     border-radius: var(--Xl-border-radius);
-    transition: var(--Xl-effectsTimeCode);
   }
   .switch {
     position: absolute;
@@ -88,7 +89,6 @@
     width: 1.5rem;
     height: 1.5rem;
     border-radius: var(--Xl-border-radius);
-    transition: var(--Xl-effectsTimeCode);
     display: flex; /* Используем Flexbox для центрирования */
     justify-content: center; /* Центрируем по горизонтали */
     align-items: center; /* Центрируем по вертикали */

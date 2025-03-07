@@ -1,7 +1,7 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ColorThemeStore.js";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -40,8 +40,10 @@
 <div
   class="data-grid border"
   style:background-color={rowBg || theme?.surface.ghost.background}
+  style:color={theme.palette.text.contrast}
   style:--Xl-border-color={borderColor || theme?.border.disabled.color}
   style:--Xl-head-bg={headBg || theme?.surface.filled.background}
+  style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
 >
   <!-- Заголовок таблицы -->
   <div class="row border">
@@ -72,9 +74,7 @@
   .border {
     border: 1px solid; /* Толщина и цвет обводки таблицы */
     border-color: var(--Xl-border-color);
-    transition:
-      border-color var(--Xl-effectsTimeCode),
-      background-color var(--Xl-effectsTimeCode);
+    transition: var(--Xl-transition);
   }
 
   .data-grid {

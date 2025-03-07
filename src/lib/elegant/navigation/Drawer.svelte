@@ -6,7 +6,7 @@
   export let isOpen = false;
   export let toggleButtonId = "drawer-toggle-button";
 
-  let theme;
+  let theme: any;
   export let bgColor = "";
   export let border = "";
 

@@ -29,7 +29,7 @@
   //Стили из контекста темы
   let triangleHover = false;
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

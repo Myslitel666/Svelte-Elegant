@@ -6,7 +6,7 @@
   export let height = "2.75rem";
   export let padding = "0.5rem";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

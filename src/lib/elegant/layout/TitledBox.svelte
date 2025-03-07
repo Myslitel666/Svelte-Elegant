@@ -5,7 +5,6 @@
   export let borderColor = "";
   export let borderRadius = "";
   export let borderWidth = "";
-  export let bgColor = "";
   export let contentHeight = "";
   export let contentMinHeight = "2.5rem";
   export let flexDirection = "column";
@@ -16,7 +15,7 @@
   export let title = "Your Box Title";
   export let width = "20rem";
 
-  let theme;
+  let theme: any;
 
   let borderRadiusFromUser = borderRadius !== "";
   let paddingFromUser = padding !== "";
@@ -63,6 +62,7 @@
   </div>
   <div
     class="content"
+    style:color={theme.palette.text.contrast}
     style:display="flex"
     style:flex-direction={flexDirection}
     style:gap

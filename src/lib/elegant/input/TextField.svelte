@@ -31,7 +31,7 @@
   //Стили из контекста темы
   let fill = backgroundColor;
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ColorThemeStore.js";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -36,6 +36,7 @@
   style:border-style={borderStyle || "Solid"}
   style:border-width={borderWidth || theme?.border.disabled.width}
   style:box-sizing={borderSizing}
+  style:color={theme.palette.text.contrast}
   style:cursor={variant === "Hoverable" ? "pointer" : ""}
   style:justify-content={justifyContent}
   style:overflow="hidden;"

@@ -2,20 +2,20 @@
 }
 
 body {
-	margin: 0;
-	transition: background-color var(--Xl-effectsTimeCode);
-	background-color: var(--Xl-background-color);
-	color: var(--Xl-text-color);
+  margin: 0;
+  transition: background-color var(--Xl-effectsTimeCode);
+  background-color: var(--Xl-background-color);
+  color: var(--Xl-text-color);
 }
 
 p,
 h6 {
-	margin: 0;
-	font-size: var(--Xl-font-size);
+  margin: 0;
+  font-size: var(--Xl-font-size);
 }
 
 p {
-	color: var(--Xl-textColorMain);
+  color: var(--Xl-textColorMain);
 }
 
 h1,
@@ -24,8 +24,8 @@ h3,
 h4,
 h5,
 h6 {
-	color: var(--Xl-textColorContrast);
-	font-weight: 600;
+  color: var(--Xl-textColorContrast);
+  font-weight: 600;
 }
 
 li,
@@ -33,16 +33,16 @@ ol,
 ul,
 a,
 div {
-	color: var(--Xl-textColorMain);
+  color: var(--Xl-textColorMain);
 }
 
 button {
-	padding: 0;
-	border: none;
-	background-color: transparent;
-	color: var(--Xl-textColorContrast);
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--Xl-textColorContrast);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
