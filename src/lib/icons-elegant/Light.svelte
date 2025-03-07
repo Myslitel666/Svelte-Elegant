@@ -4,7 +4,7 @@
   export let stroke: string = "";
   export let size: string = "1.1rem";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

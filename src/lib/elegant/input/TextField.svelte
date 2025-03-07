@@ -83,23 +83,23 @@
 
   export function handleBlur() {
     const inputElement = document.getElementById(id);
-    inputElement.classList.remove("focused");
+    inputElement?.classList.remove("focused");
   }
 
   export function handleFocus() {
     const inputElement = document.getElementById(id);
-    inputElement.classList.add("focused");
-    inputElement.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
+    inputElement?.classList.add("focused");
+    inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
   }
 
   export function handleMouseOver() {
     const inputElement = document.getElementById(id);
-    inputElement.classList.add("hovered");
+    inputElement?.classList.add("hovered");
   }
 
   export function handleMouseOut() {
     const inputElement = document.getElementById(id);
-    inputElement.classList.remove("hovered");
+    inputElement?.classList.remove("hovered");
   }
 </script>
 
@@ -110,6 +110,7 @@
   style:width
   style:--Xl-activeborderWidth={activedborderWidth}
   style:--Xl-background-color={backgroundColor}
+  style:--Xl-color={primaryColor || theme?.palette.primary}
   style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
   style:--Xl-fill={fill}
 >
@@ -132,7 +133,6 @@
     style:padding-top={paddingTop}
     style:width="100%"
     style:--Xl-border-color={borderColor}
-    style:--Xl-color={primaryColor || theme?.palette.primary}
     style:--Xl-height={height}
     style:--Xl-disabledborderWidth={disabledborderWidth ||
       theme?.border.disabled.width}
@@ -149,7 +149,6 @@
     style:position="absolute"
     style:margin-left={padding}
     style:background-color={variant === "Filled" ? "transparent" : ""}
-    style:--Xl-color={primaryColor}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={labelColor || theme?.palette.text.label}
     style:--Xl-liftingHeight={variant === "Outlined"

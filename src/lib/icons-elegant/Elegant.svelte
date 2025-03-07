@@ -8,7 +8,7 @@
 
   let isStrokeFromUser = stroke !== "";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

@@ -4,7 +4,7 @@
   export let size = "2rem";
   let fill = "";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {

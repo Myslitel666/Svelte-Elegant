@@ -2,7 +2,7 @@
   import { themeStore } from "$lib/stores/ColorThemeStore.js";
   import "./style/icons.css";
 
-  let theme;
+  let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
