@@ -51,7 +51,7 @@ const theme = derived(
 		palette: {
 			primary: $themeMode === 'light' ? '#5BB056' : '#F41C1C',
 			secondary: $themeMode === 'light' ? '#D06BCC' : '#FF35F8',
-			background: $themeMode === 'light' ? 'green' : '#050505',
+			background: $themeMode === 'light' ? 'white' : '#050505',
 			text: {
 				contrast: $themeMode === 'light' ? '#111111' : '#FEFEFE',
 				main: $themeMode === 'light' ? '#4A4A4A' : '#D2D2D2',
