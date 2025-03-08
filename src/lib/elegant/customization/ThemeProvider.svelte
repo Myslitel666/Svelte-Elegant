@@ -1,7 +1,7 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores";
   import { onMount } from "svelte";
-  import { initialBodyStyle } from "$lib/utils/initialBodyStyle";
+  import { initialBodyStyle } from "$lib/utils/initialBodyStyle.js";
   import "../../font.css";
   import "../../app.css";
 
