@@ -2,8 +2,10 @@
   import ThemeProvider from "$elegant/customization/ThemeProvider.svelte";
 </script>
 
-<div class="app">
-  <main>
-    <slot />
-  </main>
-</div>
+<ThemeProvider>
+  <div class="app">
+    <main>
+      <slot />
+    </main>
+  </div>
+</ThemeProvider>

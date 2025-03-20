@@ -21,6 +21,7 @@ const config = {
 			'$interfaces': 'src/lib/interfaces',
 			'$lib': 'src/lib',
 			'$stores': 'src/lib/stores',
+			'$styles': 'src/lib/styles',
 			'$utils': 'src/lib/utils',
 			//Files Paths
 			'$shared': 'src/lib/sharedImports.js'
