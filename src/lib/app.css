@@ -45,4 +45,5 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
 }
