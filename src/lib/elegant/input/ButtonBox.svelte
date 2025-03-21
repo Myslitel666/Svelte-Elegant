@@ -22,6 +22,25 @@
   export let marginTop = "";
   export let value = "";
   export let width = "6rem";
+
+  function handlePointerDown(e: Event) {
+    const target = e.target as HTMLElement;
+    if (target instanceof HTMLElement) {
+      setTimeout(() => {
+        target.style.setProperty("--Xl-hover-bg-color", "var(--Xl-bg-color)");
+      }, 300);
+    }
+  }
+
+  function onClick(e: Event) {
+    const target = e.target as HTMLElement;
+    if (target instanceof HTMLElement) {
+      target.style.setProperty(
+        "--Xl-hover-bg-color",
+        theme?.surface.underSolid.background
+      );
+    }
+  }
 </script>
 
 <!-- Основной Box -->
@@ -45,6 +64,12 @@
   style:--Xl-height={height}
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
+  on:pointerdown={(e: Event) => {
+    handlePointerDown(e);
+  }}
+  on:click={(e: Event) => {
+    onClick(e);
+  }}
   {...$$props}
 >
   {value}
