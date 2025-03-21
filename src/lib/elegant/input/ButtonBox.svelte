@@ -28,6 +28,7 @@
     if (target instanceof HTMLElement) {
       setTimeout(() => {
         target.style.setProperty("--Xl-hover-bg-color", "var(--Xl-bg-color)");
+        target.style.setProperty("--Xl-filter", "");
       }, 300);
     }
   }
@@ -39,6 +40,7 @@
         "--Xl-hover-bg-color",
         theme?.surface.underSolid.background
       );
+      target.style.setProperty("--Xl-filter", isPrimary ? filter : "");
     }
   }
 </script>
