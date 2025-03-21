@@ -2,10 +2,10 @@
 /* For Example, import { Light, Dark } from 'svelte-elegant'; */
 
 /* Icons */
-export { default as Backspace } from './icons-elegant/Backspace.svelte';
-export { default as BarsIcon } from './icons-elegant/BarsIcon.svelte';
-export { default as Elegant } from './icons-elegant/Elegant.svelte';
-export { default as Enter } from './icons-elegant/Enter.svelte';
+export { default as Backspace } from './Backspace.svelte';
+export { default as BarsIcon } from './BarsIcon.svelte';
+export { default as Elegant } from './Elegant.svelte';
+export { default as Enter } from './Enter.svelte';
 export { default as Dark } from './Dark.svelte';
 export { default as EnvelopeIcon } from './EnvelopeIcon.svelte';
 export { default as Light } from './Light.svelte';
