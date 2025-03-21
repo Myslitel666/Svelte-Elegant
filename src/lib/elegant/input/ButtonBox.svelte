@@ -16,11 +16,10 @@
   export let borderRadius = theme?.border.borderRadius.extra;
   export let height = theme.controls.height.medium;
   export let isPrimary = false;
-  export let margin = theme.controls.height.medium;
-  export let marginBottom = "";
-  export let marginLeft = "";
-  export let marginRight = "";
-  export let marginTop = "";
+  export let marginBottom = "0";
+  export let marginLeft = "0";
+  export let marginRight = "0";
+  export let marginTop = "0";
   export let value = "";
   export let width = "6rem";
 </script>
@@ -33,7 +32,6 @@
   style:color={theme.palette.text.main}
   style:cursor="pointer"
   style:font-size={theme.typography.maxSize}
-  style:margin
   style:margin-bottom={marginBottom}
   style:margin-left={marginLeft}
   style:margin-right={marginRight}
