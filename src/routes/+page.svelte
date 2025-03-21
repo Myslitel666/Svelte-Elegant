@@ -1,5 +1,6 @@
 <script lang="ts">
   //Импорт компонентов
+  import Backspace from "$icons-elegant/Backspace.svelte";
   import Button from "$lib/elegant/input/Button.svelte";
   import Switch from "$lib/elegant/input/Switch.svelte";
   import TextField from "$lib/elegant/input/TextField.svelte";
@@ -9,6 +10,7 @@
   import BarsIcon from "$lib/icons-elegant/BarsIcon.svelte";
   import Drawer from "$lib/elegant/navigation/Drawer.svelte";
   import Elegant from "$lib/icons-elegant/Elegant.svelte";
+  import Enter from "$lib/icons-elegant/Enter.svelte";
   import Header from "$lib/elegant/layout/Header.svelte";
   import Box from "$lib/elegant/layout/Box.svelte";
   import ModalIcon from "$lib/icons-elegant/ModalIcon.svelte";
@@ -97,7 +99,13 @@
   <div class="components-container">
     <ButtonBox>1</ButtonBox>
     <ButtonBox>2</ButtonBox>
-    <ButtonBox isPrimary={true}>3</ButtonBox>
+    <ButtonBox>3</ButtonBox>
+    <ButtonBox isPrimary={true}>
+      <Enter />
+    </ButtonBox>
+    <ButtonBox isPrimary={true}>
+      <Backspace />
+    </ButtonBox>
   </div>
   <h6 class="heading">Titled Box</h6>
   <div class="components-container">

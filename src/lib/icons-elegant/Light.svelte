@@ -1,5 +1,6 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import "./style/icons.css";
 
   export let stroke: string = "";
   export let size: string = "1.1rem";

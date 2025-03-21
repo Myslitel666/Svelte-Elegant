@@ -23,6 +23,10 @@
 			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
 			"svelte": "./dist/elegant/input/AutoComplete.svelte"
 		},
+		"./Backspace": {
+			"types": "./dist/icons-elegant/Backspace.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Backspace.svelte"
+		},
 		"./Box": {
 			"types": "./dist/elegant/layout/Box.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/Box.svelte"
@@ -46,6 +50,10 @@
 		"./Drawer": {
 			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
 			"svelte": "./dist/elegant/navigation/Drawer.svelte"
+		},
+		"./Enter": {
+			"types": "./dist/icons-elegant/Enter.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Enter.svelte"
 		},
 		"./Header": {
 			"types": "./dist/elegant/layout/Header.svelte.d.ts",

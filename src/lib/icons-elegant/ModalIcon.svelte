@@ -1,7 +1,10 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import "./style/icons.css";
+
   export let id = "";
   export let size = "2rem";
+
   let fill = "";
 
   let theme: any;
