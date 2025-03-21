@@ -16,10 +16,10 @@
   export let borderRadius = theme?.border.borderRadius.extra;
   export let height = theme.controls.height.medium;
   export let isPrimary = false;
-  export let marginBottom = "0";
-  export let marginLeft = "0";
-  export let marginRight = "0";
-  export let marginTop = "0";
+  export let marginBottom = "";
+  export let marginLeft = "";
+  export let marginRight = "";
+  export let marginTop = "";
   export let value = "";
   export let width = "6rem";
 </script>
