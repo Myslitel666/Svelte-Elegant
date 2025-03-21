@@ -3,13 +3,9 @@
 
   let theme: any;
 
-  let filter = "";
-
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; // Инициализация объекта темы
-
-    filter = theme.controls.button.filter;
   });
 
   export let bgColor = "";
@@ -40,7 +36,10 @@
         "--Xl-hover-bg-color",
         theme?.surface.underSolid.background
       );
-      target.style.setProperty("--Xl-filter", isPrimary ? filter : "");
+      target.style.setProperty(
+        "--Xl-filter",
+        isPrimary ? theme.controls.button.filter : ""
+      );
     }
   }
 </script>
@@ -62,7 +61,7 @@
     ? theme?.surface.ghost.background
     : theme?.surface.filled.background}
   style:--Xl-elegant-border={theme?.border.elegant.color}
-  style:--Xl-filter={isPrimary ? filter : ""}
+  style:--Xl-filter={isPrimary ? theme.controls.button.filter : ""}
   style:--Xl-height={height}
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
