@@ -67,10 +67,10 @@
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
   on:pointerdown={(e: Event) => {
-    handlePointerDown(e);
+    if (window.innerWidth <= 768) handlePointerDown(e);
   }}
   on:click={(e: Event) => {
-    onClick(e);
+    if (window.innerWidth <= 768) onClick(e);
   }}
   {...$$props}
 >
