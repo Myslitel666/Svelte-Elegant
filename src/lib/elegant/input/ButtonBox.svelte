@@ -3,15 +3,20 @@
 
   let theme: any;
 
+  let filter = "";
+
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; // Инициализация объекта темы
+
+    filter = theme.controls.button.filter;
   });
 
   export let bgColor = "";
   export let borderRadius = theme?.border.borderRadius.extra;
-  export let height = "6rem";
-  export let margin = "";
+  export let height = theme.controls.height.medium;
+  export let isPrimary = false;
+  export let margin = theme.controls.height.medium;
   export let marginBottom = "";
   export let marginLeft = "";
   export let marginRight = "";
@@ -23,6 +28,7 @@
 <!-- Основной Box -->
 <button
   class="btn-box"
+  style:background-color={isPrimary ? theme.palette.primary : ""}
   style:border-radius={borderRadius}
   style:color={theme.palette.text.main}
   style:cursor="pointer"
@@ -37,6 +43,7 @@
     ? theme?.surface.ghost.background
     : theme?.surface.filled.background}
   style:--Xl-elegant-border={theme?.border.elegant.color}
+  style:--Xl-filter={isPrimary ? filter : ""}
   style:--Xl-height={height}
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
@@ -61,5 +68,6 @@
   .btn-box:hover {
     background-color: var(--Xl-hover-bg-color);
     border-color: var(--Xl-border-color);
+    filter: var(--Xl-filter);
   }
 </style>

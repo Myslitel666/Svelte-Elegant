@@ -34,7 +34,10 @@ const theme = derived(
 			button: {
 				filter: $themeMode === 'light' ? 'brightness(108%)' : 'contrast(70%)'
 			},
-			height: '3rem',
+			height: {
+				small: '3rem',
+				medium: '6rem',
+			},
 			width: '15rem'
 		},
 		icon: {

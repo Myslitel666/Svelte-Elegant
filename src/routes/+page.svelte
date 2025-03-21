@@ -97,7 +97,7 @@
   <div class="components-container">
     <ButtonBox>1</ButtonBox>
     <ButtonBox>2</ButtonBox>
-    <ButtonBox>3</ButtonBox>
+    <ButtonBox isPrimary={true}>3</ButtonBox>
   </div>
   <h6 class="heading">Titled Box</h6>
   <div class="components-container">

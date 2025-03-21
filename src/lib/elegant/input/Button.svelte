@@ -56,7 +56,7 @@
     style:width="100%"
     style:--Xl-color={variant === "Contained" ? primaryColor : ""}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
-    style:--Xl-height={height || theme?.controls.height}
+    style:--Xl-height={height || theme?.controls.height.small}
     style:--Xl-hoverBorderColor={textColor}
     style:--Xl-textColor={textColor}
     style:--Xl-filter={filter}

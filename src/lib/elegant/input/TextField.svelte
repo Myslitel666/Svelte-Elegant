@@ -69,7 +69,7 @@
           ? borderRadius
           : `${borderRadius} ${borderRadius} 0 0`;
     }
-    if (!height) height = theme.controls.height;
+    if (!height) height = theme.controls.height.small;
     if (!padding)
       padding = variant === "Standard" ? "0" : theme.padding.balanced;
     if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0";
