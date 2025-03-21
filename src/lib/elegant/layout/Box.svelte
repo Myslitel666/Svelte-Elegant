@@ -36,7 +36,6 @@
   style:border-style={borderStyle || "Solid"}
   style:border-width={borderWidth || theme?.border.disabled.width}
   style:box-sizing={borderSizing}
-  style:color={theme.palette.text.contrast}
   style:cursor={variant === "Hoverable" ? "pointer" : ""}
   style:justify-content={justifyContent}
   style:overflow="hidden;"

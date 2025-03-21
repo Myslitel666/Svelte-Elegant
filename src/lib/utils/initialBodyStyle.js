@@ -9,4 +9,6 @@ export const initialBodyStyle = () => {
 	style.backgroundColor = theme.palette.background;
 	style.transition = theme.effectsTimeCode;
 	style.color = theme.palette.text.contrast;
+
+	style.setProperty('--Xl-textColorMain', theme.palette.text.main);
 };

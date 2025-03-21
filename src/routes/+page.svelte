@@ -14,6 +14,7 @@
   import ModalIcon from "$lib/icons-elegant/ModalIcon.svelte";
   import EnvelopeIcon from "$lib/icons-elegant/EnvelopeIcon.svelte";
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
+  import ButtonBox from "$elegant/input/ButtonBox.svelte";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
@@ -21,7 +22,7 @@
   //Контекст темы
   import { themeStore, themeMode } from "$lib/stores/ColorThemeStore.js";
 
-  let theme;
+  let theme: any;
 
   let logotypeFilter = "";
   let svelteColor = "";
@@ -76,8 +77,8 @@
     <Elegant size="3.25rem" />
     <p style:font-size="26px">
       <span
-        style:color={svelteColor}
-        style:filter={logotypeFilter}
+        style:color={theme.palette.primary}
+        style:filter={theme.palette.text.title}
         style:transition="all 0.3s"
       >
         Svelte
@@ -92,6 +93,12 @@
   </div>
 </Header>
 <div id="container">
+  <h6 class="heading">Button Box</h6>
+  <div class="components-container">
+    <ButtonBox>1</ButtonBox>
+    <ButtonBox>2</ButtonBox>
+    <ButtonBox>3</ButtonBox>
+  </div>
   <h6 class="heading">Titled Box</h6>
   <div class="components-container">
     <TitledBox title="Your Box Title">

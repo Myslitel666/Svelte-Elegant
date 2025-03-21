@@ -24,9 +24,9 @@ const theme = derived(
 				width: '2px'
 			},
 			borderRadius: {
-				default: '0.28rem',
-				balanced: '0.425rem',
-				extra: '0.62rem',
+				default: '0.38rem',
+				balanced: '0.525rem',
+				extra: '0.75rem',
 				ultimate: 'string'
 			}
 		},
@@ -54,7 +54,7 @@ const theme = derived(
 			background: $themeMode === 'light' ? 'white' : '#050505',
 			text: {
 				contrast: $themeMode === 'light' ? '#111111' : '#FEFEFE',
-				main: $themeMode === 'light' ? '#4A4A4A' : '#D2D2D2',
+				main: $themeMode === 'light' ? '#484848' : '#fdfdfd',
 				label: $themeMode === 'light' ? '#B4B4B4' : '#808080'
 			}
 		},
@@ -68,6 +68,9 @@ const theme = derived(
 			filled: {
 				background: $themeMode === 'light' ? '#EEEEEE' : '#212121'
 			},
+			underSolid: {
+				background: $themeMode === 'light' ? '#E5E5E5' : '#373737'
+			},
 			solid: {
 				background: $themeMode === 'light' ? '#E2E2E2' : '#404040'
 			}
@@ -79,6 +82,7 @@ const theme = derived(
 			fontStyle: 'normal',
 			fontWeight: '100',
 			format: 'truetype',
+			maxSize: '32px',
 			letterSpacing: '-0.02rem'
 		},
 		effectsTimeCode: '0.3s',
