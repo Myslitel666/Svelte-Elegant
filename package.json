@@ -31,6 +31,10 @@
 			"types": "./dist/elegant/layout/Box.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/Box.svelte"
 		},
+		"./icons-elegant/Brain": {
+			"types": "./dist/icons-elegant/Brain.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Brain.svelte"
+		},
 		"./ButtonBox": {
 			"types": "./dist/elegant/input/ButtonBox.svelte.d.ts",
 			"svelte": "./dist/elegant/input/ButtonBox.svelte"

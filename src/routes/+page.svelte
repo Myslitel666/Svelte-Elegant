@@ -17,6 +17,7 @@
   import EnvelopeIcon from "$lib/icons-elegant/EnvelopeIcon.svelte";
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
+  import Brain from "$icons-elegant/Brain.svelte";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
@@ -95,6 +96,10 @@
   </div>
 </Header>
 <div id="container">
+  <h6 class="heading">Brain</h6>
+  <div class="components-container">
+    <Brain />
+  </div>
   <h6 class="heading">Button Box</h6>
   <div class="components-container">
     <ButtonBox>1</ButtonBox>

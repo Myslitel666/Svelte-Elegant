@@ -4,6 +4,7 @@
 /* Icons */
 export { default as Backspace } from './Backspace.svelte';
 export { default as BarsIcon } from './BarsIcon.svelte';
+export { default as Brain } from './Brain.svelte';
 export { default as Elegant } from './Elegant.svelte';
 export { default as Enter } from './Enter.svelte';
 export { default as Dark } from './Dark.svelte';
