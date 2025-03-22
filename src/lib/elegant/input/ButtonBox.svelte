@@ -73,8 +73,10 @@
   }}
   {...$$props}
 >
-  {value}
-  <slot />
+  <div class="content">
+    {value}
+    <slot />
+  </div>
 </button>
 
 <style>
@@ -93,5 +95,12 @@
     background-color: var(--Xl-hover-bg-color);
     border-color: var(--Xl-border-color);
     filter: var(--Xl-filter);
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
   }
 </style>
