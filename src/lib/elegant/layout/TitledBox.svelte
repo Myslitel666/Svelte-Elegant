@@ -1,6 +1,6 @@
 <script lang="ts">
   //Контекст темы
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
 
   export let borderColor = "";
   export let borderRadius = "";

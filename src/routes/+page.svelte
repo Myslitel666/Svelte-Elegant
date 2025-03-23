@@ -18,12 +18,14 @@
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
   import Brain from "$icons-elegant/Brain.svelte";
+  import EyeOpened from "$icons-elegant/EyeOpened.svelte";
+  import EyeClosed from "$icons-elegant/EyeClosed.svelte";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
 
   //Контекст темы
-  import { themeStore, themeMode } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore, themeMode } from "$lib/stores/ThemeStore.js";
 
   let theme: any;
 
@@ -96,6 +98,14 @@
   </div>
 </Header>
 <div id="container">
+  <h6 class="heading">EyeClosed</h6>
+  <div class="components-container">
+    <EyeClosed />
+  </div>
+  <h6 class="heading">EyeClosed</h6>
+  <div class="components-container">
+    <EyeOpened />
+  </div>
   <h6 class="heading">Brain</h6>
   <div class="components-container">
     <Brain />

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount } from "svelte";
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
 
   // Свойства для управления CSS-стилями
   export let id = ""; /* Уникальный идентификатор элемента */

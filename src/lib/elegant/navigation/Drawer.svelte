@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
-  import { themeMode } from "../../stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
+  import { themeMode } from "../../stores/ThemeStore.js";
   import { onMount, onDestroy } from "svelte";
 
   export let isOpen = false;

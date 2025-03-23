@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore, themeMode } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore, themeMode } from "$lib/stores/ThemeStore.js";
 
   let theme: any;
 

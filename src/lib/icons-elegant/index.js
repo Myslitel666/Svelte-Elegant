@@ -9,5 +9,7 @@ export { default as Elegant } from './Elegant.svelte';
 export { default as Enter } from './Enter.svelte';
 export { default as Dark } from './Dark.svelte';
 export { default as EnvelopeIcon } from './EnvelopeIcon.svelte';
+export { default as EyeClosed } from './EyeClosed.svelte';
+export { default as EyeOpened } from './EyeOpened.svelte';
 export { default as Light } from './Light.svelte';
 export { default as TriangularArrowDown } from './TriangularArrowDown.svelte';

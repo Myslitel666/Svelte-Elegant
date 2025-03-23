@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
 
   export let bgColor = "";
   export let gap = "0.5rem"; /* Расстояние между элементами */

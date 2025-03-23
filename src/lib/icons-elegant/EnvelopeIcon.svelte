@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
   import "./style/icons.css";
 
   let theme: any;
@@ -16,14 +16,7 @@
   export let borderRadius = "16.000000";
 </script>
 
-<svg
-  width={size}
-  height={size}
-  viewBox="0 0 320 225"
-  fill="none"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:xlink="http://www.w3.org/1999/xlink"
->
+<svg width={size} height={size} viewBox="0 0 320 225" fill="none">
   <rect
     id="Frame 1"
     rx={borderRadius}

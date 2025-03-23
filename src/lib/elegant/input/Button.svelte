@@ -1,6 +1,6 @@
 <script lang="ts">
   import { generateIdElement } from "../../stores/ElementIdStore.js";
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
 
   export let variant = "Contained"; /* Тип кнопки */

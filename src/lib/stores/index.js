@@ -3,5 +3,5 @@
 
 /* Stores */
 export { elementId, generateIdElement } from './ElementIdStore.js';
-export { themeStore } from './ColorThemeStore.js';
-export { themeMode } from './ColorThemeStore.js';
+export { themeStore } from './ThemeStore.js';
+export { themeMode } from './ThemeStore.js';

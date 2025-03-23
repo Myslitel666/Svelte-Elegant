@@ -31,10 +31,6 @@
 			"types": "./dist/elegant/layout/Box.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/Box.svelte"
 		},
-		"./icons-elegant/Brain": {
-			"types": "./dist/icons-elegant/Brain.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Brain.svelte"
-		},
 		"./ButtonBox": {
 			"types": "./dist/elegant/input/ButtonBox.svelte.d.ts",
 			"svelte": "./dist/elegant/input/ButtonBox.svelte"
@@ -63,41 +59,37 @@
 			"types": "./dist/elegant/layout/Header.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/Header.svelte"
 		},
-		"./Switch": {
-			"types": "./dist/elegant/input/Switch.svelte.d.ts",
-			"svelte": "./dist/elegant/input/Switch.svelte"
-		},
-		"./TextField": {
-			"types": "./dist/elegant/input/TextField.svelte.d.ts",
-			"svelte": "./dist/elegant/input/TextField.svelte"
-		},
-		"./TitledBox": {
-			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
-			"svelte": "./dist/elegant/layout/TitledBox.svelte"
-		},
-		"./ThemeProvider": {
-			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
-			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
-		},
 		"./icons-elegant": {
 			"types": "./dist/icons-elegant/index.d.ts",
 			"svelte": "./dist/icons-elegant/index.js"
-		},
-		"./icons-elegant/Elegant": {
-			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Elegant.svelte"
 		},
 		"./icons-elegant/BarsIcon": {
 			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/BarsIcon.svelte"
 		},
+		"./icons-elegant/Brain": {
+			"types": "./dist/icons-elegant/Brain.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Brain.svelte"
+		},
 		"./icons-elegant/Dark": {
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Dark.svelte"
 		},
+		"./icons-elegant/Elegant": {
+			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Elegant.svelte"
+		},
 		"./icons-elegant/EnvelopeIcon": {
 			"types": "./dist/icons-elegant/EnvelopeIcon.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/EnvelopeIcon.svelte"
+		},
+		"./icons-elegant/EyeClosed": {
+			"types": "./dist/icons-elegant/EyeClosed.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EyeClosed.svelte"
+		},
+		"./icons-elegant/EyeOpened": {
+			"types": "./dist/icons-elegant/EyeOpened.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EyeOpened.svelte"
 		},
 		"./icons-elegant/Light": {
 			"types": "./dist/icons-elegant/Light.svelte.d.ts",
@@ -111,13 +103,29 @@
 			"types": "./dist/stores/index.d.ts",
 			"svelte": "./dist/stores/index.js"
 		},
-		"./stores/themeStore": {
-			"types": "./dist/stores/ColorThemeStore.d.ts",
-			"svelte": "./dist/stores/ColorThemeStore.js"
-		},
 		"./stores/ElementIdStore": {
-			"types": "./dist/stores/ColorThemeStore.d.ts",
-			"svelte": "./dist/stores/ColorThemeStore.js"
+			"types": "./dist/stores/ThemeStore.d.ts",
+			"svelte": "./dist/stores/ThemeStore.js"
+		},
+		"./stores/themeStore": {
+			"types": "./dist/stores/ThemeStore.d.ts",
+			"svelte": "./dist/stores/ThemeStore.js"
+		},
+		"./Switch": {
+			"types": "./dist/elegant/input/Switch.svelte.d.ts",
+			"svelte": "./dist/elegant/input/Switch.svelte"
+		},
+		"./TextField": {
+			"types": "./dist/elegant/input/TextField.svelte.d.ts",
+			"svelte": "./dist/elegant/input/TextField.svelte"
+		},
+		"./ThemeProvider": {
+			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
+		},
+		"./TitledBox": {
+			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/TitledBox.svelte"
 		}
 	},
 	"files": [

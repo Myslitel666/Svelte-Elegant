@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore } from "$lib/stores/ColorThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
 
