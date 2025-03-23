@@ -29,17 +29,13 @@
 
   let theme: any;
 
-  let logotypeFilter = "";
-  let svelteColor = "";
   let elegantColor = "";
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
-    svelteColor = theme.palette.primary;
     elegantColor = $themeMode === "light" ? "#383838" : "#fdfdfd";
-    logotypeFilter = $themeMode === "light" ? "brightness(80%)" : "";
   });
 
   //Тестовое данные

@@ -47,3 +47,7 @@ button {
   justify-content: center;
   -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
 }
+
+input {
+  -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
+}
