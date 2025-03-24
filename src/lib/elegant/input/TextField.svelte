@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { EyeClosed, EyeOpened } from "$icons-elegant";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
@@ -18,11 +19,14 @@
   export let label = "Text Field"; /* Надпись */
   export let labelColor = ""; /* Цвет надписи */
   export let minWidth = ""; /* Минимальная ширина поля */
+  export let type = ""; /* Тип ввода */
   export let padding = ""; /* Отступ */
   export let paddingTop = ""; /* Отступ от верхней границы */
   export let primaryColor = ""; /* Основной цвет */
   export let textColor = ""; /* Цвет текста */
   export let width = ""; /* Ширина поля */
+
+  let inputElement: HTMLInputElement | null = null;
 
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isBackgroundColorFromUser = backgroundColor !== "";
@@ -32,6 +36,8 @@
   let fill = backgroundColor;
 
   let theme: any;
+
+  $: xType = inputElement?.type;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -72,7 +78,7 @@
     if (!height) height = theme.controls.height.small;
     if (!padding)
       padding = variant === "Standard" ? "0" : theme.padding.balanced;
-    if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0";
+    if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0.15rem";
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
   }
@@ -101,11 +107,16 @@
     const inputElement = document.getElementById(id);
     inputElement?.classList.remove("hovered");
   }
+
+  function toggleType() {
+    if (inputElement) {
+      inputElement.type =
+        inputElement.type === "password" ? "text" : "password";
+    }
+  }
 </script>
 
 <div
-  role="button"
-  tabindex="0"
   class="input-container"
   style:width
   style:--Xl-activeborderWidth={activedborderWidth}
@@ -115,11 +126,12 @@
   style:--Xl-fill={fill}
 >
   <input
+    bind:this={inputElement}
     bind:value
     autocomplete="off"
     {id}
+    {type}
     placeholder="fictitious"
-    type="text"
     style:border-left={variant !== "Outlined" ? "none" : ""}
     style:border-right={variant !== "Outlined" ? "none" : ""}
     style:border-top={variant !== "Outlined" ? "none" : ""}
@@ -129,7 +141,11 @@
     style:min-width={minWidth}
     style:outline="none"
     style:padding-left={padding}
-    style:padding-right={padding}
+    style:padding-right={type === "text"
+      ? padding
+      : type === "password"
+        ? `calc(0.9 * (2 * ${padding} + 1.45rem))`
+        : ""}
     style:padding-top={paddingTop}
     style:width="100%"
     style:--Xl-border-color={borderColor}
@@ -159,6 +175,23 @@
   >
     {label}
   </label>
+  <button
+    on:click={toggleType}
+    style:position="absolute"
+    style:height="2.5rem"
+    style:display="flex"
+    style:align-items="center"
+    style:justify-content="center"
+    style:right={padding}
+    style:background-color="transparent"
+    style:border="none"
+  >
+    {#if type == "password" && xType == "password"}
+      <EyeOpened />
+    {:else if type == "password" && xType == "text"}
+      <EyeClosed />
+    {/if}
+  </button>
 </div>
 
 <style>
@@ -190,8 +223,9 @@
 
   .input-container {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    position: relative;
   }
 
   .hovered {

@@ -18,8 +18,6 @@
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
   import Brain from "$icons-elegant/Brain.svelte";
-  import EyeOpened from "$icons-elegant/EyeOpened.svelte";
-  import EyeClosed from "$icons-elegant/EyeClosed.svelte";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
@@ -94,13 +92,9 @@
   </div>
 </Header>
 <div id="container">
-  <h6 class="heading">EyeClosed</h6>
+  <h6 class="heading">Password TextField</h6>
   <div class="components-container">
-    <EyeClosed />
-  </div>
-  <h6 class="heading">EyeClosed</h6>
-  <div class="components-container">
-    <EyeOpened />
+    <TextField type="password" label="Password" />
   </div>
   <h6 class="heading">Brain</h6>
   <div class="components-container">

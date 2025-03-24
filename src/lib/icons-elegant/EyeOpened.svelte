@@ -3,7 +3,7 @@
   import "./style/icons.css";
 
   export let fill = "";
-  export let size = "2rem";
+  export let size = "1.45rem";
 
   let theme: any;
 
