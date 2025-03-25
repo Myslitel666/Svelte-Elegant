@@ -207,7 +207,7 @@
     {#if type == "password"}
       <div class="btn-container">
         <div class="eye">
-          {#if xType == "password"}
+          {#if xType == "password" || xType == null}
             <EyeOpened />
           {:else if xType == "text"}
             <EyeClosed />
