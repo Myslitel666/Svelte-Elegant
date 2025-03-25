@@ -17,10 +17,10 @@
   }
 
   function onIconClick(e: Event) {
-    //toggleType();
+    onClick();
     setTimeout(() => {
       setHoverColor(e, "--Xl-icon-bg-color", "transparent");
-    }, 258);
+    }, 170);
   }
 </script>
 
@@ -28,12 +28,10 @@
   class="btn-container"
   style:padding
   on:touchend={(e: Event) => {
-    onClick();
     onIconClick(e);
   }}
   on:click={(e: Event) => {
     if (!isMobile()) {
-      onClick();
       onIconClick(e);
     }
   }}
