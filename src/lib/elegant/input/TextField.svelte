@@ -5,6 +5,7 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { setHoverColor } from "$lib/utils/setHoverColor.js";
   import { isMobile } from "$lib/utils/isMobile.js";
+  import IconHover from "$elegant/customization/IconHover.svelte";
 
   // Свойства для управления CSS-стилями
   export let id = ""; /* Уникальный идентификатор элемента */
@@ -189,32 +190,15 @@
     {label}
   </label>
   {#if type == "password"}
-    <button
-      on:touchend={(e: Event) => {
-        onEyeClick(e);
-      }}
-      on:click={(e: Event) => {
-        if (!isMobile()) {
-          onEyeClick(e);
-        }
-      }}
-      on:touchstart={(e: Event) => {
-        eyeTouchStart(e);
-      }}
-      style:right={padding}
-      style:--Xl-eye-bg-color=""
-      style:--Xl-eye-hover={theme.surface.underSolid.background}
-    >
-      <div class="btn-container">
-        <div class="eye">
-          {#if xType == "password" || xType == null}
-            <EyeOpened />
-          {:else if xType == "text"}
-            <EyeClosed />
-          {/if}
-        </div>
-      </div>
-    </button>
+    <div class="eye" style:right={padding}>
+      <IconHover onClick={toggleType}>
+        {#if xType == "password" || xType == null}
+          <EyeOpened />
+        {:else if xType == "text"}
+          <EyeClosed />
+        {/if}
+      </IconHover>
+    </div>
   {/if}
 </div>
 
@@ -245,7 +229,7 @@
     align-items: center;
   }
 
-  button {
+  .eye {
     position: absolute;
     height: 2.5rem;
     display: flex;
@@ -265,19 +249,6 @@
   .hovered {
     background-color: var(--Xl-fill);
     border-color: var(--Xl-hoverBorderColor);
-  }
-
-  .btn-container {
-    background-color: var(--Xl-eye-bg-color);
-    border-radius: 50%;
-    padding: 0.25rem;
-    transition: all 0.3s;
-  }
-
-  .eye {
-    pointer-events: none;
-    display: flex;
-    justify-content: center;
   }
 
   input.hovered + label {
@@ -308,12 +279,6 @@
   input.focused,
   input:not(:placeholder-shown) {
     background-color: var(--Xl-eye-bg-color);
-  }
-
-  @media (hover: hover) {
-    .btn-container:hover {
-      background-color: var(--Xl-eye-hover);
-    }
   }
 
   input::placeholder {

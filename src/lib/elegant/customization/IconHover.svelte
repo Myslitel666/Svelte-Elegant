@@ -4,6 +4,7 @@
   import { setHoverColor } from "$lib/utils/setHoverColor.js";
 
   export let padding = "0.25rem";
+  export let onClick = () => {};
 
   let theme: any;
 
@@ -25,10 +26,12 @@
 
 <button
   on:touchend={(e: Event) => {
+    onClick();
     onIconClick(e);
   }}
   on:click={(e: Event) => {
     if (!isMobile()) {
+      onClick();
       onIconClick(e);
     }
   }}
@@ -40,7 +43,7 @@
   {...$$props}
 >
   <div class="btn-container" style:padding>
-    <div class="Icon">
+    <div class="icon">
       <slot />
     </div>
   </div>
@@ -57,7 +60,7 @@
     transition: all 0.3s;
   }
 
-  .Icon {
+  .icon {
     pointer-events: none;
     display: flex;
     justify-content: center;
