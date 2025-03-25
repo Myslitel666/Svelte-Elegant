@@ -11,36 +11,36 @@
     theme = value; //Инициализация объекта темы
   });
 
-  function eyeTouchStart(e: Event) {
-    setHoverColor(e, "--Xl-eye-bg-color", theme.surface.underSolid.background);
+  function IconTouchStart(e: Event) {
+    setHoverColor(e, "--Xl-icon-bg-color", theme.surface.underSolid.background);
   }
 
-  function onEyeClick(e: Event) {
+  function onIconClick(e: Event) {
     //toggleType();
     setTimeout(() => {
-      setHoverColor(e, "--Xl-eye-bg-color", "transparent");
+      setHoverColor(e, "--Xl-icon-bg-color", "transparent");
     }, 258);
   }
 </script>
 
 <button
   on:touchend={(e: Event) => {
-    onEyeClick(e);
+    onIconClick(e);
   }}
   on:click={(e: Event) => {
     if (!isMobile()) {
-      onEyeClick(e);
+      onIconClick(e);
     }
   }}
   on:touchstart={(e: Event) => {
-    eyeTouchStart(e);
+    IconTouchStart(e);
   }}
-  style:--Xl-eye-bg-color=""
-  style:--Xl-eye-hover={theme.surface.underSolid.background}
+  style:--Xl-icon-bg-color=""
+  style:--Xl-icon-hover={theme.surface.underSolid.background}
   {...$$props}
 >
   <div class="btn-container" style:padding>
-    <div class="eye">
+    <div class="Icon">
       <slot />
     </div>
   </div>
@@ -56,12 +56,12 @@
   }
 
   .btn-container {
-    background-color: var(--Xl-eye-bg-color);
+    background-color: var(--Xl-icon-bg-color);
     border-radius: 50%;
     transition: all 0.3s;
   }
 
-  .eye {
+  .Icon {
     pointer-events: none;
     display: flex;
     justify-content: center;
@@ -69,7 +69,7 @@
 
   @media (hover: hover) {
     .btn-container:hover {
-      background-color: var(--Xl-eye-hover);
+      background-color: var(--Xl-icon-hover);
     }
   }
 </style>
