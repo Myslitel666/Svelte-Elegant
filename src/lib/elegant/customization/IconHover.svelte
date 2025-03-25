@@ -3,7 +3,7 @@
   import { isMobile } from "$lib/utils/isMobile.js";
   import { setHoverColor } from "$lib/utils/setHoverColor.js";
 
-  export let padding = "0.5rem";
+  export let padding = "0.25rem";
 
   let theme: any;
 

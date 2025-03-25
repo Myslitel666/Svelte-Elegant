@@ -3,6 +3,7 @@
 
 /* Customization Components */
 export { default as ColorThemeSwitch } from './elegant/customization/ColorThemeSwitch.svelte';
+export { default as IconHover } from './elegant/customization/IconHover.svelte';
 export { default as ThemeProvider } from './elegant/customization/ThemeProvider.svelte';
 
 /* Data Display Components */
