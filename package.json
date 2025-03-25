@@ -130,7 +130,7 @@
 		"./utils/isMobile": {
 			"types": "./dist/utils/isMobile.d.ts",
 			"import": "./dist/utils/isMobile.js"
-		},
+		}
 	},
 	"files": [
 		"dist",
