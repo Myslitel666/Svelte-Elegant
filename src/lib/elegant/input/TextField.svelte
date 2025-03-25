@@ -188,23 +188,23 @@
   >
     {label}
   </label>
-  <button
-    on:touchend={(e: Event) => {
-      onEyeClick(e);
-    }}
-    on:click={(e: Event) => {
-      if (!isMobile()) {
+  {#if type == "password"}
+    <button
+      on:touchend={(e: Event) => {
         onEyeClick(e);
-      }
-    }}
-    on:touchstart={(e: Event) => {
-      eyeTouchStart(e);
-    }}
-    style:right={padding}
-    style:--Xl-eye-bg-color=""
-    style:--Xl-eye-hover={theme.surface.underSolid.background}
-  >
-    {#if type == "password"}
+      }}
+      on:click={(e: Event) => {
+        if (!isMobile()) {
+          onEyeClick(e);
+        }
+      }}
+      on:touchstart={(e: Event) => {
+        eyeTouchStart(e);
+      }}
+      style:right={padding}
+      style:--Xl-eye-bg-color=""
+      style:--Xl-eye-hover={theme.surface.underSolid.background}
+    >
       <div class="btn-container">
         <div class="eye">
           {#if xType == "password" || xType == null}
@@ -214,8 +214,8 @@
           {/if}
         </div>
       </div>
-    {/if}
-  </button>
+    </button>
+  {/if}
 </div>
 
 <style>

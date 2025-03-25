@@ -18,6 +18,7 @@
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
   import Brain from "$icons-elegant/Brain.svelte";
+  import IconHover from "$elegant/customization/IconHover.svelte";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
@@ -98,7 +99,9 @@
   </div>
   <h6 class="heading">Brain</h6>
   <div class="components-container">
-    <Brain />
+    <IconHover>
+      <Brain />
+    </IconHover>
   </div>
   <h6 class="heading">Button Box</h6>
   <div class="components-container">
