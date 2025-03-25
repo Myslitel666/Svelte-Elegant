@@ -24,7 +24,7 @@
     setTimeout(() => {
       setHoverColor(e, "--Xl-hover-bg-color", "var(--Xl-bg-color)");
       setHoverColor(e, "--Xl-filter", "");
-    }, 300);
+    }, 201);
   }
 
   function onClick(e: Event) {
@@ -62,10 +62,10 @@
   style:--Xl-height={height}
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
-  on:pointerdown={(e: Event) => {
+  on:touchend={(e: Event) => {
     handlePointerDown(e);
   }}
-  on:click={(e: Event) => {
+  on:touchstart={(e: Event) => {
     onClick(e);
   }}
   {...$$props}

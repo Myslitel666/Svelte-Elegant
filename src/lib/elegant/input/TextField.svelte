@@ -123,7 +123,7 @@
   function eyeTouchEnd(e: Event) {
     setTimeout(() => {
       setHoverColor(e, "--Xl-eye-bg-color", "transparent");
-    }, 300);
+    }, 258);
   }
 </script>
 
@@ -187,8 +187,8 @@
     {label}
   </label>
   <button
-    on:click={toggleType}
     on:touchend={(e: Event) => {
+      toggleType();
       eyeTouchEnd(e);
     }}
     on:touchstart={(e: Event) => {
