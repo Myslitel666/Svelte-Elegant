@@ -25,6 +25,8 @@
 </script>
 
 <button
+  class="btn-container"
+  style:padding
   on:touchend={(e: Event) => {
     onClick();
     onIconClick(e);
@@ -42,18 +44,12 @@
   style:--Xl-icon-hover={theme.surface.underSolid.background}
   {...$$props}
 >
-  <div class="btn-container" style:padding>
-    <div class="icon">
-      <slot />
-    </div>
+  <div class="icon">
+    <slot />
   </div>
 </button>
 
 <style>
-  button {
-    background-color: transparent;
-  }
-
   .btn-container {
     background-color: var(--Xl-icon-bg-color);
     border-radius: 50%;
