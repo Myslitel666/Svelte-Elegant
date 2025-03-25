@@ -116,13 +116,11 @@
     }
   }
 
-  function onEyeClick(e: Event) {
-    //setTimeout(() => {
+  function eyeTouchStart(e: Event) {
     setHoverColor(e, "--Xl-eye-bg-color", theme.surface.underSolid.background);
-    //}, 300);
   }
 
-  function handlePointerDown(e: Event) {
+  function eyeTouchEnd(e: Event) {
     setTimeout(() => {
       setHoverColor(e, "--Xl-eye-bg-color", "transparent");
     }, 300);
@@ -190,11 +188,11 @@
   </label>
   <button
     on:click={toggleType}
-    on:pointerdown={(e: Event) => {
-      handlePointerDown(e);
+    on:touchend={(e: Event) => {
+      eyeTouchEnd(e);
     }}
-    on:mousedown={(e: Event) => {
-      onEyeClick(e);
+    on:touchstart={(e: Event) => {
+      eyeTouchStart(e);
     }}
     style:right={padding}
     style:--Xl-eye-bg-color=""
