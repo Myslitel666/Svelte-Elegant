@@ -117,17 +117,6 @@
         inputElement.type === "password" ? "text" : "password";
     }
   }
-
-  function eyeTouchStart(e: Event) {
-    setHoverColor(e, "--Xl-eye-bg-color", theme.surface.underSolid.background);
-  }
-
-  function onEyeClick(e: Event) {
-    toggleType();
-    setTimeout(() => {
-      setHoverColor(e, "--Xl-eye-bg-color", "transparent");
-    }, 258);
-  }
 </script>
 
 <div
@@ -278,7 +267,7 @@
 
   input.focused,
   input:not(:placeholder-shown) {
-    background-color: var(--Xl-eye-bg-color);
+    background-color: var(--Xl-background-color);
   }
 
   input::placeholder {

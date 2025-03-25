@@ -95,7 +95,7 @@
 <div id="container">
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">
-    <TextField type="password" label="Password" />
+    <TextField variant="Filled" type="password" label="Password" />
   </div>
   <h6 class="heading">Brain</h6>
   <div class="components-container">
