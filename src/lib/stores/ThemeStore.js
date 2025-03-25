@@ -72,7 +72,7 @@ const theme = derived(
 				background: $themeMode === 'light' ? '#EEEEEE' : '#212121'
 			},
 			underSolid: {
-				background: $themeMode === 'light' ? '#E5E5E5' : '#373737'
+				background: $themeMode === 'light' ? '#EAEAEA' : '#373737'
 			},
 			solid: {
 				background: $themeMode === 'light' ? '#E2E2E2' : '#404040'

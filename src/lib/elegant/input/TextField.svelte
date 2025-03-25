@@ -141,7 +141,7 @@
     style:min-width={minWidth}
     style:outline="none"
     style:padding-left={padding}
-    style:padding-right={type === "text"
+    style:padding-right={type === "" || type === "text"
       ? padding
       : type === "password"
         ? `calc(0.9 * (2 * ${padding} + 1.45rem))`
@@ -186,10 +186,17 @@
     style:background-color="transparent"
     style:border="none"
   >
-    {#if type == "password" && xType == "password"}
-      <EyeOpened />
-    {:else if type == "password" && xType == "text"}
-      <EyeClosed />
+    {#if type == "password"}
+      <div
+        class="btn-container"
+        style:background-color={theme.surface.underSolid.background}
+      >
+        {#if xType == "password"}
+          <EyeOpened />
+        {:else if xType == "text"}
+          <EyeClosed />
+        {/if}
+      </div>
     {/if}
   </button>
 </div>
@@ -231,6 +238,13 @@
   .hovered {
     background-color: var(--Xl-fill);
     border-color: var(--Xl-hoverBorderColor);
+  }
+
+  .btn-container {
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 0.25rem;
   }
 
   input.hovered + label {
