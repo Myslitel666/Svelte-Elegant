@@ -4,6 +4,7 @@
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { setHoverColor } from "$lib/utils/setHoverColor.js";
+  import { isMobile } from "$lib/utils/isMobile.js";
 
   // Свойства для управления CSS-стилями
   export let id = ""; /* Уникальный идентификатор элемента */
@@ -120,7 +121,8 @@
     setHoverColor(e, "--Xl-eye-bg-color", theme.surface.underSolid.background);
   }
 
-  function eyeTouchEnd(e: Event) {
+  function onEyeClick(e: Event) {
+    toggleType();
     setTimeout(() => {
       setHoverColor(e, "--Xl-eye-bg-color", "transparent");
     }, 258);
@@ -165,11 +167,11 @@
       theme?.border.disabled.width}
     style:--Xl-hoverBorderColor={textColor || theme?.palette.text.contrast}
     style:--Xl-textColor={textColor || theme?.palette.text.contrast}
-    {...$$props}
     on:mouseover={handleMouseOver}
     on:mouseout={handleMouseOut}
     on:focus={handleFocus}
     on:blur={handleBlur}
+    {...$$props}
   />
   <label
     for={id}
@@ -188,8 +190,12 @@
   </label>
   <button
     on:touchend={(e: Event) => {
-      toggleType();
-      eyeTouchEnd(e);
+      onEyeClick(e);
+    }}
+    on:click={(e: Event) => {
+      if (!isMobile()) {
+        onEyeClick(e);
+      }
     }}
     on:touchstart={(e: Event) => {
       eyeTouchStart(e);
