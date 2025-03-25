@@ -127,6 +127,10 @@
 			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/TitledBox.svelte"
 		},
+		"./utils": {
+			"types": "./dist/utils/index.d.ts",
+			"svelte": "./dist/utils/index.js"
+		},
 		"./utils/isMobile": {
 			"types": "./dist/utils/isMobile.d.ts",
 			"import": "./dist/utils/isMobile.js"
