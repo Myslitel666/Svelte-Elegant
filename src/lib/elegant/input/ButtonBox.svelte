@@ -1,5 +1,6 @@
 <script lang="ts">
   import { themeStore, themeMode } from "$lib/stores/ThemeStore.js";
+  import { setHoverColor } from "$lib/utils/setHoverColor";
 
   let theme: any;
 
@@ -20,27 +21,23 @@
   export let width = "6rem";
 
   function handlePointerDown(e: Event) {
-    const target = e.target as HTMLElement;
-    if (target instanceof HTMLElement) {
-      setTimeout(() => {
-        target.style.setProperty("--Xl-hover-bg-color", "var(--Xl-bg-color)");
-        target.style.setProperty("--Xl-filter", "");
-      }, 300);
-    }
+    setTimeout(() => {
+      setHoverColor(e, "--Xl-hover-bg-color", "var(--Xl-bg-color)");
+      setHoverColor(e, "--Xl-filter", "");
+    }, 300);
   }
 
   function onClick(e: Event) {
-    const target = e.target as HTMLElement;
-    if (target instanceof HTMLElement) {
-      target.style.setProperty(
-        "--Xl-hover-bg-color",
-        theme?.surface.underSolid.background
-      );
-      target.style.setProperty(
-        "--Xl-filter",
-        isPrimary ? theme.controls.button.filter : ""
-      );
-    }
+    setHoverColor(
+      e,
+      "--Xl-hover-bg-color",
+      theme.surface.underSolid.background
+    );
+    setHoverColor(
+      e,
+      "--Xl-filter",
+      isPrimary ? theme.controls.button.filter : ""
+    );
   }
 </script>
 
@@ -66,10 +63,10 @@
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
   on:pointerdown={(e: Event) => {
-    if (window.innerWidth <= 768) handlePointerDown(e);
+    handlePointerDown(e);
   }}
   on:click={(e: Event) => {
-    if (window.innerWidth <= 768) onClick(e);
+    onClick(e);
   }}
   {...$$props}
 >

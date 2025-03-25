@@ -3,6 +3,7 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
+  import { setHoverColor } from "$lib/utils/setHoverColor.js";
 
   // Свойства для управления CSS-стилями
   export let id = ""; /* Уникальный идентификатор элемента */
@@ -114,6 +115,18 @@
         inputElement.type === "password" ? "text" : "password";
     }
   }
+
+  function onEyeClick(e: Event) {
+    //setTimeout(() => {
+    setHoverColor(e, "--Xl-eye-bg-color", theme.surface.underSolid.background);
+    //}, 300);
+  }
+
+  function handlePointerDown(e: Event) {
+    setTimeout(() => {
+      setHoverColor(e, "--Xl-eye-bg-color", "transparent");
+    }, 300);
+  }
 </script>
 
 <div
@@ -177,25 +190,25 @@
   </label>
   <button
     on:click={toggleType}
-    style:position="absolute"
-    style:height="2.5rem"
-    style:display="flex"
-    style:align-items="center"
-    style:justify-content="center"
+    on:pointerdown={(e: Event) => {
+      handlePointerDown(e);
+    }}
+    on:mousedown={(e: Event) => {
+      onEyeClick(e);
+    }}
     style:right={padding}
-    style:background-color="transparent"
-    style:border="none"
+    style:--Xl-eye-bg-color=""
+    style:--Xl-eye-hover={theme.surface.underSolid.background}
   >
     {#if type == "password"}
-      <div
-        class="btn-container"
-        style:background-color={theme.surface.underSolid.background}
-      >
-        {#if xType == "password"}
-          <EyeOpened />
-        {:else if xType == "text"}
-          <EyeClosed />
-        {/if}
+      <div class="btn-container">
+        <div class="eye">
+          {#if xType == "password"}
+            <EyeOpened />
+          {:else if xType == "text"}
+            <EyeClosed />
+          {/if}
+        </div>
       </div>
     {/if}
   </button>
@@ -228,6 +241,16 @@
     align-items: center;
   }
 
+  button {
+    position: absolute;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+  }
+
   .input-container {
     display: flex;
     flex-direction: column;
@@ -241,10 +264,16 @@
   }
 
   .btn-container {
+    background-color: var(--Xl-eye-bg-color);
     border-radius: 50%;
+    padding: 0.25rem;
+    transition: all 0.3s;
+  }
+
+  .eye {
+    pointer-events: none;
     display: flex;
     justify-content: center;
-    padding: 0.25rem;
   }
 
   input.hovered + label {
@@ -274,7 +303,13 @@
 
   input.focused,
   input:not(:placeholder-shown) {
-    background-color: var(--Xl-background-color);
+    background-color: var(--Xl-eye-bg-color);
+  }
+
+  @media (hover: hover) {
+    .btn-container:hover {
+      background-color: var(--Xl-eye-hover);
+    }
   }
 
   input::placeholder {
