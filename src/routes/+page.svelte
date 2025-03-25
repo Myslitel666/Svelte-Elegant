@@ -99,7 +99,7 @@
   </div>
   <h6 class="heading">Brain</h6>
   <div class="components-container">
-    <IconHover>
+    <IconHover padding="0.5rem">
       <Brain />
     </IconHover>
   </div>
