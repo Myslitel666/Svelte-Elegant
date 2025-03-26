@@ -4,22 +4,27 @@
   import { onMount } from "svelte";
   import { setHoverColor } from "$lib/utils/setHoverColor";
 
-  export let variant = "Contained"; /* Тип кнопки */
   export let id = ""; /* Уникальный идентификатор элемента */
-  export let isPrimary = true;
   export let borderColor = ""; /* Цвет обводки */
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
+  export let color = "";
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
+  export let isPrimary = true;
+  export let marginBottom = "";
+  export let marginLeft = "";
+  export let marginRight = "";
+  export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
-  export let primaryColor = ""; /* Основной цвет */
+  export let bgColor = ""; /* Основной цвет */
   export let textColor = ""; /* Цвет текста */
+  export let variant = "Contained"; /* Тип кнопки */
   export let width = ""; /* Ширина кнопки */
 
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = textColor !== "";
-  let isPrimaryColorFromUser = primaryColor !== "";
+  let isBgColorFromUser = bgColor !== "";
 
   let filter = "";
 
@@ -30,15 +35,15 @@
     theme = value; //Инициализация объекта темы
 
     // Устанавливаем значения цветов при смене темы
-    if (!isPrimaryColorFromUser) {
-      primaryColor = isPrimary
+    if (!isBgColorFromUser) {
+      bgColor = isPrimary
         ? theme.palette.primary
         : theme.surface.ghost.background;
     }
     if (!isTextColorFromUser)
       textColor =
         variant === "Contained"
-          ? theme.palette.text.contrast
+          ? theme.palette.text.main
           : theme.palette.primary;
 
     filter = theme.controls.button.filter;
@@ -70,14 +75,19 @@
     {id}
     placeholder=""
     style:background-color={isPrimary ? "var(--Xl-bgColor)" : ""}
-    style:border={variant === "Outlined" ? `1px solid ${primaryColor}` : "none"}
+    style:border={variant === "Outlined" ? `1px solid ${bgColor}` : "none"}
     style:border-color={borderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
     style:box-shadow={boxShadow}
+    style:color
     style:font-size={fontSize || theme?.typography.fontSize}
+    style:margin-left={marginLeft}
+    style:margin-right={marginRight}
+    style:margin-top={marginTop}
+    style:margin-botton={marginBottom}
     style:min-width={minWidth}
     style:width="100%"
-    style:--Xl-bgColor={variant === "Contained" ? primaryColor : ""}
+    style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
     style:--Xl-height={height || theme?.controls.height.small}
     style:--Xl-bgColorHover={theme?.surface.underSolid.background}
