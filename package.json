@@ -60,8 +60,8 @@
 			"svelte": "./dist/elegant/layout/Header.svelte"
 		},
 		"./IconHover": {
-			"types": "./dist/elegant/layout/IconHover.svelte.d.ts",
-			"svelte": "./dist/elegant/layout/IconHover.svelte"
+			"types": "./dist/elegant/customization/IconHover.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/IconHover.svelte"
 		},
 		"./icons-elegant": {
 			"types": "./dist/icons-elegant/index.d.ts",
