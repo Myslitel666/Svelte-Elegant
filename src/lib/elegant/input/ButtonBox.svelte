@@ -1,6 +1,8 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import Button from "./Button.svelte";
+  import "$styles/app.css";
+  import "../../font.css";
 
   let theme: any;
 

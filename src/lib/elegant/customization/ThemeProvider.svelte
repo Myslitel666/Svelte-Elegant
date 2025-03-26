@@ -2,8 +2,8 @@
   import { themeStore } from "$lib/stores";
   import { onMount } from "svelte";
   import { initialBodyStyle } from "$lib/utils/initialBodyStyle.js";
+  import "$styles/app.css";
   import "../../font.css";
-  import "../../app.css";
 
   export const prerender = true;
 

@@ -4,6 +4,8 @@
   import { onMount } from "svelte";
   import { setHoverColor } from "$lib/utils/setHoverColor";
   import { isMobile } from "$lib/utils/isMobile.js";
+  import "$styles/app.css";
+  import "../../font.css";
 
   export let id = ""; /* Уникальный идентификатор элемента */
   export let borderColor = ""; /* Цвет обводки */

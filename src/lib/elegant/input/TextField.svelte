@@ -4,6 +4,8 @@
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import IconHover from "$elegant/customization/IconHover.svelte";
+  import "$styles/app.css";
+  import "../../font.css";
 
   // Свойства для управления CSS-стилями
   export let id = ""; /* Уникальный идентификатор элемента */

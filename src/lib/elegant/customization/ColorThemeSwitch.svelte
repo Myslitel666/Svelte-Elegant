@@ -4,6 +4,8 @@
   import ActiveIcon from "$icons-elegant/Dark.svelte";
   import DisabledIcon from "$icons-elegant/Light.svelte";
   import { onMount } from "svelte";
+  import "$styles/app.css";
+  import "../../font.css";
 
   let isChecked = false;
 

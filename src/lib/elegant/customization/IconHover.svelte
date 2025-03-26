@@ -2,6 +2,8 @@
   import { themeStore } from "$lib/stores";
   import { isMobile } from "$lib/utils/isMobile.js";
   import { setHoverColor } from "$lib/utils/setHoverColor.js";
+  import "$styles/app.css";
+  import "../../font.css";
 
   export let color = "";
   export let padding = "0.25rem";

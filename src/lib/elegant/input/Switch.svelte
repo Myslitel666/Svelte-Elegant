@@ -2,6 +2,8 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
+  import "$styles/app.css";
+  import "../../font.css";
 
   export let id = ""; /* Уникальный идентификатор элемента */
   export let color = ""; /* Цвет переключателя */

@@ -2,6 +2,8 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { themeMode } from "../../stores/ThemeStore.js";
   import { onMount, onDestroy } from "svelte";
+  import "$styles/app.css";
+  import "../../font.css";
 
   export let isOpen = false;
   export let toggleButtonId = "drawer-toggle-button";

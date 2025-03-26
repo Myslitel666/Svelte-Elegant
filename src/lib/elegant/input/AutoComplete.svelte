@@ -4,6 +4,8 @@
   import { onMount, tick } from "svelte";
   import Arrow from "../../icons-elegant/TriangularArrowDown.svelte";
   import TextField from "./TextField.svelte";
+  import "$styles/app.css";
+  import "../../font.css";
 
   // Публичные свойства
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
