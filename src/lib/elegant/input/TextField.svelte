@@ -173,7 +173,8 @@
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={labelColor || variant != "Filled"
       ? theme?.palette.text.label
-      : theme?.palette.text.contrastLabel}
+      : theme?.palette.text.labelBalanced}
+    style:--Xl-labelContrast={labelColor || theme?.palette.text.labelContrast}
     style:--Xl-liftingHeight={variant === "Outlined"
       ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"
@@ -252,6 +253,7 @@
 
   input.hovered + label {
     background-color: var(--Xl-fill);
+    color: var(--Xl-labelContrast);
   }
 
   input.focused {
