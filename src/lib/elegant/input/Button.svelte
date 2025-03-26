@@ -109,10 +109,11 @@
     style:--Xl-filter={isPrimary ? filter : ""}
     on:click={(e: Event) => {
       if (!isMobile()) {
-        handleTouchEnd(e);
+        onClick();
       }
     }}
     on:touchend={(e: Event) => {
+      onClick();
       handleTouchEnd(e);
     }}
     on:touchstart={(e: Event) => {
