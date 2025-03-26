@@ -34,6 +34,7 @@
   let isBorderColorFromUser = borderColor !== "";
 
   //Стили из контекста темы
+  let eyeHover = "";
   let fill = backgroundColor;
 
   let theme: any;

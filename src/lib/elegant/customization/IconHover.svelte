@@ -13,7 +13,7 @@
     theme = value; //Инициализация объекта темы
   });
 
-  let xColor = color || theme.surface.underSolid.background;
+  $: xColor = color || theme.surface.underSolid.background;
 
   function IconTouchStart(e: Event) {
     setHoverColor(e, "--Xl-icon-bg-color", xColor);
