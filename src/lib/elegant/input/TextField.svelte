@@ -184,7 +184,10 @@
       class="eye"
       style:right={variant == "Standard" ? theme.padding.min : padding}
     >
-      <IconHover onClick={toggleType}>
+      <IconHover
+        onClick={toggleType}
+        color={variant === "Filled" ? theme.surface.solid.background : ""}
+      >
         {#if xType == "password" || xType == null}
           <EyeOpened />
         {:else if xType == "text"}

@@ -3,6 +3,7 @@
   import { isMobile } from "$lib/utils/isMobile.js";
   import { setHoverColor } from "$lib/utils/setHoverColor.js";
 
+  export let color = "";
   export let padding = "0.25rem";
   export let onClick = () => {};
 
@@ -12,8 +13,10 @@
     theme = value; //Инициализация объекта темы
   });
 
+  let xColor = color || theme.surface.underSolid.background;
+
   function IconTouchStart(e: Event) {
-    setHoverColor(e, "--Xl-icon-bg-color", theme.surface.underSolid.background);
+    setHoverColor(e, "--Xl-icon-bg-color", xColor);
   }
 
   function onIconClick(e: Event) {
@@ -39,7 +42,7 @@
     IconTouchStart(e);
   }}
   style:--Xl-icon-bg-color=""
-  style:--Xl-icon-hover={theme.surface.underSolid.background}
+  style:--Xl-icon-hover={xColor}
   {...$$props}
 >
   <div class="icon">
