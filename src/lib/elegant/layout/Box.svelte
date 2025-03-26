@@ -52,11 +52,10 @@
     : theme?.border.disabled.color}
   style:--Xl-height={height}
   style:--Xl-width={width}
+  style:user-select={variant == "Hoverable" ? "none" : ""}
   {...$$props}
 >
-  <div style:pointer-events={variant == "Hoverable" ? "none" : ""}>
-    <slot />
-  </div>
+  <slot />
 </div>
 
 <style>
