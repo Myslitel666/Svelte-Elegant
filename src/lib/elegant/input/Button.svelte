@@ -64,7 +64,7 @@
     setTimeout(() => {
       setHoverColor(e, "--Xl-bgColorHover", "var(--Xl-bgColor)");
       setHoverColor(e, "--Xl-filter", "");
-    }, 201);
+    }, 200);
   }
 
   function handleTouchStart(e: Event) {
@@ -95,6 +95,7 @@
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
     style:box-shadow={boxShadow}
     style:color
+    style:height="100%"
     style:font-size={fontSize || theme?.typography.fontSize}
     style:min-width={minWidth}
     style:width="100%"
@@ -119,14 +120,15 @@
     }}
     {...$$props}
   >
-    <slot></slot>
+    <div class="content" style:pointer-events="none">
+      <slot></slot>
+    </div>
     <!-- Слот для содержимого кнопки -->
   </button>
 </div>
 
 <style>
   button {
-    height: var(--Xl-height);
     color: var(--Xl-textColor);
     background-color: var(--Xl-bgColor);
     transition:
@@ -135,10 +137,10 @@
       filter var(--Xl-effectsTimeCode);
   }
 
-  .input-container {
+  .content {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
   }
 
   button:hover {
