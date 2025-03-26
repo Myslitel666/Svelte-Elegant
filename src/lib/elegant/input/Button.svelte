@@ -78,7 +78,7 @@
   style:margin-left={marginLeft}
   style:margin-right={marginRight}
   style:margin-top={marginTop}
-  style:margin-botton={marginBottom}
+  style:margin-bottom={marginBottom}
   style:width={width || theme?.controls.width}
 >
   <button
