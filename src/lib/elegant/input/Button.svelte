@@ -61,8 +61,6 @@
   });
 
   function handleTouchEnd(e: Event) {
-    onClick();
-
     setTimeout(() => {
       setHoverColor(e, "--Xl-bgColorHover", "var(--Xl-bgColor)");
       setHoverColor(e, "--Xl-filter", "");
@@ -113,8 +111,8 @@
       }
     }}
     on:touchend={(e: Event) => {
-      onClick();
       handleTouchEnd(e);
+      onClick();
     }}
     on:touchstart={(e: Event) => {
       handleTouchStart(e);
