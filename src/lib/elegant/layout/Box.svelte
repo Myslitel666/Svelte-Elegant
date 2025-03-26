@@ -41,6 +41,7 @@
   style:overflow="hidden;"
   style:padding
   style:transition={`all ${theme?.effectsTimeCode}`}
+  style:user-select={variant == "Hoverable" ? "none" : ""}
   style:--Xl-bg-color={bgColor
     ? bgColor
     : variant === "Default"
@@ -52,7 +53,6 @@
     : theme?.border.disabled.color}
   style:--Xl-height={height}
   style:--Xl-width={width}
-  style:user-select={variant == "Hoverable" ? "none" : ""}
   {...$$props}
 >
   <slot />
