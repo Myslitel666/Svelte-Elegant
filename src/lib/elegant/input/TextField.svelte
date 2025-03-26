@@ -3,8 +3,6 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
-  import { setHoverColor } from "$lib/utils/setHoverColor.js";
-  import { isMobile } from "$lib/utils/isMobile.js";
   import IconHover from "$elegant/customization/IconHover.svelte";
 
   // Свойства для управления CSS-стилями
@@ -79,8 +77,9 @@
           : `${borderRadius} ${borderRadius} 0 0`;
     }
     if (!height) height = theme.controls.height.small;
-    if (!padding)
+    if (!padding) {
       padding = variant === "Standard" ? "0" : theme.padding.balanced;
+    }
     if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0.15rem";
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
@@ -147,7 +146,9 @@
     style:padding-right={type === "" || type === "text"
       ? padding
       : type === "password"
-        ? `calc(0.9 * (2 * ${padding} + 1.45rem))`
+        ? variant == "Standard"
+          ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
+          : `calc(0.9 * (2 * ${padding} + 1.45rem))`
         : ""}
     style:padding-top={paddingTop}
     style:width="100%"
@@ -179,7 +180,10 @@
     {label}
   </label>
   {#if type == "password"}
-    <div class="eye" style:right={padding}>
+    <div
+      class="eye"
+      style:right={variant == "Standard" ? theme.padding.min : padding}
+    >
       <IconHover onClick={toggleType}>
         {#if xType == "password" || xType == null}
           <EyeOpened />

@@ -46,6 +46,7 @@ const theme = derived(
 			}
 		},
 		padding: {
+			min: '0.3rem',
 			default: '0.66rem',
 			balanced: '0.85rem',
 			extra: 'string',
