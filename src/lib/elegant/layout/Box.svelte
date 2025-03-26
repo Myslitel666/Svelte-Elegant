@@ -54,7 +54,9 @@
   style:--Xl-width={width}
   {...$$props}
 >
-  <slot />
+  <div style:pointer-events={variant == "Hoverable" ? "none" : ""}>
+    <slot />
+  </div>
 </div>
 
 <style>
