@@ -61,7 +61,7 @@ const theme = derived(
 				main: $themeMode === 'light' ? '#444' : '#fdfdfd',
 				label: $themeMode === 'light' ? '#B4B4B4' : '#808080',
 				labelBalanced: $themeMode === 'light' ? '#a2a2a2' : '#909090',
-				labelContrast: $themeMode === 'light' ? '#8E8E8E' : '#909090',
+				labelContrast: $themeMode === 'light' ? '#8a8a8a' : '#a0a0a0',
 			}
 		},
 		surface: {
@@ -75,10 +75,10 @@ const theme = derived(
 				background: $themeMode === 'light' ? '#EEEEEE' : '#212121'
 			},
 			underSolid: {
-				background: $themeMode === 'light' ? '#EAEAEA' : '#373737'
+				background: $themeMode === 'light' ? '#E4E4E4' : '#383838'
 			},
 			solid: {
-				background: $themeMode === 'light' ? '#E2E2E2' : '#404040'
+				background: $themeMode === 'light' ? '#ddd' : '#404040'
 			}
 		},
 		typography: {

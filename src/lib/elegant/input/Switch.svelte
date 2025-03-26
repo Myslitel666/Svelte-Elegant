@@ -37,7 +37,9 @@
   <span
     class="track"
     style:height
-    style:background-color={isChecked ? color : theme.surface.solid.background}
+    style:background-color={isChecked
+      ? color
+      : theme.surface.underSolid.background}
     style:transition={`all ${theme.effectsTimeCode} ease`}
     style:--Xl-border-radius={borderRadius}
   >
