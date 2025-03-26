@@ -40,11 +40,14 @@
         ? theme.palette.primary
         : theme.surface.ghost.background;
     }
-    if (!isTextColorFromUser)
-      textColor =
-        variant === "Contained"
-          ? theme.palette.text.main
-          : theme.palette.primary;
+    if (!isTextColorFromUser) {
+      if (variant == "Contained") {
+        if (isPrimary) textColor = theme.palette.text.contrast;
+        else textColor = theme.palette.text.main;
+      } else {
+        textColor = theme.palette.primary;
+      }
+    }
 
     filter = theme.controls.button.filter;
   });
@@ -70,7 +73,14 @@
   }
 </script>
 
-<div class="input-container" style:width={width || theme?.controls.width}>
+<div
+  class="input-container"
+  style:margin-left={marginLeft}
+  style:margin-right={marginRight}
+  style:margin-top={marginTop}
+  style:margin-botton={marginBottom}
+  style:width={width || theme?.controls.width}
+>
   <button
     {id}
     placeholder=""
@@ -81,10 +91,6 @@
     style:box-shadow={boxShadow}
     style:color
     style:font-size={fontSize || theme?.typography.fontSize}
-    style:margin-left={marginLeft}
-    style:margin-right={marginRight}
-    style:margin-top={marginTop}
-    style:margin-botton={marginBottom}
     style:min-width={minWidth}
     style:width="100%"
     style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
