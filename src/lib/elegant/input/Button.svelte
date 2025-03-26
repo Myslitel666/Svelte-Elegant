@@ -2,9 +2,11 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
+  import { setHoverColor } from "$lib/utils/setHoverColor";
 
   export let variant = "Contained"; /* Тип кнопки */
   export let id = ""; /* Уникальный идентификатор элемента */
+  export let isPrimary = true;
   export let borderColor = ""; /* Цвет обводки */
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
@@ -28,7 +30,11 @@
     theme = value; //Инициализация объекта темы
 
     // Устанавливаем значения цветов при смене темы
-    if (!isPrimaryColorFromUser) primaryColor = theme.palette.primary;
+    if (!isPrimaryColorFromUser) {
+      primaryColor = isPrimary
+        ? theme.palette.primary
+        : theme.surface.ghost.background;
+    }
     if (!isTextColorFromUser)
       textColor =
         variant === "Contained"
@@ -41,12 +47,29 @@
   onMount(() => {
     id ? "" : (id = `button-${generateIdElement()}`);
   });
+
+  function handleTouchEnd(e: Event) {
+    setTimeout(() => {
+      setHoverColor(e, "--Xl-bgColorHover", "var(--Xl-bgColor)");
+      setHoverColor(e, "--Xl-filter", "");
+    }, 201);
+  }
+
+  function handleTouchStart(e: Event) {
+    setHoverColor(e, "--Xl-bgColorHover", theme.surface.underSolid.background);
+    setHoverColor(
+      e,
+      "--Xl-filter",
+      isPrimary ? theme.controls.button.filter : ""
+    );
+  }
 </script>
 
 <div class="input-container" style:width={width || theme?.controls.width}>
   <button
     {id}
     placeholder=""
+    style:background-color={isPrimary ? "var(--Xl-bgColor)" : ""}
     style:border={variant === "Outlined" ? `1px solid ${primaryColor}` : "none"}
     style:border-color={borderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
@@ -54,12 +77,19 @@
     style:font-size={fontSize || theme?.typography.fontSize}
     style:min-width={minWidth}
     style:width="100%"
-    style:--Xl-color={variant === "Contained" ? primaryColor : ""}
+    style:--Xl-bgColor={variant === "Contained" ? primaryColor : ""}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
     style:--Xl-height={height || theme?.controls.height.small}
+    style:--Xl-bgColorHover={theme?.surface.underSolid.background}
     style:--Xl-hoverBorderColor={textColor}
     style:--Xl-textColor={textColor}
-    style:--Xl-filter={filter}
+    style:--Xl-filter={isPrimary ? filter : ""}
+    on:touchend={(e: Event) => {
+      handleTouchEnd(e);
+    }}
+    on:touchstart={(e: Event) => {
+      handleTouchStart(e);
+    }}
     {...$$props}
   >
     <slot></slot>
@@ -71,7 +101,7 @@
   button {
     height: var(--Xl-height);
     color: var(--Xl-textColor);
-    background-color: var(--Xl-color);
+    background-color: var(--Xl-bgColor);
     transition:
       outline-color var(--Xl-effectsTimeCode),
       background-color var(--Xl-effectsTimeCode),
@@ -85,7 +115,7 @@
   }
 
   button:hover {
-    cursor: pointer;
+    background-color: var(--Xl-bgColorHover);
     filter: var(--Xl-filter);
   }
 </style>

@@ -20,14 +20,14 @@
   export let value = "";
   export let width = "6rem";
 
-  function handlePointerDown(e: Event) {
+  function handleTouchEnd(e: Event) {
     setTimeout(() => {
       setHoverColor(e, "--Xl-hover-bg-color", "var(--Xl-bg-color)");
       setHoverColor(e, "--Xl-filter", "");
     }, 201);
   }
 
-  function onClick(e: Event) {
+  function handleTouchStart(e: Event) {
     setHoverColor(
       e,
       "--Xl-hover-bg-color",
@@ -63,10 +63,10 @@
   style:--Xl-hover-bg-color={theme?.surface.underSolid.background}
   style:--Xl-width={width}
   on:touchend={(e: Event) => {
-    handlePointerDown(e);
+    handleTouchEnd(e);
   }}
   on:touchstart={(e: Event) => {
-    onClick(e);
+    handleTouchStart(e);
   }}
   {...$$props}
 >
