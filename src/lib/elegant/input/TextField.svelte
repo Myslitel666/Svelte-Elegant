@@ -171,7 +171,9 @@
     style:margin-left={padding}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
-    style:--Xl-labelColor={labelColor || theme?.palette.text.label}
+    style:--Xl-labelColor={labelColor || variant != "Filled"
+      ? theme?.palette.text.label
+      : theme?.palette.text.contrastLabel}
     style:--Xl-liftingHeight={variant === "Outlined"
       ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"
