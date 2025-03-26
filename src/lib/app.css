@@ -48,6 +48,7 @@ button {
   -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
 }
 
-input {
+input,
+div {
   -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
 }
