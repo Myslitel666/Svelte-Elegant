@@ -66,7 +66,7 @@ const theme = derived(
 		},
 		surface: {
 			header: {
-				background: $themeMode === 'light' ? '' : '#212121'
+				background: $themeMode === 'light' ? 'white' : '#212121'
 			},
 			ghost: {
 				background: $themeMode === 'light' ? '#F7F7F7' : '#181818'
