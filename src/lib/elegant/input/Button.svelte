@@ -3,6 +3,7 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
   import { setHoverColor } from "$lib/utils/setHoverColor";
+  import { isMobile } from "$lib/utils/isMobile.js";
 
   export let id = ""; /* Уникальный идентификатор элемента */
   export let borderColor = ""; /* Цвет обводки */
@@ -17,6 +18,7 @@
   export let marginRight = "";
   export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
+  export let onClick = () => {};
   export let bgColor = ""; /* Основной цвет */
   export let textColor = ""; /* Цвет текста */
   export let variant = "Contained"; /* Тип кнопки */
@@ -57,6 +59,8 @@
   });
 
   function handleTouchEnd(e: Event) {
+    onClick();
+
     setTimeout(() => {
       setHoverColor(e, "--Xl-bgColorHover", "var(--Xl-bgColor)");
       setHoverColor(e, "--Xl-filter", "");
@@ -80,6 +84,7 @@
   style:margin-top={marginTop}
   style:margin-bottom={marginBottom}
   style:width={width || theme?.controls.width}
+  style:height={height || theme?.controls.height.small}
 >
   <button
     {id}
@@ -100,6 +105,11 @@
     style:--Xl-hoverBorderColor={textColor}
     style:--Xl-textColor={textColor}
     style:--Xl-filter={isPrimary ? filter : ""}
+    on:click={(e: Event) => {
+      if (!isMobile()) {
+        handleTouchEnd(e);
+      }
+    }}
     on:touchend={(e: Event) => {
       handleTouchEnd(e);
     }}
