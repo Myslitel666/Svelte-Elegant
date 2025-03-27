@@ -8,10 +8,13 @@
   import "../../font.css";
 
   export let id = ""; /* Уникальный идентификатор элемента */
+  export let bgColor = ""; /* Основной цвет */
+  export let bgColorHover = ""; /* Основной цвет */
   export let borderColor = ""; /* Цвет обводки */
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
   export let color = "";
+  export let filter = "";
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
   export let isPrimary = true;
@@ -21,7 +24,6 @@
   export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
   export let onClick = () => {};
-  export let bgColor = ""; /* Основной цвет */
   export let textColor = ""; /* Цвет текста */
   export let variant = "Contained"; /* Тип кнопки */
   export let width = ""; /* Ширина кнопки */
@@ -29,10 +31,11 @@
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = textColor !== "";
   let isBgColorFromUser = bgColor !== "";
-
-  let filter = "";
+  let isBgColorHoverFromUser = bgColor !== "";
+  let isFilterFromUser = filter !== "";
 
   let theme: any;
+  let xFilter = "";
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -44,6 +47,14 @@
         ? theme.palette.primary
         : theme.surface.ghost.background;
     }
+    if (!isBgColorHoverFromUser) {
+      bgColorHover = isPrimary ? bgColor : theme.surface.underSolid.background;
+    }
+    if (!isFilterFromUser) {
+      xFilter = isPrimary ? theme.controls.button.filter : "";
+    } else {
+      xFilter = filter;
+    }
     if (!isTextColorFromUser) {
       if (variant == "Contained") {
         if (isPrimary) textColor = theme.palette.text.contrast;
@@ -52,8 +63,6 @@
         textColor = theme.palette.primary;
       }
     }
-
-    filter = theme.controls.button.filter;
   });
 
   onMount(() => {
@@ -61,13 +70,10 @@
   });
 
   const hoverStyles = [
-    { "--Xl-bgColorHover": theme.surface.underSolid.background },
-    { "--Xl-filter": isPrimary ? theme.controls.button.filter : "" },
+    { "--Xl-bgColor": bgColorHover },
+    { "--Xl-filter": xFilter },
   ];
-  const resetStyles = [
-    { "--Xl-bgColorHover": "var(--Xl-bgColor)" },
-    { "--Xl-filter": "" },
-  ];
+  const resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
   const { handleTouchStart, handleTouchEnd } = createTouchEffects(
     setHoverColor,
     hoverStyles,
@@ -87,7 +93,6 @@
   <button
     {id}
     placeholder=""
-    style:background-color={isPrimary ? "var(--Xl-bgColor)" : ""}
     style:border={variant === "Outlined" ? `1px solid ${bgColor}` : "none"}
     style:border-color={borderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
@@ -103,7 +108,7 @@
     style:--Xl-bgColorHover={theme?.surface.underSolid.background}
     style:--Xl-hoverBorderColor={textColor}
     style:--Xl-textColor={textColor}
-    style:--Xl-filter={isPrimary ? filter : ""}
+    style:--Xl-filter={filter}
     on:click={() => {
       if (!isMobile()) {
         onClick();
@@ -129,6 +134,7 @@
   button {
     color: var(--Xl-textColor);
     background-color: var(--Xl-bgColor);
+    filter: var(--Xl-filter);
     transition:
       outline-color var(--Xl-effectsTimeCode),
       background-color var(--Xl-effectsTimeCode),
@@ -141,8 +147,10 @@
     align-items: center;
   }
 
-  button:hover {
-    background-color: var(--Xl-bgColorHover);
-    filter: var(--Xl-filter);
+  @media (hover: hover) {
+    button:hover {
+      background-color: var(--Xl-bgColorHover);
+      filter: var(--Xl-filter);
+    }
   }
 </style>

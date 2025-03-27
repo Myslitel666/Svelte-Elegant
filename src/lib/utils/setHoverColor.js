@@ -7,11 +7,15 @@ export const setHoverColor = (e, CSSPropName, CSSPropValue) => {
 	}
 };
 
-export function createTouchEffects(setHoverColor, hoverStyles, resetStyles, duration = 185) {
-	let touchEndTimer = null;
+export function createTouchEffects(setHoverColor, hoverStyles, resetStyles, duration = 120) {
+	// Храним таймеры для каждой кнопки по её id
+	let timers = {};
+  
 	let isTouchActive = false;
   
 	function handleTouchStart(e) {
+	  const buttonId = e.target.id; // Получаем уникальный id кнопки
+  
 	  isTouchActive = true;
   
 	  // Устанавливаем hover-стили
@@ -21,22 +25,26 @@ export function createTouchEffects(setHoverColor, hoverStyles, resetStyles, dura
 		});
 	  });
   
-	  if (touchEndTimer) {
-		cancelAnimationFrame(touchEndTimer);
-		touchEndTimer = null;
+	  // Если для этой кнопки уже был таймер, отменяем его
+	  if (timers[buttonId]) {
+		cancelAnimationFrame(timers[buttonId]);
+		timers[buttonId] = null;
 	  }
 	}
   
 	function handleTouchEnd(e) {
+	  const buttonId = e.target.id; // Получаем уникальный id кнопки
 	  isTouchActive = false;
+  
 	  let start = performance.now();
   
 	  function animateColorChange(timestamp) {
 		let progress = (timestamp - start) / duration;
+  
 		if (progress < 1) {
-		  touchEndTimer = requestAnimationFrame(animateColorChange);
+		  timers[buttonId] = requestAnimationFrame(animateColorChange); // Сохраняем таймер для этой кнопки
 		} else {
-		  touchEndTimer = null;
+		  timers[buttonId] = null;
 		  if (!isTouchActive) {
 			// Возвращаем стили в исходное состояние
 			resetStyles.forEach((styleObj) => {
@@ -48,11 +56,12 @@ export function createTouchEffects(setHoverColor, hoverStyles, resetStyles, dura
 		}
 	  }
   
-	  touchEndTimer = requestAnimationFrame(animateColorChange);
+	  timers[buttonId] = requestAnimationFrame(animateColorChange); // Запускаем таймер для этой кнопки
 	}
   
 	return { handleTouchStart, handleTouchEnd };
   }
+  
   
   
   
