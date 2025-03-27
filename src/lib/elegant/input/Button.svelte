@@ -104,7 +104,7 @@
     style:--Xl-hoverBorderColor={textColor}
     style:--Xl-textColor={textColor}
     style:--Xl-filter={isPrimary ? filter : ""}
-    on:click={(e: Event) => {
+    on:click={() => {
       if (!isMobile()) {
         onClick();
       }
