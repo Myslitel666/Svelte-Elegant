@@ -1,50 +1,51 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores";
   import { isMobile } from "$lib/utils/isMobile.js";
-  import { setHoverColor } from "$lib/utils/setHoverColor.js";
+  import { createTouchEffects } from "$lib/utils/setHoverColor";
   import "$styles/app.css";
   import "../../font.css";
 
-  export let color = "";
+  export let bgColor = ""; /* Основной цвет */
   export let padding = "0.25rem";
   export let onClick = () => {};
 
   let theme: any;
 
+  let isBgColorFromUser = bgColor !== "";
+
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
+
+    if (!isBgColorFromUser) {
+      bgColor = theme.surface.underSolid.background;
+    }
   });
 
-  $: xColor = color || theme.surface.underSolid.background;
-
-  function IconTouchStart(e: Event) {
-    setHoverColor(e, "--Xl-icon-bg-color", xColor);
-  }
-
-  function onIconClick(e: Event) {
-    onClick();
-    setTimeout(() => {
-      setHoverColor(e, "--Xl-icon-bg-color", "transparent");
-    }, 170);
-  }
+  const hoverStyles = [{ "--Xl-icon-bg-color": bgColor }];
+  const resetStyles = [{ "--Xl-icon-bg-color": "transparent" }];
+  const { handleTouchStart, handleTouchEnd } = createTouchEffects(
+    hoverStyles,
+    resetStyles
+  );
 </script>
 
 <button
   class="btn-container"
   style:padding
-  on:touchend={(e: Event) => {
-    onIconClick(e);
-  }}
-  on:click={(e: Event) => {
+  on:click={() => {
     if (!isMobile()) {
-      onIconClick(e);
+      onClick();
     }
   }}
+  on:touchend={(e: Event) => {
+    handleTouchEnd(e);
+    onClick();
+  }}
   on:touchstart={(e: Event) => {
-    IconTouchStart(e);
+    handleTouchStart(e);
   }}
   style:--Xl-icon-bg-color=""
-  style:--Xl-icon-hover={xColor}
+  style:--Xl-icon-hover={bgColor}
   {...$$props}
 >
   <div class="icon">

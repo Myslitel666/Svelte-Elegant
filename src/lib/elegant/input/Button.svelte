@@ -2,7 +2,7 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
-  import { setHoverColor, createTouchEffects } from "$lib/utils/setHoverColor";
+  import { createTouchEffects } from "$lib/utils/setHoverColor";
   import { isMobile } from "$lib/utils/isMobile.js";
   import "$styles/app.css";
   import "../../font.css";
@@ -31,7 +31,7 @@
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = textColor !== "";
   let isBgColorFromUser = bgColor !== "";
-  let isBgColorHoverFromUser = bgColor !== "";
+  let isBgColorHoverFromUser = bgColorHover !== "";
   let isFilterFromUser = filter !== "";
 
   let theme: any;
@@ -75,7 +75,6 @@
   ];
   const resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
   const { handleTouchStart, handleTouchEnd } = createTouchEffects(
-    setHoverColor,
     hoverStyles,
     resetStyles
   );

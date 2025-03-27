@@ -7,7 +7,7 @@ export const setHoverColor = (e, CSSPropName, CSSPropValue) => {
 	}
 };
 
-export function createTouchEffects(setHoverColor, hoverStyles, resetStyles, duration = 120) {
+export function createTouchEffects(hoverStyles, resetStyles, duration = 120) {
 	// Храним таймеры для каждой кнопки по её id
 	let timers = {};
   
