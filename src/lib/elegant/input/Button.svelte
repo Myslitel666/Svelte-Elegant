@@ -60,20 +60,46 @@
     id ? "" : (id = `button-${generateIdElement()}`);
   });
 
-  function handleTouchEnd(e: Event) {
-    setTimeout(() => {
-      setHoverColor(e, "--Xl-bgColorHover", "var(--Xl-bgColor)");
-      setHoverColor(e, "--Xl-filter", "");
-    }, 200);
-  }
+  let touchEndTimer: number | null = null;
+  let isTouchActive = false; // Флаг для отслеживания активного касания
 
   function handleTouchStart(e: Event) {
+    isTouchActive = true; // Фиксируем, что палец касается кнопки
     setHoverColor(e, "--Xl-bgColorHover", theme.surface.underSolid.background);
     setHoverColor(
       e,
       "--Xl-filter",
       isPrimary ? theme.controls.button.filter : ""
     );
+
+    // Если запущен таймер возврата цвета, отменяем его
+    if (touchEndTimer) {
+      cancelAnimationFrame(touchEndTimer);
+      touchEndTimer = null;
+    }
+  }
+
+  function handleTouchEnd(e: Event) {
+    isTouchActive = false; // Палец убрали, но не меняем цвет мгновенно
+
+    let start = performance.now();
+    let duration = 185; // Время анимации возврата цвета (можно настроить)
+
+    function animateColorChange(timestamp: number) {
+      let progress = (timestamp - start) / duration;
+      if (progress < 1) {
+        touchEndTimer = requestAnimationFrame(animateColorChange);
+      } else {
+        touchEndTimer = null;
+        if (!isTouchActive) {
+          // Если палец снова не касается кнопки — возвращаем цвет
+          setHoverColor(e, "--Xl-bgColorHover", "var(--Xl-bgColor)");
+          setHoverColor(e, "--Xl-filter", "");
+        }
+      }
+    }
+
+    touchEndTimer = requestAnimationFrame(animateColorChange);
   }
 </script>
 
