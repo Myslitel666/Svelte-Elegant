@@ -133,7 +133,6 @@
     </div>
     <!-- Слот для содержимого кнопки -->
   </button>
-  {bgColorHover}
 </div>
 
 <style>
