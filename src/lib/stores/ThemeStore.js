@@ -38,6 +38,7 @@ const theme = derived(
 				small: '3rem',
 				medium: '6rem',
 			},
+			kOpacity: $themeMode === 'light' ? '0.12' : '0.23',
 			width: '15rem'
 		},
 		icon: {

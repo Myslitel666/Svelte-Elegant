@@ -2,7 +2,7 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
-  import { createTouchEffects } from "$lib/utils/setHoverColor";
+  import { createTouchEffects, hexToRgba } from "$lib/utils/setHoverColor";
   import { isMobile } from "$lib/utils/isMobile.js";
   import "$styles/app.css";
   import "../../font.css";
@@ -52,8 +52,16 @@
 
     xFilter = filter; //Чтобы не потерять prop filter при обнулении xFilter
     if (!bgColorHover && !filter) {
-      xBgColorHover = isPrimary ? bgColor : theme.surface.underSolid.background;
-      filterHover = isPrimary ? theme.controls.button.filter : "";
+      if (variant == "Contained") {
+        xBgColorHover = isPrimary
+          ? bgColor
+          : theme.surface.underSolid.background;
+        filterHover = isPrimary ? theme.controls.button.filter : "";
+      } else {
+        xBgColorHover = isPrimary
+          ? hexToRgba(theme.palette.primary, theme.controls.kOpacity)
+          : hexToRgba(theme.palette.primary, theme.controls.kOpacity);
+      }
     } else if (bgColorHover && !filter) {
       xBgColorHover = bgColorHover;
       filterHover = "";
