@@ -13,20 +13,25 @@
 
   let isBgColorFromUser = bgColor !== "";
 
+  let handleTouchStart: (e: Event) => void;
+  let handleTouchEnd: (e: Event) => void;
+  let hoverStyles: { [key: string]: string }[] = [];
+  let resetStyles: { [key: string]: string }[] = [];
+
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
     if (!isBgColorFromUser) {
       bgColor = theme.surface.underSolid.background;
     }
-  });
 
-  const hoverStyles = [{ "--Xl-icon-bg-color": bgColor }];
-  const resetStyles = [{ "--Xl-icon-bg-color": "transparent" }];
-  const { handleTouchStart, handleTouchEnd } = createTouchEffects(
-    hoverStyles,
-    resetStyles
-  );
+    hoverStyles = [{ "--Xl-icon-bg-color": bgColor }];
+    resetStyles = [{ "--Xl-icon-bg-color": "transparent" }];
+    ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
+      hoverStyles,
+      resetStyles
+    ));
+  });
 </script>
 
 <button

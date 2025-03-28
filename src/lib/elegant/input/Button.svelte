@@ -34,6 +34,10 @@
   let isBgColorHoverFromUser = bgColorHover !== "";
   let isFilterFromUser = filter !== "";
 
+  let handleTouchStart: (e: Event) => void;
+  let handleTouchEnd: (e: Event) => void;
+  let hoverStyles: { [key: string]: string }[] = [];
+  let resetStyles: { [key: string]: string }[] = [];
   let theme: any;
   let xFilter = "";
 
@@ -47,6 +51,7 @@
         ? theme.palette.primary
         : theme.surface.ghost.background;
     }
+
     if (!isBgColorHoverFromUser) {
       bgColorHover = isPrimary ? bgColor : theme.surface.underSolid.background;
     }
@@ -63,21 +68,21 @@
         textColor = theme.palette.primary;
       }
     }
+
+    hoverStyles = [
+      { "--Xl-bgColor": bgColorHover },
+      { "--Xl-filter": xFilter },
+    ];
+    resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
+    ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
+      hoverStyles,
+      resetStyles
+    ));
   });
 
   onMount(() => {
     id ? "" : (id = `button-${generateIdElement()}`);
   });
-
-  const hoverStyles = [
-    { "--Xl-bgColor": bgColorHover },
-    { "--Xl-filter": xFilter },
-  ];
-  const resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
-  const { handleTouchStart, handleTouchEnd } = createTouchEffects(
-    hoverStyles,
-    resetStyles
-  );
 </script>
 
 <div
@@ -128,6 +133,7 @@
     </div>
     <!-- Слот для содержимого кнопки -->
   </button>
+  {bgColorHover}
 </div>
 
 <style>

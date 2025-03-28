@@ -106,7 +106,9 @@
   </div>
   <h6 class="heading">Button Box</h6>
   <div class="components-container">
-    <ButtonBox>1</ButtonBox>
+    <ButtonBox bgColor="Green" bgColorHover="Green" isPrimary={true}
+      >1</ButtonBox
+    >
     <ButtonBox>2</ButtonBox>
     <ButtonBox>3</ButtonBox>
     <ButtonBox isPrimary={true}>
