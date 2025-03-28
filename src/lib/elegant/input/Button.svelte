@@ -69,15 +69,21 @@
       filterHover = "";
     } else if (!bgColorHover && filter) {
       xBgColorHover = bgColor;
-      filterHover = filter; //Фильтр, который применяется при :hover
-      xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
+      if (variant == "Contained") {
+        filterHover = filter; //Фильтр, который применяется при :hover
+        xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
+      }
     } else {
       xBgColorHover = bgColorHover;
-      filterHover = ""; //Фильтр, который применяется при :hover
-      xFilter = "";
+      if (variant == "Contained") {
+        filterHover = ""; //Фильтр, который применяется при :hover
+        xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
+      }
     }
     if (!borderColor) {
       xBorderColor = variant == "Outlined" ? theme.palette.primary : "";
+    } else {
+      xBorderColor = borderColor;
     }
 
     if (!isTextColorFromUser) {
