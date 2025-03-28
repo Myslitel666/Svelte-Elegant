@@ -13,7 +13,6 @@
   export let borderColor = ""; /* Цвет обводки */
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
-  export let color = "";
   export let filter = "";
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
@@ -24,19 +23,19 @@
   export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
   export let onClick = () => {};
-  export let textColor = ""; /* Цвет текста */
+  export let color = ""; /* Цвет текста */
   export let variant = "Contained"; /* Тип кнопки */
   export let width = ""; /* Ширина кнопки */
 
   // Флаги для отслеживания, передал ли пользователь значение извне
-  let isTextColorFromUser = textColor !== "";
+  let isTextColorFromUser = color !== "";
   let isBgColorFromUser = bgColor !== "";
-  let isBgColorHoverFromUser = bgColorHover !== "";
-  let isFilterFromUser = filter !== "";
 
   let handleTouchStart: (e: Event) => void;
   let handleTouchEnd: (e: Event) => void;
   let theme: any;
+  let filterHover = "";
+  let xBgColorHover = "";
   let xFilter = "";
 
   // Подписываемся на изменения темы
@@ -50,26 +49,35 @@
         : theme.surface.ghost.background;
     }
 
-    if (!isBgColorHoverFromUser) {
-      bgColorHover = isPrimary ? bgColor : theme.surface.underSolid.background;
-    }
-    if (!isFilterFromUser) {
-      xFilter = isPrimary ? theme.controls.button.filter : "";
+    xFilter = filter; //Чтобы не потерять prop filter при обнулении xFilter
+    if (!bgColorHover && !filter) {
+      xBgColorHover = isPrimary ? bgColor : theme.surface.underSolid.background;
+      filterHover = isPrimary ? theme.controls.button.filter : "";
+    } else if (bgColorHover && !filter) {
+      xBgColorHover = bgColorHover;
+      filterHover = "";
+    } else if (!bgColorHover && filter) {
+      xBgColorHover = bgColor;
+      filterHover = filter; //Фильтр, который применяется при :hover
+      xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
     } else {
-      xFilter = filter;
+      xBgColorHover = bgColorHover;
+      filterHover = ""; //Фильтр, который применяется при :hover
+      xFilter = "";
     }
+
     if (!isTextColorFromUser) {
       if (variant == "Contained") {
-        if (isPrimary) textColor = theme.palette.text.contrast;
-        else textColor = theme.palette.text.main;
+        if (isPrimary) color = theme.palette.text.contrast;
+        else color = theme.palette.text.main;
       } else {
-        textColor = theme.palette.primary;
+        color = theme.palette.primary;
       }
     }
 
     const hoverStyles = [
-      { "--Xl-bgColor": bgColorHover },
-      { "--Xl-filter": xFilter },
+      { "--Xl-bgColor": xBgColorHover },
+      { "--Xl-filter": filterHover },
     ];
     const resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
     ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
@@ -99,19 +107,18 @@
     style:border-color={borderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
     style:box-shadow={boxShadow}
-    style:color
     style:height="100%"
     style:font-size={fontSize || theme?.typography.fontSize}
     style:min-width={minWidth}
     style:width="100%"
     style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
-    style:--Xl-bgColorHover={bgColorHover}
+    style:--Xl-bgColorHover={xBgColorHover}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
     style:--Xl-height={height || theme?.controls.height.small}
-    style:--Xl-hoverBorderColor={textColor}
-    style:--Xl-textColor={textColor}
-    style:--Xl-filter={filter}
-    style:--Xl-filterHover={xFilter}
+    style:--Xl-hoverBorderColor={color}
+    style:--Xl-textColor={color}
+    style:--Xl-filter={xFilter}
+    style:--Xl-filterHover={filterHover}
     on:click={() => {
       if (!isMobile()) {
         onClick();
@@ -126,7 +133,7 @@
     }}
     {...$$props}
   >
-    <div class="content" style:pointer-events="none">
+    <div class="content" style:pointer-events="none" style:color>
       <slot></slot>
     </div>
     <!-- Слот для содержимого кнопки -->
