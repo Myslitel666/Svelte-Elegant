@@ -102,12 +102,13 @@
     style:min-width={minWidth}
     style:width="100%"
     style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
+    style:--Xl-bgColorHover={bgColorHover}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
     style:--Xl-height={height || theme?.controls.height.small}
-    style:--Xl-bgColorHover={theme?.surface.underSolid.background}
     style:--Xl-hoverBorderColor={textColor}
     style:--Xl-textColor={textColor}
     style:--Xl-filter={filter}
+    style:--Xl-filterHover={xFilter}
     on:click={() => {
       if (!isMobile()) {
         onClick();
@@ -149,7 +150,7 @@
   @media (hover: hover) {
     button:hover {
       background-color: var(--Xl-bgColorHover);
-      filter: var(--Xl-filter);
+      filter: var(--Xl-filterHover);
     }
   }
 </style>
