@@ -36,8 +36,6 @@
 
   let handleTouchStart: (e: Event) => void;
   let handleTouchEnd: (e: Event) => void;
-  let hoverStyles: { [key: string]: string }[] = [];
-  let resetStyles: { [key: string]: string }[] = [];
   let theme: any;
   let xFilter = "";
 
@@ -69,11 +67,11 @@
       }
     }
 
-    hoverStyles = [
+    const hoverStyles = [
       { "--Xl-bgColor": bgColorHover },
       { "--Xl-filter": xFilter },
     ];
-    resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
+    const resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
     ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
       hoverStyles,
       resetStyles
