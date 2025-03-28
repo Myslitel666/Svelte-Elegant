@@ -97,6 +97,7 @@
   <div class="components-container">
     <Button variant="Contained">CONTAINED</Button>
     <Button variant="Outlined">OUTLINED</Button>
+    <Button isPrimary={false} variant="Outlined">OUTLINED</Button>
   </div>
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">
@@ -132,31 +133,13 @@
   </div>
   <h6 class="heading">Boxes</h6>
   <div class="components-container">
-    <Box
-      variant="Default"
-      width="6rem"
-      height="6rem"
-      justifyContent="center"
-      onclick={() => console.log("I'm Click!")}
-    >
+    <Box variant="Default" width="6rem" height="6rem" justifyContent="center">
       Default
     </Box>
-    <Box
-      variant="Hoverable"
-      width="6rem"
-      height="6rem"
-      justifyContent="center"
-      onclick={() => console.log("I'm Click!")}
-    >
+    <Box variant="Hoverable" width="6rem" height="6rem" justifyContent="center">
       Hoverable
     </Box>
-    <Box
-      variant="Solid"
-      width="6rem"
-      height="6rem"
-      justifyContent="center"
-      onclick={() => console.log("I'm Click!")}
-    >
+    <Box variant="Solid" width="6rem" height="6rem" justifyContent="center">
       Solid
     </Box>
   </div>

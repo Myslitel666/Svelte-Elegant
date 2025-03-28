@@ -1,6 +1,6 @@
 <script lang="ts">
   import { generateIdElement } from "../../stores/ElementIdStore.js";
-  import { themeStore } from "$lib/stores/ThemeStore.js";
+  import { themeStore, themeMode } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
   import { createTouchEffects, hexToRgba } from "$lib/utils/setHoverColor";
   import { isMobile } from "$lib/utils/isMobile.js";
@@ -60,9 +60,17 @@
           : theme.surface.underSolid.background;
         filterHover = isPrimary ? theme.controls.button.filter : "";
       } else {
-        xBgColorHover = isPrimary
-          ? hexToRgba(theme.palette.primary, theme.controls.kOpacity)
-          : hexToRgba(theme.palette.primary, theme.controls.kOpacity);
+        if (isPrimary) {
+          xBgColorHover = hexToRgba(
+            theme.palette.primary,
+            theme.controls.kOpacity
+          );
+        } else {
+          xBgColorHover =
+            $themeMode === "light"
+              ? theme.surface.ghost.background
+              : theme.surface.filled.background;
+        }
       }
     } else if (bgColorHover && !filter) {
       xBgColorHover = bgColorHover;
@@ -81,17 +89,22 @@
       }
     }
     if (!borderColor) {
-      xBorderColor = variant == "Outlined" ? theme.palette.primary : "";
+      if (variant == "Outlined") {
+        xBorderColor = isPrimary
+          ? theme.palette.primary
+          : theme.border.focused.color;
+      }
     } else {
       xBorderColor = borderColor;
     }
 
     if (!isTextColorFromUser) {
       if (variant == "Contained") {
-        if (isPrimary) color = theme.palette.text.contrast;
-        else color = theme.palette.text.main;
+        color = isPrimary
+          ? theme.palette.text.contrast
+          : theme.palette.text.main;
       } else {
-        color = theme.palette.primary;
+        color = isPrimary ? theme.palette.primary : theme.palette.text.main;
       }
     }
 
