@@ -13,6 +13,7 @@
   export let borderColor = ""; /* Цвет обводки */
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
+  export let color = ""; /* Цвет текста */
   export let filter = "";
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
@@ -23,7 +24,6 @@
   export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
   export let onClick = () => {};
-  export let color = ""; /* Цвет текста */
   export let variant = "Contained"; /* Тип кнопки */
   export let width = ""; /* Ширина кнопки */
 
@@ -36,6 +36,7 @@
   let theme: any;
   let filterHover = "";
   let xBgColorHover = "";
+  let xBorderColor = "";
   let xFilter = "";
 
   // Подписываемся на изменения темы
@@ -64,6 +65,9 @@
       xBgColorHover = bgColorHover;
       filterHover = ""; //Фильтр, который применяется при :hover
       xFilter = "";
+    }
+    if (!borderColor) {
+      xBorderColor = variant == "Outlined" ? theme.palette.primary : "";
     }
 
     if (!isTextColorFromUser) {
@@ -104,7 +108,7 @@
     {id}
     placeholder=""
     style:border={variant === "Outlined" ? `1px solid ${bgColor}` : "none"}
-    style:border-color={borderColor}
+    style:border-color={xBorderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
     style:box-shadow={boxShadow}
     style:height="100%"
@@ -116,7 +120,7 @@
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
     style:--Xl-height={height || theme?.controls.height.small}
     style:--Xl-hoverBorderColor={color}
-    style:--Xl-textColor={color}
+    style:--Xl-color={color}
     style:--Xl-filter={xFilter}
     style:--Xl-filterHover={filterHover}
     on:click={() => {
@@ -142,7 +146,7 @@
 
 <style>
   button {
-    color: var(--Xl-textColor);
+    color: var(--Xl-color);
     background-color: var(--Xl-bgColor);
     filter: var(--Xl-filter);
     transition:

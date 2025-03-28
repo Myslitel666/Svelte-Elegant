@@ -93,6 +93,11 @@
   </div>
 </Header>
 <div id="container">
+  <h6 class="heading">Button</h6>
+  <div class="components-container">
+    <Button variant="Contained">CONTAINED</Button>
+    <Button variant="Outlined">OUTLINED</Button>
+  </div>
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">
     <TextField type="password" label="Password" />
@@ -179,11 +184,6 @@
     <AutoComplete options={["Apple", "Orange", "Banana", "Grape", "Mango"]} />
     <AutoComplete variant="Filled" />
     <AutoComplete variant="Standard" />
-  </div>
-  <h6 class="heading">Button</h6>
-  <div class="components-container">
-    <Button variant="Contained">CONTAINED</Button>
-    <Button variant="Outlined">OUTLINED</Button>
   </div>
   <h6 class="heading">Switch</h6>
   <div class="components-container">
