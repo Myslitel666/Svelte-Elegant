@@ -98,6 +98,8 @@
     <Button variant="Contained">CONTAINED</Button>
     <Button variant="Outlined">OUTLINED</Button>
     <Button isPrimary={false} variant="Outlined">OUTLINED</Button>
+    <Button variant="Text">FILTER</Button>
+    <Button isPrimary={false} variant="Text">TEXT</Button>
   </div>
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">

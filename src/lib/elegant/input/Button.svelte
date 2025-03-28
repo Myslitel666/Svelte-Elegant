@@ -24,7 +24,9 @@
   export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
   export let onClick = () => {};
-  export let variant = "Contained"; /* Тип кнопки */
+  export let padding = "1rem";
+  export let variant: "Contained" | "Outlined" | "Text" =
+    "Contained"; /* Тип кнопки */
   export let width = ""; /* Ширина кнопки */
 
   // Флаги для отслеживания, передал ли пользователь значение извне
@@ -38,6 +40,7 @@
   let xBgColorHover = "";
   let xBorderColor = "";
   let xFilter = "";
+  let xWidth = "";
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -108,6 +111,10 @@
       }
     }
 
+    if (variant != "Text") {
+      xWidth = width || theme?.controls.width;
+    }
+
     const hoverStyles = [
       { "--Xl-bgColor": xBgColorHover },
       { "--Xl-filter": filterHover },
@@ -130,7 +137,7 @@
   style:margin-right={marginRight}
   style:margin-top={marginTop}
   style:margin-bottom={marginBottom}
-  style:width={width || theme?.controls.width}
+  style:width={xWidth}
   style:height={height || theme?.controls.height.small}
 >
   <button
@@ -140,9 +147,11 @@
     style:border-color={xBorderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
     style:box-shadow={boxShadow}
-    style:height="100%"
     style:font-size={fontSize || theme?.typography.fontSize}
+    style:height="100%"
     style:min-width={minWidth}
+    style:padding-left={variant === "Text" ? padding : ""}
+    style:padding-right={variant === "Text" ? padding : ""}
     style:width="100%"
     style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
     style:--Xl-bgColorHover={xBgColorHover}
