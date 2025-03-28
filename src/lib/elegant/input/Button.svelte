@@ -178,16 +178,14 @@
     color: var(--Xl-color);
     background-color: var(--Xl-bgColor);
     filter: var(--Xl-filter);
-    transition:
-      outline-color var(--Xl-effectsTimeCode),
-      background-color var(--Xl-effectsTimeCode),
-      filter var(--Xl-effectsTimeCode);
+    transition: all var(--Xl-effectsTimeCode);
   }
 
   .content {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all var(--Xl-effectsTimeCode);
   }
 
   @media (hover: hover) {
