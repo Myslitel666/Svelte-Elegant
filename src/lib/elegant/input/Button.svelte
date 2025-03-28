@@ -45,9 +45,11 @@
 
     // Устанавливаем значения цветов при смене темы
     if (!isBgColorFromUser) {
-      bgColor = isPrimary
-        ? theme.palette.primary
-        : theme.surface.ghost.background;
+      if (variant == "Contained") {
+        bgColor = isPrimary
+          ? theme.palette.primary
+          : theme.surface.ghost.background;
+      }
     }
 
     xFilter = filter; //Чтобы не потерять prop filter при обнулении xFilter
