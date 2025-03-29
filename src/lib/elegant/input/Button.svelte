@@ -114,12 +114,6 @@
       }
     }
 
-    if (disabled) {
-      isPrimary = false;
-      xBgColorHover = xBgColor;
-      color = theme.palette.text.label;
-    }
-
     if (!borderColor) {
       if (variant == "Outlined") {
         xBorderColor = isPrimary
@@ -128,6 +122,16 @@
       }
     } else {
       xBorderColor = borderColor;
+    }
+
+    if (disabled) {
+      color =
+        variant === "Contained"
+          ? theme.palette.text.disabledContrast
+          : theme.palette.text.disabled;
+      isPrimary = false;
+      xBorderColor = variant === "Outlined" ? theme.border.elegant.color : "";
+      xBgColorHover = xBgColor;
     }
 
     const hoverStyles = [
