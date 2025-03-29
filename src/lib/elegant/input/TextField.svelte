@@ -218,7 +218,7 @@
   >
     {label}
   </label>
-  {#if type == "password"}
+  {#if type == "password" && !disabled}
     <div
       class="eye"
       style:right={variant == "Standard" ? theme.padding.min : padding}

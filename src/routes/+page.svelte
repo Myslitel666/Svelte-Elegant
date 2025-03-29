@@ -161,11 +161,6 @@
     <TextField variant="Filled" label="Filled" type="password" />
     <TextField variant="Standard" label="Standard" type="password" />
   </div>
-  <h6 class="heading">Password TextField</h6>
-  <div class="components-container">
-    <TextField type="password" label="Password" />
-    <Button isPrimary={false} width="12rem">Confirm</Button>
-  </div>
   <h6 class="heading">Brain</h6>
   <div class="components-container">
     <IconHover padding="0.3rem">
