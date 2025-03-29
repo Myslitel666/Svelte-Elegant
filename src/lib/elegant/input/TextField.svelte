@@ -17,9 +17,11 @@
     ""; /* Толщина обводки в неактивном состоянии */
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
+  export let borderColorHover = "";
   export let id = ""; /* Уникальный идентификатор элемента */
   export let label = "Text Field"; /* Надпись */
   export let labelColor = ""; /* Цвет надписи */
+  export let labelColorHover = "";
   export let minWidth = ""; /* Минимальная ширина поля */
   export let type = ""; /* Тип ввода */
   export let padding = ""; /* Отступ */
@@ -35,6 +37,9 @@
   let fill = bgColor;
   let xBgColor = "";
   let xBorderColor = "";
+  let xBorderColorHover = "";
+  let xLabelColor = "";
+  let xLabelColorHover = "";
 
   let theme: any;
 
@@ -69,6 +74,12 @@
         variant === "Filled"
           ? theme.surface.solid.background
           : theme.palette.background;
+    xBorderColorHover = borderColorHover || theme?.palette.text.contrast;
+    xLabelColor =
+      labelColor || variant != "Filled"
+        ? theme?.palette.text.label
+        : theme?.palette.text.labelBalanced;
+    xLabelColorHover = labelColorHover || theme?.palette.text.labelContrast;
 
     if (disabled) {
       xBgColor = variant === "Filled" ? theme.surface.ghost.background : "";
@@ -77,6 +88,8 @@
         variant == "Filled"
           ? theme.border.disabled.color
           : theme.border.elegant.color;
+      xBorderColorHover = xBorderColor;
+      xLabelColorHover = xLabelColor;
     }
   }
 
@@ -180,7 +193,7 @@
     style:--Xl-height={height}
     style:--Xl-disabledborderWidth={disabledborderWidth ||
       theme?.border.disabled.width}
-    style:--Xl-hoverBorderColor={textColor || theme?.palette.text.contrast}
+    style:--Xl-hoverBorderColor={xBorderColorHover}
     style:--Xl-textColor={textColor || theme?.palette.text.contrast}
     on:mouseover={handleMouseOver}
     on:mouseout={handleMouseOut}
@@ -194,10 +207,8 @@
     style:margin-left={padding}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
-    style:--Xl-labelColor={labelColor || variant != "Filled"
-      ? theme?.palette.text.label
-      : theme?.palette.text.labelBalanced}
-    style:--Xl-labelContrast={labelColor || theme?.palette.text.labelContrast}
+    style:--Xl-labelColor={xLabelColor}
+    style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
       ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"
@@ -274,7 +285,7 @@
 
   input.hovered + label {
     background-color: var(--Xl-fill);
-    color: var(--Xl-labelContrast);
+    color: var(--Xl-labelColorHover);
   }
 
   input.focused {
