@@ -100,7 +100,41 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <h6 class="heading">Non Active</h6>
+  <h6 class="heading">Disabled Text Fields</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <TextField disabled variant="Outlined" label="Outlined" />
+    <TextField disabled variant="Filled" label="Filled" />
+    <TextField disabled variant="Standard" label="Standard" />
+  </div>
+  <h6 class="heading">Password Text Fields</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <TextField variant="Outlined" label="Outlined" type="password" />
+    <TextField variant="Filled" label="Filled" type="password" />
+    <TextField variant="Standard" label="Standard" type="password" />
+  </div>
+  <h6 class="heading">Text Fields</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <TextField
+      bind:value
+      variant="Outlined"
+      label="Outlined"
+      oninput={(e: any) => {
+        let value = e.target.value; //Извлечение значения
+      }}
+    />
+    <TextField variant="Filled" label="Filled" />
+    <TextField variant="Standard" label="Standard" />
+  </div>
+  <h6 class="heading">Disabled Buttons</h6>
   <div
     class="components-container"
     style:flex-direction={xMobile ? "column" : ""}
@@ -170,21 +204,6 @@
     <Box variant="Solid" width="6rem" height="6rem" justifyContent="center">
       Solid
     </Box>
-  </div>
-  <h6 class="heading">Text Field</h6>
-  <div class="components-container">
-    <TextField
-      bind:value
-      variant="Outlined"
-      label="Outlined"
-      onfocus={() => {}}
-      onblur={() => {}}
-      oninput={(e: any) => {
-        let value = e.target.value; //Извлечение значения
-      }}
-    />
-    <TextField variant="Filled" label="Filled" />
-    <TextField variant="Standard" label="Standard" />
   </div>
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">

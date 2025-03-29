@@ -8,17 +8,16 @@
   import "../../font.css";
 
   // Свойства для управления CSS-стилями
-  export let id = ""; /* Уникальный идентификатор элемента */
-  export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
-  export let value = ""; /* Значение поля */
   export let activedborderWidth = ""; /* Толщина обводки в активном состоянии */
-  export let backgroundColor = ""; /* Цвет заливки */
+  export let bgColor = ""; /* Цвет заливки */
   export let borderColor = ""; /* Цвет обводки */
   export let borderRadius = ""; /* Радиус скругления углов */
+  export let disabled: boolean = false;
   export let disabledborderWidth =
     ""; /* Толщина обводки в неактивном состоянии */
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
+  export let id = ""; /* Уникальный идентификатор элемента */
   export let label = "Text Field"; /* Надпись */
   export let labelColor = ""; /* Цвет надписи */
   export let minWidth = ""; /* Минимальная ширина поля */
@@ -27,42 +26,64 @@
   export let paddingTop = ""; /* Отступ от верхней границы */
   export let primaryColor = ""; /* Основной цвет */
   export let textColor = ""; /* Цвет текста */
+  export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
+  export let value = ""; /* Значение поля */
   export let width = ""; /* Ширина поля */
 
   let inputElement: HTMLInputElement | null = null;
 
-  // Флаги для отслеживания, передал ли пользователь значение извне
-  let isBackgroundColorFromUser = backgroundColor !== "";
-  let isBorderColorFromUser = borderColor !== "";
-
-  //Стили из контекста темы
-  let eyeHover = "";
-  let fill = backgroundColor;
+  let fill = bgColor;
+  let xBgColor = "";
+  let xBorderColor = "";
 
   let theme: any;
 
   $: xType = inputElement?.type;
+  $: {
+    if (inputElement) {
+      inputElement.disabled = disabled;
+      checkOrToggleDisabled();
+    }
+  }
 
-  // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
-    theme = value; //Инициализация объекта темы
-
+  function checkOrToggleDisabled() {
     // Устанавливаем значения цветов при смене темы
-    if (!isBackgroundColorFromUser)
-      backgroundColor =
+    if (!bgColor)
+      xBgColor =
         variant === "Filled"
           ? theme.surface.filled.background
           : theme.palette.background;
-    if (!isBorderColorFromUser)
-      borderColor =
+    else {
+      xBgColor = bgColor;
+    }
+    if (!borderColor) {
+      xBorderColor =
         variant === "Filled"
           ? theme.border.active.color
           : theme.border.focused.color;
-    if (!isBackgroundColorFromUser)
+    } else {
+      xBorderColor = borderColor;
+    }
+    if (!bgColor)
       fill =
         variant === "Filled"
           ? theme.surface.solid.background
           : theme.palette.background;
+
+    if (disabled) {
+      xBgColor = variant === "Filled" ? theme.surface.ghost.background : "";
+      fill = variant === "Filled" ? theme.surface.ghost.background : "";
+      xBorderColor =
+        variant == "Filled"
+          ? theme.border.disabled.color
+          : theme.border.elegant.color;
+    }
+  }
+
+  // Подписываемся на изменения темы
+  themeStore.subscribe((value) => {
+    theme = value; //Инициализация объекта темы
+    checkOrToggleDisabled();
   });
 
   //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
@@ -125,7 +146,7 @@
   class="input-container"
   style:width
   style:--Xl-activeborderWidth={activedborderWidth}
-  style:--Xl-background-color={backgroundColor}
+  style:--Xl-background-color={xBgColor}
   style:--Xl-color={primaryColor || theme?.palette.primary}
   style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
   style:--Xl-fill={fill}
@@ -155,7 +176,7 @@
         : ""}
     style:padding-top={paddingTop}
     style:width="100%"
-    style:--Xl-border-color={borderColor}
+    style:--Xl-border-color={xBorderColor}
     style:--Xl-height={height}
     style:--Xl-disabledborderWidth={disabledborderWidth ||
       theme?.border.disabled.width}
@@ -237,8 +258,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    border: none;
   }
 
   .input-container {

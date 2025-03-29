@@ -49,7 +49,7 @@
   $: {
     if (buttonElement) {
       buttonElement.disabled = disabled;
-      toggleDisabled();
+      checkOrToggleDisabled();
     }
   }
 
@@ -57,7 +57,7 @@
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
-    toggleDisabled();
+    checkOrToggleDisabled();
 
     const hoverStyles = [
       { "--Xl-bgColor": xBgColorHover },
@@ -75,7 +75,7 @@
     xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
   }
 
-  function toggleDisabled() {
+  function checkOrToggleDisabled() {
     // Устанавливаем значения цветов при смене темы
     if (!bgColor) {
       if (variant == "Contained") {
