@@ -33,10 +33,10 @@
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = color !== "";
 
+  let filterHover = "";
   let handleTouchStart: (e: Event) => void;
   let handleTouchEnd: (e: Event) => void;
   let theme: any;
-  let filterHover = "";
   let xBgColor = "";
   let xBgColorHover = "";
   let xBorderColor = "";
@@ -63,6 +63,8 @@
           ? theme.palette.primary
           : theme.surface.ghost.background;
       }
+    } else {
+      xBgColor = bgColor;
     }
 
     xFilter = filter; //Чтобы не потерять prop filter при обнулении xFilter

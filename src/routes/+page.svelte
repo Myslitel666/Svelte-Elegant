@@ -105,7 +105,7 @@
     class="components-container"
     style:flex-direction={xMobile ? "column" : ""}
   >
-    <Button disabled bgColor="Yellow" variant="Contained">CONTAINED</Button>
+    <Button disabled bgColor="Red" variant="Contained">CONTAINED</Button>
     <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
     <Button disabled isPrimary={false} variant="Text">TEXT</Button>
   </div>
