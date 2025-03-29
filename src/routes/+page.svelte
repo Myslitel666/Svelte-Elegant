@@ -19,6 +19,7 @@
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
   import Brain from "$icons-elegant/Brain.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
+  import { isMobile } from "$lib/utils";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
@@ -92,14 +93,18 @@
     <ColorThemeSwitch />
   </div>
 </Header>
-<div id="container">
-  <h6 class="heading">Button</h6>
+<div id="container" style:width="100%" class="components-centering">
+  <h6 class="heading">Primary Buttons</h6>
   <div class="components-container">
     <Button variant="Contained">CONTAINED</Button>
     <Button variant="Outlined">OUTLINED</Button>
-    <Button isPrimary={false} variant="Outlined">OUTLINED</Button>
-    <Button variant="Text">FILTER</Button>
-    <Button isPrimary={false} variant="Text">TEXT</Button>
+    <Button variant="Text">TEXT</Button>
+  </div>
+  <h6 class="heading">Not Primary</h6>
+  <div class="components-container">
+    <Button variant="Contained" isPrimary={false}>CONTAINED</Button>
+    <Button variant="Outlined" isPrimary={false}>OUTLINED</Button>
+    <Button variant="Text" isPrimary={false}>TEXT</Button>
   </div>
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">
@@ -222,10 +227,18 @@
     margin-bottom: 0.35rem;
   }
 
+  .components-centering {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Горизонтальное центрирование */
+  }
+
   .components-container {
-    display: flex; /* Располагает дочерние элементы в строку */
-    gap: 1rem; /* Задает отступ между элементами */
     align-items: center; /* Вертикальное выравнивание по центру */
+    display: flex; /* Располагает дочерние элементы в строку */
+    gap: 0.58rem; /* Задает отступ между элементами */
+    justify-content: center; /* Горизонтальное центрирование */
   }
 
   #container {

@@ -24,7 +24,7 @@
   export let marginTop = "";
   export let minWidth = ""; /* Минимальная ширина */
   export let onClick = () => {};
-  export let padding = "1rem";
+  export let padding = "";
   export let variant: "Contained" | "Outlined" | "Text" =
     "Contained"; /* Тип кнопки */
   export let width = ""; /* Ширина кнопки */
@@ -40,6 +40,8 @@
   let xBgColorHover = "";
   let xBorderColor = "";
   let xFilter = "";
+  let xHeight = "";
+  let xPadding = "";
   let xWidth = "";
 
   // Подписываемся на изменения темы
@@ -91,6 +93,7 @@
         xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
       }
     }
+
     if (!borderColor) {
       if (variant == "Outlined") {
         xBorderColor = isPrimary
@@ -111,10 +114,6 @@
       }
     }
 
-    if (variant != "Text") {
-      xWidth = width || theme?.controls.width;
-    }
-
     const hoverStyles = [
       { "--Xl-bgColor": xBgColorHover },
       { "--Xl-filter": filterHover },
@@ -126,6 +125,16 @@
     ));
   });
 
+  if (variant != "Text") {
+    xHeight = height || theme?.controls.height.small;
+    xWidth = width || theme?.controls.width;
+    xPadding = "";
+  } else {
+    xHeight = height || "2.25rem";
+    xWidth = "auto";
+    xPadding = padding || "0.7rem";
+  }
+
   onMount(() => {
     id ? "" : (id = `button-${generateIdElement()}`);
   });
@@ -133,12 +142,12 @@
 
 <div
   class="input-container"
+  style:height={xHeight}
   style:margin-left={marginLeft}
   style:margin-right={marginRight}
   style:margin-top={marginTop}
   style:margin-bottom={marginBottom}
   style:width={xWidth}
-  style:height={height || theme?.controls.height.small}
 >
   <button
     {id}
@@ -150,9 +159,9 @@
     style:font-size={fontSize || theme?.typography.fontSize}
     style:height="100%"
     style:min-width={minWidth}
-    style:padding-left={variant === "Text" ? padding : ""}
-    style:padding-right={variant === "Text" ? padding : ""}
-    style:width="100%"
+    style:padding-left={xPadding}
+    style:padding-right={xPadding}
+    style:width={xWidth}
     style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
     style:--Xl-bgColorHover={xBgColorHover}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
