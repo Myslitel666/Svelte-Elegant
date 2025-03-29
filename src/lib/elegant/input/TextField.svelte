@@ -27,7 +27,7 @@
   export let padding = ""; /* Отступ */
   export let paddingTop = ""; /* Отступ от верхней границы */
   export let primaryColor = ""; /* Основной цвет */
-  export let textColor = ""; /* Цвет текста */
+  export let color = ""; /* Цвет текста */
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
   export let value = ""; /* Значение поля */
   export let width = ""; /* Ширина поля */
@@ -38,6 +38,7 @@
   let xBgColor = "";
   let xBorderColor = "";
   let xBorderColorHover = "";
+  let xColor = "";
   let xLabelColor = "";
   let xLabelColorHover = "";
 
@@ -80,15 +81,20 @@
         ? theme?.palette.text.label
         : theme?.palette.text.labelBalanced;
     xLabelColorHover = labelColorHover || theme?.palette.text.labelContrast;
+    xColor = color || theme?.palette.text.contrast;
 
     if (disabled) {
-      xBgColor = variant === "Filled" ? theme.surface.ghost.background : "";
       fill = variant === "Filled" ? theme.surface.ghost.background : "";
+      xBgColor =
+        variant === "Filled"
+          ? theme.surface.ghost.background
+          : theme.palette.background;
       xBorderColor =
         variant == "Filled"
           ? theme.border.disabled.color
           : theme.border.elegant.color;
       xBorderColorHover = xBorderColor;
+      xColor = theme.palette.text.label;
       xLabelColor = theme.palette.text.disabled;
       xLabelColorHover = xLabelColor;
     }
@@ -195,7 +201,7 @@
     style:--Xl-disabledborderWidth={disabledborderWidth ||
       theme?.border.disabled.width}
     style:--Xl-hoverBorderColor={xBorderColorHover}
-    style:--Xl-textColor={textColor || theme?.palette.text.contrast}
+    style:--Xl-textColor={xColor}
     on:mouseover={handleMouseOver}
     on:mouseout={handleMouseOut}
     on:focus={handleFocus}
