@@ -20,6 +20,7 @@
   import Brain from "$icons-elegant/Brain.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import { isMobile } from "$lib/utils";
+  import { onMount } from "svelte";
 
   //Импорт утилит
   import { generateIdElement } from "$lib/stores/ElementIdStore.js";
@@ -30,6 +31,7 @@
   let theme: any;
 
   let elegantColor = "";
+  let xMobile = false;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -71,6 +73,10 @@
     { id: 2, jargon: "Baz", translate: "Баз", exampleOfUse: "Это пример 2" },
     { id: 3, jargon: "Qux", translate: "Кукс", exampleOfUse: "Это пример 3" },
   ];
+
+  onMount(() => {
+    xMobile = isMobile();
+  });
 </script>
 
 <Header>
@@ -93,18 +99,33 @@
     <ColorThemeSwitch />
   </div>
 </Header>
-<div id="container" style:width="100%" class="components-centering">
+<div id="container" style:width="100%">
+  <h6 class="heading">Non Active</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <Button disabled bgColor="Yellow" variant="Contained">CONTAINED</Button>
+    <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
+    <Button disabled isPrimary={false} variant="Text">TEXT</Button>
+  </div>
+  <h6 class="heading">Not Primary</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <Button isPrimary={false} variant="Contained">CONTAINED</Button>
+    <Button isPrimary={false} variant="Outlined">OUTLINED</Button>
+    <Button isPrimary={false} variant="Text">TEXT</Button>
+  </div>
   <h6 class="heading">Primary Buttons</h6>
-  <div class="components-container">
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
     <Button variant="Contained">CONTAINED</Button>
     <Button variant="Outlined">OUTLINED</Button>
     <Button variant="Text">TEXT</Button>
-  </div>
-  <h6 class="heading">Not Primary</h6>
-  <div class="components-container">
-    <Button variant="Contained" isPrimary={false}>CONTAINED</Button>
-    <Button variant="Outlined" isPrimary={false}>OUTLINED</Button>
-    <Button variant="Text" isPrimary={false}>TEXT</Button>
   </div>
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">
@@ -225,13 +246,6 @@
   .heading {
     margin-top: 0.35rem;
     margin-bottom: 0.35rem;
-  }
-
-  .components-centering {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Горизонтальное центрирование */
   }
 
   .components-container {

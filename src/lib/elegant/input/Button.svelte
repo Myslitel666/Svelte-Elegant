@@ -14,6 +14,7 @@
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
   export let color = ""; /* Цвет текста */
+  export let disabled = false;
   export let filter = "";
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
@@ -31,12 +32,12 @@
 
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = color !== "";
-  let isBgColorFromUser = bgColor !== "";
 
   let handleTouchStart: (e: Event) => void;
   let handleTouchEnd: (e: Event) => void;
   let theme: any;
   let filterHover = "";
+  let xBgColor = "";
   let xBgColorHover = "";
   let xBorderColor = "";
   let xFilter = "";
@@ -48,10 +49,17 @@
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
+    if (disabled) {
+      isPrimary = false;
+      bgColor = "";
+      bgColorHover = "";
+      color = "";
+    }
+
     // Устанавливаем значения цветов при смене темы
-    if (!isBgColorFromUser) {
+    if (!bgColor) {
       if (variant == "Contained") {
-        bgColor = isPrimary
+        xBgColor = isPrimary
           ? theme.palette.primary
           : theme.surface.ghost.background;
       }
@@ -61,7 +69,7 @@
     if (!bgColorHover && !filter) {
       if (variant == "Contained") {
         xBgColorHover = isPrimary
-          ? bgColor
+          ? xBgColor
           : theme.surface.underSolid.background;
         filterHover = isPrimary ? theme.controls.button.filter : "";
       } else {
@@ -81,7 +89,7 @@
       xBgColorHover = bgColorHover;
       filterHover = "";
     } else if (!bgColorHover && filter) {
-      xBgColorHover = bgColor;
+      xBgColorHover = xBgColor;
       if (variant == "Contained") {
         filterHover = filter; //Фильтр, который применяется при :hover
         xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
@@ -94,16 +102,6 @@
       }
     }
 
-    if (!borderColor) {
-      if (variant == "Outlined") {
-        xBorderColor = isPrimary
-          ? theme.palette.primary
-          : theme.border.focused.color;
-      }
-    } else {
-      xBorderColor = borderColor;
-    }
-
     if (!isTextColorFromUser) {
       if (variant == "Contained") {
         color = isPrimary
@@ -114,11 +112,27 @@
       }
     }
 
+    if (disabled) {
+      isPrimary = false;
+      xBgColorHover = xBgColor;
+      color = theme.palette.text.label;
+    }
+
+    if (!borderColor) {
+      if (variant == "Outlined") {
+        xBorderColor = isPrimary
+          ? theme.palette.primary
+          : theme.border.focused.color;
+      }
+    } else {
+      xBorderColor = borderColor;
+    }
+
     const hoverStyles = [
       { "--Xl-bgColor": xBgColorHover },
       { "--Xl-filter": filterHover },
     ];
-    const resetStyles = [{ "--Xl-bgColor": bgColor }, { "--Xl-filter": "" }];
+    const resetStyles = [{ "--Xl-bgColor": xBgColor }, { "--Xl-filter": "" }];
     ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
       hoverStyles,
       resetStyles
@@ -151,8 +165,9 @@
 >
   <button
     {id}
+    {disabled}
     placeholder=""
-    style:border={variant === "Outlined" ? `1px solid ${bgColor}` : "none"}
+    style:border={variant === "Outlined" ? `1px solid ${xBgColor}` : "none"}
     style:border-color={xBorderColor}
     style:border-radius={borderRadius || theme?.border.borderRadius.default}
     style:box-shadow={boxShadow}
@@ -162,7 +177,7 @@
     style:padding-left={xPadding}
     style:padding-right={xPadding}
     style:width={xWidth}
-    style:--Xl-bgColor={variant === "Contained" ? bgColor : ""}
+    style:--Xl-bgColor={variant === "Contained" ? xBgColor : ""}
     style:--Xl-bgColorHover={xBgColorHover}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
     style:--Xl-height={height || theme?.controls.height.small}
@@ -197,6 +212,10 @@
     background-color: var(--Xl-bgColor);
     filter: var(--Xl-filter);
     transition: all var(--Xl-effectsTimeCode);
+  }
+
+  button:disabled {
+    cursor: default;
   }
 
   .content {
