@@ -59,7 +59,7 @@ const theme = derived(
 			background: $themeMode === 'light' ? 'white' : '#050505',
 			text: {
 				contrast: $themeMode === 'light' ? '#111111' : '#FEFEFE',
-				disabled: $themeMode === 'light' ? '#D0D0D0' : '#686868',
+				disabled: $themeMode === 'light' ? '#D0D0D0' : '#606060',
 				disabledContrast: $themeMode === 'light' ? '#C4C4C4' : '#686868',
 				main: $themeMode === 'light' ? '#444' : '#fdfdfd',
 				label: $themeMode === 'light' ? '#B4B4B4' : '#808080',

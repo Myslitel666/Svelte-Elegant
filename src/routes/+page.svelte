@@ -41,8 +41,8 @@
   });
 
   //Тестовое данные
-  let value = "";
   let isChecked = true;
+  let value = "";
 
   let isDrawerOpen = false;
 
@@ -105,9 +105,9 @@
     class="components-container"
     style:flex-direction={xMobile ? "column" : ""}
   >
-    <Button disabled bgColor="Red" variant="Contained">CONTAINED</Button>
+    <Button disabled variant="Contained">CONTAINED</Button>
     <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
-    <Button disabled isPrimary={false} variant="Text">TEXT</Button>
+    <Button disabled variant="Text">TEXT</Button>
   </div>
   <h6 class="heading">Not Primary</h6>
   <div

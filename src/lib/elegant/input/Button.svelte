@@ -14,7 +14,7 @@
   export let borderRadius = ""; /* Радиус скругления углов */
   export let boxShadow = ""; /* Тень */
   export let color = ""; /* Цвет текста */
-  export let disabled = false;
+  export let disabled: boolean = false;
   export let filter = "";
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
@@ -33,6 +33,7 @@
   // Флаги для отслеживания, передал ли пользователь значение извне
   let isTextColorFromUser = color !== "";
 
+  let buttonElement: HTMLButtonElement | null = null;
   let filterHover = "";
   let handleTouchStart: (e: Event) => void;
   let handleTouchEnd: (e: Event) => void;
@@ -45,17 +46,36 @@
   let xPadding = "";
   let xWidth = "";
 
+  $: {
+    if (buttonElement) {
+      buttonElement.disabled = disabled;
+      toggleDisabled();
+    }
+  }
+
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
-    if (disabled) {
-      isPrimary = false;
-      bgColor = "";
-      bgColorHover = "";
-      color = "";
-    }
+    toggleDisabled();
 
+    const hoverStyles = [
+      { "--Xl-bgColor": xBgColorHover },
+      { "--Xl-filter": filterHover },
+    ];
+    const resetStyles = [{ "--Xl-bgColor": xBgColor }, { "--Xl-filter": "" }];
+    ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
+      hoverStyles,
+      resetStyles
+    ));
+  });
+
+  function dropFilter() {
+    filterHover = ""; //Фильтр, который применяется при :hover
+    xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
+  }
+
+  function toggleDisabled() {
     // Устанавливаем значения цветов при смене темы
     if (!bgColor) {
       if (variant == "Contained") {
@@ -66,6 +86,9 @@
     } else {
       xBgColor = bgColor;
     }
+
+    if (disabled)
+      xBgColor = variant == "Contained" ? theme.surface.ghost.background : "";
 
     xFilter = filter; //Чтобы не потерять prop filter при обнулении xFilter
     if (!bgColorHover && !filter) {
@@ -99,8 +122,7 @@
     } else {
       xBgColorHover = bgColorHover;
       if (variant == "Contained") {
-        filterHover = ""; //Фильтр, который применяется при :hover
-        xFilter = ""; //Фильтр, который применяется на постоянной основе, и изменяется при кликах
+        dropFilter();
       }
     }
 
@@ -129,21 +151,11 @@
         variant === "Contained"
           ? theme.palette.text.disabledContrast
           : theme.palette.text.disabled;
-      isPrimary = false;
       xBorderColor = variant === "Outlined" ? theme.border.elegant.color : "";
       xBgColorHover = xBgColor;
+      dropFilter();
     }
-
-    const hoverStyles = [
-      { "--Xl-bgColor": xBgColorHover },
-      { "--Xl-filter": filterHover },
-    ];
-    const resetStyles = [{ "--Xl-bgColor": xBgColor }, { "--Xl-filter": "" }];
-    ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
-      hoverStyles,
-      resetStyles
-    ));
-  });
+  }
 
   if (variant != "Text") {
     xHeight = height || theme?.controls.height.small;
@@ -170,6 +182,7 @@
   style:width={xWidth}
 >
   <button
+    bind:this={buttonElement}
     {id}
     {disabled}
     placeholder=""
@@ -192,16 +205,20 @@
     style:--Xl-filter={xFilter}
     style:--Xl-filterHover={filterHover}
     on:click={() => {
-      if (!isMobile()) {
+      if (!isMobile() && !disabled) {
         onClick();
       }
     }}
     on:touchend={(e: Event) => {
-      handleTouchEnd(e);
-      onClick();
+      if (!disabled) {
+        handleTouchEnd(e);
+        onClick();
+      }
     }}
     on:touchstart={(e: Event) => {
-      handleTouchStart(e);
+      if (!disabled) {
+        handleTouchStart(e);
+      }
     }}
     {...$$props}
   >
