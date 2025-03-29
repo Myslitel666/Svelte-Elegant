@@ -100,40 +100,6 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <h6 class="heading">Disabled Text Fields</h6>
-  <div
-    class="components-container"
-    style:flex-direction={xMobile ? "column" : ""}
-  >
-    <TextField disabled variant="Outlined" label="Outlined" />
-    <TextField disabled variant="Filled" label="Filled" />
-    <TextField disabled variant="Standard" label="Standard" />
-  </div>
-  <h6 class="heading">Password Text Fields</h6>
-  <div
-    class="components-container"
-    style:flex-direction={xMobile ? "column" : ""}
-  >
-    <TextField variant="Outlined" label="Outlined" type="password" />
-    <TextField variant="Filled" label="Filled" type="password" />
-    <TextField variant="Standard" label="Standard" type="password" />
-  </div>
-  <h6 class="heading">Text Fields</h6>
-  <div
-    class="components-container"
-    style:flex-direction={xMobile ? "column" : ""}
-  >
-    <TextField
-      bind:value
-      variant="Outlined"
-      label="Outlined"
-      oninput={(e: any) => {
-        let value = e.target.value; //Извлечение значения
-      }}
-    />
-    <TextField variant="Filled" label="Filled" />
-    <TextField variant="Standard" label="Standard" />
-  </div>
   <h6 class="heading">Disabled Buttons</h6>
   <div
     class="components-container"
@@ -160,6 +126,40 @@
     <Button variant="Contained">CONTAINED</Button>
     <Button variant="Outlined">OUTLINED</Button>
     <Button variant="Text">TEXT</Button>
+  </div>
+  <h6 class="heading">Disabled Text Fields</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <TextField disabled variant="Outlined" label="Outlined" />
+    <TextField disabled variant="Filled" label="Filled" />
+    <TextField disabled variant="Standard" label="Standard" />
+  </div>
+  <h6 class="heading">Text Fields</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <TextField
+      bind:value
+      variant="Outlined"
+      label="Outlined"
+      oninput={(e: any) => {
+        let value = e.target.value; //Извлечение значения
+      }}
+    />
+    <TextField variant="Filled" label="Filled" />
+    <TextField variant="Standard" label="Standard" />
+  </div>
+  <h6 class="heading">Password Text Fields</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <TextField variant="Outlined" label="Outlined" type="password" />
+    <TextField variant="Filled" label="Filled" type="password" />
+    <TextField variant="Standard" label="Standard" type="password" />
   </div>
   <h6 class="heading">Password TextField</h6>
   <div class="components-container">

@@ -89,6 +89,7 @@
           ? theme.border.disabled.color
           : theme.border.elegant.color;
       xBorderColorHover = xBorderColor;
+      xLabelColor = theme.palette.text.disabled;
       xLabelColorHover = xLabelColor;
     }
   }
