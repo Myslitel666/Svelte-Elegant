@@ -67,9 +67,9 @@
 			"types": "./dist/icons-elegant/index.d.ts",
 			"svelte": "./dist/icons-elegant/index.js"
 		},
-		"./icons-elegant/BarsIcon": {
-			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/BarsIcon.svelte"
+		"./icons-elegant/Bars": {
+			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Bars.svelte"
 		},
 		"./icons-elegant/Dark": {
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
@@ -79,9 +79,9 @@
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Elegant.svelte"
 		},
-		"./icons-elegant/EnvelopeIcon": {
-			"types": "./dist/icons-elegant/EnvelopeIcon.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/EnvelopeIcon.svelte"
+		"./icons-elegant/Envelope": {
+			"types": "./dist/icons-elegant/Envelope.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Envelope.svelte"
 		},
 		"./icons-elegant/EyeClosed": {
 			"types": "./dist/icons-elegant/EyeClosed.svelte.d.ts",
