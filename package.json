@@ -1,0 +1,166 @@
+{
+	"name": "svelte-elegant",
+	"version": "0.2.13",
+	"scripts": {
+		"clean": "rimraf dist",
+		"dev": "vite dev --open",
+		"build": "npm run clean && vite build && npm run package",
+		"preview": "vite preview",
+		"package": "npm run clean && svelte-kit sync && svelte-package",
+		"prepare": "svelte-kit sync || echo ''",
+		"prepack": "svelte-kit sync && svelte-package && publint"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Myslitel666/Svelte-Elegant.git"
+	},
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"svelte": "./dist/index.js"
+		},
+		"./AutoComplete": {
+			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
+			"svelte": "./dist/elegant/input/AutoComplete.svelte"
+		},
+		"./Backspace": {
+			"types": "./dist/icons-elegant/Backspace.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Backspace.svelte"
+		},
+		"./Box": {
+			"types": "./dist/elegant/layout/Box.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/Box.svelte"
+		},
+		"./ButtonBox": {
+			"types": "./dist/elegant/input/ButtonBox.svelte.d.ts",
+			"svelte": "./dist/elegant/input/ButtonBox.svelte"
+		},
+		"./Button": {
+			"types": "./dist/elegant/input/Button.svelte.d.ts",
+			"svelte": "./dist/elegant/input/Button.svelte"
+		},
+		"./ColorThemeSwitch": {
+			"types": "./dist/elegant/customization/ColorThemeSwitch.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ColorThemeSwitch.svelte"
+		},
+		"./DataGrid": {
+			"types": "./dist/elegant/data-display/DataGrid.svelte.d.ts",
+			"svelte": "./dist/elegant/data-display/DataGrid.svelte"
+		},
+		"./Drawer": {
+			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
+			"svelte": "./dist/elegant/navigation/Drawer.svelte"
+		},
+		"./Enter": {
+			"types": "./dist/icons-elegant/Enter.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Enter.svelte"
+		},
+		"./Header": {
+			"types": "./dist/elegant/layout/Header.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/Header.svelte"
+		},
+		"./IconHover": {
+			"types": "./dist/elegant/customization/IconHover.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/IconHover.svelte"
+		},
+		"./icons-elegant": {
+			"types": "./dist/icons-elegant/index.d.ts",
+			"svelte": "./dist/icons-elegant/index.js"
+		},
+		"./icons-elegant/BarsIcon": {
+			"types": "./dist/icons-elegant/BarsIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/BarsIcon.svelte"
+		},
+		"./icons-elegant/Dark": {
+			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Dark.svelte"
+		},
+		"./icons-elegant/Elegant": {
+			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Elegant.svelte"
+		},
+		"./icons-elegant/EnvelopeIcon": {
+			"types": "./dist/icons-elegant/EnvelopeIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EnvelopeIcon.svelte"
+		},
+		"./icons-elegant/EyeClosed": {
+			"types": "./dist/icons-elegant/EyeClosed.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EyeClosed.svelte"
+		},
+		"./icons-elegant/EyeOpened": {
+			"types": "./dist/icons-elegant/EyeOpened.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/EyeOpened.svelte"
+		},
+		"./icons-elegant/Light": {
+			"types": "./dist/icons-elegant/Light.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Light.svelte"
+		},
+		"./icons-elegant/TriangularArrowDown": {
+			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
+		},
+		"./stores": {
+			"types": "./dist/stores/index.d.ts",
+			"svelte": "./dist/stores/index.js"
+		},
+		"./stores/ElementIdStore": {
+			"types": "./dist/stores/ThemeStore.d.ts",
+			"svelte": "./dist/stores/ThemeStore.js"
+		},
+		"./stores/themeStore": {
+			"types": "./dist/stores/ThemeStore.d.ts",
+			"svelte": "./dist/stores/ThemeStore.js"
+		},
+		"./Switch": {
+			"types": "./dist/elegant/input/Switch.svelte.d.ts",
+			"svelte": "./dist/elegant/input/Switch.svelte"
+		},
+		"./TextField": {
+			"types": "./dist/elegant/input/TextField.svelte.d.ts",
+			"svelte": "./dist/elegant/input/TextField.svelte"
+		},
+		"./ThemeProvider": {
+			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
+		},
+		"./TitledBox": {
+			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/TitledBox.svelte"
+		},
+		"./utils": {
+			"types": "./dist/utils/index.d.ts",
+			"svelte": "./dist/utils/index.js"
+		},
+		"./utils/isMobile": {
+			"types": "./dist/utils/isMobile.d.ts",
+			"import": "./dist/utils/isMobile.js"
+		}
+	},
+	"files": [
+		"dist",
+		"!dist/**/*.test.*",
+		"!dist/**/*.spec.*"
+	],
+	"sideEffects": [
+		"**/*.css"
+	],
+	"svelte": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"type": "module",
+	"peerDependencies": {
+		"svelte": "^5.0.0"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^4.0.0",
+		"@sveltejs/kit": "^2.16.0",
+		"@sveltejs/package": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^5.0.0",
+		"publint": "^0.3.2",
+		"rimraf": "^6.0.1",
+		"svelte": "^5.0.0",
+		"vite": "^6.0.0"
+	},
+	"dependencies": {
+		"svelte2tsx": "^0.7.34"
+	}
+}

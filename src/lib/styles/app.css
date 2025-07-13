@@ -1,0 +1,55 @@
+:root {
+}
+
+body {
+  margin: 0;
+  transition: background-color var(--Xl-effectsTimeCode);
+  background-color: var(--Xl-background-color);
+  color: var(--Xl-text-color);
+}
+
+p,
+h6 {
+  margin: 0;
+  font-size: var(--Xl-font-size);
+}
+
+p {
+  color: var(--Xl-textColorMain);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--Xl-textColorMain);
+  font-weight: 600;
+}
+
+li,
+ol,
+ul,
+a,
+div {
+  color: var(--Xl-textColorMain);
+}
+
+button {
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: var(--Xl-textColorContrast);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
+}
+
+input,
+div {
+  -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
+}
