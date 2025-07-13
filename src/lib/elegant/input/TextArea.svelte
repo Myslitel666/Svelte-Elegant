@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { EyeClosed, EyeOpened } from "$icons-elegant";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
-  import IconHover from "$elegant/customization/IconHover.svelte";
   import "$styles/app.css";
   import "../../font.css";
 
@@ -252,7 +250,6 @@
   .input-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: relative;
   }
 
