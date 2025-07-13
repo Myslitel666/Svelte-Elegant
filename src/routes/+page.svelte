@@ -18,6 +18,9 @@
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
   import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
+
+  import TextArea from "$elegant/input/TextArea.svelte";
+
   import { isMobile } from "$lib/utils";
   import { onMount } from "svelte";
 
@@ -112,6 +115,8 @@
     <Button disabled variant="Contained">CONTAINED</Button>
     <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
     <Button disabled variant="Text">TEXT</Button>
+
+    <TextArea />
   </div>
   <h6 class="heading">Not Primary</h6>
   <div

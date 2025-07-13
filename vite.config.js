@@ -5,6 +5,6 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	server: {
 		host: '0.0.0.0', //ability to connect to the server from a mobile device
-		port: 5173 // Укажите другой порт
+		port: 5174 // Укажите другой порт
 	}
 });

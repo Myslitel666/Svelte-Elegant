@@ -23,16 +23,15 @@
   export let labelColor = ""; /* Цвет надписи */
   export let labelColorHover = "";
   export let minWidth = ""; /* Минимальная ширина поля */
-  export let type = ""; /* Тип ввода */
   export let padding = ""; /* Отступ */
-  export let paddingTop = ""; /* Отступ от верхней границы */
+  export let paddingTop = "0.825rem"; /* Отступ от верхней границы */
   export let primaryColor = ""; /* Основной цвет */
   export let color = ""; /* Цвет текста */
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
   export let value = ""; /* Значение поля */
   export let width = ""; /* Ширина поля */
 
-  let inputElement: HTMLInputElement | null = null;
+  let inputElement: HTMLTextAreaElement | null = null;
 
   let fill = bgColor;
   let xBgColor = "";
@@ -124,7 +123,6 @@
     if (!padding) {
       padding = variant === "Standard" ? "0" : theme.padding.balanced;
     }
-    if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0.15rem";
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
   }
@@ -153,13 +151,6 @@
     const inputElement = document.getElementById(id);
     inputElement?.classList.remove("hovered");
   }
-
-  function toggleType() {
-    if (inputElement) {
-      inputElement.type =
-        inputElement.type === "password" ? "text" : "password";
-    }
-  }
 </script>
 
 <div
@@ -176,7 +167,6 @@
     bind:value
     autocomplete="off"
     {id}
-    {type}
     placeholder="fictitious"
     style:border-left={variant !== "Outlined" ? "none" : ""}
     style:border-right={variant !== "Outlined" ? "none" : ""}
@@ -185,15 +175,12 @@
     style:font-size={fontSize}
     style:font-width="0.5rem"
     style:min-width={minWidth}
+    style:resize="none"
     style:outline="none"
     style:padding-left={padding}
-    style:padding-right={type === "" || type === "text"
-      ? padding
-      : type === "password"
-        ? variant == "Standard"
-          ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
-          : `calc(0.9 * (2 * ${padding} + 1.45rem))`
-        : ""}
+    style:padding-right={variant == "Standard"
+      ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
+      : `calc(0.9 * (2 * ${padding} + 1.45rem))`}
     style:padding-top={paddingTop}
     style:width="100%"
     style:--Xl-border-color={xBorderColor}
@@ -225,23 +212,6 @@
   >
     {label}
   </label>
-  {#if type == "password" && !disabled}
-    <div
-      class="eye"
-      style:right={variant == "Standard" ? theme.padding.min : padding}
-    >
-      <IconHover
-        onClick={toggleType}
-        color={variant === "Filled" ? theme.surface.solid.background : ""}
-      >
-        {#if xType == "password" || xType == null}
-          <EyeOpened />
-        {:else if xType == "text"}
-          <EyeClosed />
-        {/if}
-      </IconHover>
-    </div>
-  {/if}
 </div>
 
 <style>
