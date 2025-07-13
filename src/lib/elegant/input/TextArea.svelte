@@ -179,7 +179,9 @@
     style:padding-right={variant == "Standard"
       ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
       : `calc(0.9 * (2 * ${padding} + 1.45rem))`}
-    style:padding-top={paddingTop}
+    style:padding-top={variant === "Outlined"
+      ? paddingTop
+      : `calc(${paddingTop} + 0.75rem)`}
     style:width="100%"
     style:--Xl-border-color={xBorderColor}
     style:--Xl-height={height}
