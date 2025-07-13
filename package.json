@@ -115,6 +115,10 @@
 			"types": "./dist/elegant/input/Switch.svelte.d.ts",
 			"svelte": "./dist/elegant/input/Switch.svelte"
 		},
+		"./TextArea": {
+			"types": "./dist/elegant/input/TextArea.svelte.d.ts",
+			"svelte": "./dist/elegant/input/TextArea.svelte"
+		},
 		"./TextField": {
 			"types": "./dist/elegant/input/TextField.svelte.d.ts",
 			"svelte": "./dist/elegant/input/TextField.svelte"
