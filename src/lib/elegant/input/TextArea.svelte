@@ -22,6 +22,7 @@
   export let labelColorHover = "";
   export let minWidth = ""; /* Минимальная ширина поля */
   export let padding = ""; /* Отступ */
+  export let paddingLabel = "1.45rem"; /* Отступ */
   export let paddingTop = "0.825rem"; /* Отступ от верхней границы */
   export let primaryColor = ""; /* Основной цвет */
   export let color = ""; /* Цвет текста */
@@ -41,7 +42,6 @@
 
   let theme: any;
 
-  $: xType = inputElement?.type;
   $: {
     if (inputElement) {
       inputElement.disabled = disabled;
@@ -198,15 +198,16 @@
     for={id}
     style:position="absolute"
     style:margin-left={padding}
+    style:margin-top={paddingLabel}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
-      ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
+      ? `1.5rem + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"
-        ? `${height}/2 + 0.65rem`
-        : `${height}/2 + 0.82rem`}
+        ? `1.5rem + 0.65rem`
+        : `1.5rem + 0.82rem`}
   >
     {label}
   </label>
@@ -237,14 +238,6 @@
     height: calc(var(--Xl-activeborderWidth) + 1px);
     display: flex;
     align-items: center;
-  }
-
-  .eye {
-    position: absolute;
-    height: 2.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .input-container {

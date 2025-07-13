@@ -116,7 +116,7 @@
     <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
     <Button disabled variant="Text">TEXT</Button>
 
-    <TextArea />
+    <TextArea height="6rem" />
   </div>
   <h6 class="heading">Not Primary</h6>
   <div
