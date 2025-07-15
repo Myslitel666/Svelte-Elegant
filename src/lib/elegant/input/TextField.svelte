@@ -32,6 +32,11 @@
   export let value = ""; /* Значение поля */
   export let width = ""; /* Ширина поля */
 
+  // Добавляем публичный метод focus
+  export function focus() {
+    inputElement?.focus();
+  }
+
   let inputElement: HTMLInputElement | null = null;
 
   let fill = bgColor;
