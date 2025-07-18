@@ -9,14 +9,20 @@
   import "../../font.css";
 
   // Публичные свойства
+  export let value = "";
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
   export let id = ""; /* Уникальный идентификатор элемента */
   export let isOpen = false; /* Состояние активации AutoComplete */
   export let borderRadius = ""; /* Радиус скругления углов */
-  export let options: string[] = []; /* Состояние для передачи списков */
+  export let options = [
+    "Option 1",
+    "Option 2",
+    "Option 2",
+  ]; /* Состояние для передачи списков */
   export let width = ""; /* Ширина поля */
   export let dropListBgColor = "";
   export let optionHoverColor = "";
+  export let scrollbarColor = "";
 
   // Приватные атрибуты
   let autoCompleteRef: HTMLElement;
@@ -29,6 +35,7 @@
   let triangleHover = false;
   let xDropListBgColor = "";
   let xOptionHoverColor = "";
+  let xScrollbarColor = "";
 
   let theme: any;
 
@@ -49,6 +56,12 @@
         theme.palette.primary,
         theme.controls.kOpacity
       );
+    }
+
+    if (scrollbarColor) {
+      xScrollbarColor = scrollbarColor;
+    } else {
+      xScrollbarColor = theme?.scroll.color;
     }
   });
 
@@ -142,6 +155,7 @@
 >
   <TextField
     bind:this={textFieldRef}
+    bind:value
     {id}
     onmousedown={() => {
       isOpen ? "" : toggleOpen();
@@ -186,12 +200,15 @@
       : 'top'}"
     bind:this={dropListRef}
     style:--Xl-dropListHeight="{dropListHeight}px"
+    style:--Xl-scrollbar-color={xScrollbarColor}
     style:background-color={xDropListBgColor}
   >
     {#if isOpen}
-      <div class="option" style:--Xl-optionHoverColor={xOptionHoverColor}>
-        I'm Option
-      </div>
+      {#each options as option}
+        <div class="option" style:--Xl-optionHoverColor={xOptionHoverColor}>
+          {option}
+        </div>
+      {/each}
     {/if}
   </div>
 </div>
@@ -221,7 +238,10 @@
     box-shadow:
       0 2px 4px rgba(0, 0, 0, 0.1),
       0 4px 8px rgba(0, 0, 0, 0.1);
-    height: var(--Xl-dropListHeight);
+    max-height: var(--Xl-dropListHeight);
+    overflow-y: auto; /* Добавляем вертикальный скролл при необходимости */
+
+    scrollbar-color: var(--Xl-scrollbar-color) transparent;
   }
 
   .drop-list.top {
@@ -239,5 +259,13 @@
 
   .option:hover {
     background-color: var(--Xl-optionHoverColor);
+  }
+
+  .option:first-child {
+    border-top-left-radius: 6px;
+  }
+
+  .option:last-child {
+    border-bottom-left-radius: 6px;
   }
 </style>

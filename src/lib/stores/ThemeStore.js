@@ -67,6 +67,9 @@ const theme = derived(
 				labelContrast: $themeMode === 'light' ? '#8a8a8a' : '#a0a0a0',
 			}
 		},
+		scroll: {
+			color: $themeMode === 'light' ? '#e7e7e7ff' : '#4d4d4dff'
+		},
 		surface: {
 			header: {
 				background: $themeMode === 'light' ? 'white' : '#212121'
