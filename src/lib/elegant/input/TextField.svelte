@@ -167,86 +167,88 @@
   }
 </script>
 
-<div
-  class="input-container"
-  style:width
-  style:--Xl-activeborderWidth={activedborderWidth}
-  style:--Xl-background-color={xBgColor}
-  style:--Xl-color={primaryColor || theme?.palette.primary}
-  style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
-  style:--Xl-fill={fill}
->
-  <input
-    bind:this={inputElement}
-    bind:value
-    autocomplete="off"
-    {id}
-    {type}
-    placeholder="fictitious"
-    style:border-left={variant !== "Outlined" ? "none" : ""}
-    style:border-right={variant !== "Outlined" ? "none" : ""}
-    style:border-top={variant !== "Outlined" ? "none" : ""}
-    style:border-radius={borderRadius}
-    style:font-size={fontSize}
-    style:font-width="0.5rem"
-    style:min-width={minWidth}
-    style:outline="none"
-    style:padding-left={padding}
-    style:padding-right={type === "" || type === "text"
-      ? padding
-      : type === "password"
-        ? variant == "Standard"
-          ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
-          : `calc(0.9 * (2 * ${padding} + 1.45rem))`
-        : ""}
-    style:padding-top={paddingTop}
-    style:width="100%"
-    style:--Xl-border-color={xBorderColor}
-    style:--Xl-height={height}
-    style:--Xl-disabledborderWidth={disabledborderWidth ||
-      theme?.border.disabled.width}
-    style:--Xl-hoverBorderColor={xBorderColorHover}
-    style:--Xl-textColor={xColor}
-    on:mouseover={handleMouseOver}
-    on:mouseout={handleMouseOut}
-    on:focus={handleFocus}
-    on:blur={handleBlur}
-    {...$$props}
-  />
-  <label
-    for={id}
-    style:position="absolute"
-    style:margin-left={padding}
-    style:background-color={variant === "Filled" ? "transparent" : ""}
-    style:--Xl-font-size={fontSize}
-    style:--Xl-labelColor={xLabelColor}
-    style:--Xl-labelColorHover={xLabelColorHover}
-    style:--Xl-liftingHeight={variant === "Outlined"
-      ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
-      : variant === "Standard"
-        ? `${height}/2 + 0.65rem`
-        : `${height}/2 + 0.82rem`}
+{#if id}
+  <div
+    class="input-container"
+    style:width
+    style:--Xl-activeborderWidth={activedborderWidth}
+    style:--Xl-background-color={xBgColor}
+    style:--Xl-color={primaryColor || theme?.palette.primary}
+    style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
+    style:--Xl-fill={fill}
   >
-    {label}
-  </label>
-  {#if type == "password" && !disabled}
-    <div
-      class="eye"
-      style:right={variant == "Standard" ? theme.padding.min : padding}
+    <input
+      bind:this={inputElement}
+      bind:value
+      autocomplete="off"
+      {id}
+      {type}
+      placeholder="fictitious"
+      style:border-left={variant !== "Outlined" ? "none" : ""}
+      style:border-right={variant !== "Outlined" ? "none" : ""}
+      style:border-top={variant !== "Outlined" ? "none" : ""}
+      style:border-radius={borderRadius}
+      style:font-size={fontSize}
+      style:font-width="0.5rem"
+      style:min-width={minWidth}
+      style:outline="none"
+      style:padding-left={padding}
+      style:padding-right={type === "" || type === "text"
+        ? padding
+        : type === "password"
+          ? variant == "Standard"
+            ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
+            : `calc(0.9 * (2 * ${padding} + 1.45rem))`
+          : ""}
+      style:padding-top={paddingTop}
+      style:width="100%"
+      style:--Xl-border-color={xBorderColor}
+      style:--Xl-height={height}
+      style:--Xl-disabledborderWidth={disabledborderWidth ||
+        theme?.border.disabled.width}
+      style:--Xl-hoverBorderColor={xBorderColorHover}
+      style:--Xl-textColor={xColor}
+      on:mouseover={handleMouseOver}
+      on:mouseout={handleMouseOut}
+      on:focus={handleFocus}
+      on:blur={handleBlur}
+      {...$$props}
+    />
+    <label
+      for={id}
+      style:position="absolute"
+      style:margin-left={padding}
+      style:background-color={variant === "Filled" ? "transparent" : ""}
+      style:--Xl-font-size={fontSize}
+      style:--Xl-labelColor={xLabelColor}
+      style:--Xl-labelColorHover={xLabelColorHover}
+      style:--Xl-liftingHeight={variant === "Outlined"
+        ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
+        : variant === "Standard"
+          ? `${height}/2 + 0.65rem`
+          : `${height}/2 + 0.82rem`}
     >
-      <IconHover
-        onClick={toggleType}
-        color={variant === "Filled" ? theme.surface.solid.background : ""}
+      {label}
+    </label>
+    {#if type == "password" && !disabled}
+      <div
+        class="eye"
+        style:right={variant == "Standard" ? theme.padding.min : padding}
       >
-        {#if xType == "password" || xType == null}
-          <EyeOpened />
-        {:else if xType == "text"}
-          <EyeClosed />
-        {/if}
-      </IconHover>
-    </div>
-  {/if}
-</div>
+        <IconHover
+          onClick={toggleType}
+          color={variant === "Filled" ? theme.surface.solid.background : ""}
+        >
+          {#if xType == "password" || xType == null}
+            <EyeOpened />
+          {:else if xType == "text"}
+            <EyeClosed />
+          {/if}
+        </IconHover>
+      </div>
+    {/if}
+  </div>
+{/if}
 
 <style>
   input {

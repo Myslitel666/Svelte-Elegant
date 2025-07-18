@@ -39,6 +39,13 @@
 
   let theme: any;
 
+  $: {
+    filteredOptions = options;
+    if (value) {
+      filterOptions(value);
+    }
+  }
+
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
@@ -88,6 +95,12 @@
   });
 
   let dropListHeight: number;
+
+  function filterOptions(filter: string) {
+    filteredOptions = options.filter((option) =>
+      option.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
 
   // Функция для переключения состояния компонента (открыт/закрыт)
   function toggleOpen() {
@@ -194,7 +207,7 @@
     <Arrow size="0.88rem" />
   </button>
   <div
-    id="drop-list-id"
+    id="drop-list-{id}"
     class="drop-list {isOpen ? 'open' : ''} {isDropListBottom
       ? 'bottom'
       : 'top'}"
@@ -204,8 +217,14 @@
     style:background-color={xDropListBgColor}
   >
     {#if isOpen}
-      {#each options as option}
-        <div class="option" style:--Xl-optionHoverColor={xOptionHoverColor}>
+      {#each filteredOptions as option}
+        <div
+          class="option"
+          style:--Xl-optionHoverColor={xOptionHoverColor}
+          on:click={() => {
+            value = option;
+          }}
+        >
           {option}
         </div>
       {/each}

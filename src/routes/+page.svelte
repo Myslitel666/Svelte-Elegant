@@ -141,9 +141,9 @@
     class="components-container"
     style:flex-direction={xMobile ? "column" : ""}
   >
-    <TextField variant="Outlined" label="Outlined" />
-    <TextField variant="Filled" label="Filled" />
-    <TextField variant="Standard" label="Standard" />
+    <TextField disabled variant="Outlined" label="Outlined" />
+    <TextField disabled variant="Filled" label="Filled" />
+    <TextField disabled variant="Standard" label="Standard" />
   </div>
   <h6 class="heading">Text Fields</h6>
   <div
