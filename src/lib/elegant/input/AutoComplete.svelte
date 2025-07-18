@@ -4,18 +4,19 @@
   import { onMount, tick } from "svelte";
   import Arrow from "../../icons-elegant/TriangularArrowDown.svelte";
   import TextField from "./TextField.svelte";
+  import { hexToRgba } from "$lib/utils/setHoverColor";
   import "$styles/app.css";
   import "../../font.css";
 
   // Публичные свойства
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
   export let id = ""; /* Уникальный идентификатор элемента */
-  export let backgroundColor = ""; /* Цвет заливки */
-  export let borderColor = ""; /* Цвет обводки */
   export let isOpen = false; /* Состояние активации AutoComplete */
   export let borderRadius = ""; /* Радиус скругления углов */
   export let options: string[] = []; /* Состояние для передачи списков */
   export let width = ""; /* Ширина поля */
+  export let dropListBgColor = "";
+  export let optionHoverColor = "";
 
   // Приватные атрибуты
   let autoCompleteRef: HTMLElement;
@@ -24,18 +25,31 @@
   let isDropListBottom = true; // Определяет, следует ли отображать список снизу AutoComplete
   let dropListRef: HTMLElement;
 
-  // Флаги для отслеживания, передал ли пользователь значение извне
-  let isBackgroundColorFromUser = backgroundColor !== "";
-  let isBorderColorFromUser = borderColor !== "";
-
   //Стили из контекста темы
   let triangleHover = false;
+  let xDropListBgColor = "";
+  let xOptionHoverColor = "";
 
   let theme: any;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
+
+    if (dropListBgColor) {
+      xDropListBgColor = dropListBgColor;
+    } else {
+      xDropListBgColor = theme?.surface.header.background;
+    }
+
+    if (optionHoverColor) {
+      xOptionHoverColor = optionHoverColor;
+    } else {
+      xOptionHoverColor = hexToRgba(
+        theme.palette.primary,
+        theme.controls.kOpacity
+      );
+    }
   });
 
   //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
@@ -81,7 +95,7 @@
   }
 
   async function updateDropListHeight() {
-    dropListHeight = window.innerHeight * 0.4;
+    dropListHeight = window.innerHeight * 0.35;
 
     //Проверка на возможность помещения drop list'а под AutoComplete
     //await tick(); // Дождаться обновления DOM
@@ -172,9 +186,12 @@
       : 'top'}"
     bind:this={dropListRef}
     style:--Xl-dropListHeight="{dropListHeight}px"
+    style:background-color={xDropListBgColor}
   >
     {#if isOpen}
-      <div>I'm Option</div>
+      <div class="option" style:--Xl-optionHoverColor={xOptionHoverColor}>
+        I'm Option
+      </div>
     {/if}
   </div>
 </div>
@@ -201,7 +218,9 @@
   }
 
   .drop-list.open {
-    border: 1px solid #ccc;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.1),
+      0 4px 8px rgba(0, 0, 0, 0.1);
     height: var(--Xl-dropListHeight);
   }
 
@@ -211,5 +230,14 @@
 
   .drop-list.bottom {
     top: 100%; /* Отображение снизу */
+  }
+
+  .option {
+    cursor: pointer;
+    padding: 0.88rem;
+  }
+
+  .option:hover {
+    background-color: var(--Xl-optionHoverColor);
   }
 </style>
