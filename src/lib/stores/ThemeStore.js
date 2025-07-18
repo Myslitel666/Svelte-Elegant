@@ -43,7 +43,8 @@ const theme = derived(
 		},
 		icon: {
 			color: {
-				primary: $themeMode === 'light' ? '#7b7b7b' : '#E0E0E0',
+				hover: $themeMode === 'light' ? 'rgba(218, 218, 218, 0.5)' : 'rgba(64, 64, 64, 0.7)',
+				primary: $themeMode === 'light' ? '#7f7f7fff' : '#E0E0E0',
 			}
 		},
 		padding: {

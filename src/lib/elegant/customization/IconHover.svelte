@@ -6,7 +6,11 @@
   import "../../font.css";
 
   export let bgColor = ""; /* Основной цвет */
+  export let height = "";
   export let padding = "0.25rem";
+  export let right = "";
+  export let width = "";
+
   export let onClick = () => {};
 
   let theme: any;
@@ -22,7 +26,7 @@
     theme = value; //Инициализация объекта темы
 
     if (!isBgColorFromUser) {
-      bgColor = theme.surface.underSolid.background;
+      bgColor = theme.icon.color.hover;
     }
 
     hoverStyles = [{ "--Xl-icon-bg-color": bgColor }];
@@ -36,7 +40,10 @@
 
 <button
   class="btn-container"
+  style:height
   style:padding
+  style:right
+  style:width
   on:click={() => {
     if (!isMobile()) {
       onClick();

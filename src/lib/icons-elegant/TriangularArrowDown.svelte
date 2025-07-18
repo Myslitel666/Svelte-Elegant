@@ -3,7 +3,7 @@
   import "./style/icons.css";
 
   export let fill = "";
-  export let size = "0.6rem";
+  export let size = "1.2rem";
 
   let theme: any;
 
@@ -13,18 +13,26 @@
   });
 </script>
 
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  data-source="https://icons.getbootstrap.com/icons/caret-down-fill/"
+  data-source="https://www.svgrepo.com/svg/446816/triangle-down"
   data-license="MIT"
   width={size}
   height={size}
   fill={fill || theme.icon.color.primary}
-  class="bi bi-caret-down-fill"
-  viewBox="0 0 16 16"
-  style:margin-top="0.12rem"
+  version="1.1"
+  id="Layer_1"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 24 24"
+  xml:space="preserve"
 >
-  <path
-    d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"
-  />
+  <style type="text/css">
+    .st0 {
+      fill: none;
+    }
+  </style>
+  <path d="M6.5,8.5l6,7l6-7H6.5z" />
+  <rect class="st0" width="24" height="24" />
+  <rect class="st0" width="24" height="24" />
 </svg>

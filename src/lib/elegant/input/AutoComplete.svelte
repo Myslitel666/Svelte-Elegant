@@ -3,6 +3,7 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount, tick } from "svelte";
   import Arrow from "../../icons-elegant/TriangularArrowDown.svelte";
+  import IconHover from "$elegant/customization/IconHover.svelte";
   import TextField from "./TextField.svelte";
   import { hexToRgba } from "$lib/utils/setHoverColor";
   import "$styles/app.css";
@@ -177,35 +178,35 @@
     {variant}
     {...$$props}
   />
-  <button
+  <div
     class="triangle-icon"
-    on:mouseover={() => {
-      textFieldRef.handleMouseOver();
-      triangleHover = !triangleHover;
-    }}
-    on:mouseout={() => {
-      textFieldRef.handleMouseOut();
-      triangleHover = !triangleHover;
-    }}
-    on:mouseup={() => {
-      toggleOpen();
-    }}
-    on:focus={() => {
-      textFieldRef.handleFocus();
-    }}
-    on:blur={() => {}}
-    style:width="1.75rem"
-    style:height="1.75rem"
-    style:border-radius="50%"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
-    style:transform={isOpen ? "rotate(180deg) translateY(50%)" : ""}
-    style:transition="transform var(--Xl-effectsTimeCode)"
-    style:background-color={triangleHover
-      ? theme?.surface.ghost.background
-      : ""}
   >
-    <Arrow size="0.88rem" />
-  </button>
+    <IconHover
+      onmouseover={() => {
+        textFieldRef.handleMouseOver();
+        triangleHover = !triangleHover;
+      }}
+      onmouseout={() => {
+        textFieldRef.handleMouseOut();
+        triangleHover = !triangleHover;
+      }}
+      onmouseup={() => {
+        toggleOpen();
+      }}
+      width="1.75rem"
+      height="1.75rem"
+    >
+      <div
+        style:margin-top="0.25rem"
+        style:margin-right="0.1rem"
+        style:transform={isOpen ? "rotate(180deg) translateY(15%)" : ""}
+        style:z-index="10000000"
+      >
+        <Arrow size="1.33rem" />
+      </div>
+    </IconHover>
+  </div>
   <div
     id="drop-list-{id}"
     class="drop-list {isOpen ? 'open' : ''} {isDropListBottom
@@ -223,6 +224,7 @@
           style:--Xl-optionHoverColor={xOptionHoverColor}
           on:click={() => {
             value = option;
+            isOpen = false;
           }}
         >
           {option}

@@ -107,35 +107,6 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <h6 class="heading">Disabled Buttons</h6>
-  <div
-    class="components-container"
-    style:flex-direction={xMobile ? "column" : ""}
-  >
-    <Button disabled variant="Contained">CONTAINED</Button>
-    <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
-    <Button disabled variant="Text">TEXT</Button>
-
-    <TextArea height="6rem" />
-  </div>
-  <h6 class="heading">Not Primary</h6>
-  <div
-    class="components-container"
-    style:flex-direction={xMobile ? "column" : ""}
-  >
-    <Button isPrimary={false} variant="Contained">CONTAINED</Button>
-    <Button isPrimary={false} variant="Outlined">OUTLINED</Button>
-    <Button isPrimary={false} variant="Text">TEXT</Button>
-  </div>
-  <h6 class="heading">Primary Buttons</h6>
-  <div
-    class="components-container"
-    style:flex-direction={xMobile ? "column" : ""}
-  >
-    <Button variant="Contained">CONTAINED</Button>
-    <Button variant="Outlined">OUTLINED</Button>
-    <Button variant="Text">TEXT</Button>
-  </div>
   <h6 class="heading">Disabled Text Fields</h6>
   <div
     class="components-container"
@@ -169,6 +140,39 @@
     <TextField variant="Outlined" label="Outlined" type="password" />
     <TextField variant="Filled" label="Filled" type="password" />
     <TextField variant="Standard" label="Standard" type="password" />
+  </div>
+  <h6 class="heading">Auto Complete</h6>
+  <div class="components-container">
+    <AutoComplete options={["Apple", "Orange", "Banana", "Grape", "Mango"]} />
+    <AutoComplete variant="Filled" />
+    <AutoComplete variant="Standard" />
+  </div>
+  <h6 class="heading">Disabled Buttons</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <Button disabled variant="Contained">CONTAINED</Button>
+    <Button disabled isPrimary={false} variant="Outlined">OUTLINED</Button>
+    <Button disabled variant="Text">TEXT</Button>
+  </div>
+  <h6 class="heading">Not Primary</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <Button isPrimary={false} variant="Contained">CONTAINED</Button>
+    <Button isPrimary={false} variant="Outlined">OUTLINED</Button>
+    <Button isPrimary={false} variant="Text">TEXT</Button>
+  </div>
+  <h6 class="heading">Primary Buttons</h6>
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
+    <Button variant="Contained">CONTAINED</Button>
+    <Button variant="Outlined">OUTLINED</Button>
+    <Button variant="Text">TEXT</Button>
   </div>
   <h6 class="heading">Icon Hover</h6>
   <div class="components-container">
@@ -212,12 +216,6 @@
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">
     <DataGrid {columns} {rows} />
-  </div>
-  <h6 class="heading">Auto Complete</h6>
-  <div class="components-container">
-    <AutoComplete options={["Apple", "Orange", "Banana", "Grape", "Mango"]} />
-    <AutoComplete variant="Filled" />
-    <AutoComplete variant="Standard" />
   </div>
   <h6 class="heading">Switch</h6>
   <div class="components-container">
