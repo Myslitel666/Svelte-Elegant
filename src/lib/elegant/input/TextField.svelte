@@ -18,7 +18,7 @@
   export let fontSize = ""; /* Размер шрифта */
   export let height = ""; /* Высота поля */
   export let borderColorHover = "";
-  export let id = null; /* Уникальный идентификатор элемента */
+  export let id: string | null = null; /* Уникальный идентификатор элемента */
   export let label = "Text Field"; /* Надпись */
   export let labelColor = ""; /* Цвет надписи */
   export let labelColorHover = "";
