@@ -23,7 +23,6 @@
   style:padding
   style:background-color={bgColor || theme.surface.header.background}
   style:transition="all 0.3s ease"
-  style:z-index="10000"
 >
   <slot />
 </nav>
@@ -34,6 +33,6 @@
     align-items: center;
     position: fixed; /* Фиксируем на экране */
     width: 100%; /* Растягиваем на всю ширину */
-    z-index: 100; /* Устанавливаем приоритет слоя */
+    z-index: 10000; /* Устанавливаем приоритет слоя */
   }
 </style>
