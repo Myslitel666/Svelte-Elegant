@@ -142,13 +142,19 @@
     <TextField variant="Standard" label="Standard" type="password" />
   </div>
   <h6 class="heading">Auto Complete</h6>
-  <div class="components-container">
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
     <AutoComplete options={["Apple", "Orange", "Banana", "Grape", "Mango"]} />
     <AutoComplete variant="Filled" />
     <AutoComplete variant="Standard" />
   </div>
   <h6 class="heading">Auto Complete (isSelect)</h6>
-  <div class="components-container">
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+  >
     <AutoComplete
       isSelect={true}
       options={["Apple", "Orange", "Banana", "Grape", "Mango"]}
