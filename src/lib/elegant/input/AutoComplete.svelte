@@ -44,8 +44,16 @@
   $: {
     filteredOptions = options;
 
-    if (!isSelect) {
-      if (value) {
+    if (value) {
+      if (isSelect) {
+        if (!options.includes(value)) {
+          if (options.length > 0) {
+            value = options[0]; // Присваиваем первый элемент, если value нет в options
+          } else {
+            value = "";
+          }
+        }
+      } else {
         filterOptions(value);
       }
     }
