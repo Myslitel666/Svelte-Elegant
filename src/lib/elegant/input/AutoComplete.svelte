@@ -192,6 +192,12 @@
       <IconHover
         marginTop="-0.05rem"
         marginRight="-0.12rem"
+        onmouseover={() => {
+          textFieldRef.handleMouseOver();
+        }}
+        onmouseout={() => {
+          textFieldRef.handleMouseOut();
+        }}
         onmouseup={() => {
           value = "";
           isOpen = false;
@@ -208,11 +214,9 @@
     <IconHover
       onmouseover={() => {
         textFieldRef.handleMouseOver();
-        triangleHover = !triangleHover;
       }}
       onmouseout={() => {
         textFieldRef.handleMouseOut();
-        triangleHover = !triangleHover;
       }}
       onmouseup={() => {
         toggleOpen();
