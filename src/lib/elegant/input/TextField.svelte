@@ -26,6 +26,7 @@
   export let type = ""; /* Тип ввода */
   export let padding = ""; /* Отступ */
   export let paddingTop = ""; /* Отступ от верхней границы */
+  export let paddingRight = "";
   export let primaryColor = ""; /* Основной цвет */
   export let color = ""; /* Цвет текста */
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
@@ -192,13 +193,15 @@
     style:min-width={minWidth}
     style:outline="none"
     style:padding-left={padding}
-    style:padding-right={type === "" || type === "text"
-      ? padding
-      : type === "password"
-        ? variant == "Standard"
-          ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
-          : `calc(0.9 * (2 * ${padding} + 1.45rem))`
-        : ""}
+    style:padding-right={paddingRight
+      ? paddingRight
+      : type === "" || type === "text"
+        ? padding
+        : type === "password"
+          ? variant == "Standard"
+            ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
+            : `calc(0.9 * (2 * ${padding} + 1.45rem))`
+          : ""}
     style:padding-top={paddingTop}
     style:width="100%"
     style:--Xl-border-color={xBorderColor}

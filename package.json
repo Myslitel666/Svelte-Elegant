@@ -71,6 +71,10 @@
 			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Bars.svelte"
 		},
+	    "./icons-elegant/Cross": {
+			"types": "./dist/icons-elegant/Cross.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Cross.svelte"
+		},
 		"./icons-elegant/Dark": {
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Dark.svelte"

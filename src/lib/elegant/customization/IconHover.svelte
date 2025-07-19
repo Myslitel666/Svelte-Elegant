@@ -7,6 +7,8 @@
 
   export let bgColor = ""; /* Основной цвет */
   export let height = "";
+  export let marginRight = "";
+  export let marginTop = "";
   export let padding = "0.25rem";
   export let right = "";
   export let width = "";
@@ -41,6 +43,8 @@
 <button
   class="btn-container"
   style:height
+  style:margin-right={marginRight}
+  style:margin-top={marginTop}
   style:padding
   style:right
   style:width
@@ -70,12 +74,16 @@
     background-color: var(--Xl-icon-bg-color);
     border-radius: 50%;
     transition: all 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .icon {
     pointer-events: none;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 
   @media (hover: hover) {

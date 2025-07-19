@@ -3,7 +3,8 @@
 
 /* Icons */
 export { default as Backspace } from './Backspace.svelte';
-export { default as BarsIcon } from './Bars.svelte';
+export { default as Bars } from './Bars.svelte';
+export { default as Cross } from './Cross.svelte';
 export { default as Elegant } from './Elegant.svelte';
 export { default as Enter } from './Enter.svelte';
 export { default as Dark } from './Dark.svelte';

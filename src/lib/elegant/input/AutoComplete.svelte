@@ -2,7 +2,7 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount, tick } from "svelte";
-  import Arrow from "../../icons-elegant/TriangularArrowDown.svelte";
+  import { TriangularArrowDown, Cross } from "../../icons-elegant";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import TextField from "./TextField.svelte";
   import { hexToRgba } from "$lib/utils/setHoverColor";
@@ -171,6 +171,7 @@
     bind:this={textFieldRef}
     bind:value
     {id}
+    paddingRight="3rem"
     onmousedown={() => {
       isOpen ? "" : toggleOpen();
     }}
@@ -182,6 +183,23 @@
     class="triangle-icon"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
   >
+    {#if value}
+      <IconHover
+        marginTop="-0.05rem"
+        marginRight="-0.12rem"
+        onmouseup={() => {
+          value = "";
+          isOpen = false;
+        }}
+        width="1.33rem"
+        height="1.33rem"
+        padding="0.12rem"
+      >
+        <div style:margin-top="0.25rem" style:margin-left="0.05rem">
+          <Cross size="1.33rem" />
+        </div>
+      </IconHover>
+    {/if}
     <IconHover
       onmouseover={() => {
         textFieldRef.handleMouseOver();
@@ -194,16 +212,17 @@
       onmouseup={() => {
         toggleOpen();
       }}
-      width="1.75rem"
-      height="1.75rem"
+      width="1.33rem"
+      height="1.33rem"
+      padding="0.12rem"
     >
       <div
-        style:margin-top="0.25rem"
-        style:margin-right="0.1rem"
+        style:margin-top={isOpen ? "0.212rem" : "0.25rem"}
+        style:margin-right={isOpen ? "" : "0.024rem"}
         style:transform={isOpen ? "rotate(180deg) translateY(15%)" : ""}
         style:z-index="10000000"
       >
-        <Arrow size="1.33rem" />
+        <TriangularArrowDown size="1.33rem" />
       </div>
     </IconHover>
   </div>
@@ -243,6 +262,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
   }
 
   .drop-list {
