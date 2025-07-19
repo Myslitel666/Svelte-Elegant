@@ -20,17 +20,17 @@
     "Option 2",
     "Option 2",
   ]; /* Состояние для передачи списков */
-  export let width = ""; /* Ширина поля */
   export let dropListBgColor = "";
+  export let isSelect = false;
   export let optionHoverColor = "";
   export let scrollbarColor = "";
+  export let width = ""; /* Ширина поля */
 
   // Приватные атрибуты
   let autoCompleteRef: HTMLElement;
   let textFieldRef: TextField;
   let filteredOptions: string[] = [];
   let isDropListBottom = true; // Определяет, следует ли отображать список снизу AutoComplete
-  let isSelector = false;
   let dropListRef: HTMLElement;
 
   //Стили из контекста темы
@@ -43,8 +43,11 @@
 
   $: {
     filteredOptions = options;
-    if (value) {
-      filterOptions(value);
+
+    if (!isSelect) {
+      if (value) {
+        filterOptions(value);
+      }
     }
   }
 
@@ -173,6 +176,7 @@
     bind:value
     {id}
     paddingRight="3rem"
+    readonly={isSelect}
     onmousedown={() => {
       isOpen ? "" : toggleOpen();
     }}
@@ -237,18 +241,24 @@
     style:background-color={xDropListBgColor}
   >
     {#if isOpen}
-      {#each filteredOptions as option}
-        <div
-          class="option"
-          style:--Xl-optionHoverColor={xOptionHoverColor}
-          on:click={() => {
-            value = option;
-            isOpen = false;
-          }}
-        >
-          {option}
+      {#if filteredOptions.length != 0}
+        {#each filteredOptions as option}
+          <div
+            class="option"
+            style:--Xl-optionHoverColor={xOptionHoverColor}
+            on:click={() => {
+              value = option;
+              isOpen = false;
+            }}
+          >
+            {option}
+          </div>
+        {/each}
+      {:else}
+        <div class="option" style:color={theme.palette.text.disabled}>
+          No options
         </div>
-      {/each}
+      {/if}
     {/if}
   </div>
 </div>

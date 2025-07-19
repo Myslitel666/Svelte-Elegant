@@ -28,6 +28,7 @@
   export let paddingTop = ""; /* Отступ от верхней границы */
   export let paddingRight = "";
   export let primaryColor = ""; /* Основной цвет */
+  export let readonly = false;
   export let color = ""; /* Цвет текста */
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
   export let value = ""; /* Значение поля */
@@ -183,6 +184,7 @@
     autocomplete="off"
     {id}
     {type}
+    {readonly}
     placeholder="fictitious"
     style:border-left={variant !== "Outlined" ? "none" : ""}
     style:border-right={variant !== "Outlined" ? "none" : ""}

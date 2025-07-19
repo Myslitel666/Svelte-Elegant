@@ -147,6 +147,15 @@
     <AutoComplete variant="Filled" />
     <AutoComplete variant="Standard" />
   </div>
+  <h6 class="heading">Auto Complete (isSelect)</h6>
+  <div class="components-container">
+    <AutoComplete
+      isSelect={true}
+      options={["Apple", "Orange", "Banana", "Grape", "Mango"]}
+    />
+    <AutoComplete isSelect variant="Filled" />
+    <AutoComplete isSelect variant="Standard" />
+  </div>
   <h6 class="heading">Disabled Buttons</h6>
   <div
     class="components-container"
