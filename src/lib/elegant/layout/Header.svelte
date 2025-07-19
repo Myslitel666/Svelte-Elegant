@@ -23,6 +23,7 @@
   style:padding
   style:background-color={bgColor || theme.surface.header.background}
   style:transition="all 0.3s ease"
+  style:z-index="10000"
 >
   <slot />
 </nav>

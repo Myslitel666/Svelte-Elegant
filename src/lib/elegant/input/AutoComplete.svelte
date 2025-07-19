@@ -30,6 +30,7 @@
   let textFieldRef: TextField;
   let filteredOptions: string[] = [];
   let isDropListBottom = true; // Определяет, следует ли отображать список снизу AutoComplete
+  let isSelector = false;
   let dropListRef: HTMLElement;
 
   //Стили из контекста темы
@@ -220,7 +221,6 @@
         style:margin-top={isOpen ? "0.212rem" : "0.25rem"}
         style:margin-right={isOpen ? "" : "0.024rem"}
         style:transform={isOpen ? "rotate(180deg) translateY(15%)" : ""}
-        style:z-index="10000000"
       >
         <TriangularArrowDown size="1.33rem" />
       </div>
