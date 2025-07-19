@@ -1,3 +1,11 @@
+## Используемые иконки
+
+Иконки взяты из следующих источников:
+
+- [SVG Repo](https://www.svgrepo.com/) (MIT)
+- [Bootstrap Icons](https://icons.getbootstrap.com) (MIT)
+- [Heroicons](https://heroicons.com/) (MIT)
+
 ## Шрифты
 
 В проекте используется шрифт [Roboto](https://fonts.google.com/specimen/Roboto) под лицензией [SIL Open Font License (OFL)](./OFL.txt).
