@@ -1,6 +1,6 @@
 {
 	"name": "svelte-elegant",
-	"version": "0.2.21",
+	"version": "0.2.22",
 	"scripts": {
 		"clean": "rimraf dist",
 		"dev": "vite dev --open",
@@ -71,7 +71,7 @@
 			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Bars.svelte"
 		},
-	    "./icons-elegant/Cross": {
+		"./icons-elegant/Cross": {
 			"types": "./dist/icons-elegant/Cross.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Cross.svelte"
 		},
