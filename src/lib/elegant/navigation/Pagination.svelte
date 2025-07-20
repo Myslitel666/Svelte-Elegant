@@ -4,7 +4,7 @@
   export let bgColor = "";
   export let bgColorHover = "";
   export let count = 11;
-  export let selectedPage = 5;
+  export let selectedPage = 16;
   export let typePage: "Circle" | "Square" = "Circle";
   export let visiblePages: number[] = [];
   export let maxVisibleCount = 7;
@@ -12,33 +12,36 @@
   let theme;
   let xBgColor = "";
   let xBgColorHover = "";
+  let xMaxVisibleCount = maxVisibleCount < 7 ? 7 : maxVisibleCount;
 
   $: if (selectedPage) {
     visiblePages = [];
 
     //Если умещаются все страницы
-    if (count <= maxVisibleCount) {
+    if (count <= xMaxVisibleCount) {
       for (let i = 1; i <= count; i++) {
         visiblePages.push(i);
       }
     } else {
       //Если не умещаются страницы с правого края
-      if (selectedPage < maxVisibleCount - 2) {
-        for (let i = 1; i <= maxVisibleCount - 2; i++) {
+      if (selectedPage < xMaxVisibleCount - 2) {
+        for (let i = 1; i <= xMaxVisibleCount - 2; i++) {
           visiblePages.push(i);
         }
         visiblePages.push(count);
       }
       //Если страница из середины или с правого края
       else {
-        let xMaxVisibleCount = maxVisibleCount - 2; //Снижение максимального кол-ва видимых страниц из-за центральной SelectedPage
-        const centeredPages = xMaxVisibleCount - 2; //Центральные страницы = все - первая - последняя
+        let xxMaxVisibleCount = xMaxVisibleCount - 2; //Снижение максимального кол-ва видимых страниц из-за центральной SelectedPage
+        const centeredPages = xxMaxVisibleCount - 2; //Центральные страницы = все - первая - последняя
         const leftPagesCount =
           (centeredPages - 1) % 2 === 0
             ? (centeredPages - 1) / 2
-            : (centeredPages - 2) / 2;
+            : centeredPages / 2;
         const rightPagesCount =
-          (centeredPages - 1) % 2 === 0 ? leftPagesCount : centeredPages / 2;
+          (centeredPages - 1) % 2 === 0
+            ? leftPagesCount
+            : (centeredPages - 2) / 2;
 
         //Если страница с середины
         if (selectedPage < count - 3) {
