@@ -32,7 +32,7 @@ const theme = derived(
 		},
 		controls: {
 			button: {
-				filter: $themeMode === 'light' ? 'brightness(118%)' : 'contrast(63%)'
+				filter: $themeMode === 'light' ? 'brightness(80%)' : 'contrast(63%)'
 			},
 			height: {
 				small: '3rem',

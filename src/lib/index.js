@@ -24,3 +24,4 @@ export { default as TitledBox } from './elegant/layout/TitledBox.svelte';
 
 /* Navigation Components */
 export { default as Drawer } from './elegant/navigation/Drawer.svelte';
+export { default as Pagination } from './elegant/navigation/Pagination.svelte';

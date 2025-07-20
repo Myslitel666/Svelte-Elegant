@@ -47,6 +47,10 @@
   let xWidth = "";
 
   $: {
+    // Индикаторы, отслеживающие изменения свойств. Если удалить, ререндеринга в пагинации не будет (когда присваиваются не переменные, а, например, результаты сравнения)
+    let isPrimaryIndicator = isPrimary;
+    let varinatIndicator = variant;
+
     if (buttonElement) {
       buttonElement.disabled = disabled;
       checkOrToggleDisabled();
@@ -76,6 +80,11 @@
   }
 
   function checkOrToggleDisabled() {
+    // Сброс перед вычислением
+    xBgColor = "";
+    xBgColorHover = "";
+    dropFilter();
+
     // Устанавливаем значения цветов при смене темы
     if (!bgColor) {
       if (variant == "Contained") {
@@ -104,10 +113,7 @@
             theme.controls.kOpacity
           );
         } else {
-          xBgColorHover =
-            $themeMode === "light"
-              ? theme.surface.ghost.background
-              : theme.surface.filled.background;
+          xBgColorHover = theme.surface.filled.background;
         }
       }
     } else if (bgColorHover && !filter) {

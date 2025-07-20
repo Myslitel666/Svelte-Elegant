@@ -18,6 +18,7 @@
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
   import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
+  import Pagination from "$elegant/navigation/Pagination.svelte";
 
   import TextArea from "$elegant/input/TextArea.svelte";
 
@@ -107,6 +108,10 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
+  <h6 class="heading">Basic Pagination</h6>
+  <div class="components-container">
+    <Pagination />
+  </div>
   <h6 class="heading">Disabled Text Fields</h6>
   <div
     class="components-container"
