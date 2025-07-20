@@ -4,7 +4,7 @@
   export let bgColor = "";
   export let bgColorHover = "";
   export let count = 11;
-  export let selectedPage = 9;
+  export let selectedPage = 5;
   export let typePage: "Circle" | "Square" = "Circle";
   export let visiblePages: number[] = [];
   export let maxVisibleCount = 7;
@@ -31,13 +31,18 @@
       }
       //Если страница из середины или с правого края
       else {
+        let xMaxVisibleCount = maxVisibleCount - 2; //Снижение максимального кол-ва видимых страниц из-за центральной SelectedPage
+        const centeredPages = xMaxVisibleCount - 2; //Центральные страницы = все - первая - последняя
+        const leftPagesCount =
+          (centeredPages - 1) % 2 === 0
+            ? (centeredPages - 1) / 2
+            : (centeredPages - 2) / 2;
+        const rightPagesCount =
+          (centeredPages - 1) % 2 === 0 ? leftPagesCount : centeredPages / 2;
+
         //Если страница с середины
         if (selectedPage < count - 3) {
           visiblePages.push(1);
-          const centeredPages = count - 2; //Центральные страницы = все - первая - последняя
-          const sidePages = centeredPages - maxVisibleCount;
-          const leftPagesCount =
-            sidePages % 2 === 0 ? sidePages / 2 : (sidePages - 1) / 2;
 
           for (let i = selectedPage - leftPagesCount; i <= selectedPage; i++) {
             visiblePages.push(i);
@@ -46,20 +51,20 @@
           if (!visiblePages.includes(selectedPage))
             visiblePages.push(selectedPage);
 
-          for (
-            let i = selectedPage + 1;
-            i <= selectedPage + leftPagesCount;
-            i++
-          ) {
-            visiblePages.push(i);
+          for (let i = 1; i <= rightPagesCount; i++) {
+            visiblePages.push(selectedPage + i);
           }
 
-          if (!visiblePages.includes(count)) visiblePages.push(count);
+          visiblePages.push(count);
         }
         //Если не умещаются страницы с левого края
         else {
           visiblePages.push(1);
-          for (let i = count - 4; i <= count; i++) {
+          for (
+            let i = count - leftPagesCount - rightPagesCount - 2;
+            i <= count;
+            i++
+          ) {
             visiblePages.push(i);
           }
         }
