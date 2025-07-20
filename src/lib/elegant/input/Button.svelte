@@ -1,6 +1,6 @@
 <script lang="ts">
   import { generateIdElement } from "../../stores/ElementIdStore.js";
-  import { themeStore, themeMode } from "$lib/stores/ThemeStore.js";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
   import { onMount } from "svelte";
   import { createTouchEffects, hexToRgba } from "$lib/utils/setHoverColor";
   import { isMobile } from "$lib/utils/isMobile.js";
