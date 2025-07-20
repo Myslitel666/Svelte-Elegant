@@ -1,6 +1,7 @@
 {
 	"name": "svelte-elegant",
 	"version": "1.0.1",
+	"license": "MIT",
 	"scripts": {
 		"clean": "rimraf dist",
 		"dev": "vite dev --open",
@@ -104,8 +105,8 @@
 			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
 		},
 		"./Pagination": {
-			"types": "./dist/elegant/customization/Pagination.svelte.d.ts",
-			"svelte": "./dist/elegant/customization/Pagination.svelte"
+			"types": "./dist/elegant/navigation/Pagination.svelte.d.ts",
+			"svelte": "./dist/elegant/navigation/Pagination.svelte"
 		},
 		"./stores": {
 			"types": "./dist/stores/index.d.ts",
