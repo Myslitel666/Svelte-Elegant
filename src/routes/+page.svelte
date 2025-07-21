@@ -110,7 +110,7 @@
 <div id="container" style:width="100%">
   <h6 class="heading">Basic Pagination</h6>
   <div class="components-container">
-    <Pagination typePage="Circle" maxVisibleCount={10} count={20} />
+    <Pagination typePage="Circle" />
   </div>
   <h6 class="heading">Disabled Text Fields</h6>
   <div

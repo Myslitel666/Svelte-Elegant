@@ -3,11 +3,11 @@
 
   export let bgColor = "";
   export let bgColorHover = "";
-  export let count = 11;
-  export let selectedPage = 16;
+  export let count = 1024;
+  export let selectedPage = 4;
   export let typePage: "Circle" | "Square" = "Circle";
   export let visiblePages: number[] = [];
-  export let maxVisibleCount = 7;
+  export let maxVisibleCount = 10;
 
   let theme;
   let xBgColor = "";
@@ -44,7 +44,7 @@
             : (centeredPages - 2) / 2;
 
         //Если страница с середины
-        if (selectedPage < count - 3) {
+        if (selectedPage <= count - maxVisibleCount / 2) {
           visiblePages.push(1);
 
           for (let i = selectedPage - leftPagesCount; i <= selectedPage; i++) {
@@ -96,7 +96,7 @@
     <button
       style:background-color={page === selectedPage ? xBgColor : ""}
       style:border-radius={typePage === "Square" ? "0.25rem" : "50%"}
-      style:width="2rem"
+      style:min-width="2rem"
       style:height="2rem"
       style:--Xl-bgColorHover={xBgColorHover}
       onclick={() => {
