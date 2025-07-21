@@ -1,13 +1,14 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores";
+  import Chevron from "$icons-elegant/Chevron.svelte";
 
   export let bgColor = "";
   export let bgColorHover = "";
-  export let count = 1024;
+  export let count = 12;
   export let selectedPage = 4;
   export let typePage: "Circle" | "Square" = "Circle";
   export let visiblePages: number[] = [];
-  export let maxVisibleCount = 10;
+  export let maxVisibleCount = 7;
 
   let theme;
   let xBgColor = "";
@@ -87,6 +88,21 @@
 </script>
 
 <nav class="pagination">
+  <button
+    style:background-color={selectedPage - 1 >= 1 ? "" : "transparent"}
+    style:border-radius={typePage === "Square" ? "0.25rem" : "50%"}
+    style:min-width="2rem"
+    style:height="2rem"
+    style:padding-right="0.33rem"
+    style:--Xl-bgColorHover={xBgColorHover}
+    onclick={() => {
+      if (selectedPage - 1 >= 1) selectedPage--;
+    }}
+  >
+    <Chevron
+      fill={selectedPage - 1 >= 1 ? "" : theme.palette.text.disabledContrast}
+    />
+  </button>
   {#each visiblePages as page, i}
     {#if i === 1 && visiblePages[i] !== 2}
       <button style:cursor="default" style:width="2rem" style:height="2rem">
@@ -111,6 +127,24 @@
       </button>
     {/if}
   {/each}
+  <button
+    style:background-color={selectedPage + 1 <= count ? "" : "transparent"}
+    style:border-radius={typePage === "Square" ? "0.25rem" : "50%"}
+    style:min-width="2rem"
+    style:height="2rem"
+    style:padding-left="0.33rem"
+    style:--Xl-bgColorHover={xBgColorHover}
+    onclick={() => {
+      if (selectedPage + 1 <= count) selectedPage++;
+    }}
+  >
+    <Chevron
+      fill={selectedPage + 1 <= count
+        ? ""
+        : theme.palette.text.disabledContrast}
+      rotate="180deg"
+    />
+  </button>
 </nav>
 
 <style>

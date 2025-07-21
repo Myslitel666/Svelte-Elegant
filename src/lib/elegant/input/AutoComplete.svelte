@@ -267,7 +267,7 @@
           </div>
         {/each}
       {:else}
-        <div class="option" style:color={theme.palette.text.disabled}>
+        <div class="option" style:color={theme.palette.text.disabledContrast}>
           No options
         </div>
       {/if}
