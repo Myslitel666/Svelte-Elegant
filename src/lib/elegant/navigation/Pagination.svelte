@@ -4,8 +4,8 @@
 
   export let bgColor = "";
   export let bgColorHover = "";
-  export let count = 12;
-  export let selectedPage = 4;
+  export let count = 10;
+  export let selectedPage = 1;
   export let typePage: "Circle" | "Square" = "Circle";
   export let visiblePages: number[] = [];
   export let maxVisibleCount = 7;
@@ -13,7 +13,7 @@
   let theme;
   let xBgColor = "";
   let xBgColorHover = "";
-  let xMaxVisibleCount = maxVisibleCount < 7 ? 7 : maxVisibleCount;
+  $: xMaxVisibleCount = maxVisibleCount < 7 ? 7 : maxVisibleCount;
 
   $: if (selectedPage) {
     visiblePages = [];
