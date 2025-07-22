@@ -21,6 +21,7 @@
   import Pagination from "$elegant/navigation/Pagination.svelte";
   import Database from "$icons-elegant/Database.svelte";
   import TextArea from "$elegant/input/TextArea.svelte";
+  import Notepad from "$icons-elegant/Notepad.svelte";
 
   import { isMobile } from "$lib/utils";
   import { onMount } from "svelte";

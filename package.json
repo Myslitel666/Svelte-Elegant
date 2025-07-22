@@ -100,6 +100,14 @@
 			"types": "./dist/icons-elegant/Light.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Light.svelte"
 		},
+		"./icons-elegant/Notepad": {
+			"types": "./dist/icons-elegant/Notepad.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Notepad.svelte"
+		},
+		"./icons-elegant/TableIcon": {
+			"types": "./dist/icons-elegant/TableIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/TableIcon.svelte"
+		},
 		"./icons-elegant/TriangularArrowDown": {
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
