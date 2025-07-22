@@ -80,6 +80,10 @@
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Dark.svelte"
 		},
+		"./icons-elegant/Database": {
+			"types": "./dist/icons-elegant/Database.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Database.svelte"
+		},
 		"./icons-elegant/Elegant": {
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Elegant.svelte"
