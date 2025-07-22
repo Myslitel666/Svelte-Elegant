@@ -58,7 +58,6 @@
     {/each}
   </div>
 
-  <!-- Пример строки данных -->
   {#each rows as row}
     <div class="row border">
       {#each columns as column}

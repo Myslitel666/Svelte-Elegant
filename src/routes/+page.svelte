@@ -19,7 +19,7 @@
   import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import Pagination from "$elegant/navigation/Pagination.svelte";
-
+  import Database from "$icons-elegant/Database.svelte";
   import TextArea from "$elegant/input/TextArea.svelte";
 
   import { isMobile } from "$lib/utils";
@@ -108,6 +108,11 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
+  <Database />
+  <h6 class="heading">Data Grid</h6>
+  <div class="components-container">
+    <DataGrid {columns} {rows} />
+  </div>
   <h6 class="heading">Basic Pagination</h6>
   <div class="components-container">
     <Pagination typePage="Circle" />
@@ -232,10 +237,6 @@
     <Box variant="Solid" width="6rem" height="6rem" justifyContent="center">
       Solid
     </Box>
-  </div>
-  <h6 class="heading">Data Grid</h6>
-  <div class="components-container">
-    <DataGrid {columns} {rows} />
   </div>
   <h6 class="heading">Switch</h6>
   <div class="components-container">
