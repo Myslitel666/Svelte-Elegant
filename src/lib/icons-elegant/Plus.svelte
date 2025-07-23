@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore } from "svelte-elegant/stores";
+  import { themeStore } from "$lib/stores/stores";
 
   export let fill = "";
   export let size = "1.75rem";
