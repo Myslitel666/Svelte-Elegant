@@ -104,6 +104,10 @@
 			"types": "./dist/icons-elegant/Light.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Light.svelte"
 		},
+		"./icons-elegant/ModalIcon": {
+			"types": "./dist/icons-elegant/ModalIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/ModalIcon.svelte"
+		},
 		"./icons-elegant/Notepad": {
 			"types": "./dist/icons-elegant/Notepad.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Notepad.svelte"
@@ -115,6 +119,10 @@
 		"./icons-elegant/TriangularArrowDown": {
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
+		},
+		"./Modal": {
+			"types": "./dist/elegant/overlays/Modal.svelte.d.ts",
+			"svelte": "./dist/elegant/overlays/Modal.svelte"
 		},
 		"./Pagination": {
 			"types": "./dist/elegant/navigation/Pagination.svelte.d.ts",

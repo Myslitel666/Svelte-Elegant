@@ -13,6 +13,7 @@ export { default as EnvelopeIcon } from './Envelope.svelte';
 export { default as EyeClosed } from './EyeClosed.svelte';
 export { default as EyeOpened } from './EyeOpened.svelte';
 export { default as Light } from './Light.svelte';
+export { default as ModalIcon } from './ModalIcon.svelte';
 export { default as Notepad } from './Notepad.svelte';
 export { default as TableIcon } from './TableIcon.svelte';
 export { default as TriangularArrowDown } from './TriangularArrowDown.svelte';

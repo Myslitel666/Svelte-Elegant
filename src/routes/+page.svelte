@@ -12,7 +12,7 @@
   import Enter from "$lib/icons-elegant/Enter.svelte";
   import Header from "$lib/elegant/layout/Header.svelte";
   import Box from "$lib/elegant/layout/Box.svelte";
-  import Modal from "$icons-elegant/Modal.svelte";
+  import ModalIcon from "$icons-elegant/ModalIcon.svelte";
   import Envelope from "$icons-elegant/Envelope.svelte";
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
@@ -20,6 +20,7 @@
   import IconHover from "$elegant/customization/IconHover.svelte";
   import Pagination from "$elegant/navigation/Pagination.svelte";
   import Database from "$icons-elegant/Database.svelte";
+  import { Modal } from "$lib";
   import TextArea from "$elegant/input/TextArea.svelte";
   import Notepad from "$icons-elegant/Notepad.svelte";
 
@@ -34,6 +35,8 @@
   import EyeOpened from "$icons-elegant/EyeOpened.svelte";
 
   let theme: any;
+
+  let isModalOpen = false;
 
   let elegantColor = "";
   let xMobile = false;
@@ -109,7 +112,29 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <Database />
+  <h6 class="heading">Modal</h6>
+  <div on:click={() => (isModalOpen = true)} class="components-container">
+    <ModalIcon />
+  </div>
+  <Modal
+    height="auto"
+    bind:isOpen={isModalOpen}
+    onClose={() => (isModalOpen = false)}
+    padding="1.5rem"
+  >
+    <p
+      style:font-weight="bold"
+      style:font-size="1.25rem"
+      style:margin-bottom="0.5rem"
+    >
+      Modal Content
+    </p>
+    <p>Anything inside the slot.</p>
+    <Button marginTop="1rem" width="100%" onClick={() => (isModalOpen = false)}
+      >Close</Button
+    >
+  </Modal>
+  <!-- Правильное закрытие тега -->
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">
     <DataGrid {columns} {rows} />
@@ -255,10 +280,6 @@
   <h6 class="heading">Icons</h6>
   <div class="components-container">
     <Envelope />
-  </div>
-  <h6 class="heading">Modal</h6>
-  <div class="components-container">
-    <Modal id={mdlToggleButtonId} />
   </div>
   <h6 class="heading">Drawer</h6>
   <div class="components-container">

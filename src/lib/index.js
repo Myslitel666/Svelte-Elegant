@@ -22,6 +22,9 @@ export { default as Box } from './elegant/layout/Box.svelte';
 export { default as Header } from './elegant/layout/Header.svelte';
 export { default as TitledBox } from './elegant/layout/TitledBox.svelte';
 
+/* Overlays Components */
+export { default as Modal } from './elegant/overlays/Modal.svelte';
+
 /* Navigation Components */
 export { default as Drawer } from './elegant/navigation/Drawer.svelte';
 export { default as Pagination } from './elegant/navigation/Pagination.svelte';
