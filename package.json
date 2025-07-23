@@ -116,6 +116,10 @@
 			"types": "./dist/icons-elegant/Plus.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Plus.svelte"
 		},
+	    "./icons-elegant/PlusSquareFill": {
+			"types": "./dist/icons-elegant/PlusSquareFill.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/PlusSquareFill.svelte"
+		},
 		"./icons-elegant/TableIcon": {
 			"types": "./dist/icons-elegant/TableIcon.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TableIcon.svelte"
