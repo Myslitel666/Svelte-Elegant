@@ -24,6 +24,8 @@
   import TextArea from "$elegant/input/TextArea.svelte";
   import Notepad from "$icons-elegant/Notepad.svelte";
 
+  import Plus from "$icons-elegant/Plus.svelte";
+
   import { isMobile } from "$lib/utils";
   import { onMount } from "svelte";
 
@@ -112,6 +114,7 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
+  <Plus />
   <h6 class="heading">Modal</h6>
   <div on:click={() => (isModalOpen = true)} class="components-container">
     <ModalIcon />

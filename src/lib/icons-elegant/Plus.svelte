@@ -2,7 +2,7 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
 
   export let fill = "";
-  export let size = "1.75rem";
+  export let size = "2.5rem";
 
   let theme: any;
 
