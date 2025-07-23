@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore } from "$lib/stores/stores";
+  import { themeStore } from "$lib/stores/ThemeStore.js";
 
   export let fill = "";
   export let size = "1.75rem";
