@@ -45,17 +45,7 @@
     filteredOptions = options;
 
     if (value) {
-      if (isSelect) {
-        if (!options.includes(value)) {
-          if (options.length > 0) {
-            value = options[0]; // Присваиваем первый элемент, если value нет в options
-          } else {
-            value = "";
-          }
-        }
-      } else {
-        filterOptions(value);
-      }
+      filterOptions(value);
     }
   }
 
@@ -121,6 +111,8 @@
     if (isOpen) {
       setDropPosition();
     }
+
+    filteredOptions = options;
   }
 
   // Функция, которая будет вызвана при клике вне AutoComplete
