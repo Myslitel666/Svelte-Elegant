@@ -19,7 +19,7 @@
   import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import Pagination from "$elegant/navigation/Pagination.svelte";
-  import Database from "$icons-elegant/Database.svelte";
+  import CrossFadeImager from "$elegant/effects/CrossFadeImager.svelte";
   import { Modal } from "$lib";
   import TextArea from "$elegant/input/TextArea.svelte";
   import Notepad from "$icons-elegant/Notepad.svelte";
@@ -109,15 +109,29 @@
       </span>
     </p>
   </button>
-  <div style:margin-left="auto" style:margin-right="1.25rem">
+  <div style:margin-left="auto" style:margin-right="2rem">
     <ColorThemeSwitch />
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <Plus />
-  <h6 class="heading">Modal</h6>
-  <div on:click={() => (isModalOpen = true)} class="components-container">
-    <ModalIcon />
+  <h6 style:font-size="2rem" style:font-weight="500" class="heading">
+    Cross Fade Imager
+  </h6>
+  <div class="components-container">
+    <CrossFadeImager>
+      <img
+        style:width="25rem"
+        style:height="25rem"
+        slot="light"
+        src="/large/light.png"
+      />
+      <img
+        style:width="25rem"
+        style:height="25rem"
+        slot="dark"
+        src="/large/dark.png"
+      />
+    </CrossFadeImager>
   </div>
   <Modal
     height="auto"
@@ -141,6 +155,10 @@
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">
     <DataGrid {columns} {rows} />
+  </div>
+  <h6 class="heading">Modal</h6>
+  <div on:click={() => (isModalOpen = true)} class="components-container">
+    <ModalIcon />
   </div>
   <h6 class="heading">Basic Pagination</h6>
   <div class="components-container">
