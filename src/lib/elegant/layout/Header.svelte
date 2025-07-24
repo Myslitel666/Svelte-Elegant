@@ -26,6 +26,7 @@
 >
   <slot />
 </nav>
+<div style:height style:padding></div>
 
 <style>
   .header {

@@ -330,7 +330,6 @@
     justify-content: center; /* Горизонтальное центрирование */
     align-items: center; /* Вертикальное центрирование */
     min-height: 100vh; /* Минимальная высота экрана */
-    padding-top: 4rem;
   }
 
   h6 {
