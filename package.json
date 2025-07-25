@@ -128,6 +128,10 @@
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
 		},
+		"./ImageThemeTransition": {
+			"types": "./dist/elegant/effects/ImageThemeTransition.svelte.d.ts",
+			"svelte": "./dist/elegant/effects/ImageThemeTransition.svelte"
+		},
 		"./Modal": {
 			"types": "./dist/elegant/overlays/Modal.svelte.d.ts",
 			"svelte": "./dist/elegant/overlays/Modal.svelte"

@@ -19,7 +19,7 @@
   import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import Pagination from "$elegant/navigation/Pagination.svelte";
-  import CrossFadeImager from "$elegant/effects/CrossFadeImager.svelte";
+  import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
   import { Modal } from "$lib";
   import TextArea from "$elegant/input/TextArea.svelte";
   import Notepad from "$icons-elegant/Notepad.svelte";
@@ -114,24 +114,14 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <h6 style:font-size="2rem" style:font-weight="500" class="heading">
-    Cross Fade Imager
+  <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
+    Image Theme Transition
   </h6>
   <div class="components-container">
-    <CrossFadeImager>
-      <img
-        style:width="25rem"
-        style:height="25rem"
-        slot="light"
-        src="/large/light.png"
-      />
-      <img
-        style:width="25rem"
-        style:height="25rem"
-        slot="dark"
-        src="/large/dark.png"
-      />
-    </CrossFadeImager>
+    <ImageThemeTransition
+      size="12rem"
+      srcImages={["/large/light.png", "/large/dark.png"]}
+    />
   </div>
   <Modal
     height="auto"

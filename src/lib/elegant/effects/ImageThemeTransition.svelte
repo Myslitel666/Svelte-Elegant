@@ -4,6 +4,10 @@
   import "../../font.css";
 
   let theme;
+  export let size = "25rem";
+  export let height = "25rem";
+  export let width = "25rem";
+  export let srcImages = ["", ""];
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -11,12 +15,16 @@
   });
 </script>
 
-<div style:width="25rem" style:height="25rem" class="cross-fade-imager">
+<div
+  style:width={size || width}
+  style:height={size || height}
+  class="cross-fade-imager"
+>
   <div class="image-wrapper" style:opacity={$themeMode === "light" ? 1 : 0}>
-    <slot name="light" />
+    <img src={srcImages[0]} alt="light" />
   </div>
   <div class="image-wrapper" style:opacity={$themeMode === "dark" ? 1 : 0}>
-    <slot name="dark" />
+    <img src={srcImages[1]} alt="dark" />
   </div>
 </div>
 
@@ -28,5 +36,11 @@
   .image-wrapper {
     position: absolute;
     transition: opacity 1.5s ease;
+  }
+
+  img {
+    width: 100%; /* or any custom size */
+    height: 100%;
+    object-fit: contain;
   }
 </style>
