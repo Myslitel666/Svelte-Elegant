@@ -168,6 +168,10 @@
 			"types": "./dist/elegant/customization/ThemeProvider.svelte.d.ts",
 			"svelte": "./dist/elegant/customization/ThemeProvider.svelte"
 		},
+		"./TimedImageTransition": {
+			"types": "./dist/elegant/effects/TimedImageTransition.svelte.d.ts",
+			"svelte": "./dist/elegant/effects/TimedImageTransition.svelte"
+		},
 		"./TitledBox": {
 			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/TitledBox.svelte"

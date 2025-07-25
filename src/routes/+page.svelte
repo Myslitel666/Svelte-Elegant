@@ -22,9 +22,6 @@
   import { Modal } from "$lib";
   import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
-  import Notepad from "$icons-elegant/Notepad.svelte";
-
-  import Plus from "$icons-elegant/Plus.svelte";
 
   import { isMobile } from "$lib/utils";
   import { onMount } from "svelte";
@@ -57,7 +54,6 @@
   let isDrawerOpen = false;
 
   let drToggleButtonId = `drawer-toggle-button-${generateIdElement()}`;
-  let mdlToggleButtonId = `modal-toggle-button-${generateIdElement()}`;
 
   let columns = [
     { field: "id", header: "Id", width: "10rem" },
@@ -87,8 +83,6 @@
   onMount(() => {
     xMobile = isMobile();
   });
-
-  let disabled = false;
 </script>
 
 <Header>
@@ -119,8 +113,26 @@
   </h6>
   <div class="components-container">
     <TimedImageTransition
+      transitionSecons="1.75"
+      interval={1750}
       size="12rem"
-      srcImages={["/large/light.png", "/large/dark.png"]}
+      srcImages={$themeMode === "light"
+        ? [
+            "/large/light.png",
+            "/large/white-blue.png",
+            "/large/white-red.png",
+            "/large/white-light-blue.png",
+            "/large/white-pink.png",
+            "/large/white-light-green.png",
+          ]
+        : [
+            "/large/dark.png",
+            "/large/black-blue.png",
+            "/large/black-green.png",
+            "/large/black-light-blue.png",
+            "/large/black-pink.png",
+            "/large/black-light-green.png",
+          ]}
     />
   </div>
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">

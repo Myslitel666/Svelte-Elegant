@@ -3,28 +3,28 @@
   import "$styles/app.css";
   import "../../font.css";
 
-  export let size = "25rem";
-  export let height = "25rem";
-  export let width = "25rem";
-  export let srcImages = ["", ""];
   export let alt = "Timed Image Transition";
+  export let height = "25rem";
+  export let interval = 2000;
+  export let size = "25rem";
+  export let srcImages = ["", ""];
+  export let transitionSecons = "1.5";
+  export let width = "25rem";
 
   let currentIndex = 0;
   let intervalId;
-  let unsubscribe;
 
   onMount(() => {
     // Автоматическое переключение изображений
     if (srcImages.length > 1) {
       intervalId = setInterval(() => {
         currentIndex = (currentIndex + 1) % srcImages.length;
-      }, 2000);
+      }, interval);
     }
   });
 
   onDestroy(() => {
     clearInterval(intervalId);
-    unsubscribe?.();
   });
 </script>
 
@@ -38,9 +38,10 @@
 >
   {#each srcImages as src, index}
     <div
-      class="image-wrapper"
-      style:opacity={index === currentIndex ? 1 : 0}
       aria-hidden={index !== currentIndex}
+      class="image-wrapper"
+      style:transition={`opacity ${transitionSecons}s ease`}
+      style:opacity={index === currentIndex ? 1 : 0}
     >
       <img {src} {alt} />
     </div>
@@ -59,7 +60,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    transition: opacity 1.5s ease;
   }
 
   img {

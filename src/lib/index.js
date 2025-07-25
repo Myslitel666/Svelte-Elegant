@@ -11,6 +11,7 @@ export { default as DataGrid } from './elegant/data-display/DataGrid.svelte';
 
 /* Data Effects Components */
 export { default as ImageThemeTransition } from './elegant/effects/ImageThemeTransition.svelte';
+export { default as TimedImageTransition } from './elegant/effects/TimedImageTransition.svelte';
 
 /* Input Components */
 export { default as AutoComplete } from './elegant/input/AutoComplete.svelte';
