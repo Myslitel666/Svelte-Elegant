@@ -19,9 +19,9 @@
   import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import Pagination from "$elegant/navigation/Pagination.svelte";
-  import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
   import { Modal } from "$lib";
-  import TextArea from "$elegant/input/TextArea.svelte";
+  import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
+  import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
   import Notepad from "$icons-elegant/Notepad.svelte";
 
   import Plus from "$icons-elegant/Plus.svelte";
@@ -115,6 +115,15 @@
 </Header>
 <div id="container" style:width="100%">
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
+    Timed Image Transition
+  </h6>
+  <div class="components-container">
+    <TimedImageTransition
+      size="12rem"
+      srcImages={["/large/light.png", "/large/dark.png"]}
+    />
+  </div>
+  <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
     Image Theme Transition
   </h6>
   <div class="components-container">
@@ -123,6 +132,7 @@
       srcImages={["/large/light.png", "/large/dark.png"]}
     />
   </div>
+
   <Modal
     height="auto"
     bind:isOpen={isModalOpen}
