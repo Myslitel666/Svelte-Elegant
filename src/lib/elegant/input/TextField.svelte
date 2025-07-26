@@ -4,6 +4,7 @@
   import { onMount, tick } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import IconHover from "$elegant/customization/IconHover.svelte";
+  import { isMobile } from "$lib/utils/isMobile.js";
   import "$styles/app.css";
   import "../../font.css";
 
@@ -162,7 +163,7 @@
 
   export function handleFocus() {
     isFocused = true;
-    const inputElement = document.getElementById(id);
+    //const inputElement = document.getElementById(id);
     //inputElement?.classList.add("focused");
     //inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
   }
@@ -294,7 +295,7 @@
   }
 
   label {
-    background-color: var(--Xl-background-color);
+    background-color: transparent;
     pointer-events: none; /* Нажатие на label не перекрывает не припятствует активации input */
     font-size: var(--Xl-font-size);
     color: var(--Xl-labelColor);
@@ -353,6 +354,10 @@
   .input-container.hovered label {
     background-color: var(--Xl-fill);
     color: var(--Xl-labelColorHover);
+  }
+
+  .input-container.focused label {
+    background-color: var(--Xl-fill);
   }
 
   .input-container.focused .input-border {
