@@ -185,7 +185,7 @@
     paddingRight={variant === "Standard" ? "2.5rem" : "3rem"}
     readonly={isSelect}
     onmousedown={() => {
-      isOpen ? "" : toggleOpen();
+      toggleOpen();
     }}
     label="Auto Complete"
     {variant}
