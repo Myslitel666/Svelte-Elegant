@@ -93,8 +93,9 @@
             ? theme.palette.background
             : "transparent";
     xBorderColorHover = borderColorHover || theme?.palette.text.contrast;
-    xLabelColor =
-      labelColor || variant != "Filled"
+    xLabelColor = labelColor
+      ? labelColor
+      : variant != "Filled"
         ? theme?.palette.text.label
         : theme?.palette.text.labelBalanced;
     xLabelColorHover = labelColorHover || theme?.palette.text.labelContrast;

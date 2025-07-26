@@ -11,11 +11,15 @@
 
   // Публичные свойства
   export let borderRadius = ""; /* Радиус скругления углов */
+  export let clearable = true;
   export let dropListBgColor = "";
+  export let dropListWidth = "";
+  export let hoverable = true;
   export let id = ""; /* Уникальный идентификатор элемента */
   export let isOpen = false; /* Состояние активации AutoComplete */
   export let isSelect = false;
   export let marginRight = "";
+  export let marginTop = "";
   export let options = [
     "Option 1",
     "Option 2",
@@ -167,6 +171,7 @@
   bind:this={autoCompleteRef}
   class="auto-complete-container"
   style:margin-right={marginRight}
+  style:margin-top={marginTop}
   style:width
   on:mousedown={() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -191,7 +196,7 @@
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
     style:margin-top={variant === "Standard" ? "0.5rem" : "0.125rem"}
   >
-    {#if value}
+    {#if value && clearable}
       <IconHover
         marginTop="-0.05rem"
         marginRight="-0.12rem"
@@ -215,6 +220,7 @@
       </IconHover>
     {/if}
     <IconHover
+      bgColor={hoverable ? "" : "transparent"}
       onmouseover={() => {
         textFieldRef.handleMouseOver();
       }}
@@ -243,9 +249,10 @@
       ? 'bottom'
       : 'top'}"
     bind:this={dropListRef}
+    style:background-color={xDropListBgColor}
+    style:width={dropListWidth || "100%"}
     style:--Xl-dropListHeight="{dropListHeight}px"
     style:--Xl-scrollbar-color={xScrollbarColor}
-    style:background-color={xDropListBgColor}
   >
     {#if isOpen}
       {#if filteredOptions.length != 0}
@@ -273,6 +280,8 @@
 <style>
   .auto-complete-container {
     position: relative;
+    display: flex;
+    justify-content: center;
   }
 
   .triangle-icon {
@@ -284,7 +293,6 @@
 
   .drop-list {
     position: absolute;
-    width: 100%; /* Или используйте фиксированную ширину, если нужно */
     background-color: #fff;
     border-radius: 6px;
     z-index: 1000; /* Убедитесь, что список отображается поверх других элементов */

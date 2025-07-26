@@ -4,6 +4,7 @@
   import { languageStore } from "../../stores/language";
 
   export let marginRight = "";
+  export let marginTop = "";
 
   let lg = $languageStore;
   let theme;
@@ -21,11 +22,21 @@
 </script>
 
 <AutoComplete
-  variant="Standard"
-  options={["en", "ru"]}
   bind:value={lg}
-  label="Lang"
+  borderColor="transparent"
+  borderColorHover="transparent"
+  clearable={false}
+  dropListWidth="4rem"
+  hoverable={false}
   isSelect
+  label="Lang"
+  labelColor="transparent"
+  labelColorHover="transparent"
+  options={["en", "ru"]}
+  primaryColor="transparent"
   {marginRight}
-  width="3.6rem"
+  {marginTop}
+  variant="Standard"
+  paddingRight="0rem"
+  width="2.5rem"
 />
