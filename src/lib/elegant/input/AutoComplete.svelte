@@ -10,20 +10,21 @@
   import "../../font.css";
 
   // Публичные свойства
-  export let value = "";
-  export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
+  export let borderRadius = ""; /* Радиус скругления углов */
+  export let dropListBgColor = "";
   export let id = ""; /* Уникальный идентификатор элемента */
   export let isOpen = false; /* Состояние активации AutoComplete */
-  export let borderRadius = ""; /* Радиус скругления углов */
+  export let isSelect = false;
+  export let marginRight = "";
   export let options = [
     "Option 1",
     "Option 2",
     "Option 2",
   ]; /* Состояние для передачи списков */
-  export let dropListBgColor = "";
-  export let isSelect = false;
   export let optionHoverColor = "";
   export let scrollbarColor = "";
+  export let value = "";
+  export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
   export let width = ""; /* Ширина поля */
 
   // Приватные атрибуты
@@ -165,6 +166,7 @@
   tabindex="0"
   bind:this={autoCompleteRef}
   class="auto-complete-container"
+  style:margin-right={marginRight}
   style:width
   on:mousedown={() => {
     document.addEventListener("mousedown", handleClickOutside);
@@ -187,6 +189,7 @@
   <div
     class="triangle-icon"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
+    style:margin-top="0.125rem"
   >
     {#if value}
       <IconHover

@@ -42,12 +42,17 @@
   let inputElement: HTMLInputElement | null = null;
 
   let fill = bgColor;
+  let paddingTopDelta = "3.5px";
+  let paddingLeftDelta = "0.815px";
   let xBgColor = "";
   let xBorderColor = "";
   let xBorderColorHover = "";
   let xColor = "";
   let xLabelColor = "";
   let xLabelColorHover = "";
+  let xPadding = "";
+  let xPaddingTop = "";
+  let xPaddingLabel = "";
 
   let theme: any;
 
@@ -129,9 +134,10 @@
     }
     if (!height) height = theme.controls.height.small;
     if (!padding) {
-      padding = variant === "Standard" ? "0" : theme.padding.balanced;
+      xPadding = variant === "Standard" ? "0" : theme.padding.balanced;
     }
-    if (!paddingTop) paddingTop = variant !== "Outlined" ? "1rem" : "0.15rem";
+    if (!paddingTop) xPaddingTop = variant !== "Outlined" ? "1rem" : "0.15rem";
+    else xPaddingTop = paddingTop;
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
   }
@@ -143,12 +149,26 @@
   export function handleBlur() {
     const inputElement = document.getElementById(id);
     inputElement?.classList.remove("focused");
+
+    if (variant === "Outlined") {
+      xPadding = `calc(${xPadding} + ${activedborderWidth} - ${paddingLeftDelta})`;
+    } else {
+      xPaddingTop = `calc(${xPaddingTop} + ${activedborderWidth} - ${paddingTopDelta})`;
+    }
+    xPaddingLabel = "";
   }
 
   export function handleFocus() {
     const inputElement = document.getElementById(id);
     inputElement?.classList.add("focused");
     inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
+
+    xPaddingLabel = xPadding;
+    if (variant === "Outlined") {
+      xPadding = `calc(${xPadding} - ${activedborderWidth} + ${paddingLeftDelta})`;
+    } else {
+      xPaddingTop = `calc(${xPaddingTop} - ${activedborderWidth} + ${paddingTopDelta})`;
+    }
   }
 
   export function handleMouseOver() {
@@ -194,17 +214,17 @@
     style:font-width="0.5rem"
     style:min-width={minWidth}
     style:outline="none"
-    style:padding-left={padding}
+    style:padding-left={xPadding}
     style:padding-right={paddingRight
       ? paddingRight
       : type === "" || type === "text"
-        ? padding
+        ? xPadding
         : type === "password"
           ? variant == "Standard"
             ? `calc(1.15 * (2 * ${theme.padding.min} + 1.45rem))`
-            : `calc(0.9 * (2 * ${padding} + 1.45rem))`
+            : `calc(0.9 * (2 * ${xPadding} + 1.45rem))`
           : ""}
-    style:padding-top={paddingTop}
+    style:padding-top={xPaddingTop}
     style:width="100%"
     style:--Xl-border-color={xBorderColor}
     style:--Xl-height={height}
@@ -221,7 +241,7 @@
   <label
     for={id}
     style:position="absolute"
-    style:margin-left={padding}
+    style:margin-left={xPaddingLabel ? xPaddingLabel : xPadding}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
@@ -237,7 +257,11 @@
   {#if type == "password" && !disabled}
     <div
       class="eye"
-      style:right={variant == "Standard" ? theme.padding.min : padding}
+      style:right={variant == "Standard"
+        ? theme.padding.min
+        : xPaddingLabel
+          ? xPaddingLabel
+          : xPadding}
     >
       <IconHover
         onClick={toggleType}

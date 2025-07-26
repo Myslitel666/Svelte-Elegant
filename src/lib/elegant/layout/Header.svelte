@@ -4,6 +4,7 @@
   import "../../font.css";
 
   export let bgColor = "";
+  export let border = "";
   export let gap = "0.5rem"; /* Расстояние между элементами */
   export let height = "2.75rem";
   export let padding = "0.5rem";
@@ -24,6 +25,10 @@
   style:background-color={bgColor || theme.surface.header.background}
   style:transition="all 0.3s ease"
   style:width="100vw"
+  style:border
+  style:border-left="none"
+  style:border-right="none"
+  style:border-top="none"
 >
   <slot />
 </nav>

@@ -23,6 +23,9 @@
   import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
 
+  import { languageStore } from "$lib/stores/language";
+  import LangSelector from "$elegant/customization/LangSelector.svelte";
+
   import { isMobile } from "$lib/utils";
   import { onMount } from "svelte";
 
@@ -103,11 +106,23 @@
       </span>
     </p>
   </button>
-  <div style:margin-left="auto" style:margin-right="2rem">
+  <div
+    style:display="flex"
+    style:align-items="center"
+    style:margin-left="auto"
+    style:margin-right="2rem"
+  >
+    <LangSelector marginRight="0.5rem" />
     <ColorThemeSwitch />
   </div>
 </Header>
 <div id="container" style:width="100%">
+  <h6 style:font-weight="500" class="heading">LangSelector Test</h6>
+  {#if $languageStore === "ru"}
+    <p>Русский</p>
+  {:else}
+    <p>English</p>
+  {/if}
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
     Timed Image Transition
   </h6>
@@ -172,6 +187,7 @@
   <div on:click={() => (isModalOpen = true)} class="components-container">
     <ModalIcon />
   </div>
+  <LangSelector />
   <h6 class="heading">Basic Pagination</h6>
   <div class="components-container">
     <Pagination typePage="Circle" />
