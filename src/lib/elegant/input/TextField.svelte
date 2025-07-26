@@ -1,7 +1,7 @@
 <script lang="ts">
   import { EyeClosed, EyeOpened } from "$icons-elegant";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
-  import { onMount } from "svelte";
+  import { onMount, tick } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import "$styles/app.css";
@@ -42,8 +42,7 @@
   let inputElement: HTMLInputElement | null = null;
 
   let fill = bgColor;
-  let paddingTopDelta = "3.5px";
-  let paddingLeftDelta = "0.815px";
+  let isHovered = false;
   let xBgColor = "";
   let xBorderColor = "";
   let xBorderColorHover = "";
@@ -56,6 +55,7 @@
 
   let theme: any;
 
+  $: isFocused = inputElement && document.activeElement === inputElement; //Реактивное обновление фокуса (если пользователь активировал поле до ререндеринга)
   $: xType = inputElement?.type;
   $: {
     if (inputElement) {
@@ -86,7 +86,9 @@
       fill =
         variant === "Filled"
           ? theme.surface.solid.background
-          : theme.palette.background;
+          : variant === "Outlined"
+            ? theme.palette.background
+            : "transparent";
     xBorderColorHover = borderColorHover || theme?.palette.text.contrast;
     xLabelColor =
       labelColor || variant != "Filled"
@@ -144,27 +146,33 @@
 
   onMount(() => {
     id ? "" : (id = `text-field-${generateIdElement()}`);
+
+    tick(); // Ждём завершения первоначального рендеринга
+    if (inputElement) {
+      // Проверяем hover сразу после монтирования
+      isHovered = inputElement.matches(":hover");
+    }
   });
 
   export function handleBlur() {
-    const inputElement = document.getElementById(id);
-    inputElement?.classList.remove("focused");
+    isFocused = false;
+    //const inputElement = document.getElementById(id);
+    //inputElement?.classList.remove("focused");
   }
 
   export function handleFocus() {
+    isFocused = true;
     const inputElement = document.getElementById(id);
-    inputElement?.classList.add("focused");
-    inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
+    //inputElement?.classList.add("focused");
+    //inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
   }
 
   export function handleMouseOver() {
-    const inputElement = document.getElementById(id);
-    inputElement?.classList.add("hovered");
+    isHovered = true;
   }
 
   export function handleMouseOut() {
-    const inputElement = document.getElementById(id);
-    inputElement?.classList.remove("hovered");
+    isHovered = false;
   }
 
   function toggleType() {
@@ -176,18 +184,27 @@
 </script>
 
 <div
-  style:position="relative"
   class="input-container"
-  style:width
+  class:focused={isFocused}
+  class:hovered={isHovered}
+  style:border="none"
+  style:border-radius={borderRadius}
   style:height
+  style:position="relative"
+  style:width
   style:--Xl-activeborderWidth={activedborderWidth}
   style:--Xl-background-color={xBgColor}
+  style:--Xl-border-color={xBorderColor}
   style:--Xl-color={primaryColor || theme?.palette.primary}
+  style:--Xl-disabledborderWidth={disabledborderWidth ||
+    theme?.border.disabled.width}
   style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
   style:--Xl-fill={fill}
+  style:--Xl-height={height}
+  style:--Xl-hoverBorderColor={xBorderColorHover}
 >
   <input
-    style:position="absolute"
+    class:has-value={value}
     bind:this={inputElement}
     bind:value
     autocomplete="off"
@@ -195,10 +212,7 @@
     {type}
     {readonly}
     placeholder="fictitious"
-    style:border-left={variant !== "Outlined" ? "none" : ""}
-    style:border-right={variant !== "Outlined" ? "none" : ""}
-    style:border-top={variant !== "Outlined" ? "none" : ""}
-    style:border-radius={borderRadius}
+    style:border="none"
     style:font-size={fontSize}
     style:font-width="0.5rem"
     style:min-width={minWidth}
@@ -214,19 +228,24 @@
             : `calc(0.9 * (2 * ${xPadding} + 1.45rem))`
           : ""}
     style:padding-top={xPaddingTop}
+    style:position="absolute"
     style:width="100%"
-    style:--Xl-border-color={xBorderColor}
-    style:--Xl-height={height}
-    style:--Xl-disabledborderWidth={disabledborderWidth ||
-      theme?.border.disabled.width}
-    style:--Xl-hoverBorderColor={xBorderColorHover}
     style:--Xl-textColor={xColor}
+    on:click={focus}
     on:mouseover={handleMouseOver}
     on:mouseout={handleMouseOut}
     on:focus={handleFocus}
     on:blur={handleBlur}
     {...$$props}
   />
+  <div
+    class="input-border"
+    style:position="absolute"
+    style:border-left={variant !== "Outlined" ? "none" : ""}
+    style:border-right={variant !== "Outlined" ? "none" : ""}
+    style:border-top={variant !== "Outlined" ? "none" : ""}
+    style:border-radius={borderRadius}
+  ></div>
   <label
     for={id}
     style:position="absolute"
@@ -268,15 +287,9 @@
 
 <style>
   input {
-    background-color: var(--Xl-background-color);
+    background-color: transparent;
     color: var(--Xl-textColor);
     height: var(--Xl-height);
-    border-color: var(--Xl-border-color);
-    border-style: solid;
-    border-width: var(--Xl-disabledborderWidth);
-    transition:
-      border-color var(--Xl-effectsTimeCode),
-      background-color var(--Xl-effectsTimeCode);
     box-sizing: border-box; /* Включаем border и padding в размеры элемента */
   }
 
@@ -293,6 +306,22 @@
     align-items: center;
   }
 
+  .input-border {
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    pointer-events: none;
+
+    border-color: var(--Xl-border-color);
+    border-style: solid;
+    border-width: 1px;
+    box-sizing: border-box; /* Включаем border и padding в размеры элемента */
+
+    transition:
+      border-color var(--Xl-effectsTimeCode),
+      background-color var(--Xl-effectsTimeCode);
+  }
+
   .eye {
     position: absolute;
     height: 2.5rem;
@@ -302,45 +331,61 @@
   }
 
   .input-container {
+    background-color: var(--Xl-background-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
+
+    transition:
+      border-color var(--Xl-effectsTimeCode),
+      background-color var(--Xl-effectsTimeCode);
   }
 
-  .hovered {
+  .input-container.hovered {
     background-color: var(--Xl-fill);
+  }
+
+  .hovered .input-border {
     border-color: var(--Xl-hoverBorderColor);
   }
 
-  input.hovered + label {
+  .input-container.hovered label {
     background-color: var(--Xl-fill);
     color: var(--Xl-labelColorHover);
   }
 
-  input.focused {
+  .input-container.focused .input-border {
     border-color: var(--Xl-color);
-    border-width: var(--Xl-activeborderWidth);
+    border-width: 2px;
   }
 
-  input.focused + label {
+  .input-container:hover label {
+    background-color: var(--Xl-fill);
+    color: var(--Xl-labelColorHover);
+  }
+
+  .input-container.focused label {
     color: var(--Xl-color); /* Изменяем цвет на основной */
   }
 
-  input.focused + label,
-  input:not(:placeholder-shown) + label {
+  .input-container.focused label {
+    color: var(--Xl-color); /* Изменяем цвет на основной */
+  }
+
+  .input-container.focused label,
+  .input-container:has(input.has-value) label {
     transform: translate(
       -0.26rem,
       calc(-1 * var(--Xl-liftingHeight))
     ); /* Сдвигаем метку влево и вверх */
     font-size: 13px; /* Уменьшаем размер шрифта */
-    background-color: var(--Xl-background-color);
     padding: 0 0.26rem 0 0.26rem;
     transition: all var(--Xl-effectsTimeCode);
   }
 
-  input.focused,
-  input:not(:placeholder-shown) {
+  .input-container.focused,
+  .input-container:has(input:not(:placeholder-shown)) {
     background-color: var(--Xl-background-color);
   }
 
