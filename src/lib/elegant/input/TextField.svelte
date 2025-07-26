@@ -52,7 +52,7 @@
   let xLabelColorHover = "";
   let xPadding = "";
   let xPaddingTop = "";
-  let xPaddingLabel = "";
+  let xPaddingStatic = "";
 
   let theme: any;
 
@@ -155,7 +155,7 @@
     } else {
       xPaddingTop = `calc(${xPaddingTop} + ${activedborderWidth} - ${paddingTopDelta})`;
     }
-    xPaddingLabel = "";
+    xPaddingStatic = "";
   }
 
   export function handleFocus() {
@@ -163,7 +163,7 @@
     inputElement?.classList.add("focused");
     inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
 
-    xPaddingLabel = xPadding;
+    xPaddingStatic = xPadding;
     if (variant === "Outlined") {
       xPadding = `calc(${xPadding} - ${activedborderWidth} + ${paddingLeftDelta})`;
     } else {
@@ -241,7 +241,7 @@
   <label
     for={id}
     style:position="absolute"
-    style:margin-left={xPaddingLabel ? xPaddingLabel : xPadding}
+    style:margin-left={xPaddingStatic ? xPaddingStatic : xPadding}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
@@ -259,8 +259,8 @@
       class="eye"
       style:right={variant == "Standard"
         ? theme.padding.min
-        : xPaddingLabel
-          ? xPaddingLabel
+        : xPaddingStatic
+          ? xPaddingStatic
           : xPadding}
     >
       <IconHover
