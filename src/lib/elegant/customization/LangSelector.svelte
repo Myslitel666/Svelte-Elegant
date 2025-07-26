@@ -3,7 +3,7 @@
   import { themeStore } from "$lib/stores";
   import { languageStore } from "../../stores/language";
 
-  export let marginRight = "0rem";
+  export let marginRight = "";
 
   let lg = $languageStore;
   let theme;
@@ -21,6 +21,7 @@
 </script>
 
 <AutoComplete
+  variant="Standard"
   options={["en", "ru"]}
   bind:value={lg}
   label="Lang"

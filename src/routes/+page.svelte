@@ -112,7 +112,7 @@
     style:margin-left="auto"
     style:margin-right="2rem"
   >
-    <LangSelector marginRight="0.5rem" />
+    <LangSelector />
     <ColorThemeSwitch />
   </div>
 </Header>

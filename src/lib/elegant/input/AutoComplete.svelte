@@ -177,7 +177,7 @@
     bind:this={textFieldRef}
     bind:value
     {id}
-    paddingRight="3rem"
+    paddingRight={variant === "Standard" ? "2.5rem" : "3rem"}
     readonly={isSelect}
     onmousedown={() => {
       isOpen ? "" : toggleOpen();
@@ -189,7 +189,7 @@
   <div
     class="triangle-icon"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
-    style:margin-top="0.125rem"
+    style:margin-top={variant === "Standard" ? "0.375rem" : "0.125rem"}
   >
     {#if value}
       <IconHover
