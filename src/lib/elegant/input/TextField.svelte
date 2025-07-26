@@ -251,6 +251,7 @@
     for={id}
     style:position="absolute"
     style:margin-left={xPaddingStatic ? xPaddingStatic : xPadding}
+    style:margin-top={variant === "Standard" ? "0.75rem" : ""}
     style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
@@ -258,7 +259,7 @@
     style:--Xl-liftingHeight={variant === "Outlined"
       ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
       : variant === "Standard"
-        ? `${height}/2 + 0.65rem`
+        ? `${height}/2 + 0.425rem`
         : `${height}/2 + 0.82rem`}
   >
     {label}
