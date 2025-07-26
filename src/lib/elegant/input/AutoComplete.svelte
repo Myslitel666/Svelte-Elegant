@@ -189,7 +189,7 @@
   <div
     class="triangle-icon"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
-    style:margin-top={variant === "Standard" ? "0.375rem" : "0.125rem"}
+    style:margin-top={variant === "Standard" ? "0.5rem" : "0.125rem"}
   >
     {#if value}
       <IconHover

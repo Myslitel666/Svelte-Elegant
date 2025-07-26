@@ -25,6 +25,7 @@
   options={["en", "ru"]}
   bind:value={lg}
   label="Lang"
+  isSelect
   {marginRight}
-  width="5rem"
+  width="3.6rem"
 />
