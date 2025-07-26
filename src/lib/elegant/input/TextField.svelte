@@ -298,7 +298,7 @@
   }
 
   label {
-    background-color: transparent;
+    background-color: var(--Xl-label-fill);
     pointer-events: none; /* Нажатие на label не перекрывает не припятствует активации input */
     font-size: var(--Xl-font-size);
     color: var(--Xl-labelColor);
