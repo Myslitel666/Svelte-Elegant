@@ -169,7 +169,7 @@
   }
 
   export function handleMouseOver() {
-    isHovered = true;
+    if (!isMobile()) isHovered = true;
   }
 
   export function handleMouseOut() {
