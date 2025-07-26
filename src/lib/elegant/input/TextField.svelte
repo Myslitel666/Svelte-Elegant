@@ -71,7 +71,9 @@
       xBgColor =
         variant === "Filled"
           ? theme.surface.filled.background
-          : theme.palette.background;
+          : variant === "Outlined"
+            ? theme.palette.background
+            : "";
     else {
       xBgColor = bgColor;
     }
@@ -201,6 +203,7 @@
     theme?.border.disabled.width}
   style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
   style:--Xl-fill={fill}
+  style:--Xl-label-fill={variant === "Outlined" ? fill : ""}
   style:--Xl-height={height}
   style:--Xl-hoverBorderColor={xBorderColorHover}
 >
@@ -252,7 +255,6 @@
     style:position="absolute"
     style:margin-left={xPaddingStatic ? xPaddingStatic : xPadding}
     style:margin-top={variant === "Standard" ? "0.75rem" : ""}
-    style:background-color={variant === "Filled" ? "transparent" : ""}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
@@ -353,12 +355,12 @@
   }
 
   .input-container.hovered label {
-    background-color: var(--Xl-fill);
+    background-color: var(--Xl-label-fill);
     color: var(--Xl-labelColorHover);
   }
 
   .input-container.focused label {
-    background-color: var(--Xl-fill);
+    background-color: var(--Xl-label-fill);
   }
 
   .input-container.focused .input-border {
@@ -367,7 +369,7 @@
   }
 
   .input-container:hover label {
-    background-color: var(--Xl-fill);
+    background-color: var(--Xl-label-fill);
     color: var(--Xl-labelColorHover);
   }
 
