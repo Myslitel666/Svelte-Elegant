@@ -149,26 +149,12 @@
   export function handleBlur() {
     const inputElement = document.getElementById(id);
     inputElement?.classList.remove("focused");
-
-    if (variant === "Outlined") {
-      xPadding = `calc(${xPadding} + ${activedborderWidth} - ${paddingLeftDelta})`;
-    } else {
-      xPaddingTop = `calc(${xPaddingTop} + ${activedborderWidth} - ${paddingTopDelta})`;
-    }
-    xPaddingStatic = "";
   }
 
   export function handleFocus() {
     const inputElement = document.getElementById(id);
     inputElement?.classList.add("focused");
     inputElement?.focus(); // Перенаправление фокуса на элемент input при вызове данного обработчика из других компонентов
-
-    xPaddingStatic = xPadding;
-    if (variant === "Outlined") {
-      xPadding = `calc(${xPadding} - ${activedborderWidth} + ${paddingLeftDelta})`;
-    } else {
-      xPaddingTop = `calc(${xPaddingTop} - ${activedborderWidth} + ${paddingTopDelta})`;
-    }
   }
 
   export function handleMouseOver() {
@@ -190,8 +176,10 @@
 </script>
 
 <div
+  style:position="relative"
   class="input-container"
   style:width
+  style:height
   style:--Xl-activeborderWidth={activedborderWidth}
   style:--Xl-background-color={xBgColor}
   style:--Xl-color={primaryColor || theme?.palette.primary}
@@ -199,6 +187,7 @@
   style:--Xl-fill={fill}
 >
   <input
+    style:position="absolute"
     bind:this={inputElement}
     bind:value
     autocomplete="off"
