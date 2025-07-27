@@ -3,8 +3,26 @@
   import { themeStore } from "$lib/stores";
   import { languageStore } from "../../stores/language";
 
-  export let marginRight = "";
-  export let marginTop = "";
+  export let buttonMarginTop = "0.09rem";
+  export let borderColor = "transparent";
+  export let borderColorHover = "transparent";
+  export let clearable = false;
+  export let dropListWidth = "4rem";
+  export let height = "1.75rem";
+  export let hoverable = false;
+  export let isSelect = true;
+  export let label = "Lang";
+  export let labelColor = "transparent";
+  export let labelColorHover = "transparent";
+  export let marginRight = "0";
+  export let marginTop = "0";
+  export let options = ["en", "ru"];
+  export let paddingRight = "0rem";
+  export let paddingBottom = "0rem";
+  export let paddingTop = "0rem";
+  export let primaryColor = "transparent";
+  export let variant = "Standard";
+  export let width = "2.5rem";
 
   let lg = $languageStore;
   let theme;
@@ -23,24 +41,25 @@
 
 <AutoComplete
   bind:value={lg}
-  buttonMarginTop="0.09rem"
-  paddingTop="0"
-  paddingBottom="0"
-  borderColor="transparent"
-  borderColorHover="transparent"
-  clearable={false}
-  dropListWidth="4rem"
-  hoverable={false}
-  isSelect
-  label="Lang"
-  labelColor="transparent"
-  labelColorHover="transparent"
-  options={["en", "ru"]}
-  primaryColor="transparent"
+  {buttonMarginTop}
+  {paddingTop}
+  {paddingBottom}
+  {borderColor}
+  {borderColorHover}
+  {clearable}
+  {dropListWidth}
+  {hoverable}
+  {isSelect}
+  {label}
+  {labelColor}
+  {labelColorHover}
+  {options}
+  {primaryColor}
   {marginRight}
   {marginTop}
-  variant="Standard"
-  paddingRight="0rem"
-  width="2.5rem"
-  height="1.75rem"
+  {variant}
+  {paddingRight}
+  {width}
+  {height}
+  {...$$props}
 />

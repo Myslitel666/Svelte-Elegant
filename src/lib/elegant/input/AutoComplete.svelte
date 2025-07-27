@@ -40,7 +40,6 @@
   let dropListRef: HTMLElement;
 
   //Стили из контекста темы
-  let triangleHover = false;
   let xDropListBgColor = "";
   let xOptionHoverColor = "";
   let xScrollbarColor = "";

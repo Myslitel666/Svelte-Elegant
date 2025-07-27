@@ -230,10 +230,7 @@
     class="components-container"
     style:flex-direction={xMobile ? "column" : ""}
   >
-    <AutoComplete
-      height="5rem"
-      options={["Apple", "Orange", "Banana", "Grape", "Mango"]}
-    />
+    <AutoComplete options={["Apple", "Orange", "Banana", "Grape", "Mango"]} />
     <AutoComplete variant="Filled" />
     <AutoComplete variant="Standard" />
   </div>
