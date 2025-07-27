@@ -11,6 +11,7 @@
 
   // Публичные свойства
   export let borderRadius = ""; /* Радиус скругления углов */
+  export let buttonMarginTop = "";
   export let clearable = true;
   export let dropListBgColor = "";
   export let dropListWidth = "";
@@ -194,7 +195,11 @@
   <div
     class="triangle-icon"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
-    style:margin-top={variant === "Standard" ? "0.5rem" : "0.05rem"}
+    style:margin-top={buttonMarginTop
+      ? buttonMarginTop
+      : variant === "Standard"
+        ? "0.5rem"
+        : "0.05rem"}
   >
     {#if value && clearable}
       <IconHover

@@ -112,7 +112,7 @@
     style:margin-left="auto"
     style:margin-right="2rem"
   >
-    <LangSelector marginRight="0.5rem" marginTop="-0.6rem" />
+    <LangSelector marginRight="0.5rem" />
     <ColorThemeSwitch />
   </div>
 </Header>
@@ -230,7 +230,10 @@
     class="components-container"
     style:flex-direction={xMobile ? "column" : ""}
   >
-    <AutoComplete options={["Apple", "Orange", "Banana", "Grape", "Mango"]} />
+    <AutoComplete
+      height="5rem"
+      options={["Apple", "Orange", "Banana", "Grape", "Mango"]}
+    />
     <AutoComplete variant="Filled" />
     <AutoComplete variant="Standard" />
   </div>

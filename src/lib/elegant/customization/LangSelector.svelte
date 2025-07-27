@@ -23,6 +23,9 @@
 
 <AutoComplete
   bind:value={lg}
+  buttonMarginTop="0.09rem"
+  paddingTop="0"
+  paddingBottom="0"
   borderColor="transparent"
   borderColorHover="transparent"
   clearable={false}
@@ -39,4 +42,5 @@
   variant="Standard"
   paddingRight="0rem"
   width="2.5rem"
+  height="1.75rem"
 />
