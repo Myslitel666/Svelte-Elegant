@@ -194,11 +194,11 @@
   <div
     class="triangle-icon"
     style:right={variant === "Standard" ? "0rem" : "0.53rem"}
-    style:margin-top={variant === "Standard" ? "0.5rem" : "0.125rem"}
+    style:margin-top={variant === "Standard" ? "0.5rem" : "0.05rem"}
   >
     {#if value && clearable}
       <IconHover
-        marginTop="-0.05rem"
+        marginTop="-0.1rem"
         marginRight="-0.12rem"
         onmouseover={() => {
           textFieldRef.handleMouseOver();
@@ -232,11 +232,12 @@
       }}
       width="1.33rem"
       height="1.33rem"
+      marginTop="-0.09rem"
       padding="0.12rem"
     >
       <div
         style:margin-top={isOpen ? "0.212rem" : "0.25rem"}
-        style:margin-right={isOpen ? "" : "0.024rem"}
+        style:margin-right={isOpen ? "" : "0.018rem"}
         style:transform={isOpen ? "rotate(180deg) translateY(15%)" : ""}
       >
         <TriangularArrowDown size="1.33rem" />

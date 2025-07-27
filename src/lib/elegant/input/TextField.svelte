@@ -26,6 +26,7 @@
   export let minWidth = ""; /* Минимальная ширина поля */
   export let type = ""; /* Тип ввода */
   export let padding = ""; /* Отступ */
+  export let paddingBottom = "";
   export let paddingTop = ""; /* Отступ от верхней границы */
   export let paddingRight = "";
   export let primaryColor = ""; /* Основной цвет */
@@ -51,8 +52,8 @@
   let xLabelColor = "";
   let xLabelColorHover = "";
   let xPadding = "";
+  let xPaddingBottom = "";
   let xPaddingTop = "";
-  let xPaddingStatic = "";
 
   let theme: any;
 
@@ -63,6 +64,23 @@
       inputElement.disabled = disabled;
       checkOrToggleDisabled();
     }
+  }
+
+  if (paddingBottom) {
+    xPaddingBottom = paddingBottom;
+  } else {
+    xPaddingBottom = variant === "Outlined" ? "0.17rem" : "";
+  }
+
+  if (paddingTop) {
+    xPaddingTop = paddingTop;
+  } else {
+    xPaddingTop =
+      variant === "Outlined"
+        ? ""
+        : variant === "Standard"
+          ? "0.9rem"
+          : "0.909rem";
   }
 
   function checkOrToggleDisabled() {
@@ -142,8 +160,6 @@
     if (!padding) {
       xPadding = variant === "Standard" ? "0" : theme.padding.balanced;
     }
-    if (!paddingTop) xPaddingTop = variant !== "Outlined" ? "1rem" : "0.15rem";
-    else xPaddingTop = paddingTop;
     if (!width) width = theme.controls.width;
     if (!fontSize) fontSize = theme.typography.fontSize;
   }
@@ -222,6 +238,7 @@
     style:font-width="0.5rem"
     style:min-width={minWidth}
     style:outline="none"
+    style:padding-bottom={xPaddingBottom}
     style:padding-left={xPadding}
     style:padding-right={paddingRight
       ? paddingRight
@@ -254,27 +271,27 @@
   <label
     for={id}
     style:position="absolute"
-    style:margin-left={xPaddingStatic ? xPaddingStatic : xPadding}
-    style:margin-top={variant === "Standard" ? "0.75rem" : ""}
+    style:margin-left={xPadding}
+    style:margin-top={variant === "Standard"
+      ? "0.75rem"
+      : variant === "Outlined"
+        ? "-0.12rem"
+        : "-0.145rem"}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
-      ? `${height}/2 + 0.45*var(--Xl-activeborderWidth)`
+      ? `${height}/2 + 0.65*var(--Xl-activeborderWidth)`
       : variant === "Standard"
         ? `${height}/2 + 0.425rem`
-        : `${height}/2 + 0.82rem`}
+        : `${height}/2 + 0.9rem`}
   >
     {label}
   </label>
   {#if type == "password" && !disabled}
     <div
       class="eye"
-      style:right={variant == "Standard"
-        ? theme.padding.min
-        : xPaddingStatic
-          ? xPaddingStatic
-          : xPadding}
+      style:right={variant == "Standard" ? theme.padding.min : xPadding}
     >
       <IconHover
         onClick={toggleType}
