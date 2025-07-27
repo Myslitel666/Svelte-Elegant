@@ -159,7 +159,6 @@
       srcImages={["/large/light.png", "/large/dark.png"]}
     />
   </div>
-  <input style:padding-top="3rem" style:padding-bottom="3rem" />
   <Modal
     height="auto"
     bind:isOpen={isModalOpen}
