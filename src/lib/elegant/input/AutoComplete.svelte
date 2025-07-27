@@ -232,13 +232,14 @@
       }}
       width="1.33rem"
       height="1.33rem"
-      marginTop="-0.09rem"
       padding="0.12rem"
+      marginTop="-0.065rem"
     >
       <div
-        style:margin-top={isOpen ? "0.212rem" : "0.25rem"}
-        style:margin-right={isOpen ? "" : "0.018rem"}
-        style:transform={isOpen ? "rotate(180deg) translateY(15%)" : ""}
+        style:transform={isOpen
+          ? "rotate(180deg) translateY(8.07%) translateX(-2%)"
+          : "rotate(0deg) translateY(10%) translateX(-1.5%)"}
+        style:transition="transform 0.3s"
       >
         <TriangularArrowDown size="1.33rem" />
       </div>
