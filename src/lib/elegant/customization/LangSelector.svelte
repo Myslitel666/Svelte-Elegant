@@ -1,6 +1,6 @@
 <script>
   import AutoComplete from "$elegant/input/AutoComplete.svelte";
-  import { languageStore } from "../../stores/language";
+  import { languageStore } from "$stores/language";
 
   export let buttonMarginTop = "0.09rem";
   export let borderColor = "transparent";
