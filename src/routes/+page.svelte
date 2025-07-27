@@ -377,7 +377,6 @@
     flex-direction: column;
     justify-content: center; /* Горизонтальное центрирование */
     align-items: center; /* Вертикальное центрирование */
-    min-height: 100vh; /* Минимальная высота экрана */
   }
 
   h6 {
