@@ -45,6 +45,7 @@
 
   let fill = bgColor;
   let isHovered = false;
+  let isInitialized = false;
   let xBgColor = "";
   let xBorderColor = "";
   let xBorderColorHover = "";
@@ -61,6 +62,7 @@
   $: xType = inputElement?.type;
   $: {
     if (inputElement) {
+      console.log(xType);
       inputElement.disabled = disabled;
       checkOrToggleDisabled();
     }
@@ -72,15 +74,24 @@
     xPaddingBottom = variant === "Outlined" ? "0.17rem" : "";
   }
 
-  if (paddingTop) {
+  $: if (paddingTop) {
     xPaddingTop = paddingTop;
   } else {
-    xPaddingTop =
-      variant === "Outlined"
-        ? ""
-        : variant === "Standard"
-          ? "0.9rem"
-          : "0.909rem";
+    if (xType === "text") {
+      xPaddingTop =
+        variant === "Outlined"
+          ? "0.15rem"
+          : variant === "Standard"
+            ? "0.9rem"
+            : "0.909rem";
+    } else {
+      xPaddingTop =
+        variant === "Outlined"
+          ? "0.315rem"
+          : variant === "Standard"
+            ? "1.1rem"
+            : "1.012rem";
+    }
   }
 
   function checkOrToggleDisabled() {
@@ -172,6 +183,8 @@
       // Проверяем hover сразу после монтирования
       isHovered = inputElement.matches(":hover");
     }
+
+    isInitialized = true;
   });
 
   export function handleBlur() {
@@ -283,7 +296,7 @@
     style:--Xl-liftingHeight={variant === "Outlined"
       ? `${height}/2 + 0.65*var(--Xl-activeborderWidth)`
       : variant === "Standard"
-        ? `${height}/2 + 0.425rem`
+        ? `${height}/2 + 0.4rem`
         : `${height}/2 + 0.9rem`}
   >
     {label}
@@ -292,6 +305,7 @@
     <div
       class="eye"
       style:right={variant == "Standard" ? theme.padding.min : xPadding}
+      style:margin-top={variant === "Standard" ? "0.85rem" : "0.09rem"}
     >
       <IconHover
         onClick={toggleType}
