@@ -4,8 +4,10 @@
   import "../../font.css";
 
   export let borderRadius = "0.5rem";
-  export let height = "150px";
   export let isOpen = false;
+  export let maxHeight = "100vh";
+  export let maxWidth = "100vw";
+  export let minWidth = "19.5rem";
   export let onClose = () => {};
   export let padding = "1rem";
   export let width = "325px";
@@ -20,6 +22,7 @@
   // Закрытие при клике вне контента
   function handleBackdropClick(event: MouseEvent) {
     if (event.target === event.currentTarget) {
+      isOpen = false;
       onClose();
     }
   }
@@ -35,7 +38,9 @@
       class="modal-content"
       style:background-color={theme.surface.header.background}
       style:border-radius={borderRadius}
-      style:height
+      style:max-height={maxHeight}
+      style:max-width={maxWidth}
+      style:min-width={minWidth}
       style:padding
     >
       <slot />
@@ -65,6 +70,5 @@
 
   .modal-content {
     overflow: auto;
-    width: var(--Xl-width);
   }
 </style>

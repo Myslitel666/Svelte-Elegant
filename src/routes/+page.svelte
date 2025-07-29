@@ -369,6 +369,9 @@
     flex-direction: column;
     justify-content: center; /* Горизонтальное центрирование */
     align-items: center; /* Вертикальное центрирование */
+
+    width: 100vw;
+    overflow: hidden;
   }
 
   h6 {
