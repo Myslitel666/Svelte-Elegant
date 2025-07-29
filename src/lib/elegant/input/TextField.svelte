@@ -294,7 +294,7 @@
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
-      ? `${height}/2 + 0.66*var(--Xl-activeborderWidth)`
+      ? `${height}/2 + 0.9*var(--Xl-activeborderWidth)`
       : variant === "Standard"
         ? `${height}/2 + 0.4rem`
         : `${height}/2 + 0.9rem`}
@@ -337,7 +337,7 @@
     transition: var(--Xl-effectsTimeCode);
 
     /* Перекрытие верхней границы поля */
-    height: calc(var(--Xl-activeborderWidth) + 1px);
+    height: calc(var(--Xl-activeborderWidth) + 0.5px);
     display: flex;
     align-items: center;
   }
