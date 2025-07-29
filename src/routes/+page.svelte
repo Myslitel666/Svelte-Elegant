@@ -22,6 +22,7 @@
   import { Modal } from "$lib";
   import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
+  import DatabasePro from "$icons-elegant/DatabasePro.svelte";
 
   import { languageStore } from "$lib/stores/language";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
@@ -123,6 +124,7 @@
   {:else}
     <p>English</p>
   {/if}
+  <DatabasePro />
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
     Timed Image Transition
   </h6>

@@ -3,6 +3,7 @@ svg {
 }
 
 path,
-line {
+line,
+ellipse {
   transition: all 0.3s ease;
 }
