@@ -12,3 +12,12 @@ export const initialBodyStyle = () => {
 
 	style.setProperty('--Xl-textColorMain', theme.palette.text.main);
 };
+
+export const initialRootStyle = () => {
+	const theme = get(themeStore);
+	const style = document.documentElement.style;
+
+	style.setProperty('--Xl-scroll-color', theme.scroll.color);
+	style.setProperty('--Xl-bg-color', theme.palette.background);
+};
+

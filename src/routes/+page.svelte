@@ -159,12 +159,7 @@
       srcImages={["/large/light.png", "/large/dark.png"]}
     />
   </div>
-  <Modal
-    height="auto"
-    bind:isOpen={isModalOpen}
-    onClose={() => (isModalOpen = false)}
-    padding="1.5rem"
-  >
+  <Modal bind:isOpen={isModalOpen}>
     <p
       style:font-weight="bold"
       style:font-size="1.25rem"

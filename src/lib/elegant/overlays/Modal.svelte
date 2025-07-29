@@ -1,14 +1,14 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ThemeStore.js";
+  import "$styles/app.css";
+  import "../../font.css";
 
   export let borderRadius = "0.5rem";
-  export let height = "10rem";
+  export let height = "150px";
   export let isOpen = false;
-  export let maxHeight = "80vh";
-  export let maxWidth = "80%";
   export let onClose = () => {};
   export let padding = "1rem";
-  export let width = "20rem";
+  export let width = "325px";
 
   let theme: any;
 
@@ -25,17 +25,18 @@
   }
 </script>
 
-{#if isOpen}
-  <button class="modal-backdrop" on:click={handleBackdropClick}>
+1{#if isOpen}
+  <button
+    class="modal-backdrop"
+    style:--Xl-width={width}
+    on:click={handleBackdropClick}
+  >
     <div
       class="modal-content"
       style:background-color={theme.surface.header.background}
       style:border-radius={borderRadius}
       style:height
-      style:max-height={maxHeight}
-      style:max-width={maxWidth}
       style:padding
-      style:width
     >
       <slot />
     </div>
@@ -44,20 +45,26 @@
 
 <style>
   .modal-backdrop {
+    align-items: center;
     background: rgba(0, 0, 0, 0.5);
-    cursor: default;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     bottom: 0;
+    cursor: default;
     display: flex;
     justify-content: center;
-    align-items: center;
-    z-index: 1000;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 11000;
+
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
   }
 
   .modal-content {
     overflow: auto;
+    width: var(--Xl-width);
   }
 </style>

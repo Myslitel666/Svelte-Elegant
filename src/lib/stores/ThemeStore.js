@@ -1,5 +1,5 @@
 import { writable, derived } from 'svelte/store';
-import { initialBodyStyle } from '$lib/utils/initialBodyStyle';
+import { initialBodyStyle, initialRootStyle } from '$lib/utils/initialBodyStyle';
 
 // Начальный режим темы
 const themeMode = writable('light');
@@ -117,6 +117,7 @@ const toggleThemeMode = () => {
 	});
 
 	initialBodyStyle();
+	initialRootStyle();
 };
 
 // Экспортируем все необходимые элементы

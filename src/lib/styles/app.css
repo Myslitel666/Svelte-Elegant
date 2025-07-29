@@ -1,4 +1,8 @@
 :root {
+  scrollbar-gutter: stable; /* Лифт не сдвигает content (особенно важно в Header'е, когда появляется лифт при переключении между страницами и сдвигает Header Content)*/
+  scrollbar-color: var(--Xl-scroll-color, #e7e7e7ff) var(--Xl-bg-color, white); /* thumb и track */
+  scrollbar-width: thin;
+  transition: scrollbar-color 0.3s;
 }
 
 body {

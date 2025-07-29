@@ -314,6 +314,7 @@
     overflow-y: auto; /* Добавляем вертикальный скролл при необходимости */
 
     scrollbar-color: var(--Xl-scrollbar-color) transparent;
+    scrollbar-width: thin;
   }
 
   .drop-list.top {
