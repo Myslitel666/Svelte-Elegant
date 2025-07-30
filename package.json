@@ -116,8 +116,8 @@
 			"types": "./dist/icons-elegant/Notepad.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Notepad.svelte"
 		},
-		"./icons-elegant/Notebook": {
-			"types": "./dist/icons-elegant/Notebook.svelte.d.ts",
+		"./icons-elegant/NotebookPro": {
+			"types": "./dist/icons-elegant/NotebookPro.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/NotebookPro.svelte"
 		},
 		"./icons-elegant/Plus": {
