@@ -140,6 +140,10 @@
 			"types": "./dist/elegant/effects/ImageThemeTransition.svelte.d.ts",
 			"svelte": "./dist/elegant/effects/ImageThemeTransition.svelte"
 		},
+		"./LangSelector": {
+			"types": "./dist/elegant/customization/LangSelector.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/LangSelector.svelte"
+		},
 		"./Modal": {
 			"types": "./dist/elegant/overlays/Modal.svelte.d.ts",
 			"svelte": "./dist/elegant/overlays/Modal.svelte"
