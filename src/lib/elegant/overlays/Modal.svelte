@@ -28,7 +28,7 @@
   }
 </script>
 
-1{#if isOpen}
+{#if isOpen}
   <button
     class="modal-backdrop"
     style:--Xl-width={width}

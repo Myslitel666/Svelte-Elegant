@@ -23,6 +23,7 @@
   import ImageThemeTransition from "$elegant/effects/ImageThemeTransition.svelte";
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
+  import NotebookPro from "$icons-elegant/NotebookPro.svelte";
 
   import { languageStore } from "$lib/stores/language";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
@@ -91,7 +92,7 @@
 
 <Header>
   <button style:gap="0.35rem">
-    <nav style:margin-top="0.2rem">
+    <nav style:margin-left="0.18rem" style:margin-top="0.2rem">
       <Elegant />
     </nav>
     <p style:font-size="26px" style:margin-top="-0.05rem">
@@ -118,48 +119,64 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
+  <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
+    Premium Icons
+  </h6>
+  <div class="components-container" style:position="flex">
+    <DatabasePro />
+    <NotebookPro />
+  </div>
   <h6 style:font-weight="500" class="heading">LangSelector Test</h6>
   {#if $languageStore === "ru"}
     <p>Русский</p>
   {:else}
     <p>English</p>
   {/if}
-  <DatabasePro />
-  <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
-    Timed Image Transition
-  </h6>
-  <div class="components-container">
-    <TimedImageTransition
-      transitionSecons="1.75"
-      interval={1750}
-      size="12rem"
-      srcImages={$themeMode === "light"
-        ? [
-            "/large/light.png",
-            "/large/white-blue.png",
-            "/large/white-red.png",
-            "/large/white-light-blue.png",
-            "/large/white-pink.png",
-            "/large/white-light-green.png",
-          ]
-        : [
-            "/large/dark.png",
-            "/large/black-blue.png",
-            "/large/black-green.png",
-            "/large/black-light-blue.png",
-            "/large/black-pink.png",
-            "/large/black-light-green.png",
-          ]}
-    />
-  </div>
-  <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
-    Image Theme Transition
-  </h6>
-  <div class="components-container">
-    <ImageThemeTransition
-      size="12rem"
-      srcImages={["/large/light.png", "/large/dark.png"]}
-    />
+  <div
+    class="components-container"
+    style:flex-direction={xMobile ? "column" : ""}
+    style:gap="2.5rem"
+  >
+    <div>
+      <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
+        Timed Image Transition
+      </h6>
+      <div class="components-container">
+        <TimedImageTransition
+          transitionSecons="1.75"
+          interval={1750}
+          size="12rem"
+          srcImages={$themeMode === "light"
+            ? [
+                "/large/light.png",
+                "/large/white-blue.png",
+                "/large/white-red.png",
+                "/large/white-light-blue.png",
+                "/large/white-pink.png",
+                "/large/white-light-green.png",
+              ]
+            : [
+                "/large/dark.png",
+                "/large/black-blue.png",
+                "/large/black-green.png",
+                "/large/black-light-blue.png",
+                "/large/black-pink.png",
+                "/large/black-light-green.png",
+              ]}
+        />
+      </div>
+    </div>
+    <div>
+      <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
+        Image Theme Transition
+      </h6>
+      <div class="components-container">
+        <ImageThemeTransition
+          size="12rem"
+          srcImages={["/large/light.png", "/large/dark.png"]}
+        />
+      </div>
+    </div>
   </div>
   <Modal bind:isOpen={isModalOpen}>
     <p
@@ -170,9 +187,9 @@
       Modal Content
     </p>
     <p>Anything inside the slot.</p>
-    <Button marginTop="1rem" width="100%" onClick={() => (isModalOpen = false)}
-      >Close</Button
-    >
+    <Button marginTop="1rem" width="100%" onClick={() => (isModalOpen = false)}>
+      Close
+    </Button>
   </Modal>
   <!-- Правильное закрытие тега -->
   <h6 class="heading">Data Grid</h6>

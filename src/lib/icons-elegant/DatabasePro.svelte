@@ -3,7 +3,7 @@
   import "./style/icons.css";
 
   export let lightThemeFills = ["#144200", "#70bd3d", "#3d950e", "#9ed68f"];
-  export let darkThemeFills = ["#800000", "#ff0000", "#d10000", "#ff4d4d"];
+  export let darkThemeFills = ["#660606", "#ff0000", "#d10000", "#ff4d4d"];
   export let size = "9rem";
 
   let theme: any;
@@ -20,13 +20,13 @@
   data-license="CC0"
   height={size}
   width={size}
+  fill={$themeMode === "light" ? lightThemeFills[0] : darkThemeFills[0]}
   version="1.1"
   id="Layer_1"
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
   viewBox="0 0 512.001 512.001"
   xml:space="preserve"
-  fill={$themeMode === "light" ? lightThemeFills[0] : darkThemeFills[0]}
 >
   <g id="SVGRepo_bgCarrier" stroke-width="0" />
 

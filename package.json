@@ -84,6 +84,10 @@
 			"types": "./dist/icons-elegant/Database.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Database.svelte"
 		},
+		"./icons-elegant/DatabasePro": {
+			"types": "./dist/icons-elegant/DatabasePro.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/DatabasePro.svelte"
+		},
 		"./icons-elegant/Elegant": {
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Elegant.svelte"
@@ -111,6 +115,10 @@
 		"./icons-elegant/Notepad": {
 			"types": "./dist/icons-elegant/Notepad.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Notepad.svelte"
+		},
+		"./icons-elegant/Notebook": {
+			"types": "./dist/icons-elegant/Notebook.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/NotebookPro.svelte"
 		},
 		"./icons-elegant/Plus": {
 			"types": "./dist/icons-elegant/Plus.svelte.d.ts",
