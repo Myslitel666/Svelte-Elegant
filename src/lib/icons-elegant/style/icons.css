@@ -4,6 +4,8 @@ svg {
 
 path,
 line,
-ellipse {
+ellipse,
+rect,
+polygon {
   transition: all 0.3s ease;
 }
