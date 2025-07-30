@@ -24,6 +24,7 @@
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
+  import GitHub from "$icons-elegant/GitHub.svelte";
 
   import { languageStore } from "$lib/stores/language";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
@@ -114,6 +115,9 @@
     style:margin-left="auto"
     style:margin-right="2rem"
   >
+    <a href="https://github.com/Myslitel666/Svelte-Elegant">
+      <GitHub marginRight="0.5rem" />
+    </a>
     <LangSelector marginRight="0.5rem" />
     <ColorThemeSwitch />
   </div>
