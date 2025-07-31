@@ -25,6 +25,7 @@
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
   import GitHub from "$icons-elegant/GitHub.svelte";
+  import Delete from "$icons-elegant/Delete.svelte";
 
   import { languageStore } from "$lib/stores/language";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
@@ -115,14 +116,15 @@
     style:margin-left="auto"
     style:margin-right="2rem"
   >
+    <LangSelector marginRight="0.5rem" />
     <a href="https://github.com/Myslitel666/Svelte-Elegant">
       <GitHub marginRight="0.5rem" />
     </a>
-    <LangSelector marginRight="0.5rem" />
     <ColorThemeSwitch />
   </div>
 </Header>
 <div id="container" style:width="100%">
+  <Delete />
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
     Premium Icons
   </h6>
