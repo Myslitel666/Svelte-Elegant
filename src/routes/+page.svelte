@@ -124,7 +124,14 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <Delete />
+  <h6 class="heading">Data Grid</h6>
+  <div class="components-container">
+    <DataGrid />
+  </div>
+  <h6 class="heading">Data Grid</h6>
+  <div class="components-container">
+    <Delete />
+  </div>
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
     Premium Icons
   </h6>
