@@ -68,7 +68,7 @@
   <div>
     <div class="row-container">
       {#each rows as row}
-        <div class="row border over-over-border-clear">
+        <div class="row border over-border-clear">
           {#each columns as column}
             <div class="cell border" style:width={column.width}>
               <div class="cell-content">
@@ -147,7 +147,7 @@
   }
 
   .row:last-child {
-    border: none;
+    border-bottom: none; /* убираем стандартную */
   }
 
   .cell:last-child {
