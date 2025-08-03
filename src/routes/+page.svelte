@@ -126,7 +126,7 @@
 <div id="container" style:width="100%">
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">
-    <DataGrid />
+    <DataGrid width="" />
   </div>
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">

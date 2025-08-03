@@ -14,7 +14,7 @@
   export let borderColor = ""; /* Цвет обводки */
   export let headBg = "";
   export let rowBg = "";
-  export let width = "100%";
+  export let width = "";
   export let height = "";
 
   export let columns = [
@@ -43,18 +43,18 @@
 
 <div
   class="data-grid border"
-  style:background-color={rowBg || theme?.surface.ghost.background}
   style:color={theme.palette.text.contrast}
   style:width
   style:overflow-x="auto"
   style:overflow-y="auto"
+  style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
   style:--Xl-border-color={borderColor || theme?.border.disabled.color}
   style:--Xl-head-bg={headBg || theme?.surface.filled.background}
   style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
   style:height
 >
-  <div class="header-container">
-    <div class="row border">
+  <div class="header-container border over-border-clear">
+    <div class="row">
       {#each columns as column}
         <div class="cell border" style:width={column.width}>
           <div class="cell-content">
@@ -65,38 +65,33 @@
     </div>
   </div>
 
-  {#each rows as row}
-    <div class="content-container">
-      <div class="row border">
-        {#each columns as column}
-          <div class="cell border" style:width={column.width}>
-            <div class="cell-content">
-              <p>{row[column.field]}</p>
+  <div>
+    <div class="row-container">
+      {#each rows as row}
+        <div class="row border over-over-border-clear">
+          {#each columns as column}
+            <div class="cell border" style:width={column.width}>
+              <div class="cell-content">
+                <p>{row[column.field]}</p>
+              </div>
             </div>
-          </div>
-        {/each}
-      </div>
+          {/each}
+        </div>
+      {/each}
     </div>
-  {/each}
+  </div>
 </div>
 
 <style>
+  .data-grid {
+    background-color: var(--Xl-background-color);
+    border-radius: 4px;
+    border-bottom: none;
+  }
+
   .header-container {
     display: inline-block; /* Растягиваем Header по содержимому (а не по ширине DataGrid, которая может быть меньше контена при горизонтальном скролинге) */
     background-color: var(--Xl-head-bg);
-    border: none;
-  }
-
-  .content-container {
-    border: none;
-    display: flex;
-  }
-
-  .row {
-    min-height: 3rem;
-    border-left: none;
-    border-top: none;
-    display: flex; /* Горизонтальная ориентация для ячеек */
   }
 
   .border {
@@ -105,9 +100,25 @@
     transition: var(--Xl-transition);
   }
 
+  .over-border-clear {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+  }
+
+  .row-container {
+    display: inline-block;
+  }
+
+  .row {
+    min-height: 3rem;
+    display: flex; /* Горизонтальная ориентация для ячеек */
+  }
+
   .cell {
     border-top: none;
     border-left: none;
+    border-bottom: none;
     display: flex; /* Используем Flexbox для выравнивания содержимого ячеек */
     align-items: stretch; /* Ячейки растягиваются равномерно */
     justify-content: center; /* Центрируем содержимое по горизонтали */
@@ -119,12 +130,6 @@
     display: flex;
     justify-content: center; /* Центрируем содержимое по горизонтали */
     flex-direction: column; /* Расположение элементов друг под другом */
-  }
-
-  .data-grid {
-    border-radius: 4px;
-
-    border-bottom: none;
   }
 
   .data-grid:hover {
@@ -142,7 +147,7 @@
   }
 
   .row:last-child {
-    border-bottom: none; /* Убираем нижнюю границу у последней строки */
+    border: none;
   }
 
   .cell:last-child {
