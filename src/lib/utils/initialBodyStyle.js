@@ -1,5 +1,6 @@
 import { get } from 'svelte/store';
 import { themeStore } from '$lib/stores/ThemeStore.js';
+import { getBrowser } from './getBrowser';
 
 //обновление CSS-переменных значениями из хранилища темы
 export const initialBodyStyle = () => {
@@ -22,13 +23,10 @@ export const initialRootStyle = () => {
 };
 
 export const customizeScroll = () => {
-	const userAgent = navigator.userAgent.toLowerCase();
-	const words = userAgent.split(" ");
-	const lastWord = words[words.length - 1];
 	const style = document.documentElement.style;
 
 	//Применяем thin scroll для всех, кроме Opera
-	if(lastWord.includes('opera') || lastWord.includes('opr')) {
+	if(getBrowser() === 'opera') {
 		style.setProperty('--Xl-scroll-width', 'auto')
 	}
 	else {

@@ -196,6 +196,10 @@
 			"types": "./dist/utils/index.d.ts",
 			"svelte": "./dist/utils/index.js"
 		},
+		"./utils/getBrowser": {
+			"types": "./dist/utils/getBrowser.d.ts",
+			"import": "./dist/utils/getBrowser.js"
+		},
 		"./utils/isMobile": {
 			"types": "./dist/utils/isMobile.d.ts",
 			"import": "./dist/utils/isMobile.js"

@@ -1,9 +1,9 @@
-<script lang="ts">
+<script>
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import "$styles/app.css";
   import "../../font.css";
 
-  let theme: any;
+  let theme;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -31,7 +31,7 @@
     },
   ];
 
-  export let rows: { [key: string]: any }[] = [
+  export let rows = [
     { id: 1, phrase: "It is your table!", translate: "Это Ваша таблица!" },
     {
       id: 2,

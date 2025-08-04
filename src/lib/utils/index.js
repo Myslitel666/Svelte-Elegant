@@ -3,3 +3,4 @@
 
 /* Utils */
 export { isMobile } from './isMobile.js';
+export { getBrowser } from './getBrowser.js';
