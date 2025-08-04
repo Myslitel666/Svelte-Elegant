@@ -42,7 +42,7 @@
 </script>
 
 <div
-  class="data-grid-width-border-bottom"
+  class="data-grid-width-border-mask"
   style:--Xl-border-color={borderColor || theme?.border.disabled.color}
   style:--Xl-border-radius={theme.border.borderRadius.default}
   style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
@@ -85,19 +85,7 @@
       </div>
     </div>
   </div>
-  <div
-    class="border"
-    style:background-color="transparent"
-    style:height="3rem"
-    style:width="100%"
-    style:border-bottom-left-radius="var(--Xl-border-radius)"
-    style:border-bottom-right-radius="var(--Xl-border-radius)"
-    style:margin-top="-3rem"
-    style:box-sizing="border-box"
-    style:border-top="none"
-    style:position="absolute"
-    style:pointer-events="none"
-  ></div>
+  <div class="border-mask border" style:--Xl-mask-height="1.5rem"></div>
 </div>
 
 <style>
@@ -107,13 +95,26 @@
     transition: var(--Xl-transition);
   }
 
+  .border-mask {
+    border-bottom-left-radius: var(--Xl-border-radius);
+    border-bottom-right-radius: var(--Xl-border-radius);
+    background-color: transparent;
+    border-top: none;
+    box-sizing: border-box;
+    height: var(--Xl-mask-height);
+    margin-top: calc(-1 * var(--Xl-mask-height));
+    position: absolute;
+    pointer-events: none;
+    width: 100%;
+  }
+
   .data-grid {
     background-color: var(--Xl-background-color);
     border-bottom: none;
     border-radius: var(--Xl-border-radius);
   }
 
-  .data-grid-width-border-bottom {
+  .data-grid-width-border-mask {
     display: block;
     position: relative;
   }
