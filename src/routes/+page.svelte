@@ -129,7 +129,7 @@
 <div id="container" style:width="100%">
   <h6 class="heading" style:font-size="2rem">Data Grid</h6>
   <div class="components-container">
-    <DataGrid width={xMobile ? "20rem" : "25rem"} {rows} {columns} />
+    <DataGrid width={xMobile ? "20rem" : ""} {rows} {columns} />
   </div>
   <h6 class="heading">Delete</h6>
   <div class="components-container">
