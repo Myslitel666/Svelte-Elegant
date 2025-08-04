@@ -42,14 +42,13 @@
 </script>
 
 <div
+  class="data-grid-width-border-bottom"
   style:--Xl-border-color={borderColor || theme?.border.disabled.color}
   style:--Xl-border-radius={theme.border.borderRadius.default}
   style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
-  style:display="block"
 >
   <div
     class="data-grid border"
-    style:border-radius={theme.border.borderRadius.default}
     style:color={theme.palette.text.contrast}
     style:width
     style:overflow-x="auto"
@@ -96,6 +95,8 @@
     style:margin-top="-3rem"
     style:box-sizing="border-box"
     style:border-top="none"
+    style:position="absolute"
+    style:pointer-events="none"
   ></div>
 </div>
 
@@ -110,6 +111,11 @@
     background-color: var(--Xl-background-color);
     border-bottom: none;
     border-radius: var(--Xl-border-radius);
+  }
+
+  .data-grid-width-border-bottom {
+    display: block;
+    position: relative;
   }
 
   .header-container {
@@ -162,9 +168,6 @@
     border-left: none;
     border-right: none;
     border-top: none;
-  }
-
-  .row:last-child {
   }
 
   .cell:last-child {
