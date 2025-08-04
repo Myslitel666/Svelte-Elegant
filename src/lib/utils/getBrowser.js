@@ -5,7 +5,6 @@ export const getBrowser = () => {
 
 	if (lastWord.includes('safari') && words.length > 1) lastWord = words[words.length - 2];
 
-	//Применяем thin scroll для всех, кроме Opera
 	if (lastWord.includes('opera') || lastWord.includes('opr')) {
 		return 'opera';
 	}
