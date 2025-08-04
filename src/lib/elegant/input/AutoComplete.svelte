@@ -251,14 +251,13 @@
   </div>
   <div
     id="drop-list-{id}"
-    class="drop-list {isOpen ? 'open' : ''} {isDropListBottom
+    class="drop-list custom-scroll {isOpen ? 'open' : ''} {isDropListBottom
       ? 'bottom'
       : 'top'}"
     bind:this={dropListRef}
     style:background-color={xDropListBgColor}
     style:width={dropListWidth || "100%"}
     style:--Xl-dropListHeight="{dropListHeight}px"
-    style:--Xl-scrollbar-color={xScrollbarColor}
   >
     {#if isOpen}
       {#if filteredOptions.length != 0}
@@ -312,9 +311,6 @@
       0 4px 8px rgba(0, 0, 0, 0.1);
     max-height: var(--Xl-dropListHeight);
     overflow-y: auto; /* Добавляем вертикальный скролл при необходимости */
-
-    scrollbar-color: var(--Xl-scrollbar-color) transparent;
-    scrollbar-width: thin;
   }
 
   .drop-list.top {

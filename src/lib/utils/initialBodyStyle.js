@@ -25,11 +25,14 @@ export const customizeScroll = () => {
 	const userAgent = navigator.userAgent.toLowerCase();
 	const words = userAgent.split(" ");
 	const lastWord = words[words.length - 1];
+	const style = document.documentElement.style;
 
 	//Применяем thin scroll для всех, кроме Opera
 	if(lastWord.includes('opera') || lastWord.includes('opr')) {
-		const root = document.documentElement;
-		root.classList.add('opera-scroll');
+		style.setProperty('--Xl-scroll-width', 'auto')
+	}
+	else {
+		style.setProperty('--Xl-scroll-width', 'thin')
 	}
 };
 

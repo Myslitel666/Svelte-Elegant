@@ -1,8 +1,13 @@
 :root {
   scrollbar-gutter: stable; /* Лифт не сдвигает content (особенно важно в Header'е, когда появляется лифт при переключении между страницами и сдвигает Header Content)*/
   scrollbar-color: var(--Xl-scroll-color, #dbdbdbff) var(--Xl-bg-color, white); /* thumb и track */
-  scrollbar-width: thin;
+  scrollbar-width: var(--Xl-scroll-width, thin);
   transition: scrollbar-color var(--Xl-effectsTimeCode, 0.3s);
+}
+
+.custom-scroll {
+  scrollbar-color: var(--Xl-scroll-color, #dbdbdbff) transparent;
+  scrollbar-width: var(--Xl-scroll-width, thin);
 }
 
 .opera-scroll {

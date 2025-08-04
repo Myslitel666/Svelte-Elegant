@@ -48,7 +48,7 @@
   style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
 >
   <div
-    class="data-grid border"
+    class="data-grid border custom-scroll"
     style:color={theme.palette.text.contrast}
     style:width
     style:overflow-x="auto"
