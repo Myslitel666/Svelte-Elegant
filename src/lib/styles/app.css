@@ -6,7 +6,7 @@
 }
 
 .custom-scroll {
-  scrollbar-color: var(--Xl-scroll-color, #dbdbdbff) transparent;
+  scrollbar-color: var(--Xl-scroll-color, rgb(140, 191, 125)) transparent;
   scrollbar-width: var(--Xl-scroll-width, thin);
 }
 

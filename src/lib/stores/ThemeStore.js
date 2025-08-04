@@ -69,7 +69,7 @@ const theme = derived(
 			}
 		},
 		scroll: {
-			color: $themeMode === 'light' ? '#dbdbdbff' : '#4d4d4dff'
+			color: $themeMode === 'light' ? '#7cb972' : '#eb000c'
 		},
 		surface: {
 			header: {

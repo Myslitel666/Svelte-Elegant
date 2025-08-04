@@ -117,7 +117,10 @@
     style:margin-right="2rem"
   >
     <LangSelector marginRight="0.5rem" />
-    <a href="https://github.com/Myslitel666/Svelte-Elegant">
+    <a
+      style:margin-top="0.25rem"
+      href="https://github.com/Myslitel666/Svelte-Elegant"
+    >
       <GitHub marginRight="0.5rem" />
     </a>
     <ColorThemeSwitch />
