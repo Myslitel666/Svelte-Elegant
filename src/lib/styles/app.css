@@ -5,15 +5,6 @@
   transition: scrollbar-color var(--Xl-effectsTimeCode, 0.3s);
 }
 
-.custom-scroll {
-  scrollbar-color: var(--Xl-scroll-color, rgb(140, 191, 125)) transparent;
-  scrollbar-width: var(--Xl-scroll-width, thin);
-}
-
-.opera-scroll {
-  scrollbar-width: auto;
-}
-
 body {
   margin: 0;
   transition: background-color var(--Xl-effectsTimeCode, 0.3s);
@@ -65,4 +56,19 @@ button {
 input,
 div {
   -webkit-tap-highlight-color: transparent; /* Убираем голубую подсветку на iOS/Android */
+}
+
+.custom-scroll {
+  scrollbar-color: var(--Xl-scroll-color, rgb(140, 191, 125)) transparent;
+  scrollbar-width: var(--Xl-scroll-width, thin);
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.opera-scroll {
+  scrollbar-width: auto;
 }

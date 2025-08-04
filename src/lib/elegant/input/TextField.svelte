@@ -336,7 +336,7 @@
     transition: var(--Xl-effectsTimeCode);
 
     /* Перекрытие верхней границы поля */
-    height: calc(var(--Xl-activeborderWidth) + 0.5px);
+    height: calc(var(--Xl-activeborderWidth) + 0.75px);
     display: flex;
     align-items: center;
   }

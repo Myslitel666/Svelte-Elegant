@@ -50,40 +50,52 @@
   <div
     class="data-grid border custom-scroll"
     style:color={theme.palette.text.contrast}
-    style:width
+    style:min-width={columns.length ? "" : "18rem"}
     style:overflow-x="auto"
     style:overflow-y="auto"
+    style:width
     style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
     style:--Xl-head-bg={headBg || theme?.surface.filled.background}
     style:height
   >
-    <div class="header-container border over-border-clear">
-      <div class="row">
-        {#each columns as column}
-          <div class="cell border" style:width={column.width}>
-            <div class="cell-content">
-              <p>{column.header}</p>
-            </div>
-          </div>
-        {/each}
-      </div>
-    </div>
-
-    <div>
-      <div class="row-container">
-        {#each rows as row}
-          <div class="row border over-border-clear">
-            {#each columns as column}
-              <div class="cell border" style:width={column.width}>
-                <div class="cell-content">
-                  <p>{row[column.field]}</p>
-                </div>
+    {#if columns.length !== 0}
+      <div class="header-container border over-border-clear">
+        <div class="row">
+          {#each columns as column}
+            <div class="cell border" style:width={column.width}>
+              <div class="cell-content">
+                <p>{column.header}</p>
               </div>
-            {/each}
-          </div>
-        {/each}
+            </div>
+          {/each}
+        </div>
       </div>
-    </div>
+    {/if}
+
+    {#if rows.length !== 0}
+      <div>
+        <div class="row-container">
+          {#each rows as row}
+            <div class="row border over-border-clear">
+              {#each columns as column}
+                <div class="cell border" style:width={column.width}>
+                  <div class="cell-content">
+                    <p>{row[column.field]}</p>
+                  </div>
+                </div>
+              {/each}
+            </div>
+          {/each}
+        </div>
+      </div>
+    {:else}
+      <div
+        class="flex-center no-rows"
+        style:color={theme.palette.text.labelContrast}
+      >
+        Rows have not been passed yet
+      </div>
+    {/if}
   </div>
   <div class="border-mask border" style:--Xl-mask-height="1.5rem"></div>
 </div>
@@ -173,5 +185,10 @@
 
   .cell:last-child {
     border-right: none;
+  }
+
+  .no-rows {
+    padding: 2rem;
+    cursor: default;
   }
 </style>

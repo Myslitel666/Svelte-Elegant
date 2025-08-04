@@ -63,21 +63,21 @@
   let drToggleButtonId = `drawer-toggle-button-${generateIdElement()}`;
 
   let columns = [
-    { field: "id", header: "Id", width: "10rem" },
+    { field: "id", header: "Id", width: "8.8rem" },
     {
       field: "jargon",
       header: "Jargon",
-      width: "10rem",
+      width: "8.8rem",
     },
     {
       field: "translate",
       header: "Translate",
-      width: "10rem",
+      width: "8.8rem",
     },
     {
       field: "exampleOfUse",
       header: "Example Of Use",
-      width: "10rem",
+      width: "12rem",
     },
   ];
 
@@ -127,9 +127,9 @@
   </div>
 </Header>
 <div id="container" style:width="100%">
-  <h6 class="heading">Data Grid</h6>
+  <h6 class="heading" style:font-size="2rem">Data Grid</h6>
   <div class="components-container">
-    <DataGrid width="15rem" />
+    <DataGrid width={xMobile ? "20rem" : ""} {rows} {columns} />
   </div>
   <h6 class="heading">Data Grid</h6>
   <div class="components-container">
@@ -207,11 +207,6 @@
       Close
     </Button>
   </Modal>
-  <!-- Правильное закрытие тега -->
-  <h6 class="heading">Data Grid</h6>
-  <div class="components-container">
-    <DataGrid {columns} {rows} />
-  </div>
   <h6 class="heading">Modal</h6>
   <div on:click={() => (isModalOpen = true)} class="components-container">
     <ModalIcon />
