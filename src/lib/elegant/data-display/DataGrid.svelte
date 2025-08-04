@@ -42,62 +42,79 @@
 </script>
 
 <div
-  class="data-grid border"
-  style:color={theme.palette.text.contrast}
-  style:width
-  style:overflow-x="auto"
-  style:overflow-y="auto"
-  style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
   style:--Xl-border-color={borderColor || theme?.border.disabled.color}
-  style:--Xl-head-bg={headBg || theme?.surface.filled.background}
+  style:--Xl-border-radius={theme.border.borderRadius.default}
   style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
-  style:height
+  style:display="block"
 >
-  <div class="header-container border over-border-clear">
-    <div class="row">
-      {#each columns as column}
-        <div class="cell border" style:width={column.width}>
-          <div class="cell-content">
-            <p>{column.header}</p>
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
-
-  <div>
-    <div class="row-container">
-      {#each rows as row}
-        <div class="row border over-border-clear">
-          {#each columns as column}
-            <div class="cell border" style:width={column.width}>
-              <div class="cell-content">
-                <p>{row[column.field]}</p>
-              </div>
+  <div
+    class="data-grid border"
+    style:border-radius={theme.border.borderRadius.default}
+    style:color={theme.palette.text.contrast}
+    style:width
+    style:overflow-x="auto"
+    style:overflow-y="auto"
+    style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
+    style:--Xl-head-bg={headBg || theme?.surface.filled.background}
+    style:height
+  >
+    <div class="header-container border over-border-clear">
+      <div class="row">
+        {#each columns as column}
+          <div class="cell border" style:width={column.width}>
+            <div class="cell-content">
+              <p>{column.header}</p>
             </div>
-          {/each}
-        </div>
-      {/each}
+          </div>
+        {/each}
+      </div>
+    </div>
+
+    <div>
+      <div class="row-container">
+        {#each rows as row}
+          <div class="row border over-border-clear">
+            {#each columns as column}
+              <div class="cell border" style:width={column.width}>
+                <div class="cell-content">
+                  <p>{row[column.field]}</p>
+                </div>
+              </div>
+            {/each}
+          </div>
+        {/each}
+      </div>
     </div>
   </div>
+  <div
+    class="border"
+    style:background-color="transparent"
+    style:height="3rem"
+    style:width="100%"
+    style:border-bottom-left-radius="var(--Xl-border-radius)"
+    style:border-bottom-right-radius="var(--Xl-border-radius)"
+    style:margin-top="-3rem"
+    style:box-sizing="border-box"
+    style:border-top="none"
+  ></div>
 </div>
 
 <style>
+  .border {
+    border: 1px solid; /* Толщина и цвет обводки таблицы */
+    border-color: var(--Xl-border-color);
+    transition: var(--Xl-transition);
+  }
+
   .data-grid {
     background-color: var(--Xl-background-color);
-    border-radius: 4px;
     border-bottom: none;
+    border-radius: var(--Xl-border-radius);
   }
 
   .header-container {
     display: inline-block; /* Растягиваем Header по содержимому (а не по ширине DataGrid, которая может быть меньше контена при горизонтальном скролинге) */
     background-color: var(--Xl-head-bg);
-  }
-
-  .border {
-    border: 1px solid; /* Толщина и цвет обводки таблицы */
-    border-color: var(--Xl-border-color);
-    transition: var(--Xl-transition);
   }
 
   .over-border-clear {
@@ -124,6 +141,7 @@
     justify-content: center; /* Центрируем содержимое по горизонтали */
     min-width: 3.5rem;
     padding: 0.75rem;
+    box-sizing: border-box;
   }
 
   .cell-content {
@@ -147,7 +165,6 @@
   }
 
   .row:last-child {
-    border-bottom: none; /* убираем стандартную */
   }
 
   .cell:last-child {
