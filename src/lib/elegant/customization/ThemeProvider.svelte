@@ -4,6 +4,7 @@
   import {
     initialBodyStyle,
     customizeScroll,
+    initialRootStyle,
   } from "$lib/utils/initialBodyStyle.js";
   import "$styles/app.css";
   import "../../font.css";
@@ -19,6 +20,7 @@
 
   onMount(() => {
     initialBodyStyle(); // Применяем тему при запуске приложения
+    initialRootStyle();
     customizeScroll();
   });
 </script>
