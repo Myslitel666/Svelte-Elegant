@@ -21,3 +21,15 @@ export const initialRootStyle = () => {
 	style.setProperty('--Xl-bg-color', theme.palette.background);
 };
 
+export const customizeScroll = () => {
+	const userAgent = navigator.userAgent.toLowerCase();
+	const words = userAgent.split(" ");
+	const lastWord = words[words.length - 1];
+
+	//Применяем thin scroll для всех, кроме Opera
+	if(lastWord.includes('opera') || lastWord.includes('opr')) {
+		const root = document.documentElement;
+		root.classList.add('opera-scroll');
+	}
+};
+

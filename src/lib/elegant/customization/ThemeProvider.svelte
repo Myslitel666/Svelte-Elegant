@@ -1,7 +1,10 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores";
   import { onMount } from "svelte";
-  import { initialBodyStyle } from "$lib/utils/initialBodyStyle.js";
+  import {
+    initialBodyStyle,
+    customizeScroll,
+  } from "$lib/utils/initialBodyStyle.js";
   import "$styles/app.css";
   import "../../font.css";
 
@@ -16,6 +19,7 @@
 
   onMount(() => {
     initialBodyStyle(); // Применяем тему при запуске приложения
+    customizeScroll();
   });
 </script>
 

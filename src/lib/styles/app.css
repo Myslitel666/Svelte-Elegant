@@ -2,12 +2,15 @@
   scrollbar-gutter: stable; /* Лифт не сдвигает content (особенно важно в Header'е, когда появляется лифт при переключении между страницами и сдвигает Header Content)*/
   scrollbar-color: var(--Xl-scroll-color, #e7e7e7ff) var(--Xl-bg-color, white); /* thumb и track */
   scrollbar-width: thin;
-  transition: scrollbar-color 0.3s;
+}
+
+.opera-scroll {
+  scrollbar-width: auto;
 }
 
 body {
   margin: 0;
-  transition: background-color var(--Xl-effectsTimeCode);
+  transition: background-color var(--Xl-effectsTimeCode, 0.3s);
   background-color: var(--Xl-background-color);
   color: var(--Xl-text-color);
 }

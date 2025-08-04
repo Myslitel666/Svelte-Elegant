@@ -62,7 +62,6 @@
   $: xType = inputElement?.type;
   $: {
     if (inputElement) {
-      console.log(xType);
       inputElement.disabled = disabled;
       checkOrToggleDisabled();
     }
