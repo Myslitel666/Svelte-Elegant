@@ -1,6 +1,6 @@
 {
 	"name": "svelte-elegant",
-	"version": "1.4.4",
+	"version": "1.4.5",
 	"license": "MIT",
 	"scripts": {
 		"clean": "rimraf dist",
