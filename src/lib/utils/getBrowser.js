@@ -1,6 +1,6 @@
 export const getBrowser = () => {
 	const userAgent = navigator.userAgent.toLowerCase();
-	const supportedBrowsers = ['opera','opr','firefox','chrome','edge','yabrowser','mibrowser'];
+	const supportedBrowsers = ['opera','firefox','chrome','edge','yabrowser','mibrowser'];
 	const words = userAgent.split(" ");
 	let i = 1;
 	let isBrowserInfoLoading = true;
