@@ -13,6 +13,7 @@
   // Свойства для управления CSS-стилями
   export let borderColor = ""; /* Цвет обводки */
   export let headBg = "";
+  export let maxWidth = "";
   export let rowBg = "";
   export let width = "";
   export let height = "";
@@ -50,6 +51,7 @@
   <div
     class="data-grid border custom-scroll"
     style:color={theme.palette.text.contrast}
+    style:max-width={maxWidth}
     style:min-width={columns.length ? "" : "18rem"}
     style:overflow-x="auto"
     style:overflow-y="auto"
