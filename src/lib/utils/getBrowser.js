@@ -1,6 +1,6 @@
 export const getBrowser = () => {
 	const userAgent = navigator.userAgent.toLowerCase();
-	const supportedBrowsers = ['opera','opr','firefox','chrome','edge','yabrowser'];
+	const supportedBrowsers = ['opera','opr','firefox','chrome','edge','yabrowser','mibrowser'];
 	const words = userAgent.split(" ");
 	let i = 1;
 	let isBrowserInfoLoading = true;
@@ -22,6 +22,9 @@ export const getBrowser = () => {
 		}
 		else if (keyWord.includes('yabrowser')) {
 			return 'yabrowser';
+		}
+		else if (keyWord.includes('miuibrowser')) {
+			return 'mibrowser';
 		}
 
 		return keyWord;
