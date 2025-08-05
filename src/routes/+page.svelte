@@ -31,6 +31,7 @@
   import LangSelector from "$elegant/customization/LangSelector.svelte";
 
   import { isMobile } from "$lib/utils";
+  import { getBrowser } from "$lib/utils";
   import { onMount } from "svelte";
 
   //Импорт утилит
@@ -46,6 +47,8 @@
 
   let elegantColor = "";
   let xMobile = false;
+
+  let xBrowser = getBrowser();
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -89,6 +92,8 @@
 
   onMount(() => {
     xMobile = isMobile();
+
+    xBrowser = getBrowser();
   });
 </script>
 
@@ -131,9 +136,11 @@
   <div class="components-container">
     <DataGrid width={xMobile ? "20rem" : ""} {rows} {columns} />
   </div>
-  <h6 class="heading">Delete</h6>
+  <h6 class="heading" style:font-size="2rem">Test Browser</h6>
   <div class="components-container">
-    <Delete />
+    <p>
+      {xBrowser}
+    </p>
   </div>
   <h6 style:font-size="1.75rem" style:font-weight="500" class="heading">
     Premium Icons

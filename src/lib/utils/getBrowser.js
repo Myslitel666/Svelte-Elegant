@@ -1,25 +1,47 @@
 export const getBrowser = () => {
 	const userAgent = navigator.userAgent.toLowerCase();
+	const supportedBrowsers = ['opera','opr','firefox','chrome','edge','yabrowser'];
 	const words = userAgent.split(" ");
-	let lastWord = words[words.length - 1];
+	let i = 1;
+	let isBrowserInfoLoading = true;
 
-	if (lastWord.includes('safari') && words.length > 1) lastWord = words[words.length - 2];
+	const parseKeyWord = (keyWord) => {
+		if (!keyWord) return 'unknown'; // Защита от undefined/null
 
-	if (lastWord.includes('opera') || lastWord.includes('opr')) {
-		return 'opera';
-	}
-	else if (lastWord.includes('firefox')) {
-		return 'firefox';
-	}
-    else if (lastWord.includes('chrome')) {
-		return 'chrome';
-	}
-    else if (lastWord.includes('edg')) {
-		return 'edge';
-	}
-    else if (lastWord.includes('yabrowser')) {
-		return 'yabrowser';
+		if (keyWord.includes('opera') || keyWord.includes('opr')) {
+			return 'opera';
+		}
+		else if (keyWord.includes('firefox')) {
+			return 'firefox';
+		}
+		else if (keyWord.includes('chrome')) {
+			return 'chrome';
+		}
+		else if (keyWord.includes('edg')) {
+			return 'edge';
+		}
+		else if (keyWord.includes('yabrowser')) {
+			return 'yabrowser';
+		}
+
+		return keyWord;
 	}
 
-    return lastWord;
+	while (isBrowserInfoLoading) {
+		const keyWord = words[words.length - i];
+		const browser = parseKeyWord(keyWord);
+
+		if (supportedBrowsers.includes(browser)) {
+			return browser;
+		}
+
+		if (words.length >= i) {
+			i++;
+			continue;
+		}
+		else {
+			isBrowserInfoLoading = false;
+			return browser;
+		}
+	}
 };
