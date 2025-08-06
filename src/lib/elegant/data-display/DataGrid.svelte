@@ -54,11 +54,8 @@
   <div
     class="data-grid border custom-scroll"
     style:color={theme.palette.text.contrast}
-    style:max-width={maxWidth}
-    style:min-width={columns.length ? "" : "18rem"}
     style:overflow-x="auto"
     style:overflow-y="auto"
-    style:width="100%"
     style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
     style:--Xl-head-bg={headBg || theme?.surface.filled.background}
     style:height
