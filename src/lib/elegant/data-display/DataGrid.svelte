@@ -44,6 +44,9 @@
 
 <div
   class="data-grid-width-border-mask"
+  style:max-width={maxWidth}
+  style:min-width={columns.length ? "" : "18rem"}
+  style:width
   style:--Xl-border-color={borderColor || theme?.border.disabled.color}
   style:--Xl-border-radius={theme.border.borderRadius.default}
   style:--Xl-transition={`background-color ${theme.effectsTimeCode}, border-color ${theme.effectsTimeCode}`}
@@ -55,7 +58,7 @@
     style:min-width={columns.length ? "" : "18rem"}
     style:overflow-x="auto"
     style:overflow-y="auto"
-    style:width
+    style:width="100%"
     style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
     style:--Xl-head-bg={headBg || theme?.surface.filled.background}
     style:height
