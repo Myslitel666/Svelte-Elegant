@@ -40,7 +40,7 @@
     style:display="flex"
     style:align-items="center"
     style:margin-left="auto"
-    style:margin-right="2rem"
+    style:margin-right="0.25rem"
   >
     <LangSelector marginRight="0.5rem" />
     <a

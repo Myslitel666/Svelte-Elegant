@@ -23,6 +23,9 @@
   export let variant = "Standard";
   export let width = "2.5rem";
 
+  import "$styles/app.css";
+  import "../../font.css";
+
   let lg = $languageStore;
 
   $: if (lg) $languageStore = lg;

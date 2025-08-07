@@ -35,7 +35,7 @@
   });
 </script>
 
-<div style:height style:width>
+<div style:height style:width style:position="relative">
   <span
     class="track"
     style:height

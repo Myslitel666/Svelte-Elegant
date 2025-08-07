@@ -1,8 +1,6 @@
 :root {
-  scrollbar-gutter: stable; /* Лифт не сдвигает content (особенно важно в Header'е, когда появляется лифт при переключении между страницами и сдвигает Header Content)*/
-  scrollbar-color: var(--Xl-scroll-color, #dbdbdbff) var(--Xl-bg-color, white); /* thumb и track */
-  scrollbar-width: var(--Xl-scroll-width, thin);
-  transition: scrollbar-color var(--Xl-effectsTimeCode, 0.3s);
+  scrollbar-color: var(--Xl-scroll-color, #7bb87b) transparent;
+  transition: scrollbar-color 0.3s;
 }
 
 body {
@@ -71,4 +69,14 @@ div {
 
 .opera-scroll {
   scrollbar-width: auto;
+}
+
+.scrollable-content {
+  width: 100%;
+  height: calc(100dvh - 3.25rem); /* Или нужная вам высота */
+  overflow-y: auto;
+
+  /* Стили скроллбара */
+  scrollbar-gutter: stable;
+  scrollbar-width: var(--Xl-scroll-width, thin);
 }
