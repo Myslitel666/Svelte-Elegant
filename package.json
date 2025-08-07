@@ -157,8 +157,8 @@
 			"svelte": "./dist/elegant/navigation/Pagination.svelte"
 		},
 		"./ScrollbarContainer": {
-			"types": "./dist/elegant/navigation/ScrollbarContainer.svelte.d.ts",
-			"svelte": "./dist/elegant/navigation/ScrollbarContainer.svelte"
+			"types": "./dist/elegant/customization/ScrollbarContainer.svelte.d.ts",
+			"svelte": "./dist/elegant/customization/ScrollbarContainer.svelte"
 		},
 		"./stores": {
 			"types": "./dist/stores/index.d.ts",
