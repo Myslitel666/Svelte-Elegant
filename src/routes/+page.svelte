@@ -10,13 +10,12 @@
   import Bars from "$icons-elegant/Bars.svelte";
   import Drawer from "$lib/elegant/navigation/Drawer.svelte";
   import Enter from "$lib/icons-elegant/Enter.svelte";
-  import Header from "$lib/elegant/layout/Header.svelte";
+  import Header from "../components/Header.svelte";
   import Box from "$lib/elegant/layout/Box.svelte";
   import ModalIcon from "$icons-elegant/ModalIcon.svelte";
   import Envelope from "$icons-elegant/Envelope.svelte";
   import TitledBox from "$lib/elegant/layout/TitledBox.svelte";
   import ButtonBox from "$elegant/input/ButtonBox.svelte";
-  import Elegant from "$icons-elegant/Elegant.svelte";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import Pagination from "$elegant/navigation/Pagination.svelte";
   import { Modal } from "$lib";
@@ -24,8 +23,6 @@
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
-  import GitHub from "$icons-elegant/GitHub.svelte";
-  import Delete from "$icons-elegant/Delete.svelte";
 
   import { languageStore } from "$lib/stores/language";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
@@ -45,7 +42,6 @@
 
   let isModalOpen = false;
 
-  let elegantColor = "";
   let xMobile = false;
 
   let xBrowser = getBrowser();
@@ -53,8 +49,6 @@
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
-
-    elegantColor = $themeMode === "light" ? "#383838" : "#fdfdfd";
   });
 
   //Тестовое данные
@@ -97,40 +91,6 @@
   });
 </script>
 
-<Header>
-  <button style:gap="0.35rem">
-    <nav style:margin-left="0.18rem" style:margin-top="0.2rem">
-      <Elegant />
-    </nav>
-    <p style:font-size="26px" style:margin-top="-0.05rem">
-      <span
-        style:color={theme.palette.primary}
-        style:filter={theme.palette.text.title}
-        style:transition="all 0.3s"
-      >
-        Svelte
-      </span>
-      <span style:color={elegantColor} style:transition="all 0.3s">
-        Elegant
-      </span>
-    </p>
-  </button>
-  <div
-    style:display="flex"
-    style:align-items="center"
-    style:margin-left="auto"
-    style:margin-right="2rem"
-  >
-    <LangSelector marginRight="0.5rem" />
-    <a
-      style:margin-top="0.25rem"
-      href="https://github.com/Myslitel666/Svelte-Elegant"
-    >
-      <GitHub marginRight="0.5rem" />
-    </a>
-    <ColorThemeSwitch />
-  </div>
-</Header>
 <div id="container" style:width="100%">
   <h6 class="heading" style:font-size="2rem">Data Grid</h6>
   <div class="components-container">

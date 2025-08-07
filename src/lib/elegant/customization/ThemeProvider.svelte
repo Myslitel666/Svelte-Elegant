@@ -25,7 +25,7 @@
   });
 </script>
 
-<div class="app">
+<div class="app scrollbar">
   <main>
     <slot />
   </main>
