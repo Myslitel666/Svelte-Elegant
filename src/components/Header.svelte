@@ -18,7 +18,7 @@
   });
 </script>
 
-<Header>
+<Header {...$$props}>
   <button style:gap="0.35rem">
     <nav style:margin-left="0.18rem" style:margin-top="0.2rem">
       <Elegant />

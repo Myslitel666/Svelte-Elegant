@@ -3,5 +3,6 @@
 
 /* Stores */
 export { elementId, generateIdElement } from './ElementIdStore.js';
+export { languageStore } from './languageStore.js';
 export { themeStore } from './ThemeStore.js';
 export { themeMode } from './ThemeStore.js';

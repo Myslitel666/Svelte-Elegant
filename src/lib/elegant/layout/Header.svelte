@@ -1,5 +1,6 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores/ThemeStore.js";
+  import { headerHeight } from "$lib/stores/headerStore.js";
   import "$styles/app.css";
   import "../../font.css";
 
@@ -10,6 +11,9 @@
   export let padding = "0.5rem";
 
   let theme: any;
+
+  // Обновляем хранилище при изменении высоты
+  $: $headerHeight = height;
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -23,13 +27,7 @@
   style:height
   style:padding
   style:background-color={bgColor || theme.surface.header.background}
-  style:transition="all 0.3s ease"
-  style:width="100vw"
   style:border
-  style:border-left="none"
-  style:border-right="none"
-  style:border-top="none"
-  style:box-sizing="border-box"
 >
   <slot />
 </nav>
@@ -39,8 +37,13 @@
   .header {
     display: flex;
     align-items: center;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    box-sizing: border-box;
     position: fixed; /* Фиксируем на экране */
-    width: 100%; /* Растягиваем на всю ширину */
+    transition: all 0.3s ease;
+    width: 100vw; /* Растягиваем на всю ширину */
     z-index: 10000; /* Устанавливаем приоритет слоя */
   }
 </style>

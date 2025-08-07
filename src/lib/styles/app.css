@@ -1,6 +1,5 @@
 :root {
   scrollbar-color: var(--Xl-scroll-color, #7bb87b) transparent;
-  transition: scrollbar-color 0.3s;
 }
 
 body {
@@ -73,7 +72,6 @@ div {
 
 .scrollable-content {
   width: 100%;
-  height: calc(100dvh - 3.25rem); /* Или нужная вам высота */
   overflow-y: auto;
 
   /* Стили скроллбара */

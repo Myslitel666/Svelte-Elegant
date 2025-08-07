@@ -10,7 +10,6 @@
   import Bars from "$icons-elegant/Bars.svelte";
   import Drawer from "$lib/elegant/navigation/Drawer.svelte";
   import Enter from "$lib/icons-elegant/Enter.svelte";
-  import Header from "../components/Header.svelte";
   import Box from "$lib/elegant/layout/Box.svelte";
   import ModalIcon from "$icons-elegant/ModalIcon.svelte";
   import Envelope from "$icons-elegant/Envelope.svelte";
@@ -24,7 +23,7 @@
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
 
-  import { languageStore } from "$lib/stores/language";
+  import { languageStore } from "$lib/stores/languageStore";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
 
   import { isMobile } from "$lib/utils";

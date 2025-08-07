@@ -164,6 +164,10 @@
 			"types": "./dist/stores/ThemeStore.d.ts",
 			"svelte": "./dist/stores/ThemeStore.js"
 		},
+		"./stores/languageStore": {
+			"types": "./dist/stores/languageStore.d.ts",
+			"svelte": "./dist/stores/languageStore.js"
+		},
 		"./stores/themeStore": {
 			"types": "./dist/stores/ThemeStore.d.ts",
 			"svelte": "./dist/stores/ThemeStore.js"
