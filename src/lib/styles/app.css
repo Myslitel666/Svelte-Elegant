@@ -34,6 +34,7 @@ ol,
 ul,
 a,
 div {
+  margin: 0;
   color: var(--Xl-textColorMain);
 }
 

@@ -5,18 +5,22 @@
   import Box from "$elegant/layout/Box.svelte";
   import TriangularBracket from "$icons-elegant/TriangularBracket.svelte";
   import { activeCardId } from "$stores/contentCardStore";
+  import "$styles/app.css";
+  import "../../font.css";
 
   export let id = "";
-  export let stockTitle = "Box";
-  export let lotsQuantity = "6";
-  export let lotValue = "7";
-  export let comission = "6";
-  export let price = "600";
+  export let width = "27rem";
 
   // Состояние для управления раскрытием
-  let isOpen = false;
-
   let theme;
+  let isOpen = false;
+  let detailsSlot; // Ссылка на элемент слота
+  let slotHeight = 0; // Высота содержимого
+
+  // Обновляем высоту при изменении isOpen или содержимого слота
+  $: if (isOpen && detailsSlot) {
+    slotHeight = detailsSlot.clientHeight;
+  }
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -40,70 +44,41 @@
 </script>
 
 <!-- Основной Box -->
-<Box variant="Hoverable" padding="1.5rem" width="35rem" onclick={toggleDetails}>
-  <div class="box-content">
-    <p>{stockTitle}</p>
-    <p class="price" style:color={theme?.palette.primary}>
-      Test: {price}
-    </p>
-  </div>
-  <div
-    class="triangular-btn"
-    style:rotate={isOpen ? "-90deg" : ""}
-    style:transition="rotate 0.3s"
-    style:margin-top="0.3rem"
+<div>
+  <Box
+    variant="Hoverable"
+    padding="1.5rem"
+    onclick={toggleDetails}
+    {...$$props}
   >
-    <TriangularBracket />
-  </div>
-</Box>
+    <slot name="content" />
+    <div
+      class="triangular-btn"
+      style:rotate={isOpen ? "-90deg" : ""}
+      style:transition="rotate 0.3s"
+      style:margin-top="0.3rem"
+    >
+      <TriangularBracket />
+    </div>
+  </Box>
 
-<!-- Дополнительная информация под Box с плавным раскрытием -->
-<div class="details" style:height={isOpen ? "4.25rem" : "0"}>
-  <p><span style:font-weight="600">Random Text: </span> {lotsQuantity} шт.</p>
-  <p>
-    <span style:font-weight="600">Rand: </span>
-    {lotValue.replace(".", ",")}
-  </p>
-  <p><span style:font-weight="600">Randdd: </span> {comission}</p>
+  <!-- Дополнительная информация под Box с плавным раскрытием -->
+  <div class="details" style:height={isOpen ? `${slotHeight}px` : "0"}>
+    <div bind:this={detailsSlot}>
+      <slot name="detailes" />
+    </div>
+  </div>
 </div>
 
 <style>
-  .box-content {
-    margin-left: 1rem;
-  }
-
-  .box-content p {
-    display: flex;
-    justify-content: flex-start; /* Прижимаем содержимое к левому краю */
-  }
-
-  .stock-logo {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%; /* Делаем изображение круглым */
-  }
-
-  .price {
-    font-weight: bold;
-  }
-
   .details {
-    font-size: 0.9rem;
-    color: #555;
-    padding-left: 1.5rem;
+    padding-top: 0.5rem;
+    padding-left: 1.66rem;
     overflow: hidden;
     transition: height 0.3s ease; /* Плавный переход */
   }
 
   .triangular-btn {
     margin-left: auto;
-  }
-
-  .details p {
-    margin-bottom: 0.3rem;
-  }
-
-  .details p:last-child {
-    margin-bottom: 0;
   }
 </style>

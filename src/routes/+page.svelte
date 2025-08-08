@@ -22,7 +22,6 @@
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
-  import TriangularBracket from "$icons-elegant/TriangularBracket.svelte";
   import ToggleContentCard from "$elegant/layout/ToggleContentCard.svelte";
 
   import GoBack from "$icons-elegant/GoBack.svelte";
@@ -95,8 +94,23 @@
 </script>
 
 <div id="container" style:width="100%">
-  <ToggleContentCard />
-  <TriangularBracket />
+  <h6 class="heading">Toggle Content Card</h6>
+  <div class="components-container">
+    <ToggleContentCard width="27rem">
+      <div slot="content">
+        <p style:font-weight="600" style:color={theme.palette.primary}>Title</p>
+        <p style:margin-top="0.5rem">The text of the Card is located here.</p>
+      </div>
+      <div slot="detailes">
+        <p>It contains the details.</p>
+        <ul style:margin-top="0.25rem">
+          <li>Detail 1</li>
+          <li>Detail 2</li>
+          <li>Detail 3</li>
+        </ul>
+      </div>
+    </ToggleContentCard>
+  </div>
   <GoBack size="3rem" />
   <h6 class="heading" style:font-size="2rem">Data Grid</h6>
   <div class="components-container">
