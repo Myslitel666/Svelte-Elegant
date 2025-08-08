@@ -88,7 +88,7 @@
 			"types": "./dist/icons-elegant/DatabasePro.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/DatabasePro.svelte"
 		},
-		"./Delete": {
+		"./icons-elegant/Delete": {
 			"types": "./dist/icons-elegant/Delete.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Delete.svelte"
 		},
@@ -107,6 +107,10 @@
 		"./icons-elegant/EyeOpened": {
 			"types": "./dist/icons-elegant/EyeOpened.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/EyeOpened.svelte"
+		},
+		"./icons-elegant/GoBack": {
+			"types": "./dist/icons-elegant/GoBack.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/GoBack.svelte"
 		},
 		"./icons-elegant/Light": {
 			"types": "./dist/icons-elegant/Light.svelte.d.ts",

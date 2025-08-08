@@ -14,6 +14,7 @@ export { default as Enter } from './Enter.svelte';
 export { default as EnvelopeIcon } from './Envelope.svelte';
 export { default as EyeClosed } from './EyeClosed.svelte';
 export { default as EyeOpened } from './EyeOpened.svelte';
+export { default as GoBack } from './GoBack.svelte';
 export { default as Light } from './Light.svelte';
 export { default as ModalIcon } from './ModalIcon.svelte';
 export { default as Notepad } from './Notepad.svelte';

@@ -23,6 +23,8 @@
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
 
+  import GoBack from "$icons-elegant/GoBack.svelte";
+
   import { languageStore } from "$lib/stores/languageStore";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
 
@@ -91,6 +93,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <GoBack size="3rem" />
   <h6 class="heading" style:font-size="2rem">Data Grid</h6>
   <div class="components-container">
     <DataGrid width={xMobile ? "20rem" : ""} {rows} {columns} />
