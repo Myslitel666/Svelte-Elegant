@@ -3,7 +3,7 @@
   import "./style/icons.css";
 
   export let fill = "";
-  export let size = "2rem";
+  export let size = "1.66rem";
 
   let theme: any;
 
@@ -19,7 +19,7 @@
   data-license="MIT"
   width={size}
   height={size}
-  fill={fill || theme.palette.text.labelBalanced}
+  fill={fill || theme.icon.color.secondary}
   viewBox="0 0 32 32"
   version="1.1"
 >

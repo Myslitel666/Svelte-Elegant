@@ -23,6 +23,7 @@
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
   import TriangularBracket from "$icons-elegant/TriangularBracket.svelte";
+  import ToggleContentCard from "$elegant/layout/ToggleContentCard.svelte";
 
   import GoBack from "$icons-elegant/GoBack.svelte";
 
@@ -94,6 +95,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <ToggleContentCard />
   <TriangularBracket />
   <GoBack size="3rem" />
   <h6 class="heading" style:font-size="2rem">Data Grid</h6>

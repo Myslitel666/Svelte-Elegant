@@ -27,6 +27,7 @@ export { default as TextField } from './elegant/input/TextField.svelte';
 export { default as Box } from './elegant/layout/Box.svelte';
 export { default as Header } from './elegant/layout/Header.svelte';
 export { default as TitledBox } from './elegant/layout/TitledBox.svelte';
+export { default as ToggleContentCard } from './elegant/layout/ToggleContentCard.svelte';
 
 /* Overlays Components */
 export { default as Modal } from './elegant/overlays/Modal.svelte';

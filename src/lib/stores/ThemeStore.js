@@ -45,6 +45,7 @@ const theme = derived(
 			color: {
 				hover: $themeMode === 'light' ? 'rgba(218, 218, 218, 0.5)' : 'rgba(64, 64, 64, 0.7)',
 				primary: $themeMode === 'light' ? '#7f7f7fff' : '#E0E0E0',
+				secondary: $themeMode === 'light' ? '#b7b7b7' : '#E0E0E0',
 			}
 		},
 		padding: {

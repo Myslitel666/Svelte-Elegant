@@ -204,6 +204,10 @@
 			"types": "./dist/elegant/layout/TitledBox.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/TitledBox.svelte"
 		},
+		"./ToggleContentCard": {
+			"types": "./dist/elegant/layout/ToggleContentCard.svelte.d.ts",
+			"svelte": "./dist/elegant/layout/ToggleContentCard.svelte"
+		},
 		"./utils": {
 			"types": "./dist/utils/index.d.ts",
 			"svelte": "./dist/utils/index.js"
