@@ -63,7 +63,11 @@
   </Box>
 
   <!-- Дополнительная информация под Box с плавным раскрытием -->
-  <div class="details" style:height={isOpen ? `${slotHeight}px` : "0"}>
+  <div
+    class="details"
+    style:height={isOpen ? `${slotHeight}px` : "0"}
+    style:margin-bottom={isOpen ? "0.25rem" : ""}
+  >
     <div bind:this={detailsSlot}>
       <slot name="detailes" />
     </div>
