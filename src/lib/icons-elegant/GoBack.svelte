@@ -18,7 +18,7 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
   data-source="https://www.svgrepo.com/svg/101168/go-back-arrow"
-  data-license="CC0 License"
+  data-license="CC0"
   fill={fill || theme?.palette.primary}
   width={size}
   height={size}
