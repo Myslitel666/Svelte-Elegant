@@ -13,9 +13,9 @@
 </script>
 
 <svg
+  xmlns="http://www.w3.org/2000/svg"
   data-source="https://icons.getbootstrap.com/icons/plus/"
   data-license="MIT"
-  xmlns="http://www.w3.org/2000/svg"
   width={size}
   height={size}
   fill={fill || theme.palette.primary}

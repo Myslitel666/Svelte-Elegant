@@ -19,6 +19,7 @@ export { default as Light } from './Light.svelte';
 export { default as ModalIcon } from './ModalIcon.svelte';
 export { default as Notepad } from './Notepad.svelte';
 export { default as NotebookPro } from './NotebookPro.svelte';
+export { default as Pen } from './Pen.svelte';
 export { default as Plus } from './Plus.svelte';
 export { default as PlusSquareFill } from './PlusSquareFill.svelte';
 export { default as TableIcon } from './TableIcon.svelte';

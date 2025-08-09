@@ -44,33 +44,38 @@
 </script>
 
 <!-- Основной Box -->
-<div>
-  <Box
-    variant="Hoverable"
-    padding="1.5rem"
-    onclick={toggleDetails}
-    {...$$props}
-  >
-    <slot name="content" />
-    <div
-      class="triangular-btn"
-      style:rotate={isOpen ? "-90deg" : ""}
-      style:transition="rotate 0.3s"
-      style:margin-top="0.3rem"
+<div style:display="flex">
+  <div>
+    <Box
+      variant="Hoverable"
+      padding="1.5rem"
+      onclick={toggleDetails}
+      {...$$props}
     >
-      <TriangularBracket />
-    </div>
-  </Box>
+      <slot name="content" />
+      <div
+        class="triangular-btn"
+        style:rotate={isOpen ? "-90deg" : ""}
+        style:transition="rotate 0.3s"
+        style:margin-top="0.3rem"
+      >
+        <TriangularBracket />
+      </div>
+    </Box>
 
-  <!-- Дополнительная информация под Box с плавным раскрытием -->
-  <div
-    class="details"
-    style:height={isOpen ? `${slotHeight}px` : "0"}
-    style:margin-bottom={isOpen ? "0.25rem" : ""}
-  >
-    <div bind:this={detailsSlot}>
-      <slot name="detailes" />
+    <!-- Дополнительная информация под Box с плавным раскрытием -->
+    <div
+      class="details"
+      style:height={isOpen ? `${slotHeight}px` : "0"}
+      style:margin-bottom={isOpen ? "0.25rem" : ""}
+    >
+      <div bind:this={detailsSlot}>
+        <slot name="detailes" />
+      </div>
     </div>
+  </div>
+  <div class="flex-center">
+    <slot name="actions" />
   </div>
 </div>
 
