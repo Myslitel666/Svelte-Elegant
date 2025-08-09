@@ -45,45 +45,48 @@
 
 <!-- Основной Box -->
 <div style:display="flex">
-  <div>
-    <Box
-      variant="Hoverable"
-      padding="1.5rem"
-      onclick={toggleDetails}
-      {...$$props}
-    >
-      <slot name="content" />
-      <div
-        class="triangular-btn"
-        style:rotate={isOpen ? "-90deg" : ""}
-        style:transition="rotate 0.3s"
-        style:margin-top="0.3rem"
-      >
-        <TriangularBracket />
-      </div>
-    </Box>
-
-    <!-- Дополнительная информация под Box с плавным раскрытием -->
+  <Box
+    variant="Hoverable"
+    padding="1.5rem"
+    onclick={toggleDetails}
+    {width}
+    {...$$props}
+  >
+    <slot name="content" />
     <div
-      class="details"
-      style:height={isOpen ? `${slotHeight}px` : "0"}
-      style:margin-bottom={isOpen ? "0.25rem" : ""}
+      class="triangular-btn"
+      style:rotate={isOpen ? "-90deg" : ""}
+      style:transition="rotate 0.3s"
+      style:margin-top="0.3rem"
     >
-      <div bind:this={detailsSlot}>
-        <slot name="detailes" />
-      </div>
+      <TriangularBracket />
     </div>
-  </div>
+  </Box>
   <div class="flex-center">
     <slot name="actions" />
   </div>
 </div>
 
+<!-- Дополнительная информация под Box с плавным раскрытием -->
+<div style:padding-top="0.4rem" style:margin-bottom={isOpen ? "0.25rem" : ""}>
+  <div
+    class="details"
+    style:height={isOpen ? `${slotHeight}px` : "0"}
+    style:width
+  >
+    <div bind:this={detailsSlot}>
+      <slot name="detailes" />
+    </div>
+  </div>
+</div>
+
 <style>
   .details {
-    padding-top: 0.4rem;
-    padding-left: 1.66rem;
+    box-sizing: border-box;
     overflow: hidden;
+    padding-left: 1.66rem;
+    padding-right: 0.75rem;
+    text-align: justify;
     transition: height 0.3s ease; /* Плавный переход */
   }
 

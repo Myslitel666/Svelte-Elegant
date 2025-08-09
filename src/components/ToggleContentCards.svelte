@@ -1,5 +1,6 @@
 <script>
   import ToggleContentCard from "$elegant/layout/ToggleContentCard.svelte";
+  import IconHover from "$elegant/customization/IconHover.svelte";
   import Delete from "$icons-elegant/Delete.svelte";
   import Pen from "$icons-elegant/Pen.svelte";
 
@@ -7,14 +8,17 @@
 </script>
 
 <div style:margin-bottom="0.25rem">
-  <ToggleContentCard width="21rem">
+  <ToggleContentCard width="20.33rem">
     <div slot="content">
       <p style:font-weight="600" style:color>
         Выписать 500 новых слов в English Assistant
       </p>
     </div>
     <div slot="detailes">
-      <p>It contains the details.</p>
+      <p>
+        It contains the details. It contains the details. It contains the
+        details.
+      </p>
       <ul style:margin-top="0.25rem">
         <li>Detail 1</li>
         <li>Detail 2</li>
@@ -23,7 +27,9 @@
     </div>
 
     <div slot="actions" style:margin-left="0.25rem">
-      <Delete size="1.75rem" />
+      <IconHover padding="0.33rem">
+        <Delete size="1.66rem" />
+      </IconHover>
     </div>
   </ToggleContentCard>
 </div>
