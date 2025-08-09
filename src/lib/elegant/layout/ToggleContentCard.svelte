@@ -76,7 +76,7 @@
 
 <style>
   .details {
-    padding-top: 0.5rem;
+    padding-top: 0.4rem;
     padding-left: 1.66rem;
     overflow: hidden;
     transition: height 0.3s ease; /* Плавный переход */

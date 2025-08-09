@@ -96,7 +96,7 @@
 <div id="container" style:width="100%">
   <h6 class="heading">Toggle Content Card</h6>
   <div class="components-container" style:margin-bottom="0.25rem">
-    <ToggleContentCard width="27rem">
+    <ToggleContentCard width="23rem">
       <div slot="content">
         <p style:font-weight="600" style:color={theme.palette.primary}>Title</p>
         <p style:margin-top="0.5rem">The text of the Card is located here.</p>
@@ -112,7 +112,7 @@
     </ToggleContentCard>
   </div>
   <div class="components-container" style:margin-bottom="0.25rem">
-    <ToggleContentCard width="27rem">
+    <ToggleContentCard width="23rem">
       <div slot="content">
         <p style:font-weight="600" style:color={theme.palette.primary}>Title</p>
         <p style:margin-top="0.5rem">The text of the Card is located here.</p>
@@ -128,7 +128,7 @@
     </ToggleContentCard>
   </div>
   <div class="components-container">
-    <ToggleContentCard width="27rem">
+    <ToggleContentCard width="23rem">
       <div slot="content">
         <p style:font-weight="600" style:color={theme.palette.primary}>Title</p>
         <p style:margin-top="0.5rem">The text of the Card is located here.</p>
