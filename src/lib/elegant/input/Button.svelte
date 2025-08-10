@@ -23,6 +23,7 @@
   export let marginLeft = "";
   export let marginRight = "";
   export let marginTop = "";
+  export let maxWidth = "";
   export let minWidth = ""; /* Минимальная ширина */
   export let onClick = () => {};
   export let padding = "";
@@ -185,6 +186,7 @@
   style:margin-right={marginRight}
   style:margin-top={marginTop}
   style:margin-bottom={marginBottom}
+  style:max-width={maxWidth}
   style:width={xWidth}
 >
   <button
@@ -201,7 +203,7 @@
     style:min-width={minWidth}
     style:padding-left={xPadding}
     style:padding-right={xPadding}
-    style:width={xWidth}
+    style:width="100%"
     style:--Xl-bgColor={variant === "Contained" ? xBgColor : ""}
     style:--Xl-bgColorHover={xBgColorHover}
     style:--Xl-effectsTimeCode={theme?.effectsTimeCode}
