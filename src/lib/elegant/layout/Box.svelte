@@ -20,7 +20,10 @@
   export let display = "flex";
   export let height = "";
   export let justifyContent = "center";
+  export let maxWidth = "";
   export let padding = "0.5rem";
+  export let paddingRight = "";
+  export let textAlign = "";
   export let variant: "Default" | "Hoverable" | "Solid" = "Default";
   export let width = "";
 </script>
@@ -44,8 +47,11 @@
   style:cursor={variant === "Hoverable" ? "pointer" : ""}
   style:display
   style:justify-content={justifyContent}
+  style:max-width={maxWidth}
   style:overflow="hidden;"
   style:padding
+  style:padding-right={paddingRight}
+  style:text-align={textAlign}
   style:transition={`all ${theme?.effectsTimeCode}`}
   style:user-select={variant == "Hoverable" ? "none" : ""}
   style:--Xl-bg-color={bgColor

@@ -9,6 +9,7 @@
   import "../../font.css";
 
   export let id = "";
+  export let padding = "1rem";
   export let width = "27rem";
 
   // Состояние для управления раскрытием
@@ -43,39 +44,44 @@
   }
 </script>
 
-<!-- Основной Box -->
-<div style:display="flex">
-  <Box
-    variant="Hoverable"
-    padding="1.5rem"
-    onclick={toggleDetails}
-    {width}
-    {...$$props}
-  >
-    <slot name="content" />
-    <div
-      class="triangular-btn"
-      style:rotate={isOpen ? "-90deg" : ""}
-      style:transition="rotate 0.3s"
-      style:margin-top="0.3rem"
+<div style:display="inline-block" style:width>
+  <!-- Основной Box -->
+  <div style:display="flex">
+    <Box
+      variant="Hoverable"
+      height="5.33rem"
+      onclick={toggleDetails}
+      {padding}
+      {width}
+      {...$$props}
     >
-      <TriangularBracket />
+      <div style:padding-right="0.75rem">
+        <slot name="content" />
+      </div>
+      <div
+        class="triangular-btn"
+        style:rotate={isOpen ? "-90deg" : ""}
+        style:transition="rotate 0.3s, transform 0.3s"
+        style:margin-top="0.3rem"
+      >
+        <TriangularBracket />
+      </div>
+    </Box>
+    <div class="flex-center">
+      <slot name="actions" />
     </div>
-  </Box>
-  <div class="flex-center">
-    <slot name="actions" />
   </div>
-</div>
 
-<!-- Дополнительная информация под Box с плавным раскрытием -->
-<div style:padding-top="0.4rem" style:margin-bottom={isOpen ? "0.25rem" : ""}>
-  <div
-    class="details"
-    style:height={isOpen ? `${slotHeight}px` : "0"}
-    style:width
-  >
-    <div bind:this={detailsSlot}>
-      <slot name="detailes" />
+  <!-- Дополнительная информация под Box с плавным раскрытием -->
+  <div style:display="flex" style:padding-top="0.4rem">
+    <div
+      class="details"
+      style:height={isOpen ? `${slotHeight}px` : "0"}
+      style:width
+    >
+      <div bind:this={detailsSlot}>
+        <slot name="detailes" />
+      </div>
     </div>
   </div>
 </div>
@@ -84,7 +90,7 @@
   .details {
     box-sizing: border-box;
     overflow: hidden;
-    padding-left: 1.66rem;
+    padding-left: 1.1rem;
     padding-right: 0.75rem;
     text-align: justify;
     transition: height 0.3s ease; /* Плавный переход */
@@ -92,5 +98,6 @@
 
   .triangular-btn {
     margin-left: auto;
+    margin-right: -0.275rem;
   }
 </style>
