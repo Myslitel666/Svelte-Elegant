@@ -74,7 +74,6 @@
 
   <!-- Дополнительная информация под Box с плавным раскрытием -->
   <div
-    style:display="flex"
     style:transform="translateY(0.5rem)"
     style:margin-bottom={isOpen ? "0.5rem" : ""}
   >
