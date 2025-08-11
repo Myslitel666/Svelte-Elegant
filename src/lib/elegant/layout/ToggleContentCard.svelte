@@ -8,6 +8,7 @@
   import "$styles/app.css";
   import "../../font.css";
 
+  export let detailsShift = "3.5px";
   export let id = "";
   export let padding = "1rem";
   export let width = "27rem";
@@ -74,7 +75,7 @@
   </div>
 
   <!-- Дополнительная информация под Box с плавным раскрытием -->
-  <div style:transform="translateY(0.5rem)">
+  <div style:transform={`translateY(${detailsShift})`}>
     <div
       class="details"
       style:height={isOpen ? `${slotHeight}px` : "0"}
