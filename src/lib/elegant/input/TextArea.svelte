@@ -1,9 +1,7 @@
 <script lang="ts">
-  import { EyeClosed, EyeOpened } from "$icons-elegant";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount, tick } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
-  import IconHover from "$elegant/customization/IconHover.svelte";
   import { isMobile } from "$lib/utils/isMobile.js";
   import "$styles/app.css";
   import "../../font.css";
@@ -230,6 +228,7 @@
     style:border="none"
     style:font-size={fontSize}
     style:font-width="0.5rem"
+    style:margin-top={variant === "Filled" ? "0.9rem" : ""}
     style:min-width={minWidth}
     style:outline="none"
     style:padding-bottom={xPaddingBottom}
@@ -260,17 +259,18 @@
     style:position="absolute"
     style:margin-left={xPadding}
     style:margin-top={variant === "Outlined"
-      ? `calc(${height}/2 - 68*var(--Xl-activeborderWidth))`
+      ? `1.12rem`
       : variant === "Standard"
-        ? `calc(${height}/2 - 7rem)`
-        : `calc(${height}/2 - 8.5rem)`}
+        ? `2rem`
+        : `1.25rem`}
+    style:top="0"
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
-      ? `1.33rem`
+      ? `1.17rem`
       : variant === "Standard"
-        ? `1.75rem`
+        ? `2rem`
         : `0.6rem`}
   >
     {label}
@@ -282,7 +282,7 @@
     resize: none;
     background-color: transparent;
     color: var(--Xl-textColor);
-    height: calc(var(--Xl-height) - 1.5rem);
+    height: calc(var(--Xl-height) - 1.25rem);
     box-sizing: border-box; /* Включаем border и padding в размеры элемента */
   }
 

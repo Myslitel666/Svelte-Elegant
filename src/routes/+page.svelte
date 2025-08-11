@@ -96,7 +96,7 @@
 
 <div id="container" style:width="100%">
   <h6 class="heading">TextArea</h6>
-  <TextArea />
+  <TextArea height="7.5rem" />
   <h6 class="heading">Toggle Content Card</h6>
   <ToggleContentCards color={theme.palette.primary} />
   <IconHover isPrimary padding="0.5rem">
