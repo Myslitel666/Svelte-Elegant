@@ -30,7 +30,7 @@
 </script>
 
 {#if isOpen}
-  <button
+  <div
     class="modal-backdrop"
     style:padding={outerPadding}
     style:--Xl-width={width}
@@ -47,7 +47,7 @@
     >
       <slot />
     </div>
-  </button>
+  </div>
 {/if}
 
 <style>
