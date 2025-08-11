@@ -38,7 +38,10 @@ const theme = derived(
 				small: '3rem',
 				medium: '6rem',
 			},
-			kOpacity: $themeMode === 'light' ? '0.12' : '0.23',
+			kOpacity: { 
+				ghost: $themeMode === 'light' ? '0.12' : '0.23',
+				filled: $themeMode === 'light' ? '0.23' : '0.28'
+			 },
 			width: '15rem'
 		},
 		icon: {

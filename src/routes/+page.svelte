@@ -97,7 +97,9 @@
 <div id="container" style:width="100%">
   <h6 class="heading">Toggle Content Card</h6>
   <ToggleContentCards color={theme.palette.primary} />
-  <GoBack size="3rem" />
+  <IconHover isPrimary padding="0.5rem">
+    <GoBack size="3rem" />
+  </IconHover>
   <h6 class="heading" style:font-size="2rem">Data Grid</h6>
   <div class="components-container">
     <DataGrid width={xMobile ? "20rem" : ""} {rows} {columns} />

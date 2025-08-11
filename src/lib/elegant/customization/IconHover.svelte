@@ -1,12 +1,13 @@
 <script lang="ts">
   import { themeStore } from "$lib/stores";
   import { isMobile } from "$lib/utils/isMobile.js";
-  import { createTouchEffects } from "$lib/utils/setHoverColor";
+  import { createTouchEffects, hexToRgba } from "$lib/utils/setHoverColor";
   import "$styles/app.css";
   import "../../font.css";
 
   export let bgColor = ""; /* Основной цвет */
   export let height = "";
+  export let isPrimary = false;
   export let marginRight = "";
   export let marginTop = "";
   export let padding = "0.25rem";
@@ -17,7 +18,7 @@
 
   let theme: any;
 
-  let isBgColorFromUser = bgColor !== "";
+  let xBgColor = "";
 
   let handleTouchStart: (e: Event) => void;
   let handleTouchEnd: (e: Event) => void;
@@ -27,9 +28,11 @@
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
 
-    if (!isBgColorFromUser) {
-      bgColor = theme.icon.color.hover;
-    }
+    xBgColor = bgColor
+      ? bgColor
+      : isPrimary
+        ? hexToRgba(theme.palette.primary, theme.controls.kOpacity.filled)
+        : theme.icon.color.hover;
 
     hoverStyles = [{ "--Xl-icon-bg-color": bgColor }];
     resetStyles = [{ "--Xl-icon-bg-color": "transparent" }];
@@ -61,7 +64,7 @@
     handleTouchStart(e);
   }}
   style:--Xl-icon-bg-color=""
-  style:--Xl-icon-hover={bgColor}
+  style:--Xl-icon-hover={xBgColor}
   {...$$props}
 >
   <div class="icon">

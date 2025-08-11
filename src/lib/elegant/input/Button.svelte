@@ -111,7 +111,7 @@
         if (isPrimary) {
           xBgColorHover = hexToRgba(
             theme.palette.primary,
-            theme.controls.kOpacity
+            theme.controls.kOpacity.ghost
           );
         } else {
           xBgColorHover = theme.surface.filled.background;
