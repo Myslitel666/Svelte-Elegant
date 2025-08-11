@@ -1,74 +1,42 @@
-<!-- https://www.svgrepo.com/svg/436254/save -->
+<script lang="ts">
+  import { themeStore } from "$lib/stores/ThemeStore.js";
+  import "./style/icons.css";
+
+  export let fill = "";
+  export let size = "30px";
+
+  let theme: any;
+
+  // Подписываемся на изменения темы
+  themeStore.subscribe((value) => {
+    theme = value;
+  });
+</script>
 
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:cc="http://creativecommons.org/ns#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:svg="http://www.w3.org/2000/svg"
-  xmlns="http://www.w3.org/2000/svg"
-  xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-  xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-  width="400"
-  height="400"
-  viewBox="0 0 400 400.00001"
-  id="svg2"
+  data-source="https://www.svgrepo.com/svg/146761/save-disc"
+  data-license="CC0"
+  width={size}
+  height={size}
+  fill={fill || theme.palette.primary}
   version="1.1"
-  inkscape:version="0.91 r13725"
-  sodipodi:docname="save.svg"
+  id="Capa_1"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 290 290"
+  xml:space="preserve"
 >
-  <defs id="defs4" />
-  <sodipodi:namedview
-    id="base"
-    pagecolor="#ffffff"
-    bordercolor="#666666"
-    borderopacity="1.0"
-    inkscape:pageopacity="0.0"
-    inkscape:pageshadow="2"
-    inkscape:zoom="0.98994949"
-    inkscape:cx="244.49048"
-    inkscape:cy="180.68004"
-    inkscape:document-units="px"
-    inkscape:current-layer="layer1"
-    showgrid="false"
-    units="px"
-    showguides="true"
-    inkscape:guide-bbox="true"
-    inkscape:window-width="1920"
-    inkscape:window-height="1056"
-    inkscape:window-x="1920"
-    inkscape:window-y="24"
-    inkscape:window-maximized="1"
-  >
-    <sodipodi:guide
-      position="200.71429,121.42857"
-      orientation="1,0"
-      id="guide23298"
-    />
-  </sodipodi:namedview>
-  <metadata id="metadata7">
-    <rdf:RDF>
-      <cc:Work rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title> </dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <g
-    inkscape:label="Capa 1"
-    inkscape:groupmode="layer"
-    id="layer1"
-    transform="translate(0,-652.36216)"
-  >
+  <g>
     <path
-      style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:25;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-      d="m 2.5e-5,652.36213 0,400.00007 399.999945,0 0,-311.40627 -88.5937,-88.5938 -286.406245,0 z m 90.98633,26.8985 218.025385,0 0,133.8652 -218.025385,0 z m 149.982415,19.7558 0,86 43,0 0,-86 z"
-      id="save"
-      inkscape:connector-curvature="0"
-      sodipodi:nodetypes="ccccccccccccccccc"
-    >
-      <title id="title23500">save</title>
-    </path>
+      d="M287.602,53.599l-51.2-51.2C234.862,0.863,232.777,0,230.602,0H8.199C3.668,0,0,3.668,0,8.199v273.602
+		C0,286.332,3.668,290,8.199,290h273.602c4.531,0,8.199-3.668,8.199-8.199V59.397C290,57.221,289.135,55.138,287.602,53.599z
+		 M38.456,34.678c0-3.262,2.651-5.916,5.917-5.916h160.975c3.27,0,5.918,2.654,5.918,5.916v78.323c0,3.269-2.647,5.915-5.918,5.915
+		H44.373c-3.266,0-5.917-2.646-5.917-5.915V34.678z M251.544,247.513c0,4.03-3.27,7.298-7.296,7.298H45.752
+		c-4.026,0-7.296-3.268-7.296-7.298V150.94c0-4.028,3.27-7.295,7.296-7.295h198.496c4.026,0,7.296,3.267,7.296,7.295V247.513z"
+    />
+    <rect x="173.564" y="39.039" width="24.588" height="69.604" />
+    <rect x="59.489" y="174.643" width="171.021" height="8.195" />
+    <rect x="59.489" y="215.62" width="171.021" height="8.195" />
   </g>
 </svg>

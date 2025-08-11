@@ -22,5 +22,6 @@ export { default as NotebookPro } from './NotebookPro.svelte';
 export { default as Pen } from './Pen.svelte';
 export { default as Plus } from './Plus.svelte';
 export { default as PlusSquareFill } from './PlusSquareFill.svelte';
+export { default as Save } from './Save.svelte';
 export { default as TableIcon } from './TableIcon.svelte';
 export { default as TriangularArrowDown } from './TriangularArrowDown.svelte';

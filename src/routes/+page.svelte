@@ -24,6 +24,7 @@
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
   import TextArea from "$elegant/input/TextArea.svelte";
   import ToggleContentCards from "../components/ToggleContentCards.svelte";
+  import Save from "$icons-elegant/Save.svelte";
 
   import GoBack from "$icons-elegant/GoBack.svelte";
 

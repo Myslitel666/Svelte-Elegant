@@ -144,6 +144,10 @@
 			"types": "./dist/icons-elegant/TableIcon.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TableIcon.svelte"
 		},
+		"./icons-elegant/Save": {
+			"types": "./dist/icons-elegant/Save.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Save.svelte"
+		},
 		"./icons-elegant/TriangularArrowDown": {
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TriangularArrowDown.svelte"
