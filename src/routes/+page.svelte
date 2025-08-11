@@ -24,7 +24,7 @@
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
   import TextArea from "$elegant/input/TextArea.svelte";
   import ToggleContentCards from "../components/ToggleContentCards.svelte";
-  import Save from "$icons-elegant/Save.svelte";
+  import CheckMark from "./../lib/icons-elegant/CheckMark.svelte";
 
   import GoBack from "$icons-elegant/GoBack.svelte";
 
@@ -96,6 +96,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <CheckMark />
   <h6 class="heading">TextArea</h6>
   <TextArea height="7.5rem" />
   <h6 class="heading">Toggle Content Card</h6>

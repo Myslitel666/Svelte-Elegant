@@ -5,6 +5,7 @@
 export { default as Backspace } from './Backspace.svelte';
 export { default as Bars } from './Bars.svelte';
 export { default as Cross } from './Cross.svelte';
+export { default as CheckMark } from './CheckMark.svelte';
 export { default as Dark } from './Dark.svelte';
 export { default as Database } from './Database.svelte';
 export { default as DatabasePro } from './DatabasePro.svelte';

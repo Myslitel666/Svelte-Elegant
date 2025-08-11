@@ -72,6 +72,10 @@
 			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Bars.svelte"
 		},
+		"./icons-elegant/CheckMark": {
+			"types": "./dist/icons-elegant/CheckMark.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/CheckMark.svelte"
+		},
 		"./icons-elegant/Cross": {
 			"types": "./dist/icons-elegant/Cross.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Cross.svelte"
