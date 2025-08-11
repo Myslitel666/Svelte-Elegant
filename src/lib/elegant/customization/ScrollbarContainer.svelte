@@ -4,10 +4,12 @@
   import "../../font.css";
 
   export let height = "";
+  export let width = "100%";
 </script>
 
 <div
   style:height={height ? height : `calc(100dvh - ${$headerHeight})`}
+  style:width
   class="app scrollable-content"
 >
   <slot />

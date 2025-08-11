@@ -72,7 +72,6 @@ div {
 }
 
 .scrollable-content {
-  width: 100%;
   overflow-y: auto;
 
   /* Стили скроллбара */
