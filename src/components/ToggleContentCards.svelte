@@ -121,9 +121,8 @@
 
 <style>
   .card {
-    margin-bottom: 0.06rem;
+    margin-bottom: 0.66rem;
     justify-content: center;
-
     width: 525px;
   }
 
@@ -131,7 +130,6 @@
     display: flex;
     align-items: center; /* Центрируем карточки по горизонтали */
     flex-direction: column;
-    margin-bottom: 0.25rem;
     padding-left: 0.66rem;
     padding-right: 0.18rem;
     box-sizing: border-box;
