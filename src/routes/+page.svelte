@@ -22,7 +22,7 @@
   import TimedImageTransition from "$elegant/effects/TimedImageTransition.svelte";
   import DatabasePro from "$icons-elegant/DatabasePro.svelte";
   import NotebookPro from "$icons-elegant/NotebookPro.svelte";
-  import ToggleContentCard from "$elegant/layout/ToggleContentCard.svelte";
+  import TextArea from "$elegant/input/TextArea.svelte";
   import ToggleContentCards from "../components/ToggleContentCards.svelte";
 
   import GoBack from "$icons-elegant/GoBack.svelte";
@@ -95,6 +95,8 @@
 </script>
 
 <div id="container" style:width="100%">
+  <h6 class="heading">TextArea</h6>
+  <TextArea />
   <h6 class="heading">Toggle Content Card</h6>
   <ToggleContentCards color={theme.palette.primary} />
   <IconHover isPrimary padding="0.5rem">
