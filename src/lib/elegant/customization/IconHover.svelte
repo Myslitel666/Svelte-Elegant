@@ -34,7 +34,7 @@
         ? hexToRgba(theme.palette.primary, theme.controls.kOpacity.filled)
         : theme.icon.color.hover;
 
-    hoverStyles = [{ "--Xl-icon-bg-color": bgColor }];
+    hoverStyles = [{ "--Xl-icon-bg-color": xBgColor }];
     resetStyles = [{ "--Xl-icon-bg-color": "transparent" }];
     ({ handleTouchStart, handleTouchEnd } = createTouchEffects(
       hoverStyles,
