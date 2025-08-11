@@ -73,7 +73,11 @@
   </div>
 
   <!-- Дополнительная информация под Box с плавным раскрытием -->
-  <div style:display="flex" style:padding-top="0.4rem">
+  <div
+    style:display="flex"
+    style:transform="translateY(0.5rem)"
+    style:margin-bottom={isOpen ? "0.5rem" : ""}
+  >
     <div
       class="details"
       style:height={isOpen ? `${slotHeight}px` : "0"}

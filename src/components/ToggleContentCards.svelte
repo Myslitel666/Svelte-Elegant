@@ -89,6 +89,34 @@
       </div>
     </ToggleContentCard>
   </div>
+  <div class="card">
+    <ToggleContentCard width="100%">
+      <div slot="content">
+        <p>Выписать 50 новых слов в English Assistant</p>
+      </div>
+      <div
+        slot="detailes"
+        style:padding-right="47.5px"
+        style:padding-bottom="0.5rem"
+      >
+        <p>
+          It contains the details. It contains the details. It contains the
+          details.
+        </p>
+        <ul style:margin-top="0.25rem">
+          <li>Detail 1</li>
+          <li>Detail 2</li>
+          <li>Detail 3</li>
+        </ul>
+      </div>
+
+      <div slot="actions" style:margin-left="0.25rem">
+        <IconHover padding="0.33rem">
+          <Delete size="1.66rem" />
+        </IconHover>
+      </div>
+    </ToggleContentCard>
+  </div>
 </div>
 
 <style>
