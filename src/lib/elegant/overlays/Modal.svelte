@@ -34,7 +34,7 @@
     class="modal-backdrop"
     style:padding={outerPadding}
     style:--Xl-width={width}
-    on:click={handleBackdropClick}
+    on:mousedown={handleBackdropClick}
   >
     <div
       class="modal-content"
@@ -55,6 +55,7 @@
     align-items: center;
     background: rgba(0, 0, 0, 0.5);
     bottom: 0;
+    box-sizing: border-box;
     cursor: default;
     display: flex;
     justify-content: center;
