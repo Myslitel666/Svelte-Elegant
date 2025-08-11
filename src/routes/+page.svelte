@@ -172,7 +172,7 @@
       </div>
     </div>
   </div>
-  <Modal bind:isOpen={isModalOpen}>
+  <Modal width="350px" bind:isOpen={isModalOpen}>
     <p
       style:font-weight="bold"
       style:font-size="1.25rem"

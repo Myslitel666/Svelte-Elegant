@@ -6,11 +6,12 @@
   export let borderRadius = "0.5rem";
   export let isOpen = false;
   export let maxHeight = "100vh";
-  export let maxWidth = "100vw";
+  export let maxWidth = "840px";
   export let minWidth = "19.5rem";
   export let onClose = () => {};
+  export let outerPadding = "14px";
   export let padding = "1rem";
-  export let width = "325px";
+  export let width = "100vw";
 
   let theme: any;
 
@@ -31,6 +32,7 @@
 {#if isOpen}
   <button
     class="modal-backdrop"
+    style:padding={outerPadding}
     style:--Xl-width={width}
     on:click={handleBackdropClick}
   >
@@ -62,7 +64,6 @@
     top: 0;
     z-index: 11000;
 
-    padding: 0;
     margin: 0;
     height: 100vh;
     width: 100vw;
@@ -70,5 +71,6 @@
 
   .modal-content {
     overflow: auto;
+    width: var(--Xl-width);
   }
 </style>
