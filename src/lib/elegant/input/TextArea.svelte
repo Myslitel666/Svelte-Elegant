@@ -155,7 +155,7 @@
           ? borderRadius
           : `${borderRadius} ${borderRadius} 0 0`;
     }
-    if (!height) height = "4rem";
+    if (!height) height = "7.5rem";
     if (!padding) {
       xPadding = variant === "Standard" ? "0" : theme.padding.balanced;
     }
@@ -217,6 +217,7 @@
   style:--Xl-label-fill={variant === "Outlined" ? fill : ""}
   style:--Xl-height={height}
   style:--Xl-hoverBorderColor={xBorderColorHover}
+  on:focus={handleFocus}
 >
   <textarea
     class:has-value={value}
@@ -258,19 +259,19 @@
     for={id}
     style:position="absolute"
     style:margin-left={xPadding}
-    style:margin-top={variant === "Standard"
-      ? "0.75rem"
-      : variant === "Outlined"
-        ? "-0.12rem"
-        : "-0.145rem"}
+    style:margin-top={variant === "Outlined"
+      ? `calc(${height}/2 - 68*var(--Xl-activeborderWidth))`
+      : variant === "Standard"
+        ? `calc(${height}/2 - 7rem)`
+        : `calc(${height}/2 - 8.5rem)`}
     style:--Xl-font-size={fontSize}
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
-      ? `${height}/2 + 0.9*var(--Xl-activeborderWidth)`
+      ? `1.33rem`
       : variant === "Standard"
-        ? `${height}/2 + 0.4rem`
-        : `${height}/2 + 0.9rem`}
+        ? `1.75rem`
+        : `0.6rem`}
   >
     {label}
   </label>
@@ -281,7 +282,7 @@
     resize: none;
     background-color: transparent;
     color: var(--Xl-textColor);
-    height: var(--Xl-height);
+    height: calc(var(--Xl-height) - 1.5rem);
     box-sizing: border-box; /* Включаем border и padding в размеры элемента */
   }
 
