@@ -44,7 +44,8 @@
   }
 </script>
 
-<div style:display="inline-block" style:width>
+<!-- vertical-align="top" удаляет отступ снизу карточек для inline-block -->
+<div style:display="inline-block" style:vertical-align="top" style:width>
   <!-- Основной Box -->
   <div style:display="flex">
     <Box
