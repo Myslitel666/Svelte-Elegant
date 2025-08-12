@@ -18,6 +18,7 @@
   let isOpen = false;
   let detailsSlot; // Ссылка на элемент слота
   let slotHeight = 0; // Высота содержимого
+  let isInitialized = false;
 
   // Обновляем высоту при изменении isOpen или содержимого слота
   $: if (isOpen && detailsSlot) {
@@ -29,10 +30,11 @@
     theme = value; // Инициализация объекта темы
   });
 
-  $: isOpen = $activeCardId === id;
+  $: isOpen = $activeCardId === id && isInitialized;
 
   onMount(() => {
     id ? "" : (id = `toggle-content-card-${generateIdElement()}`);
+    isInitialized = true;
   });
 
   onDestroy(() => {
