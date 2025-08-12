@@ -25,8 +25,8 @@
   import TextArea from "$elegant/input/TextArea.svelte";
   import ToggleContentCards from "../components/ToggleContentCards.svelte";
   import CheckMark from "./../lib/icons-elegant/CheckMark.svelte";
-
   import GoBack from "$icons-elegant/GoBack.svelte";
+  import Message from "$elegant/feedback/Message.svelte";
 
   import { languageStore } from "$lib/stores/languageStore";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
@@ -96,6 +96,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <Message>Message</Message>
   <CheckMark />
   <h6 class="heading">TextArea</h6>
   <TextArea height="7.5rem" />

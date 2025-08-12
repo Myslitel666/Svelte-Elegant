@@ -164,6 +164,10 @@
 			"types": "./dist/elegant/customization/LangSelector.svelte.d.ts",
 			"svelte": "./dist/elegant/customization/LangSelector.svelte"
 		},
+		"./Message": {
+			"types": "./dist/elegant/feedback/Message.svelte.d.ts",
+			"svelte": "./dist/elegant/feedback/Message.svelte"
+		},
 		"./Modal": {
 			"types": "./dist/elegant/overlays/Modal.svelte.d.ts",
 			"svelte": "./dist/elegant/overlays/Modal.svelte"
