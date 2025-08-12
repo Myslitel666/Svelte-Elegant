@@ -1,7 +1,7 @@
 <script>
   import { themeStore } from "$stores";
   import { generateIdElement } from "../../stores/ElementIdStore.js";
-  import { onMount } from "svelte";
+  import { onMount, onDestroy } from "svelte";
   import Box from "$elegant/layout/Box.svelte";
   import TriangularBracket from "$icons-elegant/TriangularBracket.svelte";
   import { activeCardId } from "$stores/contentCardStore";
@@ -33,6 +33,10 @@
 
   onMount(() => {
     id ? "" : (id = `toggle-content-card-${generateIdElement()}`);
+  });
+
+  onDestroy(() => {
+    activeCardId.set("");
   });
 
   // Функция для переключения состояния
