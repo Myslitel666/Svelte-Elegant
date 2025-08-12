@@ -20,6 +20,7 @@
   export let display = "flex";
   export let height = "";
   export let justifyContent = "center";
+  export let marginBottom = "";
   export let maxWidth = "";
   export let padding = "0.5rem";
   export let paddingRight = "";
@@ -47,6 +48,7 @@
   style:cursor={variant === "Hoverable" ? "pointer" : ""}
   style:display
   style:justify-content={justifyContent}
+  style:margin-bottom={marginBottom}
   style:max-width={maxWidth}
   style:overflow="hidden;"
   style:padding
