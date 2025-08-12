@@ -17,6 +17,7 @@
   export let borderColor = "";
   export let borderRadius = theme?.border.borderRadius.balanced;
   export let borderSizing = "border-box";
+  export let color = "";
   export let display = "flex";
   export let height = "";
   export let justifyContent = "center";
@@ -45,6 +46,7 @@
   style:border-style={borderStyle || "Solid"}
   style:border-width={borderWidth || theme?.border.disabled.width}
   style:box-sizing={borderSizing}
+  style:color
   style:cursor={variant === "Hoverable" ? "pointer" : ""}
   style:display
   style:justify-content={justifyContent}
