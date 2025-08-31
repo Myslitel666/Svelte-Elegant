@@ -89,7 +89,7 @@
     z-index: 11000;
 
     margin: 0;
-    height: 100vh;
+    height: 100dvh;
     width: 100vw;
   }
 
