@@ -6,6 +6,7 @@
   import { browser } from "$app/environment"; //Позволяет определить, выполняется ли код на клиенте
 
   export let borderRadius = "0.5rem";
+  export let isCloseOnOutsideClick = true;
   export let isOpen = false;
   export let maxHeight = "100vh";
   export let maxWidth = "840px";
@@ -23,7 +24,7 @@
 
   // Закрытие при клике вне контента
   function handleBackdropClick(event: MouseEvent) {
-    if (event.target === event.currentTarget) {
+    if (event.target === event.currentTarget && isCloseOnOutsideClick) {
       isOpen = false;
     }
   }
