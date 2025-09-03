@@ -96,6 +96,10 @@
 </script>
 
 <div id="container" style:width="100%">
+  <h6 class="heading">Number TextField</h6>
+  <div class="components-container">
+    <TextField type="number" />
+  </div>
   <Message>Message</Message>
   <CheckMark />
   <h6 class="heading">TextArea</h6>

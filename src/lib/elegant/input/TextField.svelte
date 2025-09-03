@@ -5,8 +5,10 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import { isMobile } from "$lib/utils/isMobile.js";
+  import TriangularArrowDown from "$icons-elegant/TriangularArrowDown.svelte";
   import "$styles/app.css";
   import "../../font.css";
+  import TriangularBracket from "$icons-elegant/TriangularBracket.svelte";
 
   // Свойства для управления CSS-стилями
   export let activedborderWidth = ""; /* Толщина обводки в активном состоянии */
@@ -317,6 +319,24 @@
         {/if}
       </IconHover>
     </div>
+  {:else if type == "number"}
+    <div
+      class="eye"
+      style:right={variant == "Standard" ? theme.padding.min : xPadding}
+      style:margin-top={variant === "Standard" ? "0.85rem" : "0.09rem"}
+    >
+      <div
+        style:--Xl-arrow-border={`1px solid ${theme.border.disabled.color}`}
+        style:--Xl-hover-color={theme.surface.filled.background}
+      >
+        <div style:rotate="180deg" class="triangle-btn">
+          <TriangularArrowDown />
+        </div>
+        <div class="triangle-btn" style:border-top="none">
+          <TriangularArrowDown />
+        </div>
+      </div>
+    </div>
   {/if}
 </div>
 
@@ -339,6 +359,27 @@
     height: calc(var(--Xl-activeborderWidth) + 0.75px);
     display: flex;
     align-items: center;
+  }
+
+  /* Стилизуем контейнер стрелок */
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .triangle-btn {
+    padding-left: 4px;
+    padding-right: 4px;
+    height: 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--Xl-arrow-border);
+    transition: border 0.3s;
+  }
+
+  .triangle-btn:hover {
+    background-color: var(--Xl-hover-color);
   }
 
   .input-border {
