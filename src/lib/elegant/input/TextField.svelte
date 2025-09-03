@@ -380,6 +380,10 @@
     -webkit-appearance: none;
   }
 
+  input[type="number"] {
+    padding-right: 50px;
+  }
+
   .triangle-btn {
     user-select: none; /* Отмена выделения текста при двойном щелчке */
     padding-left: 4px;
