@@ -98,7 +98,12 @@
 <div id="container" style:width="100%">
   <h6 class="heading">Number TextField</h6>
   <div class="components-container">
-    <TextField type="number" />
+    <TextField
+      type="number"
+      onclick={() => {
+        console.log("GHJ");
+      }}
+    />
   </div>
   <Message>Message</Message>
   <CheckMark />

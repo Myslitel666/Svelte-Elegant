@@ -329,10 +329,24 @@
         style:--Xl-arrow-border={`1px solid ${theme.border.disabled.color}`}
         style:--Xl-hover-color={theme.surface.filled.background}
       >
-        <div style:rotate="180deg" class="triangle-btn">
+        <div
+          style:rotate="180deg"
+          class="triangle-btn"
+          on:click={() => {
+            value = (Number(value) + 1).toString();
+            focus();
+          }}
+        >
           <TriangularArrowDown />
         </div>
-        <div class="triangle-btn" style:border-top="none">
+        <div
+          class="triangle-btn"
+          style:border-top="none"
+          on:click={() => {
+            value = (Number(value) - 1).toString();
+            focus();
+          }}
+        >
           <TriangularArrowDown />
         </div>
       </div>
@@ -367,6 +381,7 @@
   }
 
   .triangle-btn {
+    user-select: none;
     padding-left: 4px;
     padding-right: 4px;
     height: 15px;
