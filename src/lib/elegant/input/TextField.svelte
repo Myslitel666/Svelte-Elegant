@@ -381,7 +381,7 @@
   }
 
   .triangle-btn {
-    user-select: none;
+    user-select: none; /* Отмена выделения текста при двойном щелчке */
     padding-left: 4px;
     padding-right: 4px;
     height: 15px;
