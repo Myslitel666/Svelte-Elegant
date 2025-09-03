@@ -328,6 +328,7 @@
       <div
         style:--Xl-arrow-border={`1px solid ${theme.border.disabled.color}`}
         style:--Xl-hover-color={theme.surface.filled.background}
+        style:margin-top="-1.45px"
       >
         <div
           style:rotate="180deg"
@@ -388,7 +389,7 @@
     user-select: none; /* Отмена выделения текста при двойном щелчке */
     padding-left: 4px;
     padding-right: 4px;
-    height: 15px;
+    height: 16px;
     border-radius: 4px;
     display: flex;
     justify-content: center;

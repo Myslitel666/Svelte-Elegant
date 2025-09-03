@@ -100,7 +100,7 @@
   <div class="components-container">
     <TextField
       type="number"
-      value="7777777777777777778888888888"
+      value="7"
       onclick={() => {
         console.log("GHJ");
       }}
