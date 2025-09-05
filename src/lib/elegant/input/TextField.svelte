@@ -295,7 +295,7 @@
     style:--Xl-labelColor={xLabelColor}
     style:--Xl-labelColorHover={xLabelColorHover}
     style:--Xl-liftingHeight={variant === "Outlined"
-      ? `${height}/2 + 0.9*var(--Xl-activeborderWidth)`
+      ? `${height}/2 + 0.8 * var(--Xl-activeborderWidth)`
       : variant === "Standard"
         ? `${height}/2 + 0.4rem`
         : `${height}/2 + 0.9rem`}
