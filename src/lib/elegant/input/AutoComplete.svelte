@@ -69,7 +69,7 @@
     } else {
       xOptionHoverColor = hexToRgba(
         theme.palette.primary,
-        theme.controls.kOpacity
+        theme.controls.kOpacity.ghost
       );
     }
 

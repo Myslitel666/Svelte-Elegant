@@ -451,10 +451,6 @@
     color: var(--Xl-labelColorHover);
   }
 
-  .input-container.focused label {
-    background-color: var(--Xl-label-fill);
-  }
-
   .input-container.focused .input-border {
     border-color: var(--Xl-color);
     border-width: 2px;
@@ -466,10 +462,7 @@
   }
 
   .input-container.focused label {
-    color: var(--Xl-color); /* Изменяем цвет на основной */
-  }
-
-  .input-container.focused label {
+    background-color: var(--Xl-label-fill);
     color: var(--Xl-color); /* Изменяем цвет на основной */
   }
 
