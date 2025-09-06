@@ -10,7 +10,7 @@
 		"package": "npm run clean && svelte-kit sync && svelte-package",
 		"prepare": "svelte-kit sync || echo ''",
 		"prepack": "svelte-kit sync && svelte-package && publint",
-		"publish": "npm run build & npm publish"
+		"publish": "npm run build && npm publish"
 	},
 	"repository": {
 		"type": "git",
