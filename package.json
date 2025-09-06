@@ -9,7 +9,8 @@
 		"preview": "vite preview",
 		"package": "npm run clean && svelte-kit sync && svelte-package",
 		"prepare": "svelte-kit sync || echo ''",
-		"prepack": "svelte-kit sync && svelte-package && publint"
+		"prepack": "svelte-kit sync && svelte-package && publint",
+		"publish": "npm run clean && vite build && npm run package && npm publish"
 	},
 	"repository": {
 		"type": "git",
