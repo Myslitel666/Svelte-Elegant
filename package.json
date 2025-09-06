@@ -24,10 +24,6 @@
 			"types": "./dist/elegant/input/AutoComplete.svelte.d.ts",
 			"svelte": "./dist/elegant/input/AutoComplete.svelte"
 		},
-		"./Backspace": {
-			"types": "./dist/icons-elegant/Backspace.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Backspace.svelte"
-		},
 		"./Box": {
 			"types": "./dist/elegant/layout/Box.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/Box.svelte"
@@ -52,10 +48,6 @@
 			"types": "./dist/elegant/navigation/Drawer.svelte.d.ts",
 			"svelte": "./dist/elegant/navigation/Drawer.svelte"
 		},
-		"./Enter": {
-			"types": "./dist/icons-elegant/Enter.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/Enter.svelte"
-		},
 		"./Header": {
 			"types": "./dist/elegant/layout/Header.svelte.d.ts",
 			"svelte": "./dist/elegant/layout/Header.svelte"
@@ -67,6 +59,10 @@
 		"./icons-elegant": {
 			"types": "./dist/icons-elegant/index.d.ts",
 			"svelte": "./dist/icons-elegant/index.js"
+		},
+		"./icons-elegant/Backspace": {
+			"types": "./dist/icons-elegant/Backspace.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Backspace.svelte"
 		},
 		"./icons-elegant/Bars": {
 			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
@@ -100,6 +96,10 @@
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Elegant.svelte"
 		},
+		"./icons-elegant/Enter": {
+			"types": "./dist/icons-elegant/Enter.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Enter.svelte"
+		},
 		"./icons-elegant/Envelope": {
 			"types": "./dist/icons-elegant/Envelope.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Envelope.svelte"
@@ -132,9 +132,17 @@
 			"types": "./dist/icons-elegant/NotebookPro.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/NotebookPro.svelte"
 		},
+		"./icons-elegant/Pause": {
+			"types": "./dist/icons-elegant/Pause.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Pause.svelte"
+		},
 		"./icons-elegant/Pen": {
 			"types": "./dist/icons-elegant/Pen.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Pen.svelte"
+		},
+		"./icons-elegant/Play": {
+			"types": "./dist/icons-elegant/Play.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Play.svelte"
 		},
 		"./icons-elegant/Plus": {
 			"types": "./dist/icons-elegant/Plus.svelte.d.ts",
