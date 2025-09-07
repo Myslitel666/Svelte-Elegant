@@ -4,6 +4,7 @@
 /* Icons */
 export { default as Backspace } from './Backspace.svelte';
 export { default as Bars } from './Bars.svelte';
+export { default as Calculator } from './Calculator.svelte';
 export { default as Cross } from './Cross.svelte';
 export { default as CheckMark } from './CheckMark.svelte';
 export { default as Dark } from './Dark.svelte';
@@ -26,5 +27,6 @@ export { default as Play } from './Play.svelte';
 export { default as Plus } from './Plus.svelte';
 export { default as PlusSquareFill } from './PlusSquareFill.svelte';
 export { default as Save } from './Save.svelte';
+export { default as Stopwatch } from './Stopwatch.svelte';
 export { default as TableIcon } from './TableIcon.svelte';
 export { default as TriangularArrowDown } from './TriangularArrowDown.svelte';

@@ -68,6 +68,10 @@
 			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Bars.svelte"
 		},
+		"./icons-elegant/Calculator": {
+			"types": "./dist/icons-elegant/Calculator.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Calculator.svelte"
+		},
 		"./icons-elegant/CheckMark": {
 			"types": "./dist/icons-elegant/CheckMark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/CheckMark.svelte"
@@ -152,13 +156,17 @@
 			"types": "./dist/icons-elegant/PlusSquareFill.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/PlusSquareFill.svelte"
 		},
-		"./icons-elegant/TableIcon": {
-			"types": "./dist/icons-elegant/TableIcon.svelte.d.ts",
-			"svelte": "./dist/icons-elegant/TableIcon.svelte"
-		},
 		"./icons-elegant/Save": {
 			"types": "./dist/icons-elegant/Save.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Save.svelte"
+		},
+		"./icons-elegant/Stopwatch": {
+			"types": "./dist/icons-elegant/Stopwatch.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Stopwatch.svelte"
+		},
+		"./icons-elegant/TableIcon": {
+			"types": "./dist/icons-elegant/TableIcon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/TableIcon.svelte"
 		},
 		"./icons-elegant/TriangularArrowDown": {
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",
