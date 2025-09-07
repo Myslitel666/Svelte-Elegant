@@ -16,7 +16,7 @@
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
 <svg
   data-source="https://www.svgrepo.com/svg/479706/stopwatch"
-  data-license="MIT"
+  data-license="PD License"
   width={size}
   height={size}
   version="1.1"
