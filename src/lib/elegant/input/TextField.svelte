@@ -26,6 +26,7 @@
   export let labelColor = ""; /* Цвет надписи */
   export let labelColorHover = "";
   export let minWidth = ""; /* Минимальная ширина поля */
+  export let textAlign = "";
   export let type = ""; /* Тип ввода */
   export let padding = ""; /* Отступ */
   export let paddingBottom = "";
@@ -265,6 +266,7 @@
           : ""}
     style:padding-top={xPaddingTop}
     style:position="absolute"
+    style:text-align={textAlign}
     style:width="100%"
     style:--Xl-textColor={xColor}
     on:click={focus}

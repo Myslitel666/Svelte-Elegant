@@ -99,6 +99,7 @@
   <h6 class="heading">Number TextField</h6>
   <div class="components-container">
     <TextField
+      textAlign="right"
       type="number"
       value="7"
       onclick={() => {
