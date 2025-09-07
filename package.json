@@ -156,6 +156,10 @@
 			"types": "./dist/icons-elegant/PlusSquareFill.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/PlusSquareFill.svelte"
 		},
+		"./icons-elegant/Process": {
+			"types": "./dist/icons-elegant/Process.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Process.svelte"
+		},
 		"./icons-elegant/Save": {
 			"types": "./dist/icons-elegant/Save.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Save.svelte"

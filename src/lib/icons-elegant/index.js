@@ -26,6 +26,7 @@ export { default as Pen } from './Pen.svelte';
 export { default as Play } from './Play.svelte';
 export { default as Plus } from './Plus.svelte';
 export { default as PlusSquareFill } from './PlusSquareFill.svelte';
+export { default as Process } from './Process.svelte';
 export { default as Save } from './Save.svelte';
 export { default as Stopwatch } from './Stopwatch.svelte';
 export { default as TableIcon } from './TableIcon.svelte';

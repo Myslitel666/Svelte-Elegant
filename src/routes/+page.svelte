@@ -28,6 +28,8 @@
   import GoBack from "$icons-elegant/GoBack.svelte";
   import Message from "$elegant/feedback/Message.svelte";
 
+  import Process from "$icons-elegant/Process.svelte";
+
   import { languageStore } from "$lib/stores/languageStore";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
 
@@ -96,6 +98,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <Process />
   <h6 class="heading">Number TextField</h6>
   <div class="components-container">
     <TextField
