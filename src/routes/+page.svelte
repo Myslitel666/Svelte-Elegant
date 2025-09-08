@@ -27,6 +27,7 @@
   import CheckMark from "./../lib/icons-elegant/CheckMark.svelte";
   import GoBack from "$icons-elegant/GoBack.svelte";
   import Message from "$elegant/feedback/Message.svelte";
+  import Checkbox from "$elegant/input/Checkbox.svelte";
 
   import Process from "$icons-elegant/Process.svelte";
 
@@ -98,6 +99,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <Checkbox />
   <Process />
   <h6 class="heading">Number TextField</h6>
   <div class="components-container">
