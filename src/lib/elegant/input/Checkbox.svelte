@@ -4,26 +4,40 @@
 
   let theme;
 
+  export let backgroundColor = "";
   export let borderColor = "";
   export let borderWidth = "1px";
   export let borderRadius = "4px";
   export let hoverColor = "";
+  export let isActive = false;
   export let size = "15px";
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
     theme = value; // Инициализация объекта темы
 
-    borderColor = theme.border.disabled.color;
     hoverColor = theme.surface.ghost.background;
   });
+
+  $: {
+    backgroundColor = isActive ? theme.palette.primary : "";
+    borderColor = isActive
+      ? theme.palette.primary
+      : theme.border.disabled.color;
+  }
+
+  function toggleActive() {
+    isActive = !isActive;
+  }
 </script>
 
 <div
   class="checkbox"
+  on:click={toggleActive}
   style:--Xl-hoverColor={hoverColor}
   style:width={size}
   style:height={size}
+  style:background-color={backgroundColor}
   style:border={`${borderWidth} solid ${borderColor}`}
   style:border-radius={borderRadius}
 ></div>
