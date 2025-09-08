@@ -22,6 +22,7 @@ export { default as Message } from './elegant/feedback/Message.svelte';
 export { default as AutoComplete } from './elegant/input/AutoComplete.svelte';
 export { default as Button } from './elegant/input/Button.svelte';
 export { default as ButtonBox } from './elegant/input/ButtonBox.svelte';
+export { default as Checkbox } from './elegant/input/Checkbox.svelte';
 export { default as Switch } from './elegant/input/Switch.svelte';
 export { default as TextArea } from './elegant/input/TextArea.svelte';
 export { default as TextField } from './elegant/input/TextField.svelte';

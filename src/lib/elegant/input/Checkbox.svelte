@@ -1,5 +1,5 @@
 <script>
-  import Box from "$elegant/layout/Box.svelte";
+  import CheckMark from "$icons-elegant/CheckMark.svelte";
   import { themeStore } from "$lib/stores";
 
   let theme;
@@ -10,7 +10,7 @@
   export let borderRadius = "4px";
   export let hoverColor = "";
   export let isActive = false;
-  export let size = "15px";
+  export let size = "20px";
 
   // Подписываемся на изменения темы
   themeStore.subscribe((value) => {
@@ -40,12 +40,19 @@
   style:background-color={backgroundColor}
   style:border={`${borderWidth} solid ${borderColor}`}
   style:border-radius={borderRadius}
-></div>
+>
+  <div style:opacity={isActive ? 1 : 0} style:transition="opacity 0.3s">
+    <CheckMark fill={theme.palette.text.main} size="12px" />
+  </div>
+</div>
 
 <style>
   .checkbox {
     background-color: transparent;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition:
       background-color 0.3s ease,
       border-color 0.3s ease;

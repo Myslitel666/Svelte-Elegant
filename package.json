@@ -36,6 +36,10 @@
 			"types": "./dist/elegant/input/Button.svelte.d.ts",
 			"svelte": "./dist/elegant/input/Button.svelte"
 		},
+		"./Checkbox": {
+			"types": "./dist/elegant/input/Checkbox.svelte.d.ts",
+			"svelte": "./dist/elegant/input/Checkbox.svelte"
+		},
 		"./ColorThemeSwitch": {
 			"types": "./dist/elegant/customization/ColorThemeSwitch.svelte.d.ts",
 			"svelte": "./dist/elegant/customization/ColorThemeSwitch.svelte"
