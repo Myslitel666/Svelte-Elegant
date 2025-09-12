@@ -92,6 +92,10 @@
 			"types": "./dist/icons-elegant/Database.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Database.svelte"
 		},
+		"./icons-elegant/DatabaseCheck": {
+			"types": "./dist/icons-elegant/DatabaseCheck.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/DatabaseCheck.svelte"
+		},
 		"./icons-elegant/DatabasePro": {
 			"types": "./dist/icons-elegant/DatabasePro.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/DatabasePro.svelte"
