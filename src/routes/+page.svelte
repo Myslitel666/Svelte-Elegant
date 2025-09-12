@@ -28,6 +28,7 @@
   import GoBack from "$icons-elegant/GoBack.svelte";
   import Message from "$elegant/feedback/Message.svelte";
   import Checkbox from "$elegant/input/Checkbox.svelte";
+  import DatabaseCheck from "$icons-elegant/DatabaseCheck.svelte";
 
   import Process from "$icons-elegant/Process.svelte";
 
@@ -99,6 +100,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <DatabaseCheck />
   <Checkbox />
   <Process />
   <h6 class="heading">Number TextField</h6>

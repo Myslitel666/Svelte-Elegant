@@ -17,7 +17,7 @@
   xmlns="http://www.w3.org/2000/svg"
   width={size}
   height={size}
-  fill={fill || theme?.palette.primary}
+  fill={fill || $themeStore.palette.primary}
   data-source="https://icons.getbootstrap.com/icons/database-check"
   data-license="MIT"
   class="bi bi-database-check"
