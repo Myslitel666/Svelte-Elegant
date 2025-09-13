@@ -28,12 +28,12 @@
   import GoBack from "$icons-elegant/GoBack.svelte";
   import Message from "$elegant/feedback/Message.svelte";
   import Checkbox from "$elegant/input/Checkbox.svelte";
-  import Info from "$icons-elegant/Info.svelte";
 
   import Process from "$icons-elegant/Process.svelte";
 
   import { languageStore } from "$lib/stores/languageStore";
   import LangSelector from "$elegant/customization/LangSelector.svelte";
+  import DiagramIconPro from "$icons-elegant/DiagramIconPro.svelte";
 
   import { isMobile } from "$lib/utils";
   import { getBrowser } from "$lib/utils";
@@ -100,7 +100,7 @@
 </script>
 
 <div id="container" style:width="100%">
-  <Info />
+  <DiagramIconPro />
   <Checkbox />
   <Process />
   <h6 class="heading">Number TextField</h6>

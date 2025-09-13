@@ -12,6 +12,7 @@ export { default as Database } from './Database.svelte';
 export { default as DatabaseCheck } from './DatabaseCheck.svelte';
 export { default as DatabasePro } from './DatabasePro.svelte';
 export { default as Delete } from './Delete.svelte';
+export { default as DiagramIconPro } from './DiagramIconPro.svelte';
 export { default as Elegant } from './Elegant.svelte';
 export { default as Enter } from './Enter.svelte';
 export { default as EnvelopeIcon } from './Envelope.svelte';
