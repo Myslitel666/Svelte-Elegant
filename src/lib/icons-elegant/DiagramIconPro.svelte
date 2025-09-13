@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { themeStore, themeMode } from "$lib/stores/ThemeStore.js";
+  import { themeMode } from "$lib/stores/ThemeStore.js";
   import "./style/icons.css";
 
   export let strokeWidth = "0.155";
