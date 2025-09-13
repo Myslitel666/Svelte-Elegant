@@ -128,6 +128,10 @@
 			"types": "./dist/icons-elegant/GoBack.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/GoBack.svelte"
 		},
+		"./icons-elegant/Info": {
+			"types": "./dist/icons-elegant/Info.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Info.svelte"
+		},
 		"./icons-elegant/Light": {
 			"types": "./dist/icons-elegant/Light.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Light.svelte"
