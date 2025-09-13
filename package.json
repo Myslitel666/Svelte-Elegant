@@ -105,8 +105,8 @@
 			"svelte": "./dist/icons-elegant/Delete.svelte"
 		},
 		"./icons-elegant/DiagramIconPro": {
-			"types": "./dist/elegant/icons-elegant/DiagramIconPro.svelte.d.ts",
-			"svelte": "./dist/elegant/icons-elegant/DiagramIconPro.svelte"
+			"types": "./dist/icons-elegant/DiagramIconPro.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/DiagramIconPro.svelte"
 		},
 		"./icons-elegant/Elegant": {
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
