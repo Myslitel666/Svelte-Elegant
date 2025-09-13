@@ -19,13 +19,6 @@
     "#696b00",
   ];
   export let size = "60px";
-
-  let theme: any;
-
-  // Подписываемся на изменения темы
-  themeStore.subscribe((value) => {
-    theme = value;
-  });
 </script>
 
 <!-- Uploaded to: SVG Repo, www.svgrepo.com, Transformed by: SVG Repo Mixer Tools -->
