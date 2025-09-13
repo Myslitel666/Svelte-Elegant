@@ -2,10 +2,10 @@
   import { themeStore } from "$lib/stores/ThemeStore.js";
   import "./style/icons.css";
 
-  export let fill = $themeStore.palette.primary;
+  export let fill = "";
   export let containerSize = "24px";
   export let padding = "5px";
-  export let stroke = $themeStore.palette.text.main;
+  export let stroke = "";
   export let size = "17px";
 
   let theme: any;
@@ -21,13 +21,13 @@
   style:cursor="pointer"
   style:height={containerSize}
   style:width={containerSize}
-  style:background-color={fill}
+  style:background-color={fill || $themeStore.palette.primary}
   class="info-icon-container"
 >
   <svg
     data-source="https://www.svgrepo.com/svg/501600/info-borderless"
     data-license="MIT"
-    fill={stroke}
+    fill={stroke || $themeStore.palette.text.main}
     width={size}
     height={size}
     viewBox="0 0 1920 1920"
