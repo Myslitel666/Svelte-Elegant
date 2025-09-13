@@ -22,6 +22,7 @@
   style:height={containerSize}
   style:width={containerSize}
   style:background-color={fill || $themeStore.palette.primary}
+  style:transition="background-color 0.3s"
   class="info-icon-container"
 >
   <svg
