@@ -9,6 +9,7 @@ export { default as Cross } from './Cross.svelte';
 export { default as CheckMark } from './CheckMark.svelte';
 export { default as Dark } from './Dark.svelte';
 export { default as Database } from './Database.svelte';
+export { default as DatabaseCheck } from './DatabaseCheck.svelte';
 export { default as DatabasePro } from './DatabasePro.svelte';
 export { default as Delete } from './Delete.svelte';
 export { default as Elegant } from './Elegant.svelte';
