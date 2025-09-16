@@ -3,6 +3,7 @@
   import { generateIdElement } from "../../stores/ElementIdStore.js";
   import { onMount, tick } from "svelte";
   import { themeStore } from "$lib/stores/ThemeStore.js";
+  import { themeMode } from "$lib/stores/ThemeStore.js";
   import IconHover from "$elegant/customization/IconHover.svelte";
   import { isMobile } from "$lib/utils/isMobile.js";
   import TriangularArrowDown from "$icons-elegant/TriangularArrowDown.svelte";
@@ -49,6 +50,7 @@
   let fill = bgColor;
   let isHovered = false;
   let isInitialized = false;
+  let dateTypeColor = "";
   let xBgColor = "";
   let xBorderColor = "";
   let xBorderColorHover = "";
@@ -153,6 +155,11 @@
   themeStore.subscribe((value) => {
     theme = value; //Инициализация объекта темы
     checkOrToggleDisabled();
+
+    dateTypeColor =
+      $themeMode === "light"
+        ? "invert(50%) sepia(80%) saturate(250%) hue-rotate(70deg)"
+        : "invert(33%) sepia(100%) saturate(2000%) hue-rotate(330deg)";
   });
 
   //Устанавливаем значения стилей после инициализации темы с проверкой не передавал ли пользователь в компонент свои значения стилей
@@ -238,6 +245,7 @@
   style:--Xl-label-fill={variant === "Outlined" ? fill : ""}
   style:--Xl-height={height}
   style:--Xl-hoverBorderColor={xBorderColorHover}
+  style:--Xl-dateColor={dateTypeColor}
 >
   <input
     class:has-value={value}
@@ -361,8 +369,10 @@
   input[type="date"]::-webkit-calendar-picker-indicator {
     margin-right: 10px; /* Для Chrome/Safari */
     font-size: 24px;
-    filter: invert(50%) sepia(80%) saturate(250%) hue-rotate(70deg);
+    filter: var(--Xl-dateColor);
+    transition: filter 0.3s;
   }
+
   input {
     background-color: transparent;
     color: var(--Xl-textColor);
