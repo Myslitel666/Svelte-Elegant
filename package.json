@@ -108,6 +108,10 @@
 			"types": "./dist/icons-elegant/DiagramIconPro.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/DiagramIconPro.svelte"
 		},
+		"./icons-elegant/Diary": {
+			"types": "./dist/icons-elegant/Diary.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Diary.svelte"
+		},
 		"./icons-elegant/Elegant": {
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Elegant.svelte"

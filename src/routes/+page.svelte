@@ -28,6 +28,7 @@
   import GoBack from "$icons-elegant/GoBack.svelte";
   import Message from "$elegant/feedback/Message.svelte";
   import Checkbox from "$elegant/input/Checkbox.svelte";
+  import Diary from "$icons-elegant/Diary.svelte";
 
   import Process from "$icons-elegant/Process.svelte";
 
