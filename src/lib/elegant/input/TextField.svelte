@@ -396,8 +396,10 @@
     -moz-appearance: textfield; /* Для Mozilla стрелки убираем отдельно */
   }
 
-  input[type="date"] {
-    user-select: none;
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    margin-right: 10px; /* Для Chrome/Safari */
+    font-size: 24px;
+    filter: invert(50%) sepia(80%) saturate(250%) hue-rotate(70deg);
   }
 
   .triangle-btn {
