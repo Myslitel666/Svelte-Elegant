@@ -366,13 +366,6 @@
 </div>
 
 <style>
-  input[type="date"]::-webkit-calendar-picker-indicator {
-    margin-right: 10px; /* Для Chrome/Safari */
-    font-size: 24px;
-    filter: var(--Xl-dateColor);
-    transition: filter 0.3s;
-  }
-
   input {
     background-color: transparent;
     color: var(--Xl-textColor);
@@ -401,6 +394,10 @@
   input[type="number"] {
     padding-right: 50px;
     -moz-appearance: textfield; /* Для Mozilla стрелки убираем отдельно */
+  }
+
+  input[type="date"] {
+    user-select: none;
   }
 
   .triangle-btn {
