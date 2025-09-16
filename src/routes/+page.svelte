@@ -100,13 +100,6 @@
 </script>
 
 <div id="container" style:width="100%">
-  <TextField
-    type="date"
-    value="7"
-    onclick={() => {
-      console.log("GHJ");
-    }}
-  />
   <DiagramIconPro />
   <Checkbox />
   <Process />

@@ -485,7 +485,8 @@
   }
 
   .input-container.focused label,
-  .input-container:has(input.has-value) label {
+  .input-container:has(input.has-value) label,
+  .input-container:has(input[type="date"]) label {
     transform: translate(
       -0.26rem,
       calc(-1 * var(--Xl-liftingHeight))
