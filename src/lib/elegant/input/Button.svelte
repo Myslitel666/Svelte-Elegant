@@ -164,14 +164,16 @@
     }
   }
 
-  if (variant != "Text") {
-    xHeight = height || theme?.controls.height.small;
-    xWidth = width || theme?.controls.width;
-    xPadding = "";
-  } else {
-    xHeight = height || "2.25rem";
-    xWidth = "auto";
-    xPadding = padding || "0.7rem";
+  $: {
+    if (variant != "Text") {
+      xHeight = height || theme?.controls.height.small;
+      xWidth = width || theme?.controls.width;
+      xPadding = "";
+    } else {
+      xHeight = height || "2.25rem";
+      xWidth = width;
+      xPadding = padding || "0.7rem";
+    }
   }
 
   onMount(() => {
