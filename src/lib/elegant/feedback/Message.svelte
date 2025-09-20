@@ -8,12 +8,17 @@
   export let marginRight = "";
   export let marginTop = "";
   export let color = "";
+  export let isError = true;
 
   $: xColor = color
     ? color
     : $themeMode === "light"
-      ? "#da0000"
-      : $themeStore.palette.primary;
+      ? isError
+        ? "#da0000"
+        : $themeStore.palette.primary
+      : isError
+        ? $themeStore.palette.primary
+        : "#10e942";
 </script>
 
 {#if isVisible}
@@ -26,7 +31,8 @@
     style:margin-top={marginTop}
     style:color={xColor}
   >
-    ✘ <slot />
+    {#if isError}✘{:else}✔{/if}
+    <slot />
   </p>
 {/if}
 

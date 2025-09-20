@@ -100,6 +100,7 @@
 </script>
 
 <div id="container" style:width="100%">
+  <TextArea width="370px" label="Example of Use" />
   <DiagramIconPro />
   <Checkbox />
   <Process />
