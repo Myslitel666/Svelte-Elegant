@@ -165,6 +165,7 @@
 </script>
 
 <div
+  style:background-color="red"
   id="{id}-container"
   role="button"
   tabindex="0"
@@ -179,6 +180,7 @@
   on:keydown={() => {}}
 >
   <TextField
+    width="100%"
     bind:this={textFieldRef}
     bind:value
     {id}

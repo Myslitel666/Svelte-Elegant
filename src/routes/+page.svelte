@@ -99,6 +99,19 @@
   });
 </script>
 
+<div class="page2">
+  <p style:margin-top="10px" style:margin-bottom="10px">
+    The <span style:font-weight="600">Dictionary</span> of special words
+    designed to study <span style:font-weight="600">Web-Development</span> and technical
+    documentation.
+  </p>
+  <div class="subject">
+    <p>Choose Subject:</p>
+    <AutoComplete label="Subject" />
+  </div>
+  <DataGrid />
+</div>
+
 <div id="container" style:width="100%">
   <TextArea width="370px" label="Example of Use" />
   <DiagramIconPro />
@@ -381,6 +394,22 @@
 </div>
 
 <style>
+  .page2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .subject {
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+
   .heading {
     margin-top: 0.35rem;
     margin-bottom: 0.35rem;
