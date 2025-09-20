@@ -30,7 +30,7 @@
   export let scrollbarColor = "";
   export let value = "";
   export let variant: "Outlined" | "Filled" | "Standard" = "Outlined";
-  export let width = ""; /* Ширина поля */
+  export let width = "200px"; /* Ширина поля */
 
   // Приватные атрибуты
   let autoCompleteRef: HTMLElement;
