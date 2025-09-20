@@ -165,7 +165,6 @@
 </script>
 
 <div
-  style:background-color="red"
   id="{id}-container"
   role="button"
   tabindex="0"
