@@ -325,6 +325,7 @@
   .option {
     cursor: pointer;
     padding: 0.88rem;
+    text-align: left;
   }
 
   .option:hover {
