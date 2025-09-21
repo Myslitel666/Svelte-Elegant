@@ -169,6 +169,8 @@
     display: flex;
     justify-content: center; /* Центрируем содержимое по горизонтали */
     flex-direction: column; /* Расположение элементов друг под другом */
+    text-align: left;
+    line-height: 1.4;
   }
 
   .data-grid:hover {
