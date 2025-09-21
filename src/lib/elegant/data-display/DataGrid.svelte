@@ -13,6 +13,7 @@
   // Свойства для управления CSS-стилями
   export let borderColor = ""; /* Цвет обводки */
   export let headBg = "";
+  export let maxHeight = "";
   export let maxWidth = "";
   export let rowBg = "";
   export let width = "";
@@ -59,6 +60,7 @@
     style:--Xl-background-color={rowBg || theme?.surface.ghost.background}
     style:--Xl-head-bg={headBg || theme?.surface.filled.background}
     style:height
+    style:max-height={maxHeight}
   >
     {#if columns.length !== 0}
       <div class="header-container border over-border-clear">
