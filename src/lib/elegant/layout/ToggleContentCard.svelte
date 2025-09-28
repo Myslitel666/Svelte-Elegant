@@ -10,7 +10,8 @@
 
   export let detailsShift = "3.5px";
   export let id = "";
-  export let padding = "1rem";
+  export let size = "Medium";
+  export let padding = size === "Medium" ? "1rem" : "10px";
   export let width = "27rem";
 
   // Состояние для управления раскрытием
@@ -57,7 +58,7 @@
   <div style:display="flex">
     <Box
       variant="Hoverable"
-      height="5.33rem"
+      height={size === "Medium" ? "5.33rem" : "auto"}
       onclick={toggleDetails}
       {padding}
       {width}
@@ -72,7 +73,7 @@
         style:transition="rotate 0.3s, transform 0.3s"
         style:margin-top="0.3rem"
       >
-        <TriangularBracket />
+        <TriangularBracket size={size === "Medium" ? "27px" : "20px"} />
       </div>
     </Box>
     <div class="flex-center">

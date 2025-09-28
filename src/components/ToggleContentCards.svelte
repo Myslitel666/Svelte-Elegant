@@ -6,7 +6,7 @@
 
 <div class="toggle-content-cards">
   <div class="card">
-    <ToggleContentCard width="100%">
+    <ToggleContentCard size="Small" width="100%">
       <div slot="content">
         <p>Выписать 50 новых слов в English Assistant</p>
       </div>
