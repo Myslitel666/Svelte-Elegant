@@ -302,7 +302,6 @@
 		"vite": "^7.0.4"
 	},
 	"dependencies": {
-		"svelte-elegant": "^1.8.7",
 		"svelte2tsx": "^0.7.34"
 	}
 }

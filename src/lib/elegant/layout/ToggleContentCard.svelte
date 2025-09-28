@@ -82,7 +82,10 @@
   </div>
 
   <!-- Дополнительная информация под Box с плавным раскрытием -->
-  <div style:transform={`translateY(${detailsShift})`}>
+  <div
+    style:transform={`translateY(${detailsShift})`}
+    style:background-color={$themeStore.palette.background}
+  >
     <div
       class="details"
       style:height={isOpen ? `${slotHeight}px` : "0"}
