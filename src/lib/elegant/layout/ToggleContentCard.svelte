@@ -11,7 +11,7 @@
   export let detailsShift = "3.5px";
   export let id = "";
   export let size = "Medium";
-  export let padding = size === "Medium" ? "1rem" : "10px";
+  export let padding = size === "Medium" ? "1rem" : "5px 10px 5px 10px";
   export let width = "27rem";
 
   // Состояние для управления раскрытием
@@ -73,7 +73,7 @@
         style:transition="rotate 0.3s, transform 0.3s"
         style:margin-top="0.3rem"
       >
-        <TriangularBracket size={size === "Medium" ? "27px" : "20px"} />
+        <TriangularBracket size={size === "Medium" ? "27px" : "17px"} />
       </div>
     </Box>
     <div class="flex-center">
