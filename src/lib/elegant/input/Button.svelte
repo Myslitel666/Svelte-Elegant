@@ -52,6 +52,10 @@
     let isPrimaryIndicator = isPrimary;
     let varinatIndicator = variant;
 
+    if (bgColor) {
+      checkOrToggleDisabled();
+    }
+
     if (buttonElement) {
       buttonElement.disabled = disabled;
       checkOrToggleDisabled();
