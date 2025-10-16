@@ -18,4 +18,5 @@
   style:width={size}
   style:background-color={fill || theme.palette.primary}
   style:border-radius="50%"
+  style:transition="all 0.3s ease"
 ></div>

@@ -7,7 +7,6 @@ path,
 line,
 ellipse,
 rect,
-polygon,
-div {
+polygon {
   transition: all 0.3s ease;
 }

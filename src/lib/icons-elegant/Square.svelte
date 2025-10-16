@@ -17,4 +17,5 @@
   style:height={size}
   style:width={size}
   style:background-color={fill || theme.palette.primary}
+  style:transition="all 0.3s ease"
 ></div>
