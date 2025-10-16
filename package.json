@@ -72,6 +72,10 @@
 			"types": "./dist/icons-elegant/Bars.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Bars.svelte"
 		},
+		"./icons-elegant/Bell": {
+			"types": "./dist/icons-elegant/Bell.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Bell.svelte"
+		},
 		"./icons-elegant/Calculator": {
 			"types": "./dist/icons-elegant/Calculator.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Calculator.svelte"
@@ -80,9 +84,21 @@
 			"types": "./dist/icons-elegant/CheckMark.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/CheckMark.svelte"
 		},
+		"./icons-elegant/Circle": {
+			"types": "./dist/icons-elegant/Circle.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Circle.svelte"
+		},
 		"./icons-elegant/Cross": {
 			"types": "./dist/icons-elegant/Cross.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Cross.svelte"
+		},
+		"./icons-elegant/Cube": {
+			"types": "./dist/icons-elegant/Cube.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Cube.svelte"
+		},
+		"./icons-elegant/Cylinder": {
+			"types": "./dist/icons-elegant/Cylinder.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Cylinder.svelte"
 		},
 		"./icons-elegant/Dark": {
 			"types": "./dist/icons-elegant/Dark.svelte.d.ts",
@@ -108,9 +124,17 @@
 			"types": "./dist/icons-elegant/DiagramIconPro.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/DiagramIconPro.svelte"
 		},
+		"./icons-elegant/Diamonds": {
+			"types": "./dist/icons-elegant/Diamonds.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Diamonds.svelte"
+		},
 		"./icons-elegant/Diary": {
 			"types": "./dist/icons-elegant/Diary.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Diary.svelte"
+		},
+		"./icons-elegant/Dodecahedron": {
+			"types": "./dist/icons-elegant/Dodecahedron.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Dodecahedron.svelte"
 		},
 		"./icons-elegant/Elegant": {
 			"types": "./dist/icons-elegant/Elegant.svelte.d.ts",
@@ -135,6 +159,18 @@
 		"./icons-elegant/GoBack": {
 			"types": "./dist/icons-elegant/GoBack.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/GoBack.svelte"
+		},
+		"./icons-elegant/Heart": {
+			"types": "./dist/icons-elegant/Heart.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Heart.svelte"
+		},
+		"./icons-elegant/Hexagon": {
+			"types": "./dist/icons-elegant/Hexagon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Hexagon.svelte"
+		},
+		"./icons-elegant/Hexahedron": {
+			"types": "./dist/icons-elegant/Hexahedron.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Hexahedron.svelte"
 		},
 		"./icons-elegant/Info": {
 			"types": "./dist/icons-elegant/Info.svelte.d.ts",
@@ -164,6 +200,10 @@
 			"types": "./dist/icons-elegant/Pen.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Pen.svelte"
 		},
+		"./icons-elegant/Pentagon": {
+			"types": "./dist/icons-elegant/Pentagon.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Pentagon.svelte"
+		},
 		"./icons-elegant/Play": {
 			"types": "./dist/icons-elegant/Play.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Play.svelte"
@@ -184,6 +224,10 @@
 			"types": "./dist/icons-elegant/Save.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Save.svelte"
 		},
+		"./icons-elegant/Square": {
+			"types": "./dist/icons-elegant/Square.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Square.svelte"
+		},
 		"./icons-elegant/Stopwatch": {
 			"types": "./dist/icons-elegant/Stopwatch.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/Stopwatch.svelte"
@@ -191,6 +235,10 @@
 		"./icons-elegant/TableIcon": {
 			"types": "./dist/icons-elegant/TableIcon.svelte.d.ts",
 			"svelte": "./dist/icons-elegant/TableIcon.svelte"
+		},
+		"./icons-elegant/Triangle": {
+			"types": "./dist/icons-elegant/Triangle.svelte.d.ts",
+			"svelte": "./dist/icons-elegant/Triangle.svelte"
 		},
 		"./icons-elegant/TriangularArrowDown": {
 			"types": "./dist/icons-elegant/TriangularArrowDown.svelte.d.ts",

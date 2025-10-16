@@ -29,6 +29,21 @@
   import Message from "$elegant/feedback/Message.svelte";
   import Checkbox from "$elegant/input/Checkbox.svelte";
 
+  import {
+    Circle,
+    Square,
+    Diamonds,
+    Pentagon,
+    Triangle,
+    Hexagon,
+    Heart,
+    Dodecahedron,
+    Cube,
+    Cylinder,
+    Cone,
+    Hexahedron,
+  } from "$icons-elegant";
+
   import Process from "$icons-elegant/Process.svelte";
 
   import { languageStore } from "$lib/stores/languageStore";
@@ -100,6 +115,28 @@
 </script>
 
 <div id="container" style:width="100%">
+  <div
+    style:display="flex"
+    style:gap="5px"
+    style:justify-content="center"
+    style:align-items="center"
+  >
+    <Circle /><Triangle /><Square />
+  </div>
+  <div style:display="flex" style:gap="5px" style:margin-top="10px">
+    <Diamonds /><Pentagon /><Hexagon />
+  </div>
+  <div style:display="flex" style:gap="5px" style:margin-top="10px">
+    <Heart /><Dodecahedron /><Cube />
+  </div>
+  <div
+    style:display="flex"
+    style:gap="5px"
+    style:margin-top="10px"
+    style:margin-bottom="10px"
+  >
+    <Cylinder /><Cone /><Hexahedron />
+  </div>
   <TextArea width="370px" label="Example of Use" />
   <DiagramIconPro />
   <Checkbox />
