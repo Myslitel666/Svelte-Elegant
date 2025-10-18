@@ -47,4 +47,5 @@ export { default as Square } from './Square.svelte';
 export { default as Stopwatch } from './Stopwatch.svelte';
 export { default as TableIcon } from './TableIcon.svelte';
 export { default as Triangle } from './Triangle.svelte';
+export { default as TriangularBracket } from './TriangularBracket.svelte';
 export { default as TriangularArrowDown } from './TriangularArrowDown.svelte';
